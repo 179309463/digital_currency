@@ -12,8 +12,8 @@
 
 ActiveRecord::Schema.define(version: 20180116072104) do
 
-  create_table "exchange_notices", force: :cascade do |t|
-    t.integer "exchange_id"
+  create_table "exchange_notices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "exchange_id"
     t.string "title"
     t.string "href"
     t.datetime "created_at", null: false
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20180116072104) do
     t.index ["exchange_id"], name: "index_exchange_notices_on_exchange_id"
   end
 
-  create_table "exchange_trade_ranks", force: :cascade do |t|
-    t.integer "exchange_id"
+  create_table "exchange_trade_ranks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "exchange_id"
     t.date "stat_date"
     t.integer "trade_count"
     t.integer "rank"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20180116072104) do
     t.index ["exchange_id"], name: "index_exchange_trade_ranks_on_exchange_id"
   end
 
-  create_table "exchanges", force: :cascade do |t|
+  create_table "exchanges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "icon"
     t.string "name"
     t.string "memo"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20180116072104) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -64,4 +64,6 @@ ActiveRecord::Schema.define(version: 20180116072104) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "exchange_notices", "exchanges"
+  add_foreign_key "exchange_trade_ranks", "exchanges"
 end
