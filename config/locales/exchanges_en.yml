@@ -1,0 +1,40 @@
+---
+en:
+  activerecord:
+    models:
+      exchange: "Exchange"
+    attributes:
+      exchange: 
+        icon: "Icon"
+        name: "Name"
+        memo: "Memo"
+        description: "Description"
+        web_site: "Web site"
+        country: "Country"
+        price_memo: "Price memo"
+        support_type: "Support type"
+        stars: "Stars"
+        trade_pair_count: "Trade pair count"
+        rank: "Rank"
+  helpers:
+    submit:
+      exchange:
+        create: "Create exchange"
+        update: "Update exchange"
+  exchanges:
+    edit:
+      title: "Editing of the exchange"
+    form:
+      exchange: "Exchange"
+    index:
+      confirm: "Are you sure you want to delete the exchange?"
+      empty: "No exchanges found"
+      new_exchange: "Add a new exchange"
+      title: "Listing of exchanges"
+    new:
+      title: "Adding a new exchange"
+    show:
+      title: "Exchange details"
+    was_created: "Exchange was successfully added"
+    was_deleted: "Exchange was successfully deleted"
+    was_updated: "Exchange was successfully updated"

@@ -1,0 +1,32 @@
+<%- model_class = Exchange -%>
+<div class="page-header">
+  <h1><%= @exchange.name %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:icon) %>:</strong></dt>
+  <dd><%= image_tag @exchange.icon, width: 20, height: 20 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @exchange.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:memo) %>:</strong></dt>
+  <dd><%= @exchange.memo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @exchange.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:web_site) %>:</strong></dt>
+  <dd><%= link_to @exchange.web_site, @exchange.web_site %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
+  <dd><%= @exchange.country %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price_memo) %>:</strong></dt>
+  <dd><%= @exchange.price_memo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:support_type) %>:</strong></dt>
+  <dd><%= @exchange.support_type_text %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:stars) %>:</strong></dt>
+  <dd><span class="raty" data-score="<%= @exchange.stars %>"></span></dd>
+  <dt><strong><%= model_class.human_attribute_name(:trade_pair_count) %>:</strong></dt>
+  <dd><%= @exchange.trade_pair_count %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rank) %>:</strong></dt>
+  <dd><%= @exchange.rank %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              exchanges_path, :class => 'btn btn-default'  %>

@@ -1,0 +1,47 @@
+# == Schema Information
+#
+# Table name: exchanges
+#
+#  id               :integer          not null, primary key
+#  icon             :string
+#  name             :string
+#  memo             :string
+#  description      :text
+#  web_site         :string
+#  country          :string
+#  price_memo       :string
+#  support_type     :string
+#  stars            :integer
+#  trade_pair_count :integer
+#  rank             :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  icon: MyString
+  name: MyString
+  memo: MyString
+  description: MyText
+  web_site: MyString
+  country: MyString
+  price_memo: MyString
+  support_type: MyString
+  stars: 1
+  trade_pair_count: 1
+  rank: 1
+
+two:
+  icon: MyString
+  name: MyString
+  memo: MyString
+  description: MyText
+  web_site: MyString
+  country: MyString
+  price_memo: MyString
+  support_type: MyString
+  stars: 1
+  trade_pair_count: 1
+  rank: 1

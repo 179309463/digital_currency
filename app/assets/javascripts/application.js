@@ -14,4 +14,18 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
+//= require raty/lib/jquery.raty
 //= require_tree .
+
+$(document).on('turbolinks:load', function(){
+	$('.raty').each(function(){
+		var data = $(this).data();
+		$(this).raty({ 
+			readOnly: true, 
+			score: data.score,
+			starHalf: '/star-half.png',
+    		starOff:  '/star-off.png',
+    		starOn:   '/star-on.png'
+     });
+	});
+})

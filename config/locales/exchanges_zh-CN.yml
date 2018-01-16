@@ -1,0 +1,46 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      exchange: "交易所"
+    attributes:
+      exchange: 
+        icon: "图标"
+        name: "名称"
+        memo: "简介"
+        description: "描述"
+        web_site: "网站"
+        country: "国家"
+        price_memo: "费用说明"
+        support_type: "支持"
+        stars: "星级"
+        trade_pair_count: "交易对数量"
+        rank: "排名"
+  helpers:
+    submit:
+      exchange:
+        create: "Create exchange"
+        update: "Update exchange"
+  exchanges:
+    edit:
+      title: "Editing of the exchange"
+    form:
+      exchange: "Exchange"
+    index:
+      confirm: "Are you sure you want to delete the exchange?"
+      empty: "No exchanges found"
+      new_exchange: "Add a new exchange"
+      title: "交易所"
+    new:
+      title: "Adding a new exchange"
+    show:
+      title: "Exchange details"
+    was_created: "Exchange was successfully added"
+    was_deleted: "Exchange was successfully deleted"
+    was_updated: "Exchange was successfully updated"
+  enumerize:
+    exchange:
+      support_type:
+        xianhuo: "现货"
+        qihuo: "期货"
+        fabi: "法币"

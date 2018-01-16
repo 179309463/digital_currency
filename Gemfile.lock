@@ -83,16 +83,22 @@ GEM
       responders
       warden (~> 1.2.3)
     devise-bootstrap-views (0.0.11)
+    enumerize (2.1.2)
+      activesupport (>= 3.2)
     erd (0.4.0)
       nokogiri
       rails-erd (>= 0.4.5)
     erubi (1.7.0)
     execjs (2.7.0)
+    faker (1.8.7)
+      i18n (>= 0.7)
+    ffaker (2.8.0)
     ffi (1.9.18-x64-mingw32)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
+    i18n_scaffold_generator (1.0.4)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -111,7 +117,13 @@ GEM
     kaminari-activerecord (1.1.1)
       activerecord
       kaminari-core (= 1.1.1)
+    kaminari-bootstrap (3.0.1)
+      kaminari (>= 0.13.0)
+      rails
     kaminari-core (1.1.1)
+    kaminari-i18n (0.5.0)
+      kaminari
+      rails
     less (2.6.0)
       commonjs (~> 0.2.7)
     less-rails (2.8.0)
@@ -240,10 +252,16 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-bootstrap-views
+  enumerize
   erd
+  faker
+  ffaker
+  i18n_scaffold_generator
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
+  kaminari-bootstrap
+  kaminari-i18n
   puma (~> 3.7)
   rails (~> 5.1.4)
   rails-admin

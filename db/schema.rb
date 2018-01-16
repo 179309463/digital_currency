@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180115083157) do
+ActiveRecord::Schema.define(version: 20180116004650) do
+
+  create_table "exchanges", force: :cascade do |t|
+    t.string "icon"
+    t.string "name"
+    t.string "memo"
+    t.text "description"
+    t.string "web_site"
+    t.string "country"
+    t.string "price_memo"
+    t.string "support_type"
+    t.integer "stars"
+    t.integer "trade_pair_count"
+    t.integer "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
