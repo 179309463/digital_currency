@@ -17,4 +17,6 @@
 
 class ExchangeTradeRank < ApplicationRecord
   belongs_to :exchange
+
+  default_scope { order(stat_date: :desc) }
 end

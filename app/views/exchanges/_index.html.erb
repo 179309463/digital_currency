@@ -16,8 +16,8 @@
     <% @exchanges.each do |exchange| %>
       <tr>
         <td>
-          <%= image_tag exchange.icon, width: 20, height: 20 %>
-          <%= link_to exchange.name, exchange_path(exchange) %>
+          <%= image_tag asset_path('icon.png'), width: 20, height: 20 %>
+          <%= link_to exchange.name, exchange_path(exchange), target: '_blank' %>
         </td>
         <td><%= truncate(exchange.memo, length: 20) %></td>
         <td><%= exchange.country %></td>
@@ -32,5 +32,5 @@
 
 <br/>
 
-<%= paginate @exchanges, remote: true %>
+<%= paginate @exchanges, remote: false %>
 

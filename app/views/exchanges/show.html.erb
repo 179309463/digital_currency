@@ -1,16 +1,13 @@
 <%- model_class = Exchange -%>
 <div class="page-header">
-  <h1><%= @exchange.name %>
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              exchanges_path, :class => 'btn btn-default'  %> 
-              </h1> 
+  <h1><%= @exchange.name %></h1> 
 </div>
 
 <div class="row">
   <div class="col-sm-4">
     <dl class="dl-vertical">
       <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-      <dd><%= image_tag @exchange.icon, width: 20, height: 20 %><%= @exchange.name %></dd>
+      <dd><%= image_tag asset_path('icon.png'), width: 20, height: 20 %><%= @exchange.name %></dd>
       <dt><strong><%= model_class.human_attribute_name(:memo) %>:</strong></dt>
       <dd><%= @exchange.memo %></dd>
       <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>

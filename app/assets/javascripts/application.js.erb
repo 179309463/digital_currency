@@ -12,10 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require raty/lib/jquery.raty
-//= require_tree .
 
 function reader_raty(){
 	$('.raty').each(function(){
@@ -23,9 +22,9 @@ function reader_raty(){
 		$(this).raty({ 
 			readOnly: true, 
 			score: data.score,
-			starHalf: '/star-half.png',
-    		starOff:  '/star-off.png',
-    		starOn:   '/star-on.png'
+			starHalf: "<%=asset_path('star-half.png')%>",
+    		starOff:  "<%=asset_path('star-off.png')%>",
+    		starOn:   "<%=asset_path('star-on.png')%>"
      });
 	});
 }
