@@ -12,7 +12,7 @@ require 'faker'
 print "setup exchanges data"
 Exchange.destroy_all
 (1..100).each do |index|
-	Exchange.create({
+	exchange = Exchange.new({
 		icon: 				FFaker::Avatar.image,
 		name: 				FFaker::CompanyCN.name,
 		memo: 				FFaker::LoremCN.sentence,
@@ -25,4 +25,18 @@ Exchange.destroy_all
 		trade_pair_count: 	Faker::Number.between(1, 50),
 		rank: 				Faker::Number.between(1, 10)
 	})
+	(1..10).each do |index|
+		exchange.exchange_notices.build({
+			title: 			FFaker::LoremCN.sentence,
+			href: 			FFaker::Internet.http_url
+		})
+	end
+	(1..100).each do |index|
+		exchange.exchange_trade_ranks.build({
+			stat_date: 		FFaker::Time.date,
+			trade_count: 	Faker::Number.between(1000, 5000),
+			rank: 			Faker::Number.between(1, 10)
+		})
+	end
+	exchange.save
 end

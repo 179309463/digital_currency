@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180116004650) do
+ActiveRecord::Schema.define(version: 20180116072104) do
+
+  create_table "exchange_notices", force: :cascade do |t|
+    t.integer "exchange_id"
+    t.string "title"
+    t.string "href"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exchange_id"], name: "index_exchange_notices_on_exchange_id"
+  end
+
+  create_table "exchange_trade_ranks", force: :cascade do |t|
+    t.integer "exchange_id"
+    t.date "stat_date"
+    t.integer "trade_count"
+    t.integer "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exchange_id"], name: "index_exchange_trade_ranks_on_exchange_id"
+  end
 
   create_table "exchanges", force: :cascade do |t|
     t.string "icon"

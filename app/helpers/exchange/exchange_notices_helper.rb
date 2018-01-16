@@ -1,0 +1,2 @@
+module Exchange::ExchangeNoticesHelper
+end

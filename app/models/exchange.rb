@@ -23,4 +23,7 @@ class Exchange < ApplicationRecord
     extend ActiveModel::Naming
 
     enumerize :support_type, in: %w[xianhuo qihuo fabi]
+
+    has_many :exchange_notices, dependent: :destroy
+    has_many :exchange_trade_ranks, dependent: :destroy
 end

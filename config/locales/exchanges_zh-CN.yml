@@ -3,6 +3,8 @@ zh-CN:
   activerecord:
     models:
       exchange: "交易所"
+      exchange_notice: "交易所公告"
+      exchange_trade_rank: "交易所成交量排行"            
     attributes:
       exchange: 
         icon: "图标"
@@ -16,6 +18,10 @@ zh-CN:
         stars: "星级"
         trade_pair_count: "交易对数量"
         rank: "排名"
+      exchange_trade_rank: 
+        stat_date: "统计日期"
+        trade_count: "成交量"
+        rank: "排行"
   helpers:
     submit:
       exchange:

@@ -1,0 +1,23 @@
+<%- model_class = ExchangeTradeRank -%>
+<h4><%=t '.title', :default => model_class.model_name.human.titleize %></h4>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:stat_date) %></th>
+      <th><%= model_class.human_attribute_name(:trade_count) %></th>
+      <th><%= model_class.human_attribute_name(:rank) %></th>
+    </tr>
+  </thead>	
+  <tbody>
+    <% @exchange_trade_ranks.each do |exchange_trade_rank| %>
+      <tr>
+        <td><%= exchange_trade_rank.stat_date %></td>
+        <td><%= exchange_trade_rank.trade_count %></td>
+        <td><%= exchange_trade_rank.rank %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @exchange_trade_ranks, remote: true, params: {current_page: 'exchange_trade_rank'}, param_name: 'page_exchange_trade_rank' %>

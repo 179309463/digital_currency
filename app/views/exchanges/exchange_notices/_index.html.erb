@@ -1,0 +1,19 @@
+<%- model_class = ExchangeNotice -%>
+<h4><%=t '.title', :default => model_class.model_name.human.titleize %></h4>
+
+<table class="table table-striped">
+  <tbody>
+    <% @exchange_notices.each do |exchange_notice| %>
+      <tr>
+        <td><%= exchange_notice.created_at %></td>
+        <td>
+          <%= link_to exchange_notice.href, target: '_blank' do %>
+            <%= exchange_notice.title %>
+          <% end %>  
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @exchange_notices, remote: true, params: {current_page: 'exchange_notice'}, param_name: 'page_exchange_notice' %>
