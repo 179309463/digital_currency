@@ -68,6 +68,9 @@ group :development do
 	gem 'better_errors'
 	gem 'binding_of_caller'
 end 
-gem 'rails-admin'
+
+gem 'rails_admin'
+gem 'rails_admin-i18n'
+
 gem 'enumerize'
 gem 'ransack'
