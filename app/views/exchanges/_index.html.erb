@@ -1,0 +1,36 @@
+<%- model_class = Exchange -%>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= sort_link(@q, :name, model_class.human_attribute_name(:name)) %></th>
+      <th><%= model_class.human_attribute_name(:memo) %></th>
+      <th><%= sort_link(@q, :country, model_class.human_attribute_name(:country)) %></th>
+      <th><%= sort_link(@q, :support_type, model_class.human_attribute_name(:support_type)) %></th>
+      <th><%= sort_link(@q, :stars, model_class.human_attribute_name(:stars)) %></th>
+      <th><%= sort_link(@q, :trade_pair_count, model_class.human_attribute_name(:trade_pair_count)) %></th>
+      <th><%= sort_link(@q, :rank, model_class.human_attribute_name(:rank)) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exchanges.each do |exchange| %>
+      <tr>
+        <td>
+          <%= image_tag exchange.icon, width: 20, height: 20 %>
+          <%= link_to exchange.name, exchange_path(exchange) %>
+        </td>
+        <td><%= truncate(exchange.memo, length: 20) %></td>
+        <td><%= exchange.country %></td>
+        <td><%= exchange.support_type_text %></td>
+        <td><span class="raty" data-score="<%= exchange.stars %>"></span></td>
+        <td><%= exchange.trade_pair_count %></td>
+        <td><%= exchange.rank %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
+
+<%= paginate @exchanges, remote: true %>
+

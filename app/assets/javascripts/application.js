@@ -17,7 +17,7 @@
 //= require raty/lib/jquery.raty
 //= require_tree .
 
-$(document).on('turbolinks:load', function(){
+function reader_raty(){
 	$('.raty').each(function(){
 		var data = $(this).data();
 		$(this).raty({ 
@@ -28,4 +28,7 @@ $(document).on('turbolinks:load', function(){
     		starOn:   '/star-on.png'
      });
 	});
+}
+$(document).on('turbolinks:load', function(){
+	reader_raty();
 })

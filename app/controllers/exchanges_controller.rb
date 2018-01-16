@@ -3,7 +3,13 @@ class ExchangesController < ApplicationController
   # GET /exchanges
   # GET /exchanges.json
   def index
-    @exchanges = Exchange.page(params[:page]).all
+    @q = Exchange.ransack(params[:q])
+    @exchanges = @q.result.page(params[:page]).all
+    respond_to do |format|
+      format.html
+      format.json
+      format.js
+    end
   end
 
   # GET /exchanges/1
