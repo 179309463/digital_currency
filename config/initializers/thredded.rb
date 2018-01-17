@@ -77,8 +77,7 @@ Thredded.messageboards_order = :position
 
 # ==> View Configuration
 # Set the layout for rendering the thredded views.
-#Thredded.layout = 'thredded/application'
-Thredded.layout = 'application'
+Thredded.layout = 'thredded'
 
 # ==> URLs
 # How Thredded generates URL slugs from text.
