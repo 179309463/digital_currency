@@ -8,6 +8,8 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
+gem 'rails-i18n'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'mysql2'
@@ -59,9 +61,12 @@ gem 'devise-bootstrap-views'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'kaminari-i18n'
-group :test do
-	gem 'annotate'
+group :test do 
 	gem 'erd'
+end
+
+group :development do
+	gem 'annotate'
 	gem 'rails-erd'
 	gem 'i18n_scaffold_generator'
 	gem 'ffaker'
@@ -77,3 +82,6 @@ gem 'rails_admin-i18n'
 gem 'enumerize'
 gem 'ransack'
 gem 'mobylette', git: 'https://github.com/MachineTools/mobylette.git'
+gem 'thredded'
+gem 'emoji'
+gem 'rails-timeago'

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Thredded::Engine => '/forum'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :exchanges, only: [:index, :show]
   devise_for :users

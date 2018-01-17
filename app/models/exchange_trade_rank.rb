@@ -14,10 +14,6 @@
 #
 #  index_exchange_trade_ranks_on_exchange_id  (exchange_id)
 #
-# Foreign Keys
-#
-#  fk_rails_...  (exchange_id => exchanges.id)
-#
 
 class ExchangeTradeRank < ApplicationRecord
   belongs_to :exchange

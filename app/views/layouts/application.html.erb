@@ -28,18 +28,19 @@
         <a class="navbar-brand" href="#">DigitalCurrency</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to Exchange.model_name.human.titleize, exchanges_path  %></li>
+            <li><%= link_to Exchange.model_name.human.titleize, main_app.exchanges_path  %></li>
             <li><%= link_to "Link2", "/path2"  %></li>
             <li><%= link_to "Link3", "/path3"  %></li>
           </ul>
           <ul class="nav navbar-nav pull-right">
             <% if user_signed_in? %>
-              <li><%= link_to "admin", rails_admin_path %></li>
-              <li><%= link_to current_user.email, edit_user_registration_path %></li>
-              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to "forum", main_app.thredded_path %></li>
+              <li><%= link_to "admin", main_app.rails_admin_path %></li>
+              <li><%= link_to current_user.email, main_app.edit_user_registration_path %></li>
+              <li><%= link_to "Sign Out", main_app.destroy_user_session_path, method: :delete %></li>
             <% else %>
-              <li><%= link_to "Login", new_user_session_path %></li>
-              <li><%= link_to "Sign In", new_user_registration_path %></li>
+              <li><%= link_to "Login", main_app.new_user_session_path %></li>
+              <li><%= link_to "Sign In", main_app.new_user_registration_path %></li>
             <% end %>
           </ul>
         </div>

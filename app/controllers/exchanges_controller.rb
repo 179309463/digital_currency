@@ -1,4 +1,4 @@
-class ExchangesController < ApplicationController
+class ExchangesController < BaseController
 
   # GET /exchanges
   # GET /exchanges.json
