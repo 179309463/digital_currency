@@ -61,12 +61,10 @@ gem 'devise-bootstrap-views'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'kaminari-i18n'
-group :test do 
-	gem 'erd'
-end
 
 group :development do
 	gem 'annotate'
+	gem 'erd'
 	gem 'rails-erd'
 	gem 'i18n_scaffold_generator'
 	gem 'ffaker'

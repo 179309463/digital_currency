@@ -1,8 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "raty/lib/jquery.raty";
-$thredded-brand: #9c27b0;
 
+$thredded-brand: #9c27b0;
 @import "thredded";
 .thredded--main-container {
   // The padding and max-width are handled by the app's container.
