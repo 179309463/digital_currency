@@ -343,6 +343,8 @@ GEM
       sass (>= 3.4.21)
       sprockets-es6
       timeago_js
+    thredded-markdown_coderay (0.1.1)
+      coderay
     thredded-markdown_katex (0.2.0)
       katex (>= 0.1.1)
     tilt (2.0.8)
@@ -415,6 +417,7 @@ DEPENDENCIES
   selenium-webdriver
   sqlite3
   thredded
+  thredded-markdown_coderay
   thredded-markdown_katex
   turbolinks (~> 5)
   twitter-bootstrap-rails
