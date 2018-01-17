@@ -5,6 +5,14 @@ GIT
     mobylette (3.5)
       actionpack (>= 3.0)
 
+GIT
+  remote: https://github.com/red56/thredded-workgroup.git
+  revision: 6eeec85796a8921f3501cf78b81a65eb43bd23b5
+  branch: master
+  specs:
+    thredded-workgroup (0.1.0)
+      thredded (~> 0.12)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -419,6 +427,7 @@ DEPENDENCIES
   thredded
   thredded-markdown_coderay
   thredded-markdown_katex
+  thredded-workgroup!
   turbolinks (~> 5)
   twitter-bootstrap-rails
   tzinfo-data

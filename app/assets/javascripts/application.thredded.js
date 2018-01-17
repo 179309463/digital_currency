@@ -5,6 +5,7 @@
 //= require thredded/dependencies
 //= require locales/jquery.timeago.zh-CN
 //= require thredded/thredded
+//= require thredded-workgroup
 
 $(window).on('load', function() {
     document.addEventListener('touchstart',function (event) {
