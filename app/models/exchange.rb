@@ -26,4 +26,6 @@ class Exchange < ApplicationRecord
 
     has_many :exchange_notices, dependent: :destroy
     has_many :exchange_trade_ranks, dependent: :destroy
+
+    has_paper_trail
 end

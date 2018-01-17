@@ -34,7 +34,7 @@
           </ul>
           <ul class="nav navbar-nav pull-right">
             <% if user_signed_in? %>
-              <li><%= link_to "forum", main_app.thredded_path %></li>
+              <li><%= link_to "forum", main_app.thredded_workgroup_path %></li>
               <li><%= link_to "admin", main_app.rails_admin_path %></li>
               <li><%= link_to current_user.email, main_app.edit_user_registration_path %></li>
               <li><%= link_to "Sign Out", main_app.destroy_user_session_path, method: :delete %></li>
