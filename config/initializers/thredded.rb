@@ -67,7 +67,7 @@ Thredded.messageboards_order = :position
 
 # ==> Email Configuration
 # Email "From:" field will use the following
-# Thredded.email_from = 'no-reply@example.com'
+Thredded.email_from = '179309463@qq.com'
 
 # Emails going out will prefix the "Subject:" with the following string
 # Thredded.email_outgoing_prefix = '[My Forum] '
@@ -108,14 +108,15 @@ Thredded.layout = 'thredded'
 # By default Thredded just renders a flash alert on errors such as Topic not found, or Login required.
 # Below is an example of overriding the default behavior on LoginRequired:
 #
-# Rails.application.config.to_prepare do
-#   Thredded::ApplicationController.module_eval do
-#     rescue_from Thredded::Errors::LoginRequired do |exception|
-#       @message = exception.message
-#       render template: 'sessions/new', status: :forbidden
-#     end
-#   end
-# end
+Rails.application.config.to_prepare do
+  Thredded::ApplicationController.module_eval do
+    rescue_from Thredded::Errors::LoginRequired do |exception|
+      @message = exception.message
+      flash[:alert] = @message
+      redirect_to '/users/sign_in'
+    end
+  end
+end
 
 # ==> View hooks
 #
