@@ -59,7 +59,7 @@ gem 'devise-bootstrap-views'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'kaminari-i18n'
-group :development do
+group :test do
 	gem 'annotate'
 	gem 'erd'
 	gem 'rails-erd'

@@ -14,5 +14,8 @@
   ],
   "dependencies": {
     "raty": "^2.8.0"
+  },
+  "resolutions": {
+    "jquery": "^3.2.1"
   }
 }
