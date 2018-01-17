@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require turbolinks-scroll-to-hash-fix-rails-nocoffee
 
 //= require thredded/dependencies
 //= require locales/jquery.timeago.zh-CN

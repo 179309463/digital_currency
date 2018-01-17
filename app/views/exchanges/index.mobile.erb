@@ -3,25 +3,6 @@
       <h1 class="title">Digital Currency</h1>
   </header>
 
-  <div class="content">
-  	<div class="page-index">
-  	  <% @exchanges.each do |exchange|  %>
-  	  <div class="card">
-  	    <div valign="bottom" class="card-header color-white no-border">旅途的山</div>
-  	    <div class="card-content">
-  	      <div class="card-content-inner">
-  	        <p class="color-gray">发表于 2015/01/15</p>
-  	        <p>此处是内容...</p>
-  	      </div>
-  	    </div>
-  	    <div class="card-footer">
-  	      <%= link_to exchange.name, exchange_path(exchange), class: 'link' %>
-  	    </div>
-  	  </div>
-  	  <% end %>
-  	</div>
-  </div>
-
   <nav class="bar bar-tab">
     <a class="tab-item active" href="#">
       <span class="icon icon-home"></span>
@@ -40,4 +21,21 @@
       <span class="tab-label">设置</span>
     </a>
   </nav>
+
+  <div class="content">
+	  <% @exchanges.each do |exchange|  %>
+	  <div class="card">
+	    <div valign="bottom" class="card-header color-white no-border">旅途的山</div>
+	    <div class="card-content">
+	      <div class="card-content-inner">
+	        <p class="color-gray">发表于 2015/01/15</p>
+	        <p>此处是内容...</p>
+	      </div>
+	    </div>
+	    <div class="card-footer">
+	      <%= link_to exchange.name, exchange_path(exchange), class: 'link' %>
+	    </div>
+	  </div>
+	  <% end %>
+  </div>
 </div>
