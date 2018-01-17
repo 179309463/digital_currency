@@ -36,7 +36,7 @@ $(document).on('turbolinks:load', function(){
 	reader_raty();
 })
 
-$(document).on('load', function() {
+$(window).on('load', function() {
     document.addEventListener('touchstart',function (event) {
         if(event.touches.length>1){
             event.preventDefault();
