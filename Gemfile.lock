@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/MachineTools/mobylette.git
+  revision: 19171771a253a17a242e9b7212f718f091dd35cd
+  specs:
+    mobylette (3.5)
+      actionpack (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -313,6 +320,7 @@ DEPENDENCIES
   kaminari
   kaminari-bootstrap
   kaminari-i18n
+  mobylette!
   mysql2
   puma (~> 3.7)
   rails (~> 5.1.4)

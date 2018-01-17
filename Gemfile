@@ -76,3 +76,4 @@ gem 'rails_admin-i18n'
 
 gem 'enumerize'
 gem 'ransack'
+gem 'mobylette', git: 'https://github.com/MachineTools/mobylette.git'
