@@ -1,44 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
     <title>Digital Currency | <%= yield :thredded_page_title %></title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <%= stylesheet_link_tag 'thredded', 'data-turbolinks-track': 'reload' %>
-    <style>
-      .thredded--main-container {
-        max-width: none;
-        padding: 0;
-      }
-      @media (min-width: 34.00001rem) {
-        .thredded-main-container {
-          padding: 0;
-        }
-      }
-    </style>
+    
     <%= csrf_meta_tag %>
-    <%= javascript_include_tag 'thredded',
+    
+    <%= stylesheet_link_tag 'application.thredded', 'data-turbolinks-track': 'reload' %>
+    
+    <%= javascript_include_tag 'application.thredded',
                                async: !Rails.application.config.assets.debug,
                                defer: true,
                                'data-turbolinks-track': 'reload'%>
     <%== Gravatar.prefetch_dns %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <script>
-      window.addEventListener("load", function() {
-        document.addEventListener('touchstart',function (event) {
-            if(event.touches.length>1){
-                event.preventDefault();
-            }
-        })
-        var lastTouchEnd=0;
-        document.addEventListener('touchend',function (event) {
-            var now=(new Date()).getTime();
-            if(now-lastTouchEnd<=300){
-                event.preventDefault();
-            }
-            lastTouchEnd=now;
-        },false)
-      })
-    </script>
+    
   </head>
   <body>
     <%= yield %>

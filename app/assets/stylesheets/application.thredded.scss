@@ -1,0 +1,11 @@
+$thredded-brand: #9c27b0;
+@import "thredded";
+.thredded--main-container {
+  // The padding and max-width are handled by the app's container.
+  max-width: none;
+  padding: 0;
+  @include thredded-media-tablet-and-up {
+    padding: 0;
+  }
+}
+@import "_katex";

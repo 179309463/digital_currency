@@ -167,6 +167,8 @@ GEM
     kaminari-i18n (0.5.0)
       kaminari
       rails
+    katex (0.3.0)
+      execjs (~> 2.7)
     kramdown (1.16.2)
     less (2.6.0)
       commonjs (~> 0.2.7)
@@ -341,6 +343,8 @@ GEM
       sass (>= 3.4.21)
       sprockets-es6
       timeago_js
+    thredded-markdown_katex (0.2.0)
+      katex (>= 0.1.1)
     tilt (2.0.8)
     timeago_js (3.0.2)
     turbolinks (5.1.0)
@@ -411,6 +415,7 @@ DEPENDENCIES
   selenium-webdriver
   sqlite3
   thredded
+  thredded-markdown_katex
   turbolinks (~> 5)
   twitter-bootstrap-rails
   tzinfo-data
