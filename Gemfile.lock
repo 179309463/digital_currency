@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/ActsAsParanoid/acts_as_paranoid.git
+  revision: 085b5cc6da14b254e8871a87337f417330c364ce
+  specs:
+    acts_as_paranoid (1.0.0.beta)
+      activerecord (>= 4.2, < 6.0)
+      activesupport (>= 4.2, < 6.0)
+
+GIT
   remote: https://github.com/MachineTools/mobylette.git
   revision: 19171771a253a17a242e9b7212f718f091dd35cd
   specs:
@@ -67,7 +75,6 @@ GEM
     acts-as-taggable-on (5.0.0)
       activerecord (>= 4.2.8)
     acts_as_follower (0.2.1)
-    acts_as_paranoid (0.3.1)
     acts_as_votable (0.11.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
@@ -495,7 +502,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   acts_as_follower
-  acts_as_paranoid
+  acts_as_paranoid!
   acts_as_votable
   annotate
   authority
