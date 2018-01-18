@@ -1,4 +1,6 @@
 class BaseController < ApplicationController
+  include Pundit
+
   include Mobylette::RespondToMobileRequests
 
   mobylette_config do |config|
