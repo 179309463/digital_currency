@@ -19,7 +19,7 @@
 #
 
 class Exchange < ApplicationRecord
-	extend Enumerize
+	  extend Enumerize
     extend ActiveModel::Naming
 
     enumerize :support_type, in: %w[xianhuo qihuo fabi]
@@ -30,6 +30,8 @@ class Exchange < ApplicationRecord
     has_paper_trail
    
     translates :name 
+
+    searchkick
 
     include RailsAdminCharts
 

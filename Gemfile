@@ -100,6 +100,7 @@ gem 'json_translate'
 
 gem 'enumerize'
 gem 'ransack'
+gem 'searchkick'
 gem 'mobylette', git: 'https://github.com/MachineTools/mobylette.git'
 gem 'thredded'
 gem 'thredded-markdown_katex'

@@ -134,6 +134,14 @@ GEM
       responders
       warden (~> 1.2.3)
     devise-bootstrap-views (0.0.11)
+    elasticsearch (6.0.0)
+      elasticsearch-api (= 6.0.0)
+      elasticsearch-transport (= 6.0.0)
+    elasticsearch-api (6.0.0)
+      multi_json
+    elasticsearch-transport (6.0.0)
+      faraday
+      multi_json
     emoji (1.0.7)
       json
     emoji_flag (0.0.1)
@@ -146,6 +154,8 @@ GEM
     execjs (2.7.0)
     faker (1.8.7)
       i18n (>= 0.7)
+    faraday (0.13.1)
+      multipart-post (>= 1.2, < 3)
     fast_blank (1.0.0)
     ffaker (2.8.0)
     ffi (1.9.18)
@@ -161,6 +171,7 @@ GEM
       temple (>= 0.8.0)
       tilt
     hash-deep-merge (0.1.1)
+    hashie (3.5.7)
     html-pipeline (2.7.1)
       activesupport (>= 2)
       nokogiri (>= 1.4)
@@ -234,6 +245,7 @@ GEM
     money (6.10.1)
       i18n (>= 0.6.4, < 1.0)
     multi_json (1.13.1)
+    multipart-post (2.0.0)
     mustache (1.0.5)
     mysql2 (0.4.10)
     mysql2 (0.4.10-x64-mingw32)
@@ -381,6 +393,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    searchkick (2.4.0)
+      activemodel (>= 4.1)
+      elasticsearch (>= 1)
+      hashie
     selenium-webdriver (3.8.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
@@ -522,6 +538,7 @@ DEPENDENCIES
   ransack
   rolify
   sass-rails (~> 5.0)
+  searchkick
   selenium-webdriver
   simple_form
   spring
