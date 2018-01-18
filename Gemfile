@@ -85,9 +85,11 @@ gem 'rails_admin-i18n'
 gem 'rails_admin_tag_list'
 gem 'rails_admin_history_rollback'
 gem 'rails_admin_import'
+gem 'rails_admin_json_translate'
 
 gem 'acts-as-taggable-on'
 gem 'paper_trail'
+gem 'json_translate'
 
 gem 'enumerize'
 gem 'ransack'

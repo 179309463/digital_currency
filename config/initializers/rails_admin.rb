@@ -38,4 +38,8 @@ RailsAdmin.config do |config|
     history_index
     history_show
   end
+
+  config.model 'Exchange' do
+    configure :name_translations, :json_translate
+  end
 end

@@ -9,6 +9,7 @@ zh-CN:
       exchange: 
         icon: "图标"
         name: "名称"
+        name_translations: "名称"
         memo: "简介"
         description: "描述"
         web_site: "网站"
