@@ -80,6 +80,22 @@ ActiveRecord::Schema.define(version: 20180118163837) do
     t.index ["scope"], name: "index_favorites_on_scope"
   end
 
+  create_table "featured_content_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "image"
+    t.bigint "featured_content_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["featured_content_id"], name: "index_featured_content_images_on_featured_content_id"
+  end
+
+  create_table "featured_contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.text "content"
+    t.boolean "status", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "follows", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "followable_type", null: false
     t.bigint "followable_id", null: false
@@ -431,6 +447,7 @@ ActiveRecord::Schema.define(version: 20180118163837) do
 
   add_foreign_key "exchange_notices", "exchanges"
   add_foreign_key "exchange_trade_ranks", "exchanges"
+  add_foreign_key "featured_content_images", "featured_contents"
   add_foreign_key "thredded_messageboard_users", "thredded_messageboards", on_delete: :cascade
   add_foreign_key "thredded_messageboard_users", "thredded_user_details", on_delete: :cascade
   add_foreign_key "thredded_user_post_notifications", "thredded_posts", column: "post_id", on_delete: :cascade
