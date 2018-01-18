@@ -86,6 +86,7 @@ gem 'rails_admin_tag_list'
 gem 'rails_admin_history_rollback'
 gem 'rails_admin_import'
 gem 'rails_admin_json_translate'
+gem 'rails_admin_charts'
 
 gem 'acts-as-taggable-on'
 gem 'paper_trail'
