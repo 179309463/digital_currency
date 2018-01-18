@@ -84,6 +84,7 @@ gem 'rails_admin'
 gem 'rails_admin-i18n'
 gem 'rails_admin_tag_list'
 gem 'rails_admin_history_rollback'
+gem 'rails_admin_import'
 
 gem 'acts-as-taggable-on'
 gem 'paper_trail'
