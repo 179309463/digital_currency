@@ -1,0 +1,18 @@
+// # IMPORTANT: Mandatory for Thredded::Workgroup dummy
+@import "thredded-workgroup";
+
+@import "variables";
+
+// The homepage
+@import "app_home";
+
+// Demo forums
+@import "thredded";
+@import "app_layout";
+@import "flash-messages";
+
+// Thredded plugins
+@import "_katex";
+
+// Other plugins
+@import "rails_email_preview";

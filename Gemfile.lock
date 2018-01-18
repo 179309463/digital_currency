@@ -461,6 +461,7 @@ DEPENDENCIES
   erd
   faker
   ffaker
+  friendly_id
   i18n_scaffold_generator
   jbuilder (~> 2.5)
   jquery-rails
