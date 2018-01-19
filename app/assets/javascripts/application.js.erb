@@ -16,6 +16,7 @@
 //= require turbolinks-scroll-to-hash-fix-rails-nocoffee
 //= require bootstrap-sprockets
 //= require raty/lib/jquery.raty
+//= require jquery.pjax
 
 function reader_raty(){
 	$('.raty').each(function(){
@@ -47,4 +48,8 @@ $(window).on('load', function() {
         }
         lastTouchEnd=now;
     },false)
+});
+
+$(function(){
+  //$(document).pjax('a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])', '[data-pjax-container]')
 });
