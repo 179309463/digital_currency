@@ -4,8 +4,8 @@
 #
 #  id          :integer          not null, primary key
 #  exchange_id :integer
-#  title       :string(255)
-#  href        :string(255)
+#  title       :string
+#  href        :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
