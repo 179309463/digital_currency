@@ -77,6 +77,7 @@ gem 'kaminari-i18n'
 
 group :development do
 	gem 'annotate'
+        gem 'lol_dba'
 	gem 'erd'
 	gem 'rails-erd'
 	gem 'i18n_scaffold_generator'
