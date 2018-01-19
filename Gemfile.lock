@@ -217,6 +217,7 @@ GEM
       tilt
     hash-deep-merge (0.1.1)
     hashie (3.5.7)
+    high_voltage (3.0.0)
     html-pipeline (2.7.1)
       activesupport (>= 2)
       nokogiri (>= 1.4)
@@ -575,6 +576,7 @@ DEPENDENCIES
   ffaker
   filterrific
   friendly_id
+  high_voltage
   i18n_scaffold_generator
   jbuilder (~> 2.5)
   jquery-rails
