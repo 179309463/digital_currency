@@ -180,6 +180,8 @@ GEM
       countries (~> 2.0)
       sort_alphabetical (~> 1.0)
     crass (1.0.3)
+    css_parser (1.6.0)
+      addressable
     dashing-rails (2.6.2)
       coffee-script (>= 2.0)
       connection_pool (~> 2.2)
@@ -527,6 +529,12 @@ GEM
       netrc (~> 0.8)
     riddle (2.3.0)
     rinku (2.0.4)
+    roadie (3.2.2)
+      css_parser (~> 1.4)
+      nokogiri (~> 1.5)
+    roadie-rails (1.2.1)
+      railties (>= 3.0, < 5.2)
+      roadie (~> 3.1)
     rolify (5.2.0)
     rsolr (2.1.0)
       builder (>= 2.1.2)
@@ -769,6 +777,7 @@ DEPENDENCIES
   refile-mini_magick
   resque
   rest-client
+  roadie-rails
   rolify
   sass-rails (~> 5.0)
   searchkick

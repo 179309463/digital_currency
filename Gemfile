@@ -94,6 +94,8 @@ group :development do
   gem 'alaska'
 end 
 
+gem 'roadie-rails'
+
 gem 'rails_admin'
 gem 'rails_admin-i18n'
 gem 'rails_admin_tag_list'
