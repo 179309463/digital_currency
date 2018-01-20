@@ -89,6 +89,7 @@ group :development do
 	gem 'rails-admin-scaffold'
 	gem 'better_errors'
 	gem 'binding_of_caller'
+  gem 'rails_db'
 end 
 
 gem 'rails_admin'
