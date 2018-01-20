@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get "/pages/*id" => 'pages#show', as: :page, format: false
-  root to: 'pages#show', id: 'home'
+  #root to: 'pages#show', id: 'home'
 
   #mount Thredded::Engine => '/forum'
   mount Thredded::Workgroup::Engine => '/forum'
