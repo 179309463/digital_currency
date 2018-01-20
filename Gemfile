@@ -113,6 +113,7 @@ gem 'acts_as_network', github: 'rahul-ranchal/acts_as_network'
 gem 'acts_as_list'
 gem 'acts_as_commentable_with_threading'
 gem 'active_record-acts_as'
+gem 'acts_as_published'
 gem 'paper_trail'
 gem 'json_translate'
 
