@@ -1,9 +1,12 @@
 require 'sidekiq/web'
+require 'resque/server'
 
 Rails.application.routes.draw do
   match "/delayed_job" => DelayedJobWeb, :anchor => false, :via => [:get, :post]
   mount Sidekiq::Web => '/sidekiq'
 
+  mount Resque::Server.new, at: 'resque'
+ 
   mount Dashing::Engine, at: Dashing.config.engine_path
   get "/pages/*id" => 'pages#show', as: :page, format: false
   #root to: 'pages#show', id: 'home'

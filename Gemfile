@@ -155,4 +155,5 @@ gem 'rest-client'
 gem 'sidekiq'
 gem 'delayed_job_web'
 gem 'delayed_job_active_record'
+gem 'resque'
 
