@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib".freeze]
   s.authors = ["Simon Neutert".freeze]
   s.bindir = "exe".freeze
-  s.date = "2018-01-18"
+  s.date = "2018-01-20"
   s.description = "Turbolinks won't scroll to hash - but now you can again ;-)".freeze
   s.email = ["simon.neutert@gmail.com".freeze]
   s.files = [".gitignore".freeze, ".travis.yml".freeze, "Gemfile".freeze, "LICENSE.txt".freeze, "README.md".freeze, "Rakefile".freeze, "app/assets/javascripts/turbolinks-scroll-to-hash-fix-rails-nocoffee.js".freeze, "app/assets/javascripts/turbolinks-scroll-to-hash-fix-rails.coffee".freeze, "bin/console".freeze, "bin/setup".freeze, "lib/turbolinks/scroll/to/hash/fix/rails.rb".freeze, "lib/turbolinks/scroll/to/hash/fix/rails/version.rb".freeze, "turbolinks-scroll-to-hash-fix-rails.gemspec".freeze]

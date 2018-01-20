@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["David Heinemeier Hansson (PJAX by Chris Wanstrath)".freeze]
-  s.date = "2018-01-19"
+  s.date = "2018-01-20"
   s.email = "david@loudthinking.com".freeze
   s.files = ["lib/pjax.rb".freeze, "lib/pjax_rails.rb".freeze, "vendor/assets/javascripts/jquery.pjax.js".freeze]
   s.homepage = "https://github.com/rails/pjax_rails".freeze
