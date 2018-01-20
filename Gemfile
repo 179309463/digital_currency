@@ -142,3 +142,6 @@ gem 'refile', github: 'refile/refile'
 gem 'refile-mini_magick'
 
 gem 'letter_opener'
+
+gem 'unirest'
+gem 'rest-client'
