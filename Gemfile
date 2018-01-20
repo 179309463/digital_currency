@@ -127,3 +127,5 @@ gem 'emoji'
 gem 'rails-timeago'
 gem 'friendly_id'
 gem 'high_voltage'
+
+gem 'ember-cli-rails'
