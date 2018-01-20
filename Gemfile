@@ -14,6 +14,7 @@ gem 'rails-i18n'
 gem 'sqlite3'
 gem 'mysql2'
 gem 'pg', '~> 0.18'
+gem 'redis'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -129,3 +130,4 @@ gem 'friendly_id'
 gem 'high_voltage'
 
 gem 'ember-cli-rails'
+gem 'dashing-rails'

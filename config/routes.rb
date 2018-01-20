@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Dashing::Engine, at: Dashing.config.engine_path
   get "/pages/*id" => 'pages#show', as: :page, format: false
   #root to: 'pages#show', id: 'home'
 
