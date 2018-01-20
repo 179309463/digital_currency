@@ -37,6 +37,15 @@ GIT
       thredded (~> 0.12)
 
 GIT
+  remote: https://github.com/refile/refile.git
+  revision: 2f9bce5e763dd71fa1b4532f235eb6af4da99488
+  specs:
+    refile (0.6.2)
+      mime-types
+      rest-client (>= 1.8, < 3.0)
+      sinatra (>= 2.0.0, <= 3.0.0)
+
+GIT
   remote: https://github.com/simonneutert/turbolinks-scroll-to-hash-fix-rails
   revision: 6174528662bd6373cc9a12787eeb9635500aae93
   specs:
@@ -144,6 +153,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (>= 2.0, < 4.0)
+    carrierwave (1.0.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
     choice (0.2.0)
@@ -191,6 +204,8 @@ GEM
       responders
       warden (~> 1.2.3)
     devise-bootstrap-views (0.0.11)
+    domain_name (0.5.20170404)
+      unf (>= 0.0.5, < 1.0.0)
     elasticsearch (6.0.0)
       elasticsearch-api (= 6.0.0)
       elasticsearch-transport (= 6.0.0)
@@ -246,6 +261,8 @@ GEM
       nokogiri (>= 1.4)
     html_page (0.1.0)
     htmlentities (4.3.4)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     i18n-language-translations (0.0.2)
@@ -312,6 +329,11 @@ GEM
     mail (2.7.0)
       mini_mime (>= 0.1.1)
     method_source (0.9.0)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
+    mimemagic (0.3.2)
+    mini_magick (4.6.1)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.1)
@@ -321,9 +343,11 @@ GEM
     multi_json (1.13.1)
     multipart-post (2.0.0)
     mustache (1.0.5)
+    mustermann (1.0.1)
     mysql2 (0.4.10)
     mysql2 (0.4.10-x64-mingw32)
     nested_form (0.3.2)
+    netrc (0.11.0)
     nio4r (2.2.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
@@ -343,6 +367,14 @@ GEM
     paper_trail (8.1.2)
       activerecord (>= 4.2, < 5.2)
       request_store (~> 1.1)
+    paperclip (5.1.0)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (~> 0.3.0)
+    paperclip-meta (3.0.0)
+      paperclip (~> 5.0)
     paranoia (2.4.0)
       activerecord (>= 4.0, < 5.2)
     pg (0.21.0)
@@ -357,6 +389,8 @@ GEM
     rack-pjax (1.0.0)
       nokogiri (~> 1.5)
       rack (>= 1.1)
+    rack-protection (2.0.0)
+      rack
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
     rails (5.1.4)
@@ -451,12 +485,24 @@ GEM
       ffi (>= 0.5.0, < 2)
     rchardet (1.7.0)
     redis (3.3.5)
+    refile-mini_magick (0.2.0)
+      mini_magick (~> 4.0)
+      refile (~> 0.5)
     remotipart (1.3.1)
     request_store (1.4.0)
       rack (>= 1.4)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rest-client (2.0.2)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    rest-client (2.0.2-x64-mingw32)
+      ffi (~> 1.9)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rinku (2.0.4)
     rolify (5.1.0)
     ruby-graphviz (1.2.3)
@@ -492,6 +538,11 @@ GEM
     simple_xlsx_reader (1.0.2)
       nokogiri
       rubyzip
+    sinatra (2.0.0)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.0)
+      tilt (~> 2.0)
     sixarm_ruby_unaccent (1.2.0)
     sort_alphabetical (1.1.0)
       unicode_utils (>= 1.2.2)
@@ -561,6 +612,10 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (4.1.3)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.4)
+    unf_ext (0.0.7.4-x64-mingw32)
     unicode-display_width (1.3.0)
     unicode_utils (1.4.0)
     warden (1.2.7)
@@ -601,6 +656,7 @@ DEPENDENCIES
   byebug
   cancancan
   capybara (~> 2.13)
+  carrierwave
   coffee-rails (~> 4.2)
   country_select
   dashing-rails
@@ -626,9 +682,12 @@ DEPENDENCIES
   kaminari-i18n
   listen (>= 3.0.5, < 3.2)
   lol_dba
+  mini_magick
   mobylette!
   mysql2
   paper_trail
+  paperclip
+  paperclip-meta
   paranoia
   pg (~> 0.18)
   pjax_rails!
@@ -649,6 +708,8 @@ DEPENDENCIES
   rails_db
   ransack
   redis
+  refile!
+  refile-mini_magick
   rolify
   sass-rails (~> 5.0)
   searchkick

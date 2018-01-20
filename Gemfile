@@ -133,3 +133,10 @@ gem 'high_voltage'
 
 gem 'ember-cli-rails'
 gem 'dashing-rails'
+
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'paperclip'
+gem 'paperclip-meta'
+gem 'refile', github: 'refile/refile'
+gem 'refile-mini_magick'
