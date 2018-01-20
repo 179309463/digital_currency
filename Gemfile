@@ -151,3 +151,5 @@ gem 'letter_opener'
 
 gem 'unirest'
 gem 'rest-client'
+
+gem 'sidekiq'

@@ -1,4 +1,8 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => '/sidekiq'
+
   mount Dashing::Engine, at: Dashing.config.engine_path
   get "/pages/*id" => 'pages#show', as: :page, format: false
   #root to: 'pages#show', id: 'home'
