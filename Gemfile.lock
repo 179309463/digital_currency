@@ -192,6 +192,15 @@ GEM
     debug_inspector (0.0.3)
     default_value_for (3.0.3)
       activerecord (>= 3.2.0, < 5.2)
+    delayed_job (4.1.4)
+      activesupport (>= 3.0, < 5.2)
+    delayed_job_active_record (4.1.2)
+      activerecord (>= 3.0, < 5.2)
+      delayed_job (>= 3.0, < 5)
+    delayed_job_web (1.4)
+      activerecord (> 3.0.0)
+      delayed_job (> 2.0.3)
+      sinatra (>= 1.4.4)
     devise (4.4.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -695,6 +704,8 @@ DEPENDENCIES
   country_select
   dashing-rails
   default_value_for
+  delayed_job_active_record
+  delayed_job_web
   devise
   devise-bootstrap-views
   ember-cli-rails

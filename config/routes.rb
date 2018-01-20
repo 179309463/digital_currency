@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, :via => [:get, :post]
   mount Sidekiq::Web => '/sidekiq'
 
   mount Dashing::Engine, at: Dashing.config.engine_path
