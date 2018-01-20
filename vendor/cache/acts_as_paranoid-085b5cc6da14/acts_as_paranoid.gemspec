@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Zachary Scott".freeze, "Goncalo Silva".freeze, "Rick Olson".freeze]
-  s.date = "2018-01-18"
+  s.date = "2018-01-20"
   s.description = "Check the home page for more in-depth information.".freeze
   s.email = ["e@zzak.io".freeze]
   s.files = ["LICENSE".freeze, "README.md".freeze, "lib/acts_as_paranoid.rb".freeze, "lib/acts_as_paranoid/associations.rb".freeze, "lib/acts_as_paranoid/core.rb".freeze, "lib/acts_as_paranoid/preloader_association.rb".freeze, "lib/acts_as_paranoid/relation.rb".freeze, "lib/acts_as_paranoid/validations.rb".freeze, "lib/acts_as_paranoid/version.rb".freeze, "test/test_associations.rb".freeze, "test/test_core.rb".freeze, "test/test_default_scopes.rb".freeze, "test/test_helper.rb".freeze, "test/test_inheritance.rb".freeze, "test/test_preloader_association.rb".freeze, "test/test_relations.rb".freeze, "test/test_validations.rb".freeze]
