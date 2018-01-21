@@ -105,7 +105,9 @@ gem 'rails_admin_json_translate'
 gem 'rails_admin_charts'
 
 gem 'activeadmin'
-gem 'active_admin_editor'
+gem 'active_skin'
+#gem 'active_admin_editor'
+#gem 'active_admin-sortable_tree'
 gem 'draper'
 
 gem 'acts-as-taggable-on'
