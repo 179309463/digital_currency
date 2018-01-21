@@ -9,6 +9,7 @@ class ExchangesController < BaseController
       format.html
       format.json
       format.js
+      format.pdf
     end
   end
 
