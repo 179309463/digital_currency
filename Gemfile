@@ -76,7 +76,7 @@ gem 'simple_form'
 gem 'cocoon'
 gem 'country_select'
 gem 'kaminari'
-gem 'kaminari-bootstrap'
+#gem 'kaminari-bootstrap'
 gem 'kaminari-i18n'
 
 group :development do
