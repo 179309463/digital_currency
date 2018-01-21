@@ -108,7 +108,10 @@ gem 'activeadmin'
 gem 'active_skin'
 #gem 'active_admin_editor'
 #gem 'active_admin-sortable_tree'
+
 gem 'draper'
+gem 'merit'
+gem 'public_activity'
 
 gem 'acts-as-taggable-on'
 gem 'acts_as_follower'
