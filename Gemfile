@@ -104,6 +104,9 @@ gem 'rails_admin_import'
 gem 'rails_admin_json_translate'
 gem 'rails_admin_charts'
 
+gem 'activeadmin'
+gem 'draper'
+
 gem 'acts-as-taggable-on'
 gem 'acts_as_follower'
 #gem 'acts_as_paranoid', github: 'ActsAsParanoid/acts_as_paranoid'

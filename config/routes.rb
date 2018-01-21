@@ -2,6 +2,7 @@ require 'sidekiq/web'
 require 'resque/server'
 
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   match "/delayed_job" => DelayedJobWeb, :anchor => false, :via => [:get, :post]
   mount Sidekiq::Web => '/sidekiq'
 
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
 
   #mount Thredded::Engine => '/forum'
   mount Thredded::Workgroup::Engine => '/forum'
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/rails_admin', as: 'rails_admin'
   resources :exchanges, only: [:index, :show]
   devise_for :users
 
