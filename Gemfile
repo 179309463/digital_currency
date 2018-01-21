@@ -109,6 +109,8 @@ gem 'active_skin'
 #gem 'active_admin_editor'
 #gem 'active_admin-sortable_tree'
 
+gem 'administrate'
+
 gem 'draper'
 gem 'merit'
 gem 'public_activity'

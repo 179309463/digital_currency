@@ -2,6 +2,12 @@ require 'sidekiq/web'
 require 'resque/server'
 
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :exchanges
+    resources :exchange_notices
+    resources :exchange_trade_ranks
+  end
+
   ActiveAdmin.routes(self)
   match "/delayed_job" => DelayedJobWeb, :anchor => false, :via => [:get, :post]
   mount Sidekiq::Web => '/sidekiq'
