@@ -3,11 +3,11 @@
 # Table name: favorites
 #
 #  id               :integer          not null, primary key
-#  favoritable_type :string           not null
+#  favoritable_type :string(255)      not null
 #  favoritable_id   :integer          not null
-#  favoritor_type   :string           not null
+#  favoritor_type   :string(255)      not null
 #  favoritor_id     :integer          not null
-#  scope            :string           default("favorite"), not null
+#  scope            :string(255)      default("favorite"), not null
 #  blocked          :boolean          default(FALSE), not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null

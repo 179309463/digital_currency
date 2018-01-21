@@ -42,6 +42,6 @@ RailsAdmin.config do |config|
   end
 
   config.model 'Exchange' do
-    configure :name_translations, :json_translate
+    #configure :name_translations, :json_translate
   end
 end
