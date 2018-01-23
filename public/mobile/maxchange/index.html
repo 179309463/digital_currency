@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>数字货币涨跌幅排行榜-非小号</title>
+    <meta name="keywords" content="虚拟币涨跌幅排行榜,代币涨跌幅排行榜,虚拟币24小时涨跌幅排行榜,数字货币龙虎榜" />
+    <meta name="description" content="非小号提供全球虚拟币的涨跌幅排行榜，包括1小时、24小时、一周涨跌幅排行榜" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-title" content="非小号" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="applicable-device" content="mobile">
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <link rel="canonical" href="https://www.feixiaohao.com/maxchange/" />
+    <link rel="shortcut icon" href="https://static.feixiaohao.com/themes/default/images/fav.ico" />
+    <link href="https://static.feixiaohao.com/themes/default/css/msite/mstyle.css?v=1.16" rel="stylesheet">
+    <script src="https://static.feixiaohao.com/scripts/jquery-2.1.1.js"></script>
+    <link rel="stylesheet" href="https://static.feixiaohao.com/scripts/chartist/chartist.min.css">
+    <script src="https://static.feixiaohao.com/scripts/highcharts.js"></script>
+</head>
+<body>
+    <nav class="memu">
+    <div class="list">
+        <div class="memuheader">
+            导航
+            <div class="back"></div>
+        </div>
+
+        <ul class="navList">
+            <li  style="display:none;">
+                <a href="../setting/index.html" style="color:blue;" class="userLink">
+                    <img src="https://static.feixiaohao.com/themes/default/images/sharelogo.png" alt="">
+                    <span class="name">179309463@qq.com</span>
+                    <span class="tit">个人中心</span>
+                </a>
+            </li>
+            <li style="display:none;"><a href="">自选行情</a></li>
+            <li class="">
+                <div class="">行情</div>
+                <ul>
+                    <li><a href="https://m.feixiaohao.com/">所有</a></li>
+                    <li><a href="../currencies/index.html">货币</a></li>
+                    <li><a href="../assets/index.html">代币</a></li>
+                </ul>
+            </li>
+            <li>
+                <div>排行榜</div>
+                <ul>
+                    <li><a href="../vol/index.html">24小时成交量排行（币种）</a></li>
+                    <li><a href="../vol/exchange/index.html">24小时成交量排行（平台）</a></li>
+                    <li><a href="../vol/monthrank/index.html">月成交量排行</a></li>
+                </ul>
+            </li>
+            <li>
+                <div>趋势</div>
+                <ul>
+                    <li><a href="index.html">涨跌幅排行榜</a></li>
+                    <li><a href="../newcoin/index.html">最近上市的货币</a></li>
+                    <li>  <a href="../charts/index.html">市值趋势</a> </li>
+                </ul>
+            </li>
+            <li><a href="../exchange/index.html">交易平台</a> </li>
+            <li><a href="../gbi/index.html"> GBI指数</a> </li>
+           
+            <li> <a href="../app/index.html">App</a> </li>
+            
+        </ul>
+    </div>
+</nav>
+<div class="pageheader">
+    <div class="memubtn"></div>
+    <div class="logo"><a href="https://m.feixiaohao.com/"><img src="https://static.feixiaohao.com/themes/default/images/msite/logo.png"></a></div>
+    <a class="search" href="../search/index.html"></a>
+</div>
+
+    <div class="content">
+        <div class="theBox theBox-top" style="display:none;">
+            
+            <span class="close"></span>
+        </div>
+        <div class="preview_fixed" style="display:none;">
+            <ul>
+                <li>
+                    <a>BTC/Bitfinex</a>
+                    <span class="text-green">104642↑</span>
+                </li>
+                <li>
+                    <a>BTC/Bitfinex</a>
+                    <span class="text-red">104642↓</span>
+                </li>
+                <li>
+                    <a>BTC/Bitfinex</a>
+                    <span class="">104642</span>
+                </li>
+            </ul>
+        </div>
+        <div class="tabBox">
+            <div class="boxTit">
+                <h2 class="tabtit active" style="width: 50%">涨幅榜</h2>
+                <h2 class="tabtit" style="width: 50%">跌幅榜</h2>
+            </div>
+            <div class="tabBody lowheightRank">
+                <div class="unitList smalltab">
+                    <a >1小时</a>
+                    <a class="active">24小时</a>
+                    <a >1周</a>
+                </div>
+        <div class="smalltabBody" style="display:none">
+            <div class="multTable" style="position: relative">
+                <table class="tablefixed" cellspacing="0" style="width: 122px">
+                    <thead>
+                        <tr>
+                            <th style="min-width:25px;">#</th>
+                            <th style="min-width:100px;">名称</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <a href="../currencies/supernet-unity/index.html">
+                                            <img src="https://static.feixiaohao.com/Coin/ca109bd46447d49841c82c1572fb70_small.png" alt="SuperNET">
+                                        UNITY
+                                    </a>
+                                </td>
+                            </tr>
+                           
+
+
+                    </tbody>
+                </table>
+                <div class="scrollbox">
+                    <table class="tableMain" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th style="min-width:25px;">#</th>
+                                <th style="min-width:100px;">名称</th>
+                                <th style="min-width:90px;">%1小时</th>
+                                <th style="min-width:100px;">价格</th>
+                                <th style="min-width:140px;">成交量(24h)</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <a href="../currencies/supernet-unity/index.html">
+                                                <img src="https://static.feixiaohao.com/Coin/ca109bd46447d49841c82c1572fb70_small.png" alt="SuperNET">
+                                            UNITY
+                                        </a>
+                                    </td>
+                                    <td><span class="text-green">38.71%</span></td>
+                                    <td class="price" data-usd="191" data-cny="1223" data-btc="0.017"><a href="../currencies/supernet-unity/index.html#markets" target="_blank">¥1,223</a></td>
+                                    <td class="volume" data-usd="22726" data-cny="37672" data-btc="1.9"><a href="../currencies/supernet-unity/index.html#markets" target="_blank">¥37,672</a></td>
+
+                                </tr>
+                                
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="smalltabBody" >
+            <div class="multTable" style="position: relative">
+                <table class="tablefixed" cellspacing="0" style="width: 122px">
+                    <thead>
+                        <tr>
+                            <th style="min-width:25px;">#</th>
+                            <th style="min-width:100px;">名称</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <a href="../currencies/cryptojacks/index.html">
+                                            <img src="https://static.feixiaohao.com/Coin/2bba5ca785e52d939652e8d7ba0eb77_small.png" alt="Cryptojacks">
+                                        CJ
+                                    </a>
+                                </td>
+                            </tr>
+                           
+
+
+                    </tbody>
+                </table>
+                <div class="scrollbox">
+                    <table class="tableMain" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th style="min-width:25px;">#</th>
+                                <th style="min-width:100px;">名称</th>
+                                <th style="min-width:90px;">%24小时</th>
+                                <th style="min-width:100px;">价格</th>
+                                <th style="min-width:140px;">成交量(24h)</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <a href="../currencies/cryptojacks/index.html">
+                                                <img src="https://static.feixiaohao.com/Coin/2bba5ca785e52d939652e8d7ba0eb77_small.png" alt="Cryptojacks">
+                                            CJ
+                                        </a>
+                                    </td>
+                                    <td><span class="text-green">152.07%</span></td>
+                                    <td class="price" data-usd="0.01" data-cny="0.0643" data-btc="0.00000089"><a href="../currencies/cryptojacks/index.html#markets" target="_blank">¥0.0643</a></td>
+                                    <td class="volume" data-usd="1735530" data-cny="10702183" data-btc="147"><a href="../currencies/cryptojacks/index.html#markets" target="_blank">¥1,070万</a></td>
+
+                                </tr>
+                                
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="smalltabBody" style="display:none">
+            <div class="multTable" style="position: relative">
+                <table class="tablefixed" cellspacing="0" style="width: 122px">
+                    <thead>
+                        <tr>
+                            <th style="min-width:25px;">#</th>
+                            <th style="min-width:100px;">名称</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <a href="../currencies/cfcion66/index.html">
+                                            <img src="https://static.feixiaohao.com/Coin/20171219/fd3cfc3a61a6466cadbbf2b07a4038bf.png" alt="咖啡金链-Coffee gold chain">
+                                        CFC
+                                    </a>
+                                </td>
+                            </tr>
+                          
+
+
+                    </tbody>
+                </table>
+                <div class="scrollbox">
+                    <table class="tableMain" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th style="min-width:25px;">#</th>
+                                <th style="min-width:100px;">名称</th>
+                                <th style="min-width:90px;">%1周</th>
+                                <th style="min-width:100px;">价格</th>
+                                <th style="min-width:140px;">成交量(24h)</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <a href="../currencies/cfcion66/index.html">
+                                                <img src="https://static.feixiaohao.com/Coin/20171219/fd3cfc3a61a6466cadbbf2b07a4038bf.png" alt="咖啡金链-Coffee gold chain">
+                                            CFC
+                                        </a>
+                                    </td>
+                                    <td><span class="text-green">1401.87%</span></td>
+                                    <td class="price" data-usd="0.0672" data-cny="0.4306" data-btc="0.00000595"><a href="../currencies/cfcion66/index.html#markets" target="_blank">¥0.4306</a></td>
+                                    <td class="volume" data-usd="1120877" data-cny="7180672" data-btc="99.23"><a href="../currencies/cfcion66/index.html#markets" target="_blank">¥718万</a></td>
+
+                                </tr>
+                               
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+            <div class="tabBody lowheightRank" style="display: none">
+                <div class="unitList smalltab">
+                    <a >1小时</a>
+                    <a class="active">24小时</a>
+                    <a >1周</a>
+                </div>               
+                            <div class="smalltabBody" style="display:none">
+                                <div class="multTable" style="position: relative">
+                                    <table class="tablefixed" cellspacing="0" style="width: 122px">
+                                        <thead>
+                                            <tr>
+                                                <th style="min-width:25px;">#</th>
+                                                <th style="min-width:100px;">名称</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <a href="../currencies/iethereum/index.html">
+                                        <img src="https://static.feixiaohao.com/Coin/18921d4f6d97d1dd7708e1eec15f6_small.png" alt="iEthereum">
+                                    IETH
+                                </a>
+                            </td>
+                        </tr>
+                        
+
+
+                                        </tbody>
+
+                                    </table>
+                                    <div class="scrollbox">
+                                        <table class="tableMain" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th style="min-width:25px;">#</th>
+                                                    <th style="min-width:100px;">名称</th>
+                                                    <th style="min-width:90px;">%1小时</th>
+                                                    <th style="min-width:100px;">价格</th>
+                                                    <th style="min-width:140px;">成交量(24h)</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <a href="../currencies/iethereum/index.html">
+                                            <img src="https://static.feixiaohao.com/Coin/18921d4f6d97d1dd7708e1eec15f6_small.png" alt="iEthereum">
+                                        IETH
+                                    </a>
+                                </td>
+                                <td><span class="text-red">-46.86%</span></td>
+                                <td class="price" data-usd="0.0803" data-cny="0.5147" data-btc="0.00000717"><a href="../currencies/iethereum/index.html#markets" target="_blank">¥0.5147</a></td>
+                                <td class="volume" data-usd="23370" data-cny="23975" data-btc="0.34"><a href="../currencies/iethereum/index.html#markets" target="_blank">¥23,975</a></td>
+
+
+                            </tr>
+                           
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="smalltabBody" >
+                                <div class="multTable" style="position: relative">
+                                    <table class="tablefixed" cellspacing="0" style="width: 122px">
+                                        <thead>
+                                            <tr>
+                                                <th style="min-width:25px;">#</th>
+                                                <th style="min-width:100px;">名称</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <a href="../currencies/xios/index.html">
+                                        <img src="https://static.feixiaohao.com/Coin/2a8031d38ed7bd5f23522a97aeda2c2f_small.png" alt="Xios">
+                                    XIOS
+                                </a>
+                            </td>
+                        </tr>
+                       
+
+
+                                        </tbody>
+
+                                    </table>
+                                    <div class="scrollbox">
+                                        <table class="tableMain" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th style="min-width:25px;">#</th>
+                                                    <th style="min-width:100px;">名称</th>
+                                                    <th style="min-width:90px;">%24小时</th>
+                                                    <th style="min-width:100px;">价格</th>
+                                                    <th style="min-width:140px;">成交量(24h)</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <a href="../currencies/xios/index.html">
+                                            <img src="https://static.feixiaohao.com/Coin/2a8031d38ed7bd5f23522a97aeda2c2f_small.png" alt="Xios">
+                                        XIOS
+                                    </a>
+                                </td>
+                                <td><span class="text-red">-83.13%</span></td>
+                                <td class="price" data-usd="0.4132" data-cny="2.65" data-btc="0.00003687"><a href="../currencies/xios/index.html#markets" target="_blank">¥2.65</a></td>
+                                <td class="volume" data-usd="13330" data-cny="214" data-btc="?"><a href="../currencies/xios/index.html#markets" target="_blank">¥214</a></td>
+
+
+                            </tr>
+                           
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="smalltabBody" style="display:none">
+                                <div class="multTable" style="position: relative">
+                                    <table class="tablefixed" cellspacing="0" style="width: 122px">
+                                        <thead>
+                                            <tr>
+                                                <th style="min-width:25px;">#</th>
+                                                <th style="min-width:100px;">名称</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <a href="../currencies/dimoncoin/index.html">
+                                        <img src="https://static.feixiaohao.com/Coin/eabc8f33bff0873399e61f931012b8e8_small.png" alt="DimonCoin">
+                                    FUDD
+                                </a>
+                            </td>
+                        </tr>
+                       
+
+
+                                        </tbody>
+
+                                    </table>
+                                    <div class="scrollbox">
+                                        <table class="tableMain" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th style="min-width:25px;">#</th>
+                                                    <th style="min-width:100px;">名称</th>
+                                                    <th style="min-width:90px;">%1周</th>
+                                                    <th style="min-width:100px;">价格</th>
+                                                    <th style="min-width:140px;">成交量(24h)</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <a href="../currencies/dimoncoin/index.html">
+                                            <img src="https://static.feixiaohao.com/Coin/eabc8f33bff0873399e61f931012b8e8_small.png" alt="DimonCoin">
+                                        FUDD
+                                    </a>
+                                </td>
+                                <td><span class="text-red">-95.95%</span></td>
+                                <td class="price" data-usd="0.000001" data-cny="0.00000642" data-btc="?"><a href="../currencies/dimoncoin/index.html#markets" target="_blank">¥0.00000642</a></td>
+                                <td class="volume" data-usd="19655" data-cny="152780" data-btc="1.75"><a href="../currencies/dimoncoin/index.html#markets" target="_blank">¥15万</a></td>
+
+
+                            </tr>
+                          
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                
+        </div>
+        </div>
+
+    </div>
+
+  
+  
+     
+<div class="footer">
+    <div>
+        <a href="../aboutus/index.html">关于我们</a>&nbsp;|&nbsp;<a href="../contact/index.html">联系我们</a>&nbsp;|&nbsp;
+        <a href="../faq/index.html">常见问题</a>&nbsp;|&nbsp;
+        <a href="../declare/index.html">免责声明</a>&nbsp;|&nbsp;
+        <a href="../app/index.html">APP</a>&nbsp;|&nbsp;
+            <a href="https://www.feixiaohao.com/maxchange/?browsemode=pc">电脑版页面</a> 
+
+    </div>
+    <div>©Copyright feixiaohao.com 2017</div>
+    <div>备案号：粤ICP备16116847号-8</div>
+    <div>
+    </div>
+</div> 
+<script src="https://static.feixiaohao.com/scripts/msite/msite.js?v=1.11"></script>
+
+<div style="display:none"><script src="https://s19.cnzz.com/z_stat.php?id=1263003344&amp;web_id=1263003344" language="JavaScript"></script></div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?192e611c7ffa4b2f8a5047e5cf45403f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+    
+</body>
+</html>
