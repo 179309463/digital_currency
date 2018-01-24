@@ -854,27 +854,36 @@ $.QianLoad.PageLoading({
   }
   function loadHomeVolRank() {
       $.ajax({
-          url: apiHots+"vol/homevolrank.json",
+          url: apiHots+"vol/coin.html",
           async: true,
-          dataType: "json",
           success: function (data) { 
-              $("#vol_coin").append(data.result1);
-              $("#vol_exchange").append(data.result2);
-
+              $("#vol_coin").append(data);
               $('#vol_coin').closest('.tabBody').removeClass('loading');
-              $('#vol_exchange').closest('.tabBody').removeClass('loading');
           }
       });
+      $.ajax({
+          url: apiHots+"vol/exchange.html",
+          async: true,
+          success: function (data) { 
+              $("#vol_exchange").append(data);
+              $('#vol_exchange').closest('.tabBody').removeClass('loading');
+          }
+      });      
   }
   function loadHomeCoinMaxChange() {
       $.ajax({
-          url: apiHots+"coins/HomeCoinMaxChange.json",
+          url: apiHots+"coins/maxchange_up.html",
           async: true,
-          dataType: "json",
           success: function (data) {
-              $("#maxchange_up").after(data.result1);
-              $("#maxchange_down").after(data.result2);
+              $("#maxchange_up").after(data);
               $('#maxchange_up').closest('.tabBody').removeClass('loading');
+          }
+      });
+      $.ajax({
+          url: apiHots+"coins/maxchange_down.html",
+          async: true,
+          success: function (data) {
+              $("#maxchange_down").after(data);
               $('#maxchange_down').closest('.tabBody').removeClass('loading');
           }
       });
@@ -949,28 +958,27 @@ $.QianLoad.PageLoading({
       var url = "/api/";
 
       $.ajax({
-          url: url + "hotconcept/" + conceptid + ".json",
+          url: url + "hotconcept/" + conceptid + "/hotconcept.html",
           async: true,
-          dataType: "json",
           success: function (data) {
-
-              if (null != data.result1 && data.result1.length > 0) {
-                  $("#hotconcept").html("");
-                  $("#hotconcept").append(data.result1);
-                  coinConceptSlide();
-                  $('body').on('click', "#hotconcept a", function () { 
-                          if ($(this).hasClass('active')) {
-                              return;
-                          }
-                          $('#hotconcept a').removeClass('active');
-                          $(this).addClass('active')
-                      
-                  }) 
-              }
-              if (null != data.result2 && data.result2.length > 0) {
-                  $("#hotconceptCoinTable").html("");
-                  $("#hotconceptCoinTable").append(data.result2);
-              }
+              $("#hotconcept").html("");
+              $("#hotconcept").append(data);
+              coinConceptSlide();
+              $('body').on('click', "#hotconcept a", function () { 
+                  if ($(this).hasClass('active')) {
+                      return;
+                  }
+                  $('#hotconcept a').removeClass('active');
+                  $(this).addClass('active')
+              }) 
+          }
+      });
+      $.ajax({
+          url: url + "hotconcept/" + conceptid + "/hotconceptCoinTable.html",
+          async: true,
+          success: function (data) {
+              $("#hotconceptCoinTable").html("");
+              $("#hotconceptCoinTable").append(data);
           }
       });
   }
