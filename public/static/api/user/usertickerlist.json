@@ -1,0 +1,21 @@
+{
+	"PageSize": 100,
+	"Status": "success",
+	"TickerList": [{
+		"SiteCode": "",
+		"CoinCode": "echolink",
+		"CoinSymbolPair": "EKO",
+		"Last": "0.1908",
+		"Last_Cny": "1.22",
+		"Vol": "4,023万",
+		"Change": 17.54
+	}, {
+		"SiteCode": "okex",
+		"CoinCode": "bitcoin",
+		"CoinSymbolPair": "BTC/USDT",
+		"Last": "11,048",
+		"Last_Cny": "71,020",
+		"Vol": "47,814",
+		"Change": 1.41
+	}]
+}

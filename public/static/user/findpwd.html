@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>通过邮箱找回密码-非小号</title>
-    <link rel="shortcut icon" href="/themes/default/images/fav.ico" />
+    <link rel="shortcut icon" href="/assets/images/fav.ico" />
     <style>
       .findpwd {
         width:400px;
@@ -151,7 +151,7 @@
           <div class="formItem hasPic">
             <input type="text" placeholder="验证码" class="imgcode">
             <div class="pic">
-              <img id="verifyImage" style="cursor:hand" height="34" title="点击刷新验证码" onclick="this.src='/api/tool/verifyimage?time=' + new Date()" src="../tool/verifyimage.jpeg" /></div>
+              <img id="verifyImage" style="cursor:hand" height="34" title="点击刷新验证码" onclick="this.src='/api/tool/verifyimage.jpeg?time=' + new Date()" src="../api/tool/verifyimage.jpeg" /></div>
             <p class="alert">*请输入验证码</p></div>
           <div class="formItem">
             <button type="button" class="btn">发送邮件</button>
@@ -161,8 +161,8 @@
       <div class="links">
         <a href="../index.html">返回主页</a></div>
     </div>
-    <script type="text/javascript" src="/themes/default/js/jquery-2.1.1.js"></script>
-    <script type="text/javascript" src="/themes/default/js/account.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="/assets/js/account.js"></script>
   </body>
 
 </html>

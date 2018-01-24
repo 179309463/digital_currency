@@ -2,19 +2,19 @@
 <html lang="zh-cn">
   
   <head>
-    <title>虚拟币24小时成交量排行-非小号</title>
-    <meta name="keywords" content="虚拟币24小时成交量排行,代币24小时成交量排行" />
-    <meta name="description" content="非小号为广大币友提供虚拟币24小时成交量排行" />
+    <title>非小号_专注数字货币行业大数据分析</title>
+    <meta name="keywords" content="coinmarket,数字货币数据分析,数字货币行业大数据,虚拟币数据分析" />
+    <meta name="description" content="非小号&#160;&#160;(www.feixiaohao.com)&#160;&#160;是最专业的数字货币行业大数据平台之一，专注于为数字货币用户提供数据分析，数据挖掘服务。我们拥有全球1000多个数字货币，150多家交易平台，5千多个交易对的数据资源，提供最专业的数字货币趋势分析，行情分析等多维度，全方位的分析服务" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="applicable-device" content="pc">
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
-    <meta http-equiv="mobile-agent" content="format=html5; url=//m.feixiaohao.com/vol/" />
-    <link rel="alternate" media="only screen and(max-width: 640px)" href="https://m.feixiaohao.com/vol/" />
+    <meta http-equiv="mobile-agent" content="format=html5; url=//m.feixiaohao.com/all/" />
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="https://m.feixiaohao.com/all/" />
     <link rel="canonical" href="../index.html" />
-    <link rel="shortcut icon" href="/assets/images/fav.ico" />
     <link href="/assets/css/stylesheet_nav.css" rel="stylesheet">
+    <link href="/assets/css/tablesort.css" rel="stylesheet">
     <script src="/assets/js/jquery-2.1.1.js"></script>
-  </head>
+    <link rel="shortcut icon" href="/assets/images/fav.ico" /></head>
   
   <body>
     <nav class="">
@@ -48,11 +48,11 @@
               <li>
                 <a href="../vol/maxchange.html">涨跌幅排行榜</a></li>
               <li>
-                <a href="../index.html">24小时成交额排行(币种)</a></li>
+                <a href="../vol/currency.html">24小时成交额排行(币种)</a></li>
               <li>
-                <a href="../exchange/index.html">24小时成交额排行(交易平台)</a></li>
+                <a href="../vol/exchange/index.html">24小时成交额排行(交易平台)</a></li>
               <li>
-                <a href="../monthrank.html">月成交额排行</a></li>
+                <a href="../vol/monthrank.html">月成交额排行</a></li>
             </ul>
           </li>
           <li>
@@ -95,17 +95,58 @@
     </nav>
     <div class="m30"></div>
     <div class="m30"></div>
+    <div id="indexheadad" class="headAd" style="width: 1205px;margin:0 auto;"></div>
+    <div class="m15"></div>
     <div class="w1200">
       <div class="col">
-        <div class="box box1200">
+        <div class="box w1200" style="min-height:880px">
           <div class="boxTit">
-            <h1>24小时成交额排行榜人民币(CNY)</h1></div>
+            <h1>所有货币</h1>
+            <div class="searchForm searchForm2">
+              <form action="">
+                <input type="text" id="search2" class="open" placeholder="输入关键词...">
+                <i class="icon-search" onclick="search(document.getElementById('search2').value)"></i>
+                <span class="searchBtn">搜索</span></form>
+            </div>
+          </div>
           <div class="boxTools">
+            <div class="slideBtn btnlink">
+              <a href="../index.html">全部</a></div>
+            <div class="slideBtn btnlink usercustom">
+              <a href="../currencies/userticker.html">自选行情</a></div>
+            <div class="slideBtn">
+              <button>货币</button>
+              <ul>
+                <li>
+                  <a href="../currencies/index.html">前100</a></li>
+                <li class="sline"></li>
+                <li>
+                  <a href="../currencies/index.html">根据流通市值排序</a></li>
+                <li>
+                  <a href="../currencies/marketcap-by-totalsupply/index.html">根据总市值排序</a></li>
+                <li>
+                  <a href="../currencies/filter-nonmineable/index.html">过滤不可挖矿</a></li>
+                <li>
+                  <a href="../currencies/filter-premined/index.html">过滤预挖矿的</a></li>
+                <li>
+                  <a href="../currencies/filter-nonmineable_premined/index.html">过滤不可挖矿及预挖矿的</a></li>
+              </ul>
+            </div>
+            <div class="slideBtn">
+              <button>代币</button>
+              <ul>
+                <li>
+                  <a href="../assets/index.html">前100</a></li>
+                <li class="sline"></li>
+                <li>
+                  <a href="../assets/index.html">根据流通市值排序</a></li>
+                <li>
+                  <a href="../assets/marketcap-by-totalsupply/index.html">根据总市值排序</a></li>
+              </ul>
+            </div>
             <div class="slideBtn unit">
               <button>人民币(CNY)</button>
               <ul>
-                <li class="pointer">
-                  <a href="../index.html#native" class="price-toggle" data-currency="native">平台价格</a></li>
                 <li>
                   <a href="../index.html#CNY" class="price-toggle" data-currency="cny">人民币(CNY)</a></li>
                 <li>
@@ -143,51 +184,75 @@
               </ul>
             </div>
             <div style="display:none" id="currency-exchange-rates" data-cny="0.15609634266269143" data-usd="1" data-btc="10407.1" data-eth="937.01207246177455" data-jpy="0.009038240796811307" data-krw="0.0009309210066979767" data-hkd="0.1279132236690629" data-rub="0.017693180782728624" data-inr="0.01567275291905023" data-aud="0.796781004740847" data-eur="1.2246707472695966" data-chf="1.0394707846341271" data-gbp="1.3952177516344977" data-cad="0.8015710793154583" data-idr="7.47758696218376e-05" data-brl="0.3121297361005507" data-mxn="0.053277072744515125"></div>
+            <div class="pageList">
+              <a href="../index.html">查看前100名</a></div>
           </div>
           <div class="boxContain">
-            <div class="vol-rank">
-              <div class="tit">
-                <div class="rank">NO.1</div>
-                <a class="coin" href="../currencies/bitcoin.html">
-                  <img src="https://static.feixiaohao.com/Coin/eced1e28da4f16e117f471b08ad6e_mid.png" alt="比特币-Bitcoin">比特币-Bitcoin(34.11%)</a>
-                <div class="data">
-                  <small>平均成交额</small>
-                  <span class="volume" data-usd="10348700000" data-cny="35881235173" data-btc="1000690">¥3,588,124万</span></div>
-                <div class="data">
-                  <small>平均价格</small>
-                  <span class="price" data-usd="10474" data-cny="67102" data-btc="1">¥67,102</span></div>
-                <a class="more" title="查看更多" href="../currencies/bitcoin.html"></a>
-              </div>
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>交易平台</th>
-                    <th>交易对</th>
-                    <th>成交额(24小时)</th>
-                    <th>价格</th>
-                    <th>占比</th></tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>
-                      <a href="../exchange/bitfinex/index.html" target="_blank">Bitfinex</a></td>
-                    <td>
-                      <a href="https://www.bitfinex.com" rel="nofollow" target="_blank">BTC/USD</a></td>
-                    <td class="volume" data-usd="773169107.24491030000000000000" data-cny="4953153251.7430688548900000000" data-btc="75320.90669702000000000000" data-native="75320.90669702000000000000">¥495,315万</td>
-                    <td class="price" data-usd="10265" data-cny="65761" data-btc="1" data-native="10265">¥65,761</td>
-                    <td>6.88%</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="m30"></div>
+            <table class="table maintable" id="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th data-sort-method='none'>名称</th>
+                  <th>流通市值</th>
+                  <th>价格</th>
+                  <th>流通数量</th>
+                  <th>流通率</th>
+                  <th>成交额(24h)</th>
+                  <th>涨幅(1h)</th>
+                  <th>涨幅(24h)</th>
+                  <th>涨幅(7d)</th></tr>
+              </thead>
+              <tbody>
+                <tr id="bitcoin">
+                  <td>1</td>
+                  <td>
+                    <a href="../currencies/bitcoin.html" target="_blank">
+                      <img src="https://static.feixiaohao.com/Coin/7033f2f2c2a16094bbb3bafc47205ba8_small.png" alt="BTC-比特币">BTC-比特币</a></td>
+                  <td class="market-cap" data-usd="176193549596" data-cny="1128748669074" data-btc="16895941">¥11,287亿</td>
+                  <td>
+                    <a href="../currencies/bitcoin.html#markets" target="_blank" class="price" data-usd="10474" data-cny="67102" data-btc="1">¥67,102</a></td>
+                  <td>1,682万</td>
+                  <td>80.1%</td>
+                  <td>
+                    <a href="../currencies/bitcoin.html#markets" target="_blank" class="volume" data-usd="10348700000" data-cny="35881235172.6561" data-btc="1000690">¥3,588,124万</a></td>
+                  <td>
+                    <span class="text-green">1.06%</span></td>
+                  <td class="change">
+                    <span class="text-red">-6.43%</span></td>
+                  <td>
+                    <span class="text-red">-13.54%</span></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <div class='loading2' style="display:none"></div>
-        </div>
+          <div class="boxTools">
+            <div class="pageList">
+              <a href="../index.html">查看前100名</a></div>
+          </div>
+          <div class="tips">备注：* 不可挖矿&nbsp;&nbsp;&nbsp;&nbsp;** 有预挖矿&nbsp;&nbsp;&nbsp;&nbsp;IFO表示该币由其它币分叉而来。</div></div>
       </div>
     </div>
     <div class="m30"></div>
+    <div class="fLink clear">
+      <div class="w1200">
+        <h3>友情链接</h3>
+        <a href="http://robot.feixiaohao.com" target="_blank" title="非小号智能机器人">非小号智能机器人</a>
+        <a href="http://www.bitett.com" target="_blank" title="比特头条">比特头条</a>
+        <a href="http://www.haoqkl.cn" target="_blank" title="好区块链">好区块链</a>
+        <a href="http://www.coingogo.com/" target="_blank" title="币源社区">币源社区</a>
+        <a href="http://www.bcex.ca/" target="_blank" title="BCEX">BCEX</a>
+        <a href="http://uncoinex.com/" target="_blank" title="澳洲U网">澳洲U网</a>
+        <a href="http://www.bibox.com/" target="_blank" title="Bibox">Bibox</a>
+        <a href="http://www.btctrade.im/" target="_blank" title="比特币交易网">比特币交易网</a>
+        <a href="http://www.bixingxing.com" target="_blank" title="比特币导航">比特币导航</a>
+        <a href="http://www.linkcoin.pro/" target="_blank" title="linkcoin">linkcoin</a>
+        <a href="http://topbtc.com/" target="_blank" title="TopBtc">TopBtc</a>
+        <a href="http://www.qukuaiwang.com.cn" target="_blank" title="区块网">区块网</a>
+        <a href="http://www.lun.bi/" target="_blank" title="论币">论币</a>
+        <a href="http://www.block123.com/" target="_blank" title="区块链导航">区块链导航</a>
+        <a href="http://www.weilaicaijing.com/" target="_blank" title="未来财经">未来财经</a>
+        <a href="https://www.epay.com" target="_blank" title="易派支付">易派支付</a></div>
+    </div>
     <footer class="clear">
       <div class="w1200">
         <a class="logo2" href="../index.html">
@@ -202,7 +267,7 @@
             <i class="space2"></i>
             <a href="../dashboard/declare.html" target="_blank">免责声明</a>
             <i class="space2"></i>
-            <a href="https://m.feixiaohao.com/vol/?browsemode=mobile">访问手机版</a></div>
+            <a href="https://m.feixiaohao.com/all/?browsemode=mobile">访问手机版</a></div>
           <div>
             <p>©Copyright feixiaohao.com 2018 | 备案号：
               <a href="https://www.miibeian.gov.cn/" target="_blank">粤ICP备16116847号-8</a></p>
@@ -261,8 +326,42 @@
     <div style="display:none">
       <script src="https://s19.cnzz.com/z_stat.php?id=1263003344&amp;web_id=1263003344" language="JavaScript"></script>
     </div>
-    <input id="pagenum" type="hidden" value="2">
-    <script src="/assets/js/morevol.js"></script>
+    <script src="/assets/js/jquery.color.js"></script>
+    <script src="/assets/js/tablesort.js"></script>
+    <script src="/assets/js/fxh3.js"></script>
+    <script type="text/javascript">new Tablesort(document.getElementById('table'));</script>
+    <script>var mun = 0;
+      var scroll1 = null;
+      function scroll() {
+        scroll1 = setInterval(function() {
+          mun--;
+          $('.artList').eq(0).css('margin-top', mun + 'px');
+          if (mun == -200) {
+            $('.artList').eq(0).appendTo('#artList');
+            $('.artList').css('margin-top', '0');
+            setTimeout(function() {
+              mun = 0;
+              clearInterval(scroll1);
+              scroll()
+            }, 75)
+          }
+        }, 80)
+      }
+      scroll();
+      $('.artList').mouseover(function() {
+        clearInterval(scroll1);
+      });
+      $('.artList').mouseout(function() {
+        scroll()
+      })</script>
+    <script type="text/javascript" src="/assets/js/account.js"></script>
+    <script type="text/javascript" src="/assets/js/layer/layer.js"></script>
+    <script type="text/javascript">loadindexdaohang();
+      loadHomeNewCoin();
+      loadHomeVolRank();
+      loadHomeCoinMaxChange();
+      loadconcept(0);
+      autoComplete($('#search2'));</script>
   </body>
 
 </html>
