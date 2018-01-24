@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
+  
+  <head>
     <title>bitcoin的搜索结果</title>
     <meta name="keywords" content="bitcoin相关虚拟币,bitcoin相关交易所,bitcoin的行情" />
     <meta name="description" content="非小号关于bitcoin的搜索结果列表" />
@@ -14,340 +14,298 @@
     <link href="/themes/default/css/stylesheet_nav.css?v=1.26" rel="stylesheet">
     <link href="/themes/default/css/tablesort.css" rel="stylesheet">
     <script src="/themes/default/js/jquery-2.1.1.js"></script>
-    <link rel="shortcut icon" href="/themes/default/images/fav.ico" />
-
-</head>
-<body style="background:#fff;">
+    <link rel="shortcut icon" href="/themes/default/images/fav.ico" /></head>
+  
+  <body style="background:#fff;">
     <nav class="">
-    <div class="navsub">
-        <div class="minWidth" id="globalinfo">
-            
-        </div>
-    </div>
-    <div class="minWidth">
+      <div class="navsub">
+        <div class="minWidth" id="globalinfo"></div>
+      </div>
+      <div class="minWidth">
         <ul class="leftNav">
-            <li class="logo"><a href="/"><img src="/themes/default/images/logo.png" alt="非小号的Logo"></a></li>
-            <li class="navSlide">
-                行情
-                <ul class="subNav">
-                    <li><a href="/">所有</a></li>
-                    <li><a href="/currencies/">货币</a></li>
-                    <li><a href="/assets/">代币</a></li>
-                    <li><a href="/newcoin/">最新上市</a></li>
-                    <li><a href="/concept/">概念行情</a></li>
- <li>
-                        <a href="/charts/">
-                            市值趋势
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="navSlide">
-               排行榜
-                <ul class="subNav">
-                    <li><a href="/maxchange/">涨跌幅排行榜</a></li> 
-                    <li><a href="/vol/">24小时成交额排行(币种)</a></li>
-                    <li><a href="/vol/exchange/">24小时成交额排行(交易平台)</a></li>
-                    <li><a href="/vol/monthrank/">月成交额排行</a></li>
-                </ul>
-            </li>
-            
-            <li><a  href="/exchange/">交易平台</a></li> 
-            <li><a href="/app/">APP</a> </li>
+          <li class="logo">
+            <a href="/">
+              <img src="/themes/default/images/logo.png" alt="非小号的Logo"></a>
+          </li>
+          <li class="navSlide">行情
+            <ul class="subNav">
+              <li>
+                <a href="/">所有</a></li>
+              <li>
+                <a href="/currencies/">货币</a></li>
+              <li>
+                <a href="/assets/">代币</a></li>
+              <li>
+                <a href="/newcoin/">最新上市</a></li>
+              <li>
+                <a href="/concept/">概念行情</a></li>
+              <li>
+                <a href="/charts/">市值趋势</a></li>
+            </ul>
+          </li>
+          <li class="navSlide">排行榜
+            <ul class="subNav">
+              <li>
+                <a href="/maxchange/">涨跌幅排行榜</a></li>
+              <li>
+                <a href="/vol/">24小时成交额排行(币种)</a></li>
+              <li>
+                <a href="/vol/exchange/">24小时成交额排行(交易平台)</a></li>
+              <li>
+                <a href="/vol/monthrank/">月成交额排行</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/exchange/">交易平台</a></li>
+          <li>
+            <a href="/app/">APP</a></li>
         </ul>
         <ul class="rightNav">
-            <li class="searchForm"  style="float: right">
-                <form action="">
-                    <input type="text" id="input-sm" placeholder="输入关键词...">
-                    <i class="icon-search"  onclick="search(document.getElementById('input-sm').value)"></i> 
+          <li class="searchForm" style="float: right">
+            <form action="">
+              <input type="text" id="input-sm" placeholder="输入关键词...">
+              <i class="icon-search" onclick="search(document.getElementById('input-sm').value)"></i>
             </form>
-            </li>
-            <li class="showmarket" style="float: right">
- 
-                   
-                            <div class="cell">
-                                <div class="tit"><a id="ticker_bitfinex_btc_usd" href="https://www.bitfinex.com/" target="_blank" rel="nofollow">BTC/Bitfinex</a></div>
-                                <div class="num">69994.97</div>
-                                <div class="char">
-                                    <span class="line">64859,65673,69645,69664,73802,74023,70970,72158,74451,74097,71692,79155,80295,81992,81890,77899,75842,72178,72454,73489,75000,67701,68396,67139,66349,72474,70451,68212,69994.97</span>
-                                </div>
-                            </div>
-                            <div class="cell">
-                                <div class="tit"><a id="ticker_poloniex_btc_usdt" href="https://poloniex.com/exchange/#usdt_btc" target="_blank" rel="nofollow">BTC/P网</a></div>
-                                <div class="num">69652.65</div>
-                                <div class="char">
-                                    <span class="line">63249,66138,70634,70130,73516,74022,70690,71835,74651,73812,71284,79128,80591,82284,81955,77670,75719,72580,71951,74084,75038,67637,68542,67724,66540,72498,70734,69653,69652.65</span>
-                                </div>
-                            </div>
-                            <div class="cell">
-                                <div class="tit"><a id="ticker_bitfinex_eth_usd" href="https://www.bitfinex.com/" target="_blank" rel="nofollow">ETH/Bitfinex</a></div>
-                                <div class="num">6345.51</div>
-                                <div class="char">
-                                    <span class="line">5733,5753,6216,6160,6605,6788,6397,6510,6783,6727,6466,7037,7172,7356,7367,7024,6856,6598,6571,6722,6891,6223,6304,6165,6036,6522,6404,6208,6345.51</span>
-                                </div>
-                            </div>
-
-
-
-</li>
-
+          </li>
+          <li class="showmarket" style="float: right">
+            <div class="cell">
+              <div class="tit">
+                <a id="ticker_bitfinex_btc_usd" href="https://www.bitfinex.com/" target="_blank" rel="nofollow">BTC/Bitfinex</a></div>
+              <div class="num">69994.97</div>
+              <div class="char">
+                <span class="line">64859,65673,69645,69664,73802,74023,70970,72158,74451,74097,71692,79155,80295,81992,81890,77899,75842,72178,72454,73489,75000,67701,68396,67139,66349,72474,70451,68212,69994.97</span></div>
+            </div>
+            <div class="cell">
+              <div class="tit">
+                <a id="ticker_poloniex_btc_usdt" href="https://poloniex.com/exchange/#usdt_btc" target="_blank" rel="nofollow">BTC/P网</a></div>
+              <div class="num">69652.65</div>
+              <div class="char">
+                <span class="line">63249,66138,70634,70130,73516,74022,70690,71835,74651,73812,71284,79128,80591,82284,81955,77670,75719,72580,71951,74084,75038,67637,68542,67724,66540,72498,70734,69653,69652.65</span></div>
+            </div>
+            <div class="cell">
+              <div class="tit">
+                <a id="ticker_bitfinex_eth_usd" href="https://www.bitfinex.com/" target="_blank" rel="nofollow">ETH/Bitfinex</a></div>
+              <div class="num">6345.51</div>
+              <div class="char">
+                <span class="line">5733,5753,6216,6160,6605,6788,6397,6510,6783,6727,6466,7037,7172,7356,7367,7024,6856,6598,6571,6722,6891,6223,6304,6165,6036,6522,6404,6208,6345.51</span></div>
+            </div>
+          </li>
         </ul>
-    </div>
-</nav>
-<div class="m30"></div>
-
-
+      </div>
+    </nav>
     <div class="m30"></div>
-    <div id="headad" style="width: 1200px;margin:0 auto;"> 
-    </div>
+    <div class="m30"></div>
+    <div id="headad" style="width: 1200px;margin:0 auto;"></div>
     <div class="m15"></div>
     <div class="w1200">
-        <div class="col">
-            <div class="box2 box815">
-                <div class="searchBar">
-                    <input type="text" id="searchbar" name="searchbar" value="bitcoin" style="background: none" placeholder="输入关键词搜索" onkeydown="javascript:if(event.keyCode==13) search(document.getElementById('word').value);">
-                    <button onclick="search(document.getElementById('searchbar').value)"><i class="icon-search"></i></button>
-
-                    <div class="tips">共45个结果，41个币种，4个交易所</div>
+      <div class="col">
+        <div class="box2 box815">
+          <div class="searchBar">
+            <input type="text" id="searchbar" name="searchbar" value="bitcoin" style="background: none" placeholder="输入关键词搜索" onkeydown="javascript:if(event.keyCode==13) search(document.getElementById('word').value);">
+            <button onclick="search(document.getElementById('searchbar').value)">
+              <i class="icon-search"></i>
+            </button>
+            <div class="tips">共45个结果，41个币种，4个交易所</div></div>
+          <div class="m15"></div>
+          <div class="slide">
+            <div class="active">币种</div>
+            <div>交易平台</div></div>
+          <div class="slidebody" style="min-height: 830px;">
+            <table class="table maintable" id="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th data-sort-method='none'>名称</th>
+                  <th>流通市值</th>
+                  <th>价格</th>
+                  <th>涨幅(24h)</th>
+                  <th>自选状态</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <a href="/currencies/bitcoin/" target="_blank">
+                      <img src="/Coin/7033f2f2c2a16094bbb3bafc47205ba8_small.png" alt="BTC-比特币">BTC-比特币</a></td>
+                  <td>¥11,942亿</td>
+                  <td>￥70,985</td>
+                  <td class="change">
+                    <span class="text-green">5.14%</span></td>
+                  <td>
+                    <div class="addto disactive" onclick="addfocus();">添加自选</div></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="seeAll">
+              <a href="javascript:void(0);" page="1" onclick="MoreSearchCoin($(this), '/moresearchcoin/?word=bitcoin')">加载更多</a></div>
+            <div class="m15"></div>
+          </div>
+          <div class="slidebody" style="min-height: 830px;display:none;">
+            <ul class="plantList plantList2" id="liEx">
+              <li>
+                <div class="con">
+                  <a target="_blank" href="/exchange/bitcointoyou/" class="pic">
+                    <img src="/PlatImages/20170806/cbb38512f4e842109ae2701bbf9428c9_2_100_100.png" alt="BitcoinToYou的logo"></a>
+                  <div class="info">
+                    <div class="tit">
+                      <a target="_blank" href="/exchange/bitcointoyou/">
+                        <b>BitcoinToYou</b>
+                      </a>
+                      <div class="star star3" style="float: right"></div>
+                    </div>
+                    <div class="des">bitcointoyou成立于2010年,是巴西第一家比特币交易平台，目前已有超过20万用户</div>
+                    <div class="detal">交易对:
+                      <a target="_blank" href="/exchange/bitcointoyou/">1</a>
+                      <i class="space"></i>国家:
+                      <a href="/exchange/?code=brazil">巴西</a>
+                      <i class="space"></i>成交额(24h):
+                      <a href="/exchange/bitcointoyou/">¥781万</a>支持：
+                      <span class="tag">
+                        <a href="/exchange/?type=1">
+                          <i class="xianhuo" title="支持现货"></i></a>
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <div class="m15"></div>
-                <div class="slide">
-                    <div class="active">币种</div>
-                    <div>交易平台</div>
-                </div>
-                <div class="slidebody" style="min-height: 830px;">
-                    <table class="table maintable" id="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th data-sort-method='none'>名称</th>
-                                <th>流通市值</th>
-                                <th>价格</th>
-                                <th>涨幅(24h)</th>
-                                <th>自选状态</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <a href="/currencies/bitcoin/" target="_blank">
-                                                <img src="/Coin/7033f2f2c2a16094bbb3bafc47205ba8_small.png" alt="BTC-比特币">BTC-比特币
-                                            </a>
-                                        </td>
-
-
-                                        <td>
-                                            ¥11,942亿
-                                            
-                                        </td>
-                                        <td>￥70,985</td>
-
-                                        <td class="change">
-                                            <span class="text-green">5.14%</span>
-                                        </td>
-                                            <td><div class="addto disactive" onclick="addfocus();">添加自选</div></td>
-                                    </tr>
-                                    
-
-                        </tbody>
-                    </table>
-                        <div class="seeAll"><a href="javascript:void(0);" page="1" onclick="MoreSearchCoin($(this), '/moresearchcoin/?word=bitcoin')">加载更多</a></div>
-                    <div class="m15"></div>
-
-                </div>
-                <div class="slidebody" style="min-height: 830px;display:none;">
-                    <ul class="plantList plantList2" id="liEx">
-                        <li>
-                            <div class="con">
-                                <a target="_blank" href="/exchange/bitcointoyou/" class="pic">
-                                    <img src="/PlatImages/20170806/cbb38512f4e842109ae2701bbf9428c9_2_100_100.png" alt="BitcoinToYou的logo">
-                                </a>
-                                <div class="info">
-                                    <div class="tit">
-                                        <a target="_blank" href="/exchange/bitcointoyou/"><b>BitcoinToYou</b></a>
-                                        <div class="star star3" style="float: right"></div>
-                                    </div>
-                                    <div class="des">
-                                        bitcointoyou成立于2010年,是巴西第一家比特币交易平台，目前已有超过20万用户
-                                    </div>
-                                    <div class="detal">
-                                        交易对:<a target="_blank" href="/exchange/bitcointoyou/">1</a>
-                                        <i class="space"></i>国家:<a href="/exchange/?code=brazil"  >巴西</a><i class="space"></i>
-                                        成交额(24h):<a href="/exchange/bitcointoyou/">¥781万</a>
-
-                                        支持：<span class="tag">
-                                        <a href="/exchange/?type=1"><i class="xianhuo" title="支持现货"></i></a>
-                                                                                    </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                       
-                        
-                    </ul>
-                        <div class="seeAll"><a href="javascript:void(0);" page="1" onclick="MoreSearchExchange($(this), '')">加载更多</a></div>
-                    <div class="m15"></div>
-                    
-                </div>
-            </div>
-
-            <div class="box325 searchRight">
-                <div class="boxTit">
-                    <h2>今日热门</h2>
-                </div>
-                <div class="hotsearch">
-                        <a href="/search?word=BTC">BTC</a>
-                        <a href="/search?word=eos">eos</a>
-                        <a href="/search?word=IOST">IOST</a>
-                        <a href="/search?word=ETH">ETH</a>
-                        <a href="/search?word=DDD">DDD</a>
-                        <a href="/search?word=XRP">XRP</a>
-                        <a href="/search?word=TNB">TNB</a>
-                        <a href="/search?word=VEN">VEN</a>
-                        <a href="/search?word=btm">btm</a>
-                        <a href="/search?word=DOGE">DOGE</a>
-                </div>
-            </div>
-            <div class="box box325 searchRight">
-                <div class="plantListsSpread">
-
-                </div>
-            </div>
-            
+              </li>
+            </ul>
+            <div class="seeAll">
+              <a href="javascript:void(0);" page="1" onclick="MoreSearchExchange($(this), '')">加载更多</a></div>
+            <div class="m15"></div>
+          </div>
         </div>
+        <div class="box325 searchRight">
+          <div class="boxTit">
+            <h2>今日热门</h2></div>
+          <div class="hotsearch">
+            <a href="/search?word=BTC">BTC</a>
+            <a href="/search?word=eos">eos</a>
+            <a href="/search?word=IOST">IOST</a>
+            <a href="/search?word=ETH">ETH</a>
+            <a href="/search?word=DDD">DDD</a>
+            <a href="/search?word=XRP">XRP</a>
+            <a href="/search?word=TNB">TNB</a>
+            <a href="/search?word=VEN">VEN</a>
+            <a href="/search?word=btm">btm</a>
+            <a href="/search?word=DOGE">DOGE</a></div>
+        </div>
+        <div class="box box325 searchRight">
+          <div class="plantListsSpread"></div>
+        </div>
+      </div>
     </div>
     <div class="m30"></div>
-
     <div class="fLink clear">
-    <div class="w1200">
+      <div class="w1200">
         <h3>友情链接</h3>
-
-                <a href="http://robot.feixiaohao.com" target="_blank" title="非小号智能机器人">非小号智能机器人</a>
-                <a href="http://www.bitett.com" target="_blank" title="比特头条">比特头条</a>
-                <a href="http://www.haoqkl.cn" target="_blank" title="好区块链">好区块链</a>
-                <a href="http://www.coingogo.com/" target="_blank" title="币源社区">币源社区</a>
-                <a href="http://www.bcex.ca/" target="_blank" title="BCEX">BCEX</a>
-                <a href="http://uncoinex.com/" target="_blank" title="澳洲U网">澳洲U网</a>
-                <a href="http://www.bibox.com/" target="_blank" title="Bibox">Bibox</a>
-                <a href="http://www.btctrade.im/" target="_blank" title="比特币交易网">比特币交易网</a>
-                <a href="http://www.bixingxing.com" target="_blank" title="比特币导航">比特币导航</a>
-                <a href="http://www.linkcoin.pro/" target="_blank" title="linkcoin">linkcoin</a>
-                <a href="http://topbtc.com/" target="_blank" title="TopBtc">TopBtc</a>
-                <a href="http://www.qukuaiwang.com.cn" target="_blank" title="区块网">区块网</a>
-                <a href="http://www.lun.bi/" target="_blank" title="论币">论币</a>
-                <a href="http://www.block123.com/" target="_blank" title="区块链导航">区块链导航</a>
-                <a href="http://www.weilaicaijing.com/" target="_blank" title="未来财经">未来财经</a>
-                <a href="https://www.epay.com" target="_blank" title="易派支付">易派支付</a>
+        <a href="http://robot.feixiaohao.com" target="_blank" title="非小号智能机器人">非小号智能机器人</a>
+        <a href="http://www.bitett.com" target="_blank" title="比特头条">比特头条</a>
+        <a href="http://www.haoqkl.cn" target="_blank" title="好区块链">好区块链</a>
+        <a href="http://www.coingogo.com/" target="_blank" title="币源社区">币源社区</a>
+        <a href="http://www.bcex.ca/" target="_blank" title="BCEX">BCEX</a>
+        <a href="http://uncoinex.com/" target="_blank" title="澳洲U网">澳洲U网</a>
+        <a href="http://www.bibox.com/" target="_blank" title="Bibox">Bibox</a>
+        <a href="http://www.btctrade.im/" target="_blank" title="比特币交易网">比特币交易网</a>
+        <a href="http://www.bixingxing.com" target="_blank" title="比特币导航">比特币导航</a>
+        <a href="http://www.linkcoin.pro/" target="_blank" title="linkcoin">linkcoin</a>
+        <a href="http://topbtc.com/" target="_blank" title="TopBtc">TopBtc</a>
+        <a href="http://www.qukuaiwang.com.cn" target="_blank" title="区块网">区块网</a>
+        <a href="http://www.lun.bi/" target="_blank" title="论币">论币</a>
+        <a href="http://www.block123.com/" target="_blank" title="区块链导航">区块链导航</a>
+        <a href="http://www.weilaicaijing.com/" target="_blank" title="未来财经">未来财经</a>
+        <a href="https://www.epay.com" target="_blank" title="易派支付">易派支付</a></div>
     </div>
-</div>
- 
     <footer class="clear">
-    <div class="w1200">
+      <div class="w1200">
         <a class="logo2" href="/">
-            <img src="/themes/default/images/logo.png" alt="非小号的Logo">
-        </a>
+          <img src="/themes/default/images/logo.png" alt="非小号的Logo"></a>
         <div class="info">
-            <div>
-                 <a href="/aboutus/" target="_blank">关于我们</a><i class="space2"></i>
-                <a  href="/contact/" target="_blank">联系我们</a><i class="space2"></i>
-                <a href="/faq/" target="_blank">常见问题（f&q）</a><i class="space2"></i>
-                <a href="/declare/" target="_blank">免责声明</a>
-                                    <i class="space2"></i><a  href="http://m.feixiaohao.com/search/?browsemode=mobile">访问手机版</a>
-            </div>
-            <div><p>©Copyright  feixiaohao.com 2018 | 备案号：<a href="//www.miibeian.gov.cn/" target="_blank">粤ICP备16116847号-8</a></p></div>
+          <div>
+            <a href="/aboutus/" target="_blank">关于我们</a>
+            <i class="space2"></i>
+            <a href="/contact/" target="_blank">联系我们</a>
+            <i class="space2"></i>
+            <a href="/faq/" target="_blank">常见问题（f&q）</a>
+            <i class="space2"></i>
+            <a href="/declare/" target="_blank">免责声明</a>
+            <i class="space2"></i>
+            <a href="http://m.feixiaohao.com/search/?browsemode=mobile">访问手机版</a></div>
+          <div>
+            <p>©Copyright feixiaohao.com 2018 | 备案号：
+              <a href="//www.miibeian.gov.cn/" target="_blank">粤ICP备16116847号-8</a></p>
+          </div>
         </div>
         <div class="media">
-            <div class="weCat">
-                <div class="detal">
-                    <img src="/themes/default/images/fwh.jpg"  alt="非小号微信公众号" width="120"
-                         height="120">
-                </div>
-            </div>
-            
-            <a class="qq"  href="//wpa.qq.com/msgrd?v=3&uin=1162544794&site=qq&menu=yes" target="_blank"> 
-            </a>
-            <a class="sina" href='//www.weibo.com/u/6363391733' target='_blank'></a> 
+          <div class="weCat">
+            <div class="detal">
+              <img src="/themes/default/images/fwh.jpg" alt="非小号微信公众号" width="120" height="120"></div>
+          </div>
+          <a class="qq" href="//wpa.qq.com/msgrd?v=3&uin=1162544794&site=qq&menu=yes" target="_blank"></a>
+          <a class="sina" href='//www.weibo.com/u/6363391733' target='_blank'></a>
         </div>
-    </div>
-</footer>
-
-<div class="totop">
- 
-    <div class="wCat2">
+      </div>
+    </footer>
+    <div class="totop">
+      <div class="wCat2">
         <div class="detal">
-            <img src="/themes/default/images/fwh.jpg"  alt="非小号微信服务号">
-            <img src="/themes/default/images/wxdyh.png"  alt="币联社公众号">
-            <div style="text-align: center;width: 116px;float: left;color: #fff">非小号微信服务号</div>
-            <div style="text-align: center;width: 116px;float: left;color: #fff">币联社公众号</div>
-        </div>
+          <img src="/themes/default/images/fwh.jpg" alt="非小号微信服务号">
+          <img src="/themes/default/images/wxdyh.png" alt="币联社公众号">
+          <div style="text-align: center;width: 116px;float: left;color: #fff">非小号微信服务号</div>
+          <div style="text-align: center;width: 116px;float: left;color: #fff">币联社公众号</div></div>
+      </div>
+      <a class="qq2" href="//wpa.qq.com/msgrd?v=3&uin=1162544794&site=qq&menu=yes" target="_blank"></a>
+      <a class="sina2" href='//www.weibo.com/u/6363391733' target='_blank'></a>
+      <div class="top"></div>
     </div>
-    <a class="qq2" href="//wpa.qq.com/msgrd?v=3&uin=1162544794&site=qq&menu=yes" target="_blank">
-    </a>
-    <a class="sina2" href='//www.weibo.com/u/6363391733' target='_blank'></a> 
-    <div class="top"></div>
-</div>
-<script src="/themes/default/js/common-1.1.js?v=1.13"></script>
-<script src="/themes/default/js/jquery.signalR-2.2.1.min.js"></script>
-<script src="/themes/default/js/jquery.peity.min.js"></script>
-<script src="/lcc.js"></script>
-<script type="text/javascript">
-
-    $('.line').peity("line", { width: 50, height: 15, fill: '#f5f5f5', min: 99999, strokeWidth: 1 });
-    loadglobalinfo_new();
-    startSocketHub(false);
-    $('body').on('click', '.showmarket a', function () {
+    <script src="/themes/default/js/common-1.1.js?v=1.13"></script>
+    <script src="/themes/default/js/jquery.signalR-2.2.1.min.js"></script>
+    <script src="/themes/default/js/jquery.peity.min.js"></script>
+    <script src="/lcc.js"></script>
+    <script type="text/javascript">$('.line').peity("line", {
+        width: 50,
+        height: 15,
+        fill: '#f5f5f5',
+        min: 99999,
+        strokeWidth: 1
+      });
+      loadglobalinfo_new();
+      startSocketHub(false);
+      $('body').on('click', '.showmarket a',
+      function() {
         var thiscode = $(this).attr("id");
         $.ajax({
-            url: '//api.feixiaohao.com/sitestat/?code=' + thiscode,
-            type: "GET",
-            success: function (data) {
-                return;
-            },
-            error: function () {
-                return;
-            }
+          url: '//api.feixiaohao.com/sitestat/?code=' + thiscode,
+          type: "GET",
+          success: function(data) {
+            return;
+          },
+          error: function() {
+            return;
+          }
         })
-    });
-
-</script>
-
-
- <script type="text/javascript"> 
-   autoComplete($('#input-sm'));
-</script>
- 
-<div style="display:none"><script src="https://s19.cnzz.com/z_stat.php?id=1263003344&web_id=1263003344" language="JavaScript"></script></div>
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?192e611c7ffa4b2f8a5047e5cf45403f";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
+      });</script>
+    <script type="text/javascript">autoComplete($('#input-sm'));</script>
+    <div style="display:none">
+      <script src="https://s19.cnzz.com/z_stat.php?id=1263003344&web_id=1263003344" language="JavaScript"></script>
+    </div>
+    <script>var _hmt = _hmt || []; (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?192e611c7ffa4b2f8a5047e5cf45403f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();</script>
     <script src="/themes/default/js/jquery.color.js"></script>
     <script src="/themes/default/js/moresearchcoin.js"></script>
     <script src="/themes/default/js/coinoutlink.js?v=1.32"></script>
-
-    <script>
-    $('.slide>div').click(function(){
-        if(!$(this).hasClass('active')){
-            var index = $(this).index();
-            $('.slide>div.active').removeClass('active');
-            $(this).addClass('active');
-            $('.slidebody').hide();
-            $('.slidebody').eq(index).show();
+    <script>$('.slide>div').click(function() {
+        if (!$(this).hasClass('active')) {
+          var index = $(this).index();
+          $('.slide>div.active').removeClass('active');
+          $(this).addClass('active');
+          $('.slidebody').hide();
+          $('.slidebody').eq(index).show();
         }
-    })
-    </script>
+      })</script>
+    <script type="text/javascript">loadSearchAD();</script></body>
 
-    <script type="text/javascript">
-
-        loadSearchAD();
-
-    </script>
-</body>
 </html>

@@ -1,1 +1,12 @@
-{"Url":"/lcc","ConnectionToken":"m7UY26EbWTaigPMZaVXrezrKR8KN3u1nre6Vgtoav16bQXfl53btE6enlYkTPlNAncrFBbQgkr1XtT9Du8xwq/ldg2GTI0i7k71qIfPb4LDK3nr6IGr1mh5O8wb3cReY","ConnectionId":"ee92ee46-e972-4b0e-8935-63f5d39d6e4d","KeepAliveTimeout":20.0,"DisconnectTimeout":30.0,"ConnectionTimeout":110.0,"TryWebSockets":false,"ProtocolVersion":"1.5","TransportConnectTimeout":5.0,"LongPollDelay":0.0}
+{
+    "Url": "/lcc",
+    "ConnectionToken": "m7UY26EbWTaigPMZaVXrezrKR8KN3u1nre6Vgtoav16bQXfl53btE6enlYkTPlNAncrFBbQgkr1XtT9Du8xwq/ldg2GTI0i7k71qIfPb4LDK3nr6IGr1mh5O8wb3cReY",
+    "ConnectionId": "ee92ee46-e972-4b0e-8935-63f5d39d6e4d",
+    "KeepAliveTimeout": 20.0,
+    "DisconnectTimeout": 30.0,
+    "ConnectionTimeout": 110.0,
+    "TryWebSockets": false,
+    "ProtocolVersion": "1.5",
+    "TransportConnectTimeout": 5.0,
+    "LongPollDelay": 0.0
+}

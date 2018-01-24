@@ -1,207 +1,204 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
+  
+  <head>
     <title>数字货币交易所最新公告-非小号</title>
     <meta name="keywords" content="数字货币交易所最新公告,交易所公告大全" />
     <meta name="description" content="非小号聚合了国内外数字货币交易所最新公告" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="applicable-device" content="pc"> 
+    <meta name="applicable-device" content="pc">
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <link rel="canonical" href="index.html" />
     <link rel="shortcut icon" href="/themes/default/images/fav.ico" />
     <link href="/themes/default/css/stylesheet_nav.css" rel="stylesheet">
-    <script src="/themes/default/js/jquery-2.1.1.js"></script> 
-</head>
-<body>
+    <script src="/themes/default/js/jquery-2.1.1.js"></script>
+  </head>
+  
+  <body>
     <nav class="">
-    <div class="navsub">
-        <div class="minWidth" id="globalinfo">
-            
-        </div>
-    </div>
-    <div class="minWidth">
+      <div class="navsub">
+        <div class="minWidth" id="globalinfo"></div>
+      </div>
+      <div class="minWidth">
         <ul class="leftNav">
-            <li class="logo"><a href="index.html"><img src="/themes/default/images/logo.png" alt="非小号的Logo"></a></li>
-            <li class="navSlide">
-                行情
-                <ul class="subNav">
-                    <li><a href="index.html">所有</a></li>
-                    <li><a href="currencies/index.html">货币</a></li>
-                    <li><a href="assets/index.html">代币</a></li>
-                    <li><a href="newcoin.html">最新上市</a></li>
-                    <li><a href="concept.html">概念行情</a></li>
- <li>
-                        <a href="charts.html">
-                            市值趋势
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="navSlide">
-               排行榜
-                <ul class="subNav">
-                    <li><a href="maxchange.html">涨跌幅排行榜</a></li> 
-                    <li><a href="vol.html">24小时成交额排行(币种)</a></li>
-                    <li><a href="vol/exchange.html">24小时成交额排行(交易平台)</a></li>
-                    <li><a href="vol/monthrank.html">月成交额排行</a></li>
-                </ul>
-            </li>
-            
-            <li><a  href="exchange.html">交易平台</a></li> 
-            <li><a href="app.html">APP</a> </li>
+          <li class="logo">
+            <a href="index.html">
+              <img src="/themes/default/images/logo.png" alt="非小号的Logo"></a>
+          </li>
+          <li class="navSlide">行情
+            <ul class="subNav">
+              <li>
+                <a href="index.html">所有</a></li>
+              <li>
+                <a href="currencies/index.html">货币</a></li>
+              <li>
+                <a href="assets/index.html">代币</a></li>
+              <li>
+                <a href="newcoin.html">最新上市</a></li>
+              <li>
+                <a href="concept.html">概念行情</a></li>
+              <li>
+                <a href="charts.html">市值趋势</a></li>
+            </ul>
+          </li>
+          <li class="navSlide">排行榜
+            <ul class="subNav">
+              <li>
+                <a href="maxchange.html">涨跌幅排行榜</a></li>
+              <li>
+                <a href="vol.html">24小时成交额排行(币种)</a></li>
+              <li>
+                <a href="vol/exchange.html">24小时成交额排行(交易平台)</a></li>
+              <li>
+                <a href="vol/monthrank.html">月成交额排行</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="exchange.html">交易平台</a></li>
+          <li>
+            <a href="app.html">APP</a></li>
         </ul>
         <ul class="rightNav">
-            <li class="searchForm"  style="float: right">
-                <form action="">
-                    <input type="text" id="input-sm" placeholder="输入关键词...">
-                    <i class="icon-search"  onclick="search(document.getElementById('input-sm').value)"></i> 
+          <li class="searchForm" style="float: right">
+            <form action="">
+              <input type="text" id="input-sm" placeholder="输入关键词...">
+              <i class="icon-search" onclick="search(document.getElementById('input-sm').value)"></i>
             </form>
-            </li>
-            <li class="showmarket" style="float: right">
- 
-                   
-                            <div class="cell">
-                                <div class="tit"><a id="ticker_bitfinex_btc_usd" href="https://www.bitfinex.com/" target="_blank" rel="nofollow">BTC/Bitfinex</a></div>
-                                <div class="num">65760.67</div>
-                                <div class="char">
-                                    <span class="line">74963,69215,69949,64859,65673,69645,69664,73802,74023,70970,72158,74451,74097,71692,79155,80295,81992,81890,77899,75842,72178,72454,73489,75000,67701,68396,67139,66349,65760.67</span>
-                                </div>
-                            </div>
-                            <div class="cell">
-                                <div class="tit"><a id="ticker_poloniex_btc_usdt" href="https://poloniex.com/exchange/#usdt_btc" target="_blank" rel="nofollow">BTC/P网</a></div>
-                                <div class="num">66351.97</div>
-                                <div class="char">
-                                    <span class="line">75645,70690,69938,63249,66138,70634,70130,73516,74022,70690,71835,74651,73812,71284,79128,80591,82284,81955,77670,75719,72580,71951,74084,75038,67637,68542,67724,66540,66351.97</span>
-                                </div>
-                            </div>
-                            <div class="cell">
-                                <div class="tit"><a id="ticker_bitfinex_eth_usd" href="https://www.bitfinex.com/" target="_blank" rel="nofollow">ETH/Bitfinex</a></div>
-                                <div class="num">5973.87</div>
-                                <div class="char">
-                                    <span class="line">7010,6271,6221,5733,5753,6216,6160,6605,6788,6397,6510,6783,6727,6466,7037,7172,7356,7367,7024,6856,6598,6571,6722,6891,6223,6304,6165,6036,5973.87</span>
-                                </div>
-                            </div>
-
-
-
-</li>
-
+          </li>
+          <li class="showmarket" style="float: right">
+            <div class="cell">
+              <div class="tit">
+                <a id="ticker_bitfinex_btc_usd" href="https://www.bitfinex.com/" target="_blank" rel="nofollow">BTC/Bitfinex</a></div>
+              <div class="num">65760.67</div>
+              <div class="char">
+                <span class="line">74963,69215,69949,64859,65673,69645,69664,73802,74023,70970,72158,74451,74097,71692,79155,80295,81992,81890,77899,75842,72178,72454,73489,75000,67701,68396,67139,66349,65760.67</span></div>
+            </div>
+            <div class="cell">
+              <div class="tit">
+                <a id="ticker_poloniex_btc_usdt" href="https://poloniex.com/exchange/#usdt_btc" target="_blank" rel="nofollow">BTC/P网</a></div>
+              <div class="num">66351.97</div>
+              <div class="char">
+                <span class="line">75645,70690,69938,63249,66138,70634,70130,73516,74022,70690,71835,74651,73812,71284,79128,80591,82284,81955,77670,75719,72580,71951,74084,75038,67637,68542,67724,66540,66351.97</span></div>
+            </div>
+            <div class="cell">
+              <div class="tit">
+                <a id="ticker_bitfinex_eth_usd" href="https://www.bitfinex.com/" target="_blank" rel="nofollow">ETH/Bitfinex</a></div>
+              <div class="num">5973.87</div>
+              <div class="char">
+                <span class="line">7010,6271,6221,5733,5753,6216,6160,6605,6788,6397,6510,6783,6727,6466,7037,7172,7356,7367,7024,6856,6598,6571,6722,6891,6223,6304,6165,6036,5973.87</span></div>
+            </div>
+          </li>
         </ul>
-    </div>
-</nav>
-<div class="m30"></div>
-
-
+      </div>
+    </nav>
+    <div class="m30"></div>
     <div class="m30"></div>
     <div class="w1200">
-        <div class="col">
-            <div class="box box1200">
-                <div class="boxTit">
-                   
-                        <h2>交易平台公告列表</h2> 
-                </div>
-              
-                <div class="boxContain">
-                    <div class="m15"></div>
-                    <ul class="noticeList">
-                                <li>
-                                    <a href="kucoin/index.html" class="web">[库币网]</a>
-                                    <a href="https://news.kucoin.com/trade-io%E4%BA%8E2018%E5%B9%B41%E6%9C%8823%E6%97%A5%E4%B8%8A%E7%BA%BFkucoin/" class="tit" target="_blank" rel="nofollow" title="trade.io于2018年1月23日上线KuCoin!">
-                                       
-                                            <img src="https://static.feixiaohao.com/PlatImages/20171012/abe6f121516549289e5e629f0e7b0afb_15_15.png" alt="trade.io于2018年1月23日上线KuCoin!">trade.io于2018年1月23日上线KuCoin!
-                                        <span class="time">2018-01-23 21:12</span>
-                                    </a>
-                                </li>
-                               
-                                           </ul>
-                    <div class="m15"></div>
-
-                </div>
-                <div class="boxTools">
-                    <div class="pageList">
-                        <a  href='index.html#' class='btn btn-white'    ><</a> <a href='index.html#' class='btn btn-white active' >1</a><a class='btn btn-white' href='list_2.html'>2</a><a class='btn btn-white' href='list_3.html'>3</a><a class='btn btn-white' href='list_4.html'>4</a><a class='btn btn-white' href='list_5.html'>5</a><a  href='index.html#' class='btn btn-white'    >...</a><a class='btn btn-white' href='list_113.html'>113</a><a class='btn btn-white' href='list_2.html'>></a>
-                    </div>
-                </div>
-                <div class="m15"></div>
-            </div>
+      <div class="col">
+        <div class="box box1200">
+          <div class="boxTit">
+            <h2>交易平台公告列表</h2></div>
+          <div class="boxContain">
+            <div class="m15"></div>
+            <ul class="noticeList">
+              <li>
+                <a href="kucoin/index.html" class="web">[库币网]</a>
+                <a href="https://news.kucoin.com/trade-io%E4%BA%8E2018%E5%B9%B41%E6%9C%8823%E6%97%A5%E4%B8%8A%E7%BA%BFkucoin/" class="tit" target="_blank" rel="nofollow" title="trade.io于2018年1月23日上线KuCoin!">
+                  <img src="https://static.feixiaohao.com/PlatImages/20171012/abe6f121516549289e5e629f0e7b0afb_15_15.png" alt="trade.io于2018年1月23日上线KuCoin!">trade.io于2018年1月23日上线KuCoin!
+                  <span class="time">2018-01-23 21:12</span></a>
+              </li>
+            </ul>
+            <div class="m15"></div>
+          </div>
+          <div class="boxTools">
+            <div class="pageList">
+              <a href='index.html#' class='btn btn-white'>
+                <</a>
+                  <a href='index.html#' class='btn btn-white active'>1</a>
+                  <a class='btn btn-white' href='list_2.html'>2</a>
+                  <a class='btn btn-white' href='list_3.html'>3</a>
+                  <a class='btn btn-white' href='list_4.html'>4</a>
+                  <a class='btn btn-white' href='list_5.html'>5</a>
+                  <a href='index.html#' class='btn btn-white'>...</a>
+                  <a class='btn btn-white' href='list_113.html'>113</a>
+                  <a class='btn btn-white' href='list_2.html'>></a></div>
+          </div>
+          <div class="m15"></div>
         </div>
-    </div> 
-<div class="m30"></div>
-<footer class="clear">
-    <div class="w1200">
+      </div>
+    </div>
+    <div class="m30"></div>
+    <footer class="clear">
+      <div class="w1200">
         <a class="logo2" href="index.html">
-            <img src="/themes/default/images/logo.png" alt="非小号的Logo">
-        </a>
+          <img src="/themes/default/images/logo.png" alt="非小号的Logo"></a>
         <div class="info">
-            <div>
-                 <a href="aboutus.html" target="_blank">关于我们</a><i class="space2"></i>
-                <a  href="contact.html" target="_blank">联系我们</a><i class="space2"></i>
-                <a href="faq.html" target="_blank">常见问题（f&q）</a><i class="space2"></i>
-                <a href="declare/index.html" target="_blank">免责声明</a>
-            </div>
-            <div><p>©Copyright  feixiaohao.com 2018 | 备案号：<a href="https://www.miibeian.gov.cn/" target="_blank">粤ICP备16116847号-8</a></p></div>
+          <div>
+            <a href="aboutus.html" target="_blank">关于我们</a>
+            <i class="space2"></i>
+            <a href="contact.html" target="_blank">联系我们</a>
+            <i class="space2"></i>
+            <a href="faq.html" target="_blank">常见问题（f&q）</a>
+            <i class="space2"></i>
+            <a href="declare/index.html" target="_blank">免责声明</a></div>
+          <div>
+            <p>©Copyright feixiaohao.com 2018 | 备案号：
+              <a href="https://www.miibeian.gov.cn/" target="_blank">粤ICP备16116847号-8</a></p>
+          </div>
         </div>
         <div class="media">
-            <div class="weCat">
-                <div class="detal">
-                    <img src="/themes/default/images/fwh.jpg"  alt="非小号微信公众号" width="120"
-                         height="120">
-                </div>
-            </div>
-            
-            <a class="qq"  href="https://wpa.qq.com/msgrd?v=3&amp;uin=1162544794&amp;site=qq&amp;menu=yes" target="_blank"> 
-            </a>
-            <a class="sina" href='https://www.weibo.com/u/6363391733' target='_blank'></a> 
+          <div class="weCat">
+            <div class="detal">
+              <img src="/themes/default/images/fwh.jpg" alt="非小号微信公众号" width="120" height="120"></div>
+          </div>
+          <a class="qq" href="https://wpa.qq.com/msgrd?v=3&amp;uin=1162544794&amp;site=qq&amp;menu=yes" target="_blank"></a>
+          <a class="sina" href='https://www.weibo.com/u/6363391733' target='_blank'></a>
         </div>
-    </div>
-</footer>
-
-<div class="totop">
- 
-    <div class="wCat2">
+      </div>
+    </footer>
+    <div class="totop">
+      <div class="wCat2">
         <div class="detal">
-            <img src="/themes/default/images/fwh.jpg"  alt="非小号微信服务号">
-            <img src="/themes/default/images/wxdyh.png"  alt="币联社公众号">
-            <div style="text-align: center;width: 116px;float: left;color: #fff">非小号微信服务号</div>
-            <div style="text-align: center;width: 116px;float: left;color: #fff">币联社公众号</div>
-        </div>
+          <img src="/themes/default/images/fwh.jpg" alt="非小号微信服务号">
+          <img src="/themes/default/images/wxdyh.png" alt="币联社公众号">
+          <div style="text-align: center;width: 116px;float: left;color: #fff">非小号微信服务号</div>
+          <div style="text-align: center;width: 116px;float: left;color: #fff">币联社公众号</div></div>
+      </div>
+      <a class="qq2" href="https://wpa.qq.com/msgrd?v=3&amp;uin=1162544794&amp;site=qq&amp;menu=yes" target="_blank"></a>
+      <a class="sina2" href='https://www.weibo.com/u/6363391733' target='_blank'></a>
+      <div class="top"></div>
     </div>
-    <a class="qq2" href="https://wpa.qq.com/msgrd?v=3&amp;uin=1162544794&amp;site=qq&amp;menu=yes" target="_blank">
-    </a>
-    <a class="sina2" href='https://www.weibo.com/u/6363391733' target='_blank'></a> 
-    <div class="top"></div>
-</div>
-<script src="/themes/default/js/common-1.1.js"></script>
-<script src="/themes/default/js/jquery.signalR-2.2.1.min.js"></script>
-<script src="/themes/default/js/jquery.peity.min.js"></script>
-<script src="lcc.js"></script>
-<script type="text/javascript">
-
-    $('.line').peity("line", { width: 50, height: 15, fill: '#f5f5f5', min: 99999, strokeWidth: 1 });
-    loadglobalinfo_new();
-    startSocketHub(false);
-    $('body').on('click', '.showmarket a', function () {
+    <script src="/themes/default/js/common-1.1.js"></script>
+    <script src="/themes/default/js/jquery.signalR-2.2.1.min.js"></script>
+    <script src="/themes/default/js/jquery.peity.min.js"></script>
+    <script src="lcc.js"></script>
+    <script type="text/javascript">$('.line').peity("line", {
+        width: 50,
+        height: 15,
+        fill: '#f5f5f5',
+        min: 99999,
+        strokeWidth: 1
+      });
+      loadglobalinfo_new();
+      startSocketHub(false);
+      $('body').on('click', '.showmarket a',
+      function() {
         var thiscode = $(this).attr("id");
         $.ajax({
-            url: '/api/sitestat/?code=' + thiscode,
-            type: "GET",
-            success: function (data) {
-                return;
-            },
-            error: function () {
-                return;
-            }
+          url: '/api/sitestat/?code=' + thiscode,
+          type: "GET",
+          success: function(data) {
+            return;
+          },
+          error: function() {
+            return;
+          }
         })
-    });
+      });</script>
+    <script type="text/javascript">autoComplete($('#input-sm'));</script>
+    <div style="display:none">
+      <script src="https://s19.cnzz.com/z_stat.php?id=1263003344&amp;web_id=1263003344" language="JavaScript"></script>
+    </div>
+  </body>
 
-</script>
-
-
- <script type="text/javascript"> 
-   autoComplete($('#input-sm'));
-</script>
- 
-<div style="display:none"><script src="https://s19.cnzz.com/z_stat.php?id=1263003344&amp;web_id=1263003344" language="JavaScript"></script></div>
-
-</body>
 </html>
