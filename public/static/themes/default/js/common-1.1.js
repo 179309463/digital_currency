@@ -836,7 +836,7 @@ $.QianLoad.PageLoading({
   }
   function loadindexdaohang() {
       $.ajax({
-          url: apiHots+"site/daohang.html",
+          url: apiHots+"site/dashboard/daohang.html",
           async: true,
           success: function (data) {
               $(".linksList").html(data);
@@ -845,7 +845,7 @@ $.QianLoad.PageLoading({
   }
   function loadHomeNewCoin() {
       $.ajax({
-          url: apiHots+"coins/homenewcoin.html",
+          url: apiHots+"coins/homedashboard/newcoin.html",
           async: true,
           success: function (data) {
               $("#newCoin").append(data); 
@@ -1064,7 +1064,7 @@ $.QianLoad.PageLoading({
       }
       else {
 		      word = word.trim();
-          window.location.href = "/search.html?word=" + encodeURIComponent(word);
+          window.location.href = "/dashboard/search.html?word=" + encodeURIComponent(word);
           //alert(window.location.href = "/search?word=" + encodeURIComponent(word));
       }
   }
