@@ -93,19 +93,21 @@
     </nav>
     <div class="m30"></div>
     <div class="m30"></div>
-    <div id="headad" style="width: 1200px;margin:0 auto;">
-      <div class="col-1" id="headAd05">
-        <a href="https://jq.qq.com/?_wv=1027&k=5FxHR79" target="_blank">
-          <img src="/assets/images/vip/qqrobot.png"></a>
+    <div class="w1200">
+      <div class="headAd">
+        <div class="col-1" id="headAd05">
+          <a href="https://jq.qq.com/?_wv=1027&k=5FxHR79" target="_blank">
+            <img src="/assets/images/vip/qqrobot.png"></a>
+        </div>
+        <div class="col-2" id="headAd02">
+          <a href="/app/" target="_blank">
+            <img src="/assets/images/fxhapp2.png"></a>
+        </div>
+        <div class="col-2" id="headAd03">
+          <a href="//robot.feixiaohao.com" target="_blank">
+            <img src="/assets/images/indxtop_fxh1.png"></a>
+        </div>          
       </div>
-      <div class="col-2" id="headAd02">
-        <a href="/app/" target="_blank">
-          <img src="/assets/images/fxhapp2.png"></a>
-      </div>
-      <div class="col-2" id="headAd03">
-        <a href="//robot.feixiaohao.com" target="_blank">
-          <img src="/assets/images/indxtop_fxh1.png"></a>
-      </div>        
     </div>
     <div class="m15"></div>
     <div class="w1200">
@@ -211,13 +213,23 @@
     
     <script src="/assets/js/jquery.peity.min.js"></script>
     
-    <script type="text/javascript">$('.line').peity("line", {
+    <script type="text/javascript">
+      $('.line').peity("line", {
         width: 50,
         height: 15,
         fill: '#f5f5f5',
         min: 99999,
         strokeWidth: 1
       });
+      function loadglobalinfo_new() {
+          $.ajax({
+              url: "/dashboard/globalinfo_v2.html",
+              async: true,
+              success: function (data) {
+                  $("#globalinfo").html(data);
+              }
+          });
+      }     
       loadglobalinfo_new();
       
       $('body').on('click', '.showmarket a',
@@ -235,9 +247,7 @@
         })
       });</script>
     <script type="text/javascript">autoComplete($('#input-sm'));</script>
-    <div style="display:none">
-      <script src="https://s19.cnzz.com/z_stat.php?id=1263003344&amp;web_id=1263003344" language="JavaScript"></script>
-    </div>
+    
     
   </body>
 </html>

@@ -43,4 +43,40 @@
       outerWindow(seting)</script>
   </div>
 </div>
-<script>getUserInfo();</script>
+<script>
+  function getUserInfo() {
+      $.ajax({
+          type: "GET",
+          url: "/user/login.json",
+          xhrFields: {
+              withCredentials: true
+          },
+          success: function (data) {
+              var result = data;
+
+              if (result.status == "success") {
+                  if (result.username.length > 0 || result.userid.length > 0) {
+                      $(".userinfo").css('display', 'block');
+                      $(".unlogin").css('display', 'none');
+                      if (result.username.length > 0) {
+                          $(".userLinks .username").html(result.username);
+                      } else {
+                          $(".userLinks .username").html(result.userid);
+                      }
+
+                      return;
+                  } else {
+                      $(".userLinks .username").html(result.userid);
+                  }
+
+              }
+
+              $(".userinfo").css('display', 'none');
+              $(".unlogin").css('display', 'block');
+
+
+          }
+      })
+  };
+  getUserInfo();
+</script>

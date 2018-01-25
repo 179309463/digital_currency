@@ -200,6 +200,63 @@
       <div class="top"></div>
     </div>
     <script src="/assets/js/common-1.1.js"></script>
+    <script>
+      function logout() {
+          if (confirm("确认退出吗？")) {
+              var parms = new Object();
+              $.ajax({
+                  url: apiHots + "user/logout",
+                  data: parms,
+                  type: "post",
+                  async: true,
+                  xhrFields: {
+                      withCredentials: true
+                  },
+                  success: function (data) {
+                      logoutResponse(data);
+                  }
+              });
+             
+          }
+      }
+      //处理logout反馈信息
+      function logoutResponse(data) {
+
+          var result = eval("(" + data + ")");
+          if (result.status == "success") {
+              DelCookie("fxhuid");
+              DelCookie("distinctuid");
+              window.location.href = '/';
+          }
+          else {
+              alert(result.content);
+          }
+      }
+
+      function DelCookie(name) {
+          var exp = new Date();
+          exp.setTime(exp.getTime() + (-1 * 24 * 60 * 60 * 1000));
+          var cval = GetCookieValue(name);
+          document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+      }
+      function GetCookieValue(name) {
+          var cookieValue = null;
+          if (document.cookie && document.cookie != '') {
+              var cookies = document.cookie.split(';');
+              for (var i = 0; i < cookies.length; i++) {
+                  var cookie = jQuery.trim(cookies[i]);
+                  //PYYH=USERNAME=steven&PASSWORD=111111&UserID=1&UserType=1
+                  if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                      //USERNAME=steven&PASSWORD=111111&UserID=1&UserType=1
+                      break;
+                  }
+              }
+          }
+          return cookieValue;
+      }
+
+    </script>
     
     <script src="/assets/js/jquery.peity.min.js"></script>
     
@@ -211,6 +268,15 @@
         min: 99999,
         strokeWidth: 1
       });
+      function loadglobalinfo_new() {
+          $.ajax({
+              url: "/dashboard/globalinfo_v2.html",
+              async: true,
+              success: function (data) {
+                  $("#globalinfo").html(data);
+              }
+          });
+      }       
       loadglobalinfo_new();
       
       $('body').on('click', '.showmarket a',
@@ -384,9 +450,7 @@
         $('.layui-layer-close').trigger('click');
         $('body').css('overflow', 'auto');
         cropper = null
-      })</script>
-    <script type="text/javascript">
-      //getUserInfo();
+      })
     </script>
   </body>
 

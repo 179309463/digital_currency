@@ -226,13 +226,23 @@
     
     <script src="/assets/js/jquery.peity.min.js"></script>
     
-    <script type="text/javascript">$('.line').peity("line", {
+    <script type="text/javascript">
+      $('.line').peity("line", {
         width: 50,
         height: 15,
         fill: '#f5f5f5',
         min: 99999,
         strokeWidth: 1
       });
+      function loadglobalinfo_new() {
+          $.ajax({
+              url: "/dashboard/globalinfo_v2.html",
+              async: true,
+              success: function (data) {
+                  $("#globalinfo").html(data);
+              }
+          });
+      }     
       loadglobalinfo_new();
       
       $('body').on('click', '.showmarket a',
@@ -250,9 +260,7 @@
         })
       });</script>
     <script type="text/javascript">autoComplete($('#input-sm'));</script>
-    <div style="display:none">
-      <script src="https://s19.cnzz.com/z_stat.php?id=1263003344&amp;web_id=1263003344" language="JavaScript"></script>
-    </div>
+    
     <script src="/assets/js/tablesort.js"></script>
     <script type="text/javascript">new Tablesort(document.getElementById('table'));</script></body>
 

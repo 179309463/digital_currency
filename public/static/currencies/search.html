@@ -95,19 +95,21 @@
     </nav>
     <div class="m30"></div>
     <div class="m30"></div>
-    <div id="headad" style="width: 1200px;margin:0 auto;">
-      <div class="col-1" id="headAd05">
-        <a href="https://jq.qq.com/?_wv=1027&k=5FxHR79" target="_blank">
-          <img src="/assets/images/vip/qqrobot.png"></a>
+    <div class="w1200">
+      <div class="headAd">
+        <div class="col-1" id="headAd05">
+          <a href="https://jq.qq.com/?_wv=1027&k=5FxHR79" target="_blank">
+            <img src="/assets/images/vip/qqrobot.png"></a>
+        </div>
+        <div class="col-2" id="headAd02">
+          <a href="/app/" target="_blank">
+            <img src="/assets/images/fxhapp2.png"></a>
+        </div>
+        <div class="col-2" id="headAd03">
+          <a href="//robot.feixiaohao.com" target="_blank">
+            <img src="/assets/images/indxtop_fxh1.png"></a>
+        </div>          
       </div>
-      <div class="col-2" id="headAd02">
-        <a href="/app/" target="_blank">
-          <img src="/assets/images/fxhapp2.png"></a>
-      </div>
-      <div class="col-2" id="headAd03">
-        <a href="//robot.feixiaohao.com" target="_blank">
-          <img src="/assets/images/indxtop_fxh1.png"></a>
-      </div>        
     </div>
     <div class="m15"></div>
     <div class="w1200">
@@ -273,16 +275,181 @@
       <div class="top"></div>
     </div>
     <script src="/assets/js/common-1.1.js"></script>
+    <script>
+      //搜索结果--添加自选(全网)
+      function addsearchchose(keys) {
+
+          var id = keys.attr("id");
+
+          keys.attr("disabled", "disabled");
+          keys.html("提交中...");
+          var parms = new Object();
+          var coincode = id.split("#")[1];
+          var symbolpair = id.split("#")[2];
+          parms["coincode"] = coincode;
+          parms["symbolpair"] = symbolpair;
+          parms["type"] = "1";
+
+          $.ajax({
+              url: apiHots + "user/CoinSearchFocus",
+              data: parms,
+              type: "post",
+              async: true,
+              xhrFields: {
+                  withCredentials: true
+              },
+              success: function (data) {
+                  addsearchfocusResponse(data);
+              }
+          });
+          function addsearchfocusResponse(data) {
+
+              var result = eval("(" + data + ")");
+              if (result.status == "success") {
+                  keys.attr("onclick", "cancelsearchchose($(this))");
+                  keys.attr("class", "hasaddto disactive");
+
+                  keys.removeAttr("disabled");
+                  keys.html("移除自选");
+              }
+              else {
+                  alert(result.content);
+                  keys.removeAttr("disabled");
+                  keys.attr("class", "addto disactive");
+                  keys.html("添加自选");
+              }
+
+          }
+      }
+
+
+      //搜索结果--取消自选（全网）
+      function cancelsearchchose(keys) {
+
+          var id = keys.attr("id");
+
+          keys.attr("disabled", "disabled");
+          keys.html("提交中...");
+          var parms = new Object();
+          var coincode = id.split("#")[1];
+          var symbolpair = id.split("#")[2];
+          parms["coincode"] = coincode;
+          parms["symbolpair"] = symbolpair;
+          parms["type"] = "2";
+          $.ajax({
+              url: apiHots + "user/CoinSearchFocus",
+              data: parms,
+              type: "post",
+              async: true,
+              xhrFields: {
+                  withCredentials: true
+              },
+              success: function (data) {
+                  cancelsearchfocusResponse(data);
+              }
+          });
+
+
+          function cancelsearchfocusResponse(data) {
+
+
+              var result = eval("(" + data + ")");
+              if (result.status == "success") {
+                  keys.attr("onclick", "addsearchchose($(this))");
+                  keys.attr("class", "addto disactive");
+                  keys.removeAttr("disabled");
+                  keys.html("添加自选");
+              }
+              else {
+                  alert(result.content);
+                  keys.removeAttr("disabled");
+                  keys.attr("class", "hasaddto disactive");
+                  keys.html("移除自选");
+              }
+          }
+      }
+
+      function MoreSearchCoin(btn, url, obj) {
+            url = apiHots + url;
+            page = parseInt(btn.attr('page')) + 1;
+
+            var urlparam = "";
+            if (url.indexOf("?") > -1) {
+                urlparam = "&page=" + page;
+            } else {
+                urlparam = "?page=" + page;
+            }
+            info = $.ajax({
+                url: url + urlparam,
+                async: false,
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function (data) {
+                    if (data == '') {
+                        btn.css("display", "none");
+                    }
+                    else {
+                        if (data != 'error') {
+                            $("#table").append(data);
+                            btn.attr("page", page);
+                        }
+                    }
+                }
+            });
+
+      }      
+      function MoreSearchExchange(btn, url, obj) {
+          url = apiHots + url;
+          page = parseInt(btn.attr('page')) + 1;
+
+          var urlparam = "";
+          if (url.indexOf("?") > -1) {
+              urlparam = "&page=" + page;
+          } else {
+              urlparam = "?page=" + page;
+          }
+          info = $.ajax({
+              url: url + urlparam,
+              async: false,
+              xhrFields: {
+                  withCredentials: true
+              },
+              success: function (data) {
+                  if (data == '') {
+                      btn.css("display", "none");
+                  }
+                  else {
+                      if (data != 'error') {
+                          $("#liEx").append(data);
+                          btn.attr("page", page);
+                      }
+                  }
+              }
+          });
+
+      }      
+    </script>
     
     <script src="/assets/js/jquery.peity.min.js"></script>
 
-    <script type="text/javascript">$('.line').peity("line", {
+    <script type="text/javascript">
+      $('.line').peity("line", {
         width: 50,
         height: 15,
         fill: '#f5f5f5',
         min: 99999,
         strokeWidth: 1
       });
+      function loadglobalinfo_new() {
+          $.ajax({
+              url: "/dashboard/globalinfo_v2.html",
+              async: true,
+              success: function (data) {
+                  $("#globalinfo").html(data);
+              }
+          });
+      }       
       loadglobalinfo_new();
       
       $('body').on('click', '.showmarket a',
