@@ -99,7 +99,20 @@
     <div class="m30"></div>
     <div class="m30"></div>
     <div class="w1200">
-      <div class="headAd"></div>
+      <div class="headAd">
+        <div class="col-1" id="headAd05">
+          <a href="https://jq.qq.com/?_wv=1027&k=5FxHR79" target="_blank">
+            <img src="/assets/images/vip/qqrobot.png"></a>
+        </div>
+        <div class="col-2" id="headAd02">
+          <a href="/app/" target="_blank">
+            <img src="/assets/images/fxhapp2.png"></a>
+        </div>
+        <div class="col-2" id="headAd03">
+          <a href="//robot.feixiaohao.com" target="_blank">
+            <img src="/assets/images/indxtop_fxh1.png"></a>
+        </div>          
+      </div>
     </div>
     <div class="m15"></div>
     <div class="w1200">
@@ -458,7 +471,7 @@
     <script src="/assets/js/tablesort.js"></script>
     <script src="/assets/js/Highstock-5.0.12/highstock.js"></script>
     <script src="/currencies/hischarts.js"></script>
-    <script src="/assets/js/coinoutlink.js"></script>
+    
     <script src="/currencies/rank.js"></script>
     <script>
       new Chartist.Pie('.ct-chart3', {
@@ -517,8 +530,7 @@
         $('.unit2 a').removeClass('active');
         $(this).addClass('active')
       });
-      $('.secondPark a').on('click',
-      function(e) {
+      $('.secondPark a').on('click', function(e) {
 
         if ($(this).attr('href')[0] == "#") {
           $('html,body').animate({
@@ -529,8 +541,7 @@
           return true;
         }
       });
-      $('.fixedIndex a').on('click',
-      function(e) {
+      $('.fixedIndex a').on('click', function(e) {
         /* e.preventDefault();*/
         if ($(this).attr('href')[0] == "#") {
           $('html,body').animate({
@@ -544,8 +555,8 @@
           return true
         }
       });</script>
-    <script type="text/javascript">$(document).ready(function() {
-
+    <script type="text/javascript">
+      $(document).ready(function() {
         $('#piechart_coinvol').highcharts({
           legend: {
             itemStyle: {
@@ -600,7 +611,88 @@
         });
 
       })</script>
-    <script type="text/javascript" src="/assets/js/account.js"></script>
+    
+    <script>
+      //添加自选(全网)
+      function addchose() {
+           
+          $('#FocusChose').attr("disabled", "disabled");
+          $('#FocusChose').html("提交中...");
+          var parms = new Object();
+          var coincode = $("#coincode").val();
+          parms["coincode"] = coincode;
+          parms["type"] = "1";
+          $.ajax({
+              url: apiHots + "user/coinfocus",
+              data: parms,
+              type: "post",
+              async: true,
+              xhrFields: {
+                  withCredentials: true
+              },
+              success: function (data) {
+                  addfocusResponse(data);
+              }
+          });
+          
+      }
+      function addfocusResponse(data) {
+
+          var result = eval("(" + data + ")");
+          if (result.status == "success") {
+              $('#FocusChose').attr("onclick", "cancelchose()");
+              $('#FocusChose').attr("class", "hasaddto disactive");
+
+              $('#FocusChose').removeAttr("disabled");
+              $('#FocusChose').html("移除自选");
+          }
+          else {
+              alert(result.content);
+              $('#FocusChose').removeAttr("disabled");
+              $('#FocusChose').attr("class", "addto disactive");
+              $('#FocusChose').html("添加自选");
+          }
+          
+      }    
+      //取消自选（全网）
+      function cancelchose() {
+
+          $('#FocusChose').attr("disabled", "disabled");
+          $('#FocusChose').html("提交中...");
+          var parms = new Object();
+          var coincode = $("#coincode").val();
+          parms["coincode"] = coincode;
+          parms["type"] = "2";
+          $.ajax({
+              url: apiHots + "user/coinfocus",
+              data: parms,
+              type: "post",
+              async: true,
+              xhrFields: {
+                  withCredentials: true
+              },
+              success: function (data) {
+                  cancelfocusResponse(data);
+              }
+          }); 
+      }        
+      function cancelfocusResponse(data) {
+
+          var result = eval("(" + data + ")");
+          if (result.status == "success") {
+              $('#FocusChose').attr("onclick", "addchose()");
+              $('#FocusChose').attr("class", "addto disactive");
+              $('#FocusChose').removeAttr("disabled");
+              $('#FocusChose').html("添加自选");
+          }
+          else {
+              alert(result.content);
+              $('#FocusChose').removeAttr("disabled");
+              $('#FocusChose').attr("class", "hasaddto disactive");
+              $('#FocusChose').html("移除自选");
+          } 
+      }      
+    </script>    
     <div class="area_group" style="padding-bottom: 10px">
       <div class="tit">
         <svg t="1515031462007" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2604" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16">

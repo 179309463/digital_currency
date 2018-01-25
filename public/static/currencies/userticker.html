@@ -162,7 +162,20 @@
     </nav>
     <div class="m30"></div>
     <div class="m30"></div>
-    <div id="indexheadad" class="headAd" style="width: 1205px;margin:0 auto;"></div>
+    <div id="indexheadad" class="headAd" style="width: 1205px;margin:0 auto;">
+      <div class="col-2" id="headAd01">
+        <a href="https://www.huobipro.com/zh-cn/notice_detail/?id=890" target="_blank">
+          <img src="/assets/images/vip/huobi_ht.jpg"></a>
+      </div>
+      <div class="col-1" id="headAd03">
+        <a href="/app/" target="_blank">
+          <img src="/assets/images/vip/appad.png"></a>
+      </div>
+      <div class="col-2" id="headAd04">
+        <a href="https://www.okex.com/?channelId=11625" target="_blank">
+          <img src="/assets/images/vip/okex_the.jpg"></a>
+      </div>      
+    </div>
     <div class="m15"></div>
     <div class="w1200">
       <div class="col">
@@ -442,8 +455,7 @@
       });
       loadglobalinfo_new();
       
-      $('body').on('click', '.showmarket a',
-      function() {
+      $('body').on('click', '.showmarket a', function() {
         var thiscode = $(this).attr("id");
         $.ajax({
           url: '/api/sitestat/?code=' + thiscode,
@@ -455,7 +467,21 @@
             return;
           }
         })
-      });</script>
+      });
+      $('body').on('click', '#spread2', function() {
+          var thiscode = $(this).attr("id");
+          $.ajax({
+              url: '/api/sitestat/?code=' + thiscode,
+              type: "GET",
+              success: function(data) {
+                  return;
+              },
+              error: function() {
+                  return;
+              }
+          })
+      });      
+    </script>
     <script type="text/javascript">autoComplete($('#input-sm'));</script>
     <div style="display:none">
       <script src="https://s19.cnzz.com/z_stat.php?id=1263003344&amp;web_id=1263003344" language="JavaScript"></script>
@@ -464,7 +490,7 @@
       
     <script src="/assets/js/jquery.color.js"></script>
     <script src="/assets/js/tablesort.js"></script>
-    <script src="/assets/js/fxh3.js"></script>
+    
     <script type="text/javascript">new Tablesort(document.getElementById('table'));
       $('.line2').peity('line', {
         width: 80,
@@ -498,7 +524,78 @@
       $('.artList').mouseout(function() {
         scroll()
       })</script>
-    <script type="text/javascript" src="/assets/js/account.js"></script>
+    
+    <script>
+      function removesitechose(keys) {
+          var id = keys.attr("id");
+
+        
+          var parms = new Object();
+          var coincode = id.split("#")[1];
+          var sitecode = id.split("#")[2];
+          var symbolpair = id.split("#")[3];
+          parms["coincode"] = coincode;
+          parms["sitecode"] = sitecode;
+          parms["symbolpair"] = symbolpair;
+          parms["type"] = "2";
+          delconfirm(symbolpair, function () {
+              keys.attr("disabled", "disabled");
+              keys.html("提交中...");
+              $.ajax({
+                  url: apiHots + "user/coinsitefocus",
+                  data: parms,
+                  type: "post",
+                  async: true,
+                  xhrFields: {
+                      withCredentials: true
+                  },
+                  success: function (data) {
+                      cancelsitefocusResponse(data);
+                      $('.layui-layer-close').trigger('click');
+                  }
+              });
+
+          }); 
+         
+          function cancelsitefocusResponse(data) {
+
+
+              var result = eval("(" + data + ")");
+              if (result.status == "success") {
+                  keys.parents("tr").remove();
+                  var tbRows= $("#table tr");
+                  for(var i=1;i<tbRows.length;i++)
+                  {
+                      tbRows.eq(i).find("td:first-child").html(i);
+                  }
+              }
+              else {
+                  keys.removeAttr("disabled"); 
+                  keys.html("移除自选");
+              }
+          }
+      }
+      function delconfirm(text, callback) {
+        var style = '<style class="delstyle">.alert{padding:15px;margin-top: 15px;font-size: 16px}.btngroup{margin-top: 15px}.btngroup button{height: 30px;border}.alert .group a{margin: 0 5px}</style>';
+        if ($('.delstyle').length == 0) {
+            $('head').append(style);
+        }
+        var div = '<div class="alert loginTip" style="min-height:0!important">确认移除' + text + '?<div class="group" style="margin-top: 15px"><a class="delete">确定</a><a class="cancel">取消</a></div></div>';
+        layer.open({
+            title: '移除自选',
+            type: 1,
+            area: ['300px', '190px'],
+            shadeClose: true,
+            content: div
+        });
+        $('body').on('click', '.alert .cancel', function () {
+            $('.layui-layer-close').trigger('click')
+        })
+        $('body').on('click', '.alert .delete', function () {
+            return callback()
+        })
+      }
+    </script>
     <script type="text/javascript" src="/assets/js/layer/layer.js"></script>
     <script type="text/javascript">loadindexdaohang();
       loadHomeNewCoin();

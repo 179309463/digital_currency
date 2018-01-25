@@ -358,7 +358,107 @@
     <script src="/assets/js/jquery.color.js"></script>
     <script src="/assets/js/Highstock-5.0.12/highstock.js"></script>
     <script src="/exchange/rank.js"></script>
-    <script type="text/javascript" src="/assets/js/account.js"></script>
+    <script>
+      var apiHots = "/api/";
+
+      //取消自选（交易对）
+      function cancelsitechose(keys) {
+          
+          var id = keys.attr("id");
+
+          keys.attr("disabled", "disabled");
+          keys.html("提交中...");
+          var parms = new Object();
+          var coincode = id.split("#")[1];
+          var sitecode = id.split("#")[2];
+          var symbolpair = id.split("#")[3];
+          parms["coincode"] = coincode;
+          parms["sitecode"] = sitecode;
+          parms["symbolpair"] = symbolpair;
+          parms["type"] = "2";
+          $.ajax({
+              url: apiHots + "user/coinsitefocus",
+              data: parms,
+              type: "post",
+              async: true,
+              xhrFields: {
+                  withCredentials: true
+              },
+              success: function (data) {
+                  cancelsitefocusResponse(data);
+              }
+          });
+         
+
+          function cancelsitefocusResponse(data) {
+
+
+              var result = eval("(" + data + ")");
+              if (result.status == "success") {
+                  keys.attr("onclick", "addsitechose($(this))");
+                  keys.attr("class", "addto disactive");
+                  keys.removeAttr("disabled");
+                  keys.html("添加自选");
+              }
+              else {
+                  alert(result.content);
+                  keys.removeAttr("disabled");
+                  keys.attr("class", "hasaddto disactive");
+                  keys.html("移除自选");
+              }
+          }
+      }      
+    </script>
+    <script>
+      //添加自选(交易对)
+      function addsitechose(keys) {
+          
+          var id = keys.attr("id");
+
+          keys.attr("disabled", "disabled");
+          keys.html("提交中...");
+          var parms = new Object();
+          var coincode = id.split("#")[1];
+          var sitecode = id.split("#")[2];
+          var symbolpair = id.split("#")[3];
+          parms["coincode"] = coincode;
+          parms["sitecode"] = sitecode;
+          parms["symbolpair"] = symbolpair;
+          parms["type"] = "1";
+         
+          $.ajax({
+              url: apiHots + "user/coinsitefocus",
+              data: parms,
+              type: "post",
+              async: true,
+              xhrFields: {
+                  withCredentials: true
+              },
+              success: function (data) {
+                  addsitefocusResponse(data);
+              }
+          });
+          function addsitefocusResponse(data) {
+
+              var result = eval("(" + data + ")");
+              if (result.status == "success") {
+                  keys.attr("onclick", "cancelsitechose($(this))");
+                  keys.attr("class", "hasaddto disactive");
+
+                  keys.removeAttr("disabled");
+                  keys.html("移除自选");
+              }
+              else {
+                  alert(result.content);
+                  keys.removeAttr("disabled");
+                  keys.attr("class", "addto disactive");
+                  keys.html("添加自选");
+              }
+
+          }
+      }
+    </script>
+
     <script type="text/javascript">$(document).ready(function() {
 
         $('#piechart_coinvol').highcharts({
