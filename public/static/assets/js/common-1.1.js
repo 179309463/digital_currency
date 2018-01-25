@@ -418,7 +418,7 @@ function preheadUpdate_New(a, data, char,ishome) {
         return;
     }
     if (ishome&&0 == a) {
-        document.title = data + ' BTC-比特币(Bitfinex) - 非小号 feixiaohao';
+        document.title = data + ' BTC-比特币(Bitfinex) - 东方币湾 feixiaohao';
     }
 
     if (a >= 0 && a < 3) {
@@ -467,7 +467,7 @@ function preheadUpdate(a, data, char) {
         return;
     }
     if (0 == a) {
-        document.title = data + ' BTC-比特币(币安) - 非小号 feixiaohao';
+        document.title = data + ' BTC-比特币(币安) - 东方币湾 feixiaohao';
     }
     if (old > data) {
         if ($('.preHead .w299').eq(a).find('.num').hasClass('text-red')) {

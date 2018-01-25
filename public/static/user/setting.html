@@ -25,7 +25,7 @@
         <ul class="leftNav">
           <li class="logo">
             <a href="../index.html">
-              <img src="/assets/images/logo.png" alt="非小号的Logo"></a>
+              <img src="/assets/images/logo.png" alt="东方币湾的Logo"></a>
           </li>
           <li class="navSlide">行情
             <ul class="subNav">
@@ -117,11 +117,6 @@
           <div class="boxTit">
             <h1>个人中心</h1></div>
           <div class="padding15 userinfo">
-            <div class="editHeadPic" style="display:none;">
-              <div class="editbox">
-                <img src="/assets/images/sharelogo.png"></div>
-              <a id="edithpic">修改头像</a>
-              <input type="file" class="picfile" style="display: none"></div>
             <div class="infocell">
               <span class="main">登陆账号：</span>
               <span class="info">179309463@qq.com</span></div>
@@ -162,7 +157,7 @@
     <footer class="clear">
       <div class="w1200">
         <a class="logo2" href="../index.html">
-          <img src="/assets/images/logo.png" alt="非小号的Logo"></a>
+          <img src="/assets/images/logo.png" alt="东方币湾的Logo"></a>
         <div class="info">
           <div>
             <a href="../dashboard/aboutus.html" target="_blank">关于我们</a>
@@ -173,14 +168,14 @@
             <i class="space2"></i>
             <a href="../dashboard/declare.html" target="_blank">免责声明</a></div>
           <div>
-            <p>©Copyright feixiaohao.com 2018 | 备案号：
+            <p>©Copyright eastcoinbay.com 2018 | 备案号：
               <a href="https://www.miibeian.gov.cn/" target="_blank">粤ICP备16116847号-8</a></p>
           </div>
         </div>
         <div class="media">
           <div class="weCat">
             <div class="detal">
-              <img src="/assets/images/fwh.jpg" alt="非小号微信公众号" width="120" height="120"></div>
+              <img src="/assets/images/fwh.jpg" alt="东方币湾微信公众号" width="120" height="120"></div>
           </div>
           <a class="qq" href="https://wpa.qq.com/msgrd?v=3&amp;uin=1162544794&amp;site=qq&amp;menu=yes" target="_blank"></a>
           <a class="sina" href='https://www.weibo.com/u/6363391733' target='_blank'></a>
@@ -190,9 +185,9 @@
     <div class="totop">
       <div class="wCat2">
         <div class="detal">
-          <img src="/assets/images/fwh.jpg" alt="非小号微信服务号">
+          <img src="/assets/images/fwh.jpg" alt="东方币湾微信服务号">
           <img src="/assets/images/wxdyh.png" alt="币联社公众号">
-          <div style="text-align: center;width: 116px;float: left;color: #fff">非小号微信服务号</div>
+          <div style="text-align: center;width: 116px;float: left;color: #fff">东方币湾微信服务号</div>
           <div style="text-align: center;width: 116px;float: left;color: #fff">币联社公众号</div></div>
       </div>
       <a class="qq2" href="https://wpa.qq.com/msgrd?v=3&amp;uin=1162544794&amp;site=qq&amp;menu=yes" target="_blank"></a>
@@ -281,7 +276,9 @@
       
       
     </script>
-    <script type="text/javascript">autoComplete($('#input-sm'));</script>
+    <script type="text/javascript">
+      autoComplete($('#input-sm'));
+    </script>
     <script src="/assets/js/jquery.color.js"></script>
     <script src="/assets/js/tablesort/tablesort.js"></script>
     
@@ -370,73 +367,6 @@
         }
       });
 
-      $('#edithpic').click(function() {
-        $('.picfile').trigger('click');
-      });
-      /////////////////图片裁切////////////
-      var options = {
-        imageBox: '.imageBox',
-        thumbBox: '.thumbBox',
-        spinner: '.spinner',
-        imgSrc: 'avatar.png'
-      };
-      var cropper;
-      $('.picfile').change(function() {
-        layer.open({
-          type: 1,
-          title: '上传头像',
-          area: '[600px]',
-          move: false,
-          content: '<div class=" cropper_headpic "><div class="imageBox"><div class="thumbBox"></div> <div class="spinner" style="display: none">加载中...</div></div> <div class="actionc"> <button type="button" id="btnZoomIn" class="btn2">放大</button><button type="button" id="btnZoomOut" class=" btn2">缩小</button><button type="button" class="btn-danger cancel btn2 cancel2">取消</button><button type="button" id="btnCrop" class=" btn2">确定</button></div></div>'
-        });
-        $('body').css('overflow', 'hidden');
-        var reader = new FileReader();
-        reader.onload = function(e) {
-          options.imgSrc = e.target.result;
-          cropper = new cropbox(options);
-        };
-        reader.readAsDataURL(this.files[0]);
-        this.files = null;
-        document.querySelector('#btnZoomIn').addEventListener('click',
-        function() {
-          cropper.zoomIn();
-        });
-        document.querySelector('#btnZoomOut').addEventListener('click',
-        function() {
-          cropper.zoomOut();
-        })
-      });
-      $('body').on('click', '#btnCrop', function() {
-        var img = cropper.getDataURL(); //图片database64
-        var ii = layer.load();
-        $.ajax({
-          url: "",
-          async: 'true',
-          type: 'post',
-          data: {
-            "image-url": img
-          },
-          success: function(date) {
-            layer.close(ii); //关掉加载中
-            layer.msg('上传成功');
-            $('.cropper_headpic').remove();
-            $('.layui-layer-close').trigger('click');
-            $('body').css('overflow', 'auto');
-            cropper = null
-          },
-          error: function() {
-            layer.close(ii); //关掉加载中
-            layer.msg('上传失败，请重新提交');
-          }
-        });
-      })
-
-      $('body').on('click', '.cancel2', function() {
-        $('.cropper_headpic').remove();
-        $('.layui-layer-close').trigger('click');
-        $('body').css('overflow', 'auto');
-        cropper = null
-      })
     </script>
   </body>
 
