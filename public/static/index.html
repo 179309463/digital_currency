@@ -12,7 +12,7 @@
     <link rel="alternate" media="only screen and(max-width: 640px)" href="https://m.feixiaohao.com/" />
     <link rel="canonical" href="index.html" />
     <link href="/assets/css/stylesheet_nav.css" rel="stylesheet">
-    <link href="/assets/css/tablesort.css" rel="stylesheet">
+    <link href="/assets/js/tablesort/tablesort.css" rel="stylesheet">
     <script src="/assets/js/jquery-2.1.1.js"></script>
     <link rel="shortcut icon" href="/assets/images/fav.ico" /></head>
   
@@ -118,9 +118,83 @@
     <div class="m15"></div>
     <div class="w1200">
       <div class="col">
+        <style>
+        .pageList {
+          float: right
+        }
+
+        .pageList a {
+          height: 30px;
+          line-height: 30px;
+          padding: 0 10px;
+          border: 1px solid #eaecef;
+          display: block;
+          float: left;
+          color: #333;
+          border-right: 0;
+          transition: all .3s;
+          text-decoration: none
+        }
+
+        .pageList a:hover {
+          background: #3499da;
+          color: #fff
+        }
+
+        .pageList a:first-child {
+          border-radius: 3px 0 0 3px
+        }
+
+        .pageList a:last-child {
+          border-radius: 0 3px 3px 0;
+          border-right: 1px solid #eaecef
+        }
+
+        .pageList a:active,
+        .pageList .active {
+          background: #3499da;
+          color: #fff
+        }
+
+        .pageList-left {
+          float: none !important;
+          display: inline-block;
+          vertical-align: top
+        }
+        </style>         
         <div class="box box860" style="min-height:2880px">
           <div class="boxTit">
             <h1>所有货币</h1>
+            <style>
+            .searchForm2 {
+              float: right
+            }
+
+            .searchForm2 input {
+              width: 0 !important;
+              height: 20px;
+              border: 0;
+              border-bottom: 1px solid #ddd;
+              border-radius: 0;
+              transition: all .3s;
+              padding: 3px 0
+            }
+
+            .searchForm2 .icon-search {
+              position: relative;
+              right: 0
+            }
+
+            .searchForm2 input.open {
+              width: 260px !important;
+              padding: 3px 10px;
+              padding-right: 30px
+            }
+
+            .searchForm2 form{
+                margin-top: 0;
+            }
+            </style>            
             <div class="searchForm searchForm2">
               <form action="">
                 <input type="text" id="search2" class="open" placeholder="输入关键词...">
@@ -217,6 +291,17 @@
                   <a class='btn btn-white' href='list_2.html'>></a></div>
           </div>
           <div class="boxContain">
+            <style>
+            .maintable tr td a.price.text-red:after,
+            .maintable  tr td .tprice.text-red:after {
+              content: url("/assets/images/arrow-d4.svg")
+            }
+
+            .maintable tr td a.price.text-green:after,
+            .maintable  tr td .tprice.text-green:after {
+              content: url("/assets/images/arrow-u3.svg")
+            }
+            </style>            
             <table class="table maintable" id="table">
               <thead>
                 <tr>
@@ -296,12 +381,58 @@
             <div class="bannerPoin"></div>
           </div>
         </div>
+        <style>
+        .tabTit-a {
+          width: 100%;
+          padding: 5px 0;
+          overflow: hidden;
+        }
+
+        .tabTit-a li:last-child {
+          margin-right: 0;
+        }
+
+        .tabTit-a li {
+          display: block;
+          cursor: pointer;
+          float: left;
+          padding: 5px 10px;
+          border: 1px solid #f1f1f1;
+          width: 79px;
+          text-align: center;
+          transition: all .2s;
+          margin-bottom: 5px;
+          margin-right: 5px;
+        }
+
+        .tabTit-a li:hover,
+        .tabTit-a li.active {
+          color: #fff;
+          background: #3499da;
+          border-color: #3499da
+        }
+        </style>         
         <div class="box box325">
+          <style>
+          .tabTit .more {
+            margin-right: 15px;
+            margin-top: 15px
+          }
+          </style>          
           <div class="tabTit">
             <h3 class="active tit" style="width: 40%">涨幅榜</h3>
             <h3 class="tit" style="width: 40%">跌幅榜</h3>
             <a href="currencies/maxchange.html" target="_blank" class="more" title="更多"></a>
           </div>
+          <style>
+          .table-rank tbody tr td:first-child span {
+            margin-left: 5px
+          }
+
+          .table-rank thead tr th:first-child {
+            padding-left: 10px
+          }
+          </style>           
           <div class="tabBody padding5" style="height:385px">
             <ul class="tabTit-a" id="maxchange_up">
               <li>1小时</li>
@@ -531,6 +662,11 @@
             <a href="currencies/newest.html" target="_blank" class="more" title="更多"></a>
           </div>
           <div class="boxContain padding5 loading" style="height:417px">
+            <style>
+            #newCoin {
+              background: #fff !important
+            }
+            </style>            
             <table class="table noBg" id="newCoin">
               <thead>
                 <tr>
@@ -558,6 +694,14 @@
             <a href="dashboard/daohang.html" target="_blank" class="more" title="更多"></a>
           </div>
           <div class="boxContain">
+            <style>
+            .cLink {
+              display: block;
+              height: 50px;
+              background: #fff url("/assets/images/cLink.png") no-repeat;
+              width: 107px
+            }
+            </style>            
             <ul class="linksList">
               <li>
                 <a href="https://www.huobi.pro/" target="_blank" title="火币网" style="background-position:-108px 0px" class="cLink"></a>
@@ -689,7 +833,7 @@
     <script type="text/javascript">autoComplete($('#input-sm'));</script>
     
     <script src="/assets/js/jquery.color.js"></script>
-    <script src="/assets/js/tablesort.js"></script>
+    <script src="/assets/js/tablesort/tablesort.js"></script>
     
     <script type="text/javascript">new Tablesort(document.getElementById('table'));
       $('.line2').peity('line', {
@@ -763,7 +907,8 @@
           });
       }     
       loadconcept(0);
-      autoComplete($('#search2'));</script>
+      autoComplete($('#search2'));
+    </script>
   </body>
 
 </html>

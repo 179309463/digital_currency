@@ -11,7 +11,7 @@
     <link rel="canonical" href="index.html" />
     <link rel="shortcut icon" href="/assets/images/fav.ico" />
     <link href="/assets/css/stylesheet_nav.css" rel="stylesheet">
-    <link href="/assets/css/tablesort.css" rel="stylesheet">
+    <link href="/assets/js/tablesort/tablesort.css" rel="stylesheet">
     <script src="/assets/js/jquery-2.1.1.js"></script>
   </head>
   
@@ -113,6 +113,50 @@
     <div class="m15"></div>
     <div class="w1200">
       <div class="col">
+        <style>
+        .pageList {
+          float: right
+        }
+
+        .pageList a {
+          height: 30px;
+          line-height: 30px;
+          padding: 0 10px;
+          border: 1px solid #eaecef;
+          display: block;
+          float: left;
+          color: #333;
+          border-right: 0;
+          transition: all .3s;
+          text-decoration: none
+        }
+
+        .pageList a:hover {
+          background: #3499da;
+          color: #fff
+        }
+
+        .pageList a:first-child {
+          border-radius: 3px 0 0 3px
+        }
+
+        .pageList a:last-child {
+          border-radius: 0 3px 3px 0;
+          border-right: 1px solid #eaecef
+        }
+
+        .pageList a:active,
+        .pageList .active {
+          background: #3499da;
+          color: #fff
+        }
+
+        .pageList-left {
+          float: none !important;
+          display: inline-block;
+          vertical-align: top
+        }
+        </style>         
         <div class="box box860" id="tickerlist" style="min-height: 877px;">
           <div class="boxTit">
             <h2>BTC市场行情</h2>
@@ -339,7 +383,7 @@
     <script type="text/javascript">autoComplete($('#input-sm'));</script>
     
     
-    <script src="/assets/js/tablesort.js"></script>
+    <script src="/assets/js/tablesort/tablesort.js"></script>
     <script type="text/javascript">new Tablesort(document.getElementById('markets'));</script>
     <script type="text/javascript">
       $('.unit2 a').click(function() {

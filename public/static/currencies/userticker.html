@@ -12,7 +12,7 @@
     <link rel="alternate" media="only screen and(max-width: 640px)" href="https://m.feixiaohao.com/">
     <link rel="canonical" href="../index.html">
     <link href="/assets/css/stylesheet_nav.css" rel="stylesheet">
-    <link href="/assets/css/tablesort.css" rel="stylesheet">
+    <link href="/assets/js/tablesort/tablesort.css" rel="stylesheet">
     <script type="text/javascript">document.write = function() {};
       document.writeln = function() {};</script>
     <script src="/assets/js/jquery-2.1.1.js"></script>
@@ -25,53 +25,7 @@
   <body>
     <nav class="fixedNav">
       <div class="navsub">
-        <div class="minWidth" id="globalinfo">
-          <div class="leftSise">虚拟币：
-            <a href="../currencies/index.html">1151</a>
-            <i class="space"></i>代币：
-            <a href="../assets/index.html">601</a>
-            <i class="space"></i>交易平台：
-            <a href="../exchange/index.html">252</a>
-            <i class="space"></i>24小时成交量：
-            <a id="total_vol" class="totalvolcap" href="../dashboard/charts.html">¥2119.10亿</a>
-            <i class="space"></i>总市值：
-            <a id="total_cap" class="totalvolcap" href="../dashboard/charts.html">¥32039.20亿</a>
-            <i class="space"></i>GBI指数：
-            <a id="total_gbi" class="totalvolcap" href="../dashboard/gbi.html">13958.59</a></div>
-          <div class="leftSise"></div>
-          <div class="rightSise loginbar">
-            <div class="getgroup">官方交流群
-              <ul>
-                <li>
-                  <a href="https://t.me/joinchat/G8O8YQ0qvAWNUBX2DOQLUA" target="_blank">
-                    <img alt="非小号官方电报群" src="/assets/images/telegram.png"></a></li>
-                <li>
-                  <a href="https://jq.qq.com/?_wv=1027&amp;k=5FxHR79" target="_blank">
-                    <img alt="非小号官方QQ群368805087" src="https://pub.idqqimg.com/wpa/images/group.png"></a>
-                </li>
-              </ul>
-            </div>&nbsp;&nbsp;
-            <div class="userLinks userinfo" style="display: none">
-              <a class="username" href="../user/setting.html"></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-              <a rel="nofollow" onclick="javascript: logout(); return false; ">退出</a></div>&nbsp;&nbsp;
-            <div class="userLinks unlogin" style="display: none">
-              <a rel="nofollow" class="login">登陆</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-              <a rel="nofollow" class="signup">注册</a>
-              <script src="/assets/js/loginwindow.js"></script>
-              <script>var seting = {
-                  "login": ".login",
-                  "signup": ".signup",
-                  "findPassword": "/user/findpwd",
-                  "loginUrl": "登陆表单提交地址",
-                  "signupUrl": "注册表单提交地址",
-                  "xinlang": "/weibo/weibologin",
-                  "QQ": "/qqoauth/qqLogin",
-                  "weixin": "/wechat/wechatlogin",
-                }
-                outerWindow(seting)</script>
-            </div>
-          </div>
-        </div>
+        <div class="minWidth" id="globalinfo"></div>
       </div>
       <div class="minWidth">
         <ul class="leftNav">
@@ -179,9 +133,83 @@
     <div class="m15"></div>
     <div class="w1200">
       <div class="col">
+        <style>
+        .pageList {
+          float: right
+        }
+
+        .pageList a {
+          height: 30px;
+          line-height: 30px;
+          padding: 0 10px;
+          border: 1px solid #eaecef;
+          display: block;
+          float: left;
+          color: #333;
+          border-right: 0;
+          transition: all .3s;
+          text-decoration: none
+        }
+
+        .pageList a:hover {
+          background: #3499da;
+          color: #fff
+        }
+
+        .pageList a:first-child {
+          border-radius: 3px 0 0 3px
+        }
+
+        .pageList a:last-child {
+          border-radius: 0 3px 3px 0;
+          border-right: 1px solid #eaecef
+        }
+
+        .pageList a:active,
+        .pageList .active {
+          background: #3499da;
+          color: #fff
+        }
+
+        .pageList-left {
+          float: none !important;
+          display: inline-block;
+          vertical-align: top
+        }
+        </style>         
         <div class="box box860" style="min-height:880px">
           <div class="boxTit">
             <h1>所有货币</h1>
+            <style>
+            .searchForm2 {
+              float: right
+            }
+
+            .searchForm2 input {
+              width: 0 !important;
+              height: 20px;
+              border: 0;
+              border-bottom: 1px solid #ddd;
+              border-radius: 0;
+              transition: all .3s;
+              padding: 3px 0
+            }
+
+            .searchForm2 .icon-search {
+              position: relative;
+              right: 0
+            }
+
+            .searchForm2 input.open {
+              width: 260px !important;
+              padding: 3px 10px;
+              padding-right: 30px
+            }
+
+            .searchForm2 form{
+                margin-top: 0;
+            }
+            </style>            
             <div class="searchForm searchForm2">
               <form action="">
                 <input type="text" id="search2" class="open" placeholder="输入关键词...">
@@ -232,6 +260,17 @@
           </div>
           <div class="boxContain">
             <input id="usertickerpage" value="1" type="hidden">
+            <style>
+            .maintable tr td a.price.text-red:after,
+            .maintable  tr td .tprice.text-red:after {
+              content: url("/assets/images/arrow-d4.svg")
+            }
+
+            .maintable tr td a.price.text-green:after,
+            .maintable  tr td .tprice.text-green:after {
+              content: url("/assets/images/arrow-u3.svg")
+            }
+            </style>            
             <table class="table maintable" id="table">
               <thead>
                 <tr>
@@ -314,12 +353,58 @@
             <div class="bannerPoin"></div>
           </div>
         </div>
+        <style>
+        .tabTit-a {
+          width: 100%;
+          padding: 5px 0;
+          overflow: hidden;
+        }
+
+        .tabTit-a li:last-child {
+          margin-right: 0;
+        }
+
+        .tabTit-a li {
+          display: block;
+          cursor: pointer;
+          float: left;
+          padding: 5px 10px;
+          border: 1px solid #f1f1f1;
+          width: 79px;
+          text-align: center;
+          transition: all .2s;
+          margin-bottom: 5px;
+          margin-right: 5px;
+        }
+
+        .tabTit-a li:hover,
+        .tabTit-a li.active {
+          color: #fff;
+          background: #3499da;
+          border-color: #3499da
+        }
+        </style>         
         <div class="box box325">
+          <style>
+          .tabTit .more {
+            margin-right: 15px;
+            margin-top: 15px
+          }
+          </style>          
           <div class="tabTit">
             <h3 class="active tit" style="width: 40%">涨幅榜</h3>
             <h3 class="tit" style="width: 40%">跌幅榜</h3>
             <a href="../currencies/maxchange.html" target="_blank" class="more" title="更多"></a>
           </div>
+          <style>
+          .table-rank tbody tr td:first-child span {
+            margin-left: 5px
+          }
+
+          .table-rank thead tr th:first-child {
+            padding-left: 10px
+          }
+          </style>           
           <div class="tabBody padding5" style="height:385px">
             <ul class="tabTit-a" id="maxchange_up">
               <li>1小时</li>
@@ -554,7 +639,7 @@
     <script type="text/javascript">autoComplete($('#input-sm'));</script>
       
     <script src="/assets/js/jquery.color.js"></script>
-    <script src="/assets/js/tablesort.js"></script>
+    <script src="/assets/js/tablesort/tablesort.js"></script>
     
     <script type="text/javascript">new Tablesort(document.getElementById('table'));
       $('.line2').peity('line', {
