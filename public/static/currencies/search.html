@@ -291,7 +291,7 @@
           parms["type"] = "1";
 
           $.ajax({
-              url: apiHots + "user/CoinSearchFocus",
+              url: "/user/post.CoinSearchFocus",
               data: parms,
               type: "post",
               async: true,
@@ -337,7 +337,7 @@
           parms["symbolpair"] = symbolpair;
           parms["type"] = "2";
           $.ajax({
-              url: apiHots + "user/CoinSearchFocus",
+              url: "/user/post.CoinSearchFocus",
               data: parms,
               type: "post",
               async: true,
@@ -370,7 +370,6 @@
       }
 
       function MoreSearchCoin(btn, url, obj) {
-            url = apiHots + url;
             page = parseInt(btn.attr('page')) + 1;
 
             var urlparam = "";
@@ -400,7 +399,6 @@
 
       }      
       function MoreSearchExchange(btn, url, obj) {
-          url = apiHots + url;
           page = parseInt(btn.attr('page')) + 1;
 
           var urlparam = "";
@@ -452,33 +450,9 @@
       }       
       loadglobalinfo_new();
       
-      $('body').on('click', '.showmarket a',
-      function() {
-        var thiscode = $(this).attr("id");
-        $.ajax({
-          url: '//api.feixiaohao.com/sitestat/?code=' + thiscode,
-          type: "GET",
-          success: function(data) {
-            return;
-          },
-          error: function() {
-            return;
-          }
-        })
-      });</script>
-    <script type="text/javascript">autoComplete($('#input-sm'));</script>
-    <div style="display:none">
-      <script src="https://s19.cnzz.com/z_stat.php?id=1263003344&web_id=1263003344" language="JavaScript"></script>
-    </div>
-    <script>
-      var _hmt = _hmt || []; 
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?192e611c7ffa4b2f8a5047e5cf45403f";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
     </script>
+    <script type="text/javascript">autoComplete($('#input-sm'));</script>
+
     <script src="/assets/js/jquery.color.js"></script>
     
     <script>

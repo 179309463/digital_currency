@@ -549,40 +549,9 @@
               }
           });
       }       
-      loadglobalinfo_new();
-      
-      $('body').on('click', '.showmarket a', function() {
-        var thiscode = $(this).attr("id");
-        $.ajax({
-          url: '/api/sitestat/?code=' + thiscode,
-          type: "GET",
-          success: function(data) {
-            return;
-          },
-          error: function() {
-            return;
-          }
-        })
-      });
-      $('body').on('click', '#spread2', function() {
-          var thiscode = $(this).attr("id");
-          $.ajax({
-              url: '/api/sitestat/?code=' + thiscode,
-              type: "GET",
-              success: function(data) {
-                  return;
-              },
-              error: function() {
-                  return;
-              }
-          })
-      });      
+      loadglobalinfo_new();    
     </script>
     <script type="text/javascript">autoComplete($('#input-sm'));</script>
-    <div style="display:none">
-      <script src="https://s19.cnzz.com/z_stat.php?id=1263003344&amp;web_id=1263003344" language="JavaScript"></script>
-      <script src="https://c.cnzz.com/core.php?web_id=1263003344&amp;t=z" charset="utf-8" type="text/javascript"></script>
-      <a href="http://www.cnzz.com/stat/website.php?web_id=1263003344" target="_blank" title="站长统计">站长统计</a></div>
       
     <script src="/assets/js/jquery.color.js"></script>
     <script src="/assets/js/tablesort.js"></script>
@@ -638,7 +607,7 @@
               keys.attr("disabled", "disabled");
               keys.html("提交中...");
               $.ajax({
-                  url: apiHots + "user/coinsitefocus",
+                  url: "/user/post.coinsitefocus",
                   data: parms,
                   type: "post",
                   async: true,

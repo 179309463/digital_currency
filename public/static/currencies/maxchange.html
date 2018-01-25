@@ -508,20 +508,7 @@
       }       
       loadglobalinfo_new();
       
-      $('body').on('click', '.showmarket a',
-      function() {
-        var thiscode = $(this).attr("id");
-        $.ajax({
-          url: '/api/sitestat/?code=' + thiscode,
-          type: "GET",
-          success: function(data) {
-            return;
-          },
-          error: function() {
-            return;
-          }
-        })
-      });</script>
+      </script>
     <script type="text/javascript">autoComplete($('#input-sm'));</script>
     
     

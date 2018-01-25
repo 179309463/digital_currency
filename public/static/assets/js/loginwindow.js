@@ -2,7 +2,6 @@
  * Created by zfd on 2017/3/28.
  */
 
-var toolApiUrl = "/api/";
 //手机格式
 function checkPhone(p) {
    
@@ -148,7 +147,7 @@ var $style = $("<style>.outerWindow{width:450px;min-height:320px;background:#fff
             parms["password"] = $('.setPassword').val().trim();
             parms["confirmPwd"] = $('.rePassword').val().trim();
             parms["verifyCode"] = $('.hasPic input').val().trim();
-            $.post(toolApiUrl+"user/register", parms, registerResponse) 
+            $.post("/user/post.register", parms, registerResponse) 
         }//或者ajax
         else { return false }
     })
@@ -192,7 +191,7 @@ var $style = $("<style>.outerWindow{width:450px;min-height:320px;background:#fff
 
             parms["isRemember"] = $('#rememberme').is(':checked');
             $.ajax({
-                url: toolApiUrl + "user/login",
+                url: "/user/post.login",
                 data: parms,
                 type:"post",
                 async: true, 
@@ -204,7 +203,6 @@ var $style = $("<style>.outerWindow{width:450px;min-height:320px;background:#fff
                 } 
             });
 
-           // $.post(toolApiUrl + "user/login", parms, loginResponse)
              
         }
 

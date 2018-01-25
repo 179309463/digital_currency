@@ -475,20 +475,7 @@
       }     
       loadglobalinfo_new();
       
-      $('body').on('click', '.showmarket a',
-      function() {
-        var thiscode = $(this).attr("id");
-        $.ajax({
-          url: '/api/sitestat/?code=' + thiscode,
-          type: "GET",
-          success: function(data) {
-            return;
-          },
-          error: function() {
-            return;
-          }
-        })
-      });</script>
+      </script>
     <script type="text/javascript">autoComplete($('#input-sm'));</script>
     
     <script src="/assets/js/jquery.color.js"></script>
@@ -881,7 +868,7 @@
           parms["coincode"] = coincode;
           parms["type"] = "1";
           $.ajax({
-              url: apiHots + "user/coinfocus",
+              url: "/user/post.coinfocus",
               data: parms,
               type: "post",
               async: true,
@@ -922,7 +909,7 @@
           parms["coincode"] = coincode;
           parms["type"] = "2";
           $.ajax({
-              url: apiHots + "user/coinfocus",
+              url: "/user/post.coinfocus",
               data: parms,
               type: "post",
               async: true,

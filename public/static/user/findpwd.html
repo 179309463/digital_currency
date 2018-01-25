@@ -163,7 +163,6 @@
     </div>
     <script type="text/javascript" src="/assets/js/jquery-2.1.1.js"></script>
     <script>
-      var apiHots = "/api/";
       //邮箱找回提交
       $('.findPwd-mail .btn').click(function () {
           $('p.alert').html('').css('display', 'none');
@@ -183,7 +182,7 @@
               parms["mail"] = $('input.mail').val().trim();
               parms["imgcode"] = $('input.imgcode').val().trim();
               $.ajax({
-                  url: apiHots + "user/findpwd",
+                  url: "/user/post.findpwd",
                   data: parms,
                   type: "post",
                   async: true,

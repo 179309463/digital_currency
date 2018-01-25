@@ -2,7 +2,6 @@
  * Created by zfd on 2017/8/8.
  */
 
-var apiHots = "/api/";
 var con = $('<div class="autocomplete"></div>');
 var tit = $('<div class="tit"></div>');
 var ul = $('<ul class="datalist"></ul>');

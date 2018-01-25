@@ -255,20 +255,7 @@
       }     
       loadglobalinfo_new();
       
-      $('body').on('click', '.showmarket a',
-      function() {
-        var thiscode = $(this).attr("id");
-        $.ajax({
-          url: '/api/sitestat/?code=' + thiscode,
-          type: "GET",
-          success: function(data) {
-            return;
-          },
-          error: function() {
-            return;
-          }
-        })
-      });</script>
+      </script>
     <script type="text/javascript">autoComplete($('#input-sm'));</script>
     
     <input id="exchangeType" type="hidden" value="0">
@@ -291,7 +278,7 @@
                   $.ajax({
                       type:"GET",
                       async:false,
-                      url: '/api/exchange/volrank/'+page_num+'/?exchangeType='+exchangeType,
+                      url: '/exchange/vol.list.html?page_number='+page_num+'&exchangeType='+exchangeType,
                       beforeSend: function () { 
                           $('.loading2').css("display", "block"); //显示加载时候的提示
                       },

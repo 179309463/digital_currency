@@ -253,20 +253,7 @@
       }     
       loadglobalinfo_new();
       
-      $('body').on('click', '.showmarket a',
-      function() {
-        var thiscode = $(this).attr("id");
-        $.ajax({
-          url: '/api/sitestat/?code=' + thiscode,
-          type: "GET",
-          success: function(data) {
-            return;
-          },
-          error: function() {
-            return;
-          }
-        })
-      });</script>
+      </script>
     <script type="text/javascript">autoComplete($('#input-sm'));</script>
     
     <input id="pagenum" type="hidden" value="2">
@@ -281,7 +268,7 @@
              
                   $.ajax({
                       type:"GET",
-                      url: '/api/currencies/volrank/' + page_num + '/',
+                      url: '/currencies/vol.list.html?' + page_num,
                       beforeSend:function(){
                           $('.loading2').css("display", "block"); //显示加载时候的提示
                       },
