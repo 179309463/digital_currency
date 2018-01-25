@@ -12,7 +12,7 @@ $('head').append(s);
 function autoComplete(a) {
     a.keyup(function () {
         var q = a.val();
-        var url =apiHots+ 'search/relatedword.json?q=' + q + '&limit=12';
+        var url ='/currencies/search.json?q=' + q + '&limit=12';
         var ul1 = ul.clone();
         var ul2 = ul.clone();
         var position = a.offset();
@@ -817,7 +817,7 @@ $.QianLoad.PageLoading({
 
   function loadglobalinfo() {
     $.ajax({
-        url: apiHots+"global/",
+        url: "/dashboard/globalinfo.html",
         async: true,
         success: function (data) {
             $(".total").html(data); 
@@ -826,7 +826,7 @@ $.QianLoad.PageLoading({
   }
   function loadglobalinfo_new() {
       $.ajax({
-          url: apiHots + "global/v2.html",
+          url: "/dashboard/globalinfo_v2.html",
           async: true,
           success: function (data) {
               $("#globalinfo").html(data);
@@ -835,7 +835,7 @@ $.QianLoad.PageLoading({
   }
   function loadindexdaohang() {
       $.ajax({
-          url: apiHots+"site/daohang.html",
+          url: "/dashboard/_daohang.html",
           async: true,
           success: function (data) {
               $(".linksList").html(data);
@@ -844,7 +844,7 @@ $.QianLoad.PageLoading({
   }
   function loadHomeNewCoin() {
       $.ajax({
-          url: apiHots+"coins/homenewcoin.html",
+          url: "/currencies/_newest.html",
           async: true,
           success: function (data) {
               $("#newCoin").append(data); 
@@ -854,7 +854,7 @@ $.QianLoad.PageLoading({
   }
   function loadHomeVolRank() {
       $.ajax({
-          url: apiHots+"vol/coin.html",
+          url: "/currencies/_vol.html",
           async: true,
           success: function (data) { 
               $("#vol_coin").append(data);
@@ -862,7 +862,7 @@ $.QianLoad.PageLoading({
           }
       });
       $.ajax({
-          url: apiHots+"vol/exchange.html",
+          url: "/exchange/_vol.html",
           async: true,
           success: function (data) { 
               $("#vol_exchange").append(data);
@@ -872,7 +872,7 @@ $.QianLoad.PageLoading({
   }
   function loadHomeCoinMaxChange() {
       $.ajax({
-          url: apiHots+"coins/maxchange_up.html",
+          url: "/currencies/maxchange_up.html",
           async: true,
           success: function (data) {
               $("#maxchange_up").after(data);
@@ -880,7 +880,7 @@ $.QianLoad.PageLoading({
           }
       });
       $.ajax({
-          url: apiHots+"coins/maxchange_down.html",
+          url: "/currencies/maxchange_down.html",
           async: true,
           success: function (data) {
               $("#maxchange_down").after(data);
@@ -940,25 +940,10 @@ $.QianLoad.PageLoading({
       }
   });
 
-  function loadcoinevent() {
-      var url = "/api/";
-      var coincode = $("#coincode").val();
-      $.ajax({
-          url: url + "coinevent/" + coincode + ".html",
-          async: true,
-          success: function (data) {
-              if (data.length > 0) {
-                  $("#coineventtimeline").append(data);
-                  $("#timeLineBox").css("display", "block");
-              }
-          }
-      });
-  }
-  function loadconcept(conceptid) {
-      var url = "/api/";
 
+  function loadconcept(conceptid) {
       $.ajax({
-          url: url + "hotconcept/" + conceptid + "/hotconcept.html",
+          url: "/concept/" + conceptid + "/hotconcept.html",
           async: true,
           success: function (data) {
               $("#hotconcept").html("");
@@ -974,7 +959,7 @@ $.QianLoad.PageLoading({
           }
       });
       $.ajax({
-          url: url + "hotconcept/" + conceptid + "/hotconceptCoinTable.html",
+          url: "/concept/" + conceptid + "/hotconceptCoinTable.html",
           async: true,
           success: function (data) {
               $("#hotconceptCoinTable").html("");
@@ -1017,7 +1002,7 @@ $.QianLoad.PageLoading({
   function getUserInfo() {
       $.ajax({
           type: "GET",
-          url: "/api/login/getlogininfo.json",
+          url: "/user/login.json",
           xhrFields: {
               withCredentials: true
           },

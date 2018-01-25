@@ -43,19 +43,19 @@
               <li>
                 <a href="../concept/index.html">概念行情</a></li>
               <li>
-                <a href="../vol/charts.html">市值趋势</a></li>
+                <a href="../dashboard/charts.html">市值趋势</a></li>
             </ul>
           </li>
           <li class="navSlide">排行榜
             <ul class="subNav">
               <li>
-                <a href="../vol/maxchange.html">涨跌幅排行榜</a></li>
+                <a href="../currencies/maxchange.html">涨跌幅排行榜</a></li>
               <li>
-                <a href="../vol/currency.html">24小时成交额排行(币种)</a></li>
+                <a href="../currencies/vol.html">24小时成交额排行(币种)</a></li>
               <li>
-                <a href="../vol/exchange/index.html">24小时成交额排行(交易平台)</a></li>
+                <a href="../exchange/vol.html">24小时成交额排行(交易平台)</a></li>
               <li>
-                <a href="../vol/monthrank.html">月成交额排行</a></li>
+                <a href="../currencies/monthrank.html">月成交额排行</a></li>
             </ul>
           </li>
           <li>
@@ -457,10 +457,11 @@
     <script src="/assets/js/jquery.color.js"></script>
     <script src="/assets/js/tablesort.js"></script>
     <script src="/assets/js/Highstock-5.0.12/highstock.js"></script>
-    <script src="/assets/js/hischarts_new.js?v=1.12"></script>
+    <script src="/currencies/hischarts.js"></script>
     <script src="/assets/js/coinoutlink.js"></script>
-    <script src="/assets/js/coinrank.js"></script>
-    <script>new Chartist.Pie('.ct-chart3', {
+    <script src="/currencies/rank.js"></script>
+    <script>
+      new Chartist.Pie('.ct-chart3', {
         series: [3, 97]
       },
       {
@@ -489,8 +490,24 @@
         startAngle: 270,
         total: 200,
         showLabel: false
-      });</script>
-    <script type="text/javascript">new Tablesort(document.getElementById('markets'));
+      });
+    </script>
+    <script type="text/javascript">
+      new Tablesort(document.getElementById('markets'));
+
+      function loadcoinevent() {
+        var coincode = $("#coincode").val();
+        $.ajax({
+            url: "/currencies/" + coincode + "/_event.html",
+            async: true,
+            success: function (data) {
+                if (data.length > 0) {
+                    $("#coineventtimeline").append(data);
+                    $("#timeLineBox").css("display", "block");
+                }
+            }
+        });
+      }
       loadcoinevent();
       loadconcept(0);
       $('.unit2 a').click(function() {
@@ -571,7 +588,7 @@
 
         $.ajax({
           type: "GET",
-          url: apiHots + 'cointrades_percent/' + coinCode + '.json',
+          url: '/currencies/' + coinCode + '/trades_percent.json',
           async: true,
           dataType: "json",
           success: function(data) {
@@ -580,16 +597,6 @@
             });
             $('#piechart_coinvol').highcharts().series[0].setData(pieArr);
           }
-        });
-
-        $.ajax({
-          type: "GET",
-          url: apiHots + 'currencies/coinstatic/' + coinCode + '.html',
-          xhrFields: {
-            withCredentials: true
-          },
-          async: true,
-          success: function(data) {}
         });
 
       })</script>

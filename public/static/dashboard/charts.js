@@ -1,4 +1,16 @@
-﻿function series_is_visible(chartName, index, defaultState) {
+﻿function save_preferences(chartName, index, chart) {
+    var seriesVisible = []
+    for (i = 0; i < chart.series.length; i++) {
+        if (i == index) {
+            seriesVisible[i] = !chart.series[i].visible;
+        } else {
+            seriesVisible[i] = chart.series[i].visible;
+        }
+    }
+    Cookies.set("highcharts_" + chartName, seriesVisible, { expires: 180 })
+}
+
+function series_is_visible(chartName, index, defaultState) {
     var preferences = Cookies.getJSON("highcharts_" + chartName);
     if (preferences === undefined) {
         return defaultState;
@@ -10,24 +22,37 @@ function tooltip_format_market_cap() {
     return '<span style="color:' + this.color + '">\u25CF</span> ' + this.series.name + ': <b>' + val + ' USD</b><br/>'
 }
 function tooltip_format_crypto() {
-    val = this.y;
+    val = format_crypto(this.y);
     return '<span style="color:' + this.color + '">\u25CF</span> ' + this.series.name + ': <b>' + val + '</b><br/>'
 }
 
 function tooltip_format_fiat() {
-    val = this.y;
+    val = format_fiat(this.y);
     return '<span style="color:' + this.color + '">\u25CF</span> ' + this.series.name + ': <b>' + val + '</b><br/>'
 }
-
-
-
-function label_format_fiat() {
-    val = this.y;
-    return val;
+function tooltip_format_percentage() {
+    val = this.y.toFixed(2)
+    return '<span style="color:' + this.color + '">\u25CF</span> ' + this.series.name + ': <b>' + val + '%</b><br/>'
 }
-
+function label_format_market_cap() {
+    val = format_market_cap(this.value)
+    return '$' + val;
+}
+function label_format_crypto() {
+    val = format_crypto(this.value)
+    return val + ' BTC';
+}
+function label_format_fiat() {
+    val = format_fiat(this.value)
+    return '$' + val;
+}
+function is_altcoin(slug) {
+    if (slug == "bitcoin") {
+        return false;
+    }
+    return true;
+}
 function is_mobile() {
-
     var mobile = $("#metadata").data("mobile");
     return mobile == "True"
 }
@@ -63,6 +88,7 @@ HighChartsGraph.prototype.updateCharts = function (min, max) {
     var that = this;
     var chart = $('#' + that.graphId).highcharts();
     chart.showLoading('');
+    //chart.showLoading('正在加载数据...');
     that.fetchAndLoad(that.finishUpdateCharts, min, max);
 }
 HighChartsGraph.prototype.finishUpdateCharts = function (seriesData) {
@@ -71,28 +97,32 @@ HighChartsGraph.prototype.fetchAndLoad = function (callback, start, end) {
 }
 HighChartsGraph.prototype.initCharts = function (seriesData) {
 }
-function GbiGraph(graphId, loadingId, noDataId) {
-    HighChartsGraph.call(this, graphId, loadingId, noDataId);
 
+
+function CapVolGraph(graphId, loadingId, noDataId) {
+    HighChartsGraph.call(this, graphId, loadingId, noDataId);
+     
 }
-GbiGraph.prototype = new HighChartsGraph;
-GbiGraph.constructor = GbiGraph;
-GbiGraph.prototype.finishUpdateCharts = function (seriesData) {
+CapVolGraph.prototype = new HighChartsGraph;
+CapVolGraph.constructor = CapVolGraph;
+CapVolGraph.prototype.finishUpdateCharts = function (seriesData) {
     var that = this;
     var chart = $('#' + that.graphId).highcharts();
-    chart.series[0].setData(seriesData["coinrank"]);
+    chart.series[0].setData(seriesData["market_cap_by_available_supply"]); 
+    chart.series[1].setData(seriesData["vol_usd"]);
+
     chart.hideLoading();
 }
-GbiGraph.prototype.fetchAndLoad = function (callback, start, end) {
-    var coincode = $("#coincode").val();
+CapVolGraph.prototype.fetchAndLoad = function (callback, start, end) {
+
     var that = this;
-    var apiDomain = "/api";
+    var dataType = $('#' + that.graphId).data("value");
     timeParams = ""
     if (start !== undefined && end !== undefined) {
         timeParams = start + "/" + end + "/";
     }
     $.ajax({
-        url: apiDomain + "/coinrank/" +coincode+".json?"+ timeParams,
+        url: "/dashboard/charts/" + dataType+".json?"+timeParams,
         type: "GET",
         dataType: "json",
         error: function () {
@@ -100,19 +130,11 @@ GbiGraph.prototype.fetchAndLoad = function (callback, start, end) {
             that.showNoData();
         },
         success: function (data) {
-            if(undefined!=data&&null!=data)
-            {
-                if(data.coinrank.length>=1)
-                {
-                    $("#coinrankBox").css("display","block");
-                }                   
-            }
-             callback.call(that, data);
-             
+            callback.call(that, data);
         }
     });
 }
-GbiGraph.prototype.initCharts = function (seriesData) {
+CapVolGraph.prototype.initCharts = function (seriesData) {
     var that = this;
     Highcharts.setOptions({
         global: { useUTC: false },
@@ -125,7 +147,8 @@ GbiGraph.prototype.initCharts = function (seriesData) {
             months: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
             printChart: '打印图表',
             shortMonths: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
-           
+            rangeSelectorFrom: "从",
+            rangeSelectorTo: "到",
             rangeSelectorZoom: "缩放",
             resetZoom: "恢复初始缩放等级",
             resetZoomTitle: " 1:1缩放等级",
@@ -135,12 +158,17 @@ GbiGraph.prototype.initCharts = function (seriesData) {
             thousandsSep: ","
         }
     });
-    var titleName =   $("#coinname").val()+"历史排名趋势图"; 
+    var dataType = $('#' + that.graphId).data("value");
+    var titleName = "全球数字货币总市值走势图";
+    if (dataType == "1") {
+        titleName = titleName+"(比特币Btc除外)";
+    }
+
     $('#' + that.graphId).highcharts('StockChart', {
-        chart: { type: 'line', zoomType: is_mobile() ? 'null' : 'x',  ignoreHiddenSeries: true },
-        tooltip: { shared: true, hideDelay: 50, xDateFormat: '%A, %b %d %Y' },
+        chart: { type: 'line', zoomType: is_mobile() ? 'null' : 'x', height: 520, ignoreHiddenSeries: true },
+        tooltip: { shared: true, hideDelay: 50, xDateFormat: '%A, %b %d %Y, %H:%M:%S' },
         legend: {
-            enabled: false,
+            enabled: true,
             align: 'center',
             backgroundColor: '#FFFFFF',
             borderColor: 'black',
@@ -153,16 +181,24 @@ GbiGraph.prototype.initCharts = function (seriesData) {
         },
         navigator: { adaptToUpdatedData: false },
         scrollbar: { liveRedraw: false },
-        title: { text: "", align: "left", style: { fontSize: "24px" } },
+        title: { text: titleName , align: "left", style: { fontSize: "24px" } },
         subtitle: { text: '' },
-      
+        rangeSelector: {
+            allButtonsEnabled: true,
+            buttons: [{ type: 'day', count: 1, text: '天' }, { type: 'week', count: 1, text: '周' }, {
+                type: 'month',
+                count: 1,
+                text: '1月'
+            }, { type: 'month', count: 3, text: '3月' }, { type: 'year', count: 1, text: '1年' }, {
+                type: 'ytd',
+                count: 1,
+                text: '今年'
+            }, { type: 'all', text: '所有' }],
+            selected: 6,
+            inputEnabled: true,
+            enabled: true
+        },
         xAxis: [{
-            dateTimeLabelFormats: {
-                day: '%Y<br/>%m-%d',
-                week: '%Y<br/>%m-%d',
-                month: '%Y-%m',
-                year: '%Y'
-            },
             events: {
                 afterSetExtremes: function (e) {
                     that.afterSetExtremes(e)
@@ -170,22 +206,40 @@ GbiGraph.prototype.initCharts = function (seriesData) {
             }, minRange: 24 * 3600 * 1000
         }],
         yAxis: [{
-            labels: { formatter: label_format_fiat, style: { color: '#666666', }, align: "left", x: -30 },
-            title: { text: '', style: { color: '#666666', 'font-weight': 'bold' } },
+            labels: {
+                formatter: function () {
+                    return '$' + this.axis.defaultLabelFormatter.call(this);
+                }, align: 'right', style: { color: '#7cb5ec' }
+            },
+            title: { text: '市值', style: { color: '#7cb5ec', 'font-weight': 'bold' } },
             showEmpty: false,
-            height: '100%',
-            opposite: true,
-            floor: 0,
-            min: 1, 
-            reversed: true
+            height: '80%',
+            opposite: false,
+            floor: 0
+        },  {
+            labels: { align: 'right', style: { color: '#777', } },
+            title: { text: '24h 成交量', style: { color: '#777', 'font-weight': 'bold' } },
+            showEmpty: false,
+            top: '80%',
+            height: '20%',
+            offset: 2,
+            lineWidth: 1,
+            opposite: false
         }],
         series: [{
-            name: $("#coinname").val()+"排名",
-            yAxis: 0,
-            color: '#85BCEB',
-            tooltip: { pointFormatter: tooltip_format_fiat },
-            data: seriesData["coinrank"],
+            name: '市值',
+            color: '#7cb5ec',
+            tooltip: { pointFormatter: tooltip_format_market_cap },
+            data: seriesData["market_cap_by_available_supply"], 
             dataGrouping: { enabled: false }
+        }, {
+            type: 'column',
+            name: '24h 成交量',
+            color: '#777',
+            yAxis: 1,
+            tooltip: { pointFormatter: tooltip_format_market_cap },
+            data: seriesData["vol_usd"] ,
+            dataGrouping: { approximation: "average", enabled: false }
         }],
         plotOptions: {
             series: {
@@ -203,9 +257,11 @@ GbiGraph.prototype.initCharts = function (seriesData) {
 
 $(document).ready(function () {
     $(function () {
-        var gbiGraph = new GbiGraph("highcharts-graph_coinrank", "highcharts-loading_coinrank", "highcharts-nodata_coinrank");
-        gbiGraph.init();
+        var capvolGraph = new CapVolGraph("highcharts-graph", "highcharts-loading", "highcharts-nodata" );
+        capvolGraph.init();
 
+        var capvolGraph_Altcoin = new CapVolGraph("highcharts-graph_altcoin", "highcharts-loading_altcoin", "highcharts-nodata_altcoin" );
+        capvolGraph_Altcoin.init();
     });
 
 });

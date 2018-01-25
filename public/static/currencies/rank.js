@@ -10,19 +10,19 @@ function tooltip_format_market_cap() {
     return '<span style="color:' + this.color + '">\u25CF</span> ' + this.series.name + ': <b>' + val + ' USD</b><br/>'
 }
 function tooltip_format_crypto() {
-    val = format_crypto(this.y);
+    val = this.y;
     return '<span style="color:' + this.color + '">\u25CF</span> ' + this.series.name + ': <b>' + val + '</b><br/>'
 }
 
 function tooltip_format_fiat() {
-    val = format_crypto(this.y);
+    val = this.y;
     return '<span style="color:' + this.color + '">\u25CF</span> ' + this.series.name + ': <b>' + val + '</b><br/>'
 }
 
 
 
 function label_format_fiat() {
-    val = format_crypto(this.value)
+    val = this.y;
     return val;
 }
 
@@ -80,19 +80,18 @@ GbiGraph.constructor = GbiGraph;
 GbiGraph.prototype.finishUpdateCharts = function (seriesData) {
     var that = this;
     var chart = $('#' + that.graphId).highcharts();
-    chart.series[0].setData(seriesData["gbi"]);
+    chart.series[0].setData(seriesData["coinrank"]);
     chart.hideLoading();
 }
 GbiGraph.prototype.fetchAndLoad = function (callback, start, end) {
-
+    var coincode = $("#coincode").val();
     var that = this;
-    var apiDomain = "/api";
     timeParams = ""
     if (start !== undefined && end !== undefined) {
         timeParams = start + "/" + end + "/";
     }
     $.ajax({
-        url: apiDomain + "/gbi.json?" + timeParams,
+        url: "/currencies/" +coincode+"/rank.json?"+ timeParams,
         type: "GET",
         dataType: "json",
         error: function () {
@@ -100,7 +99,15 @@ GbiGraph.prototype.fetchAndLoad = function (callback, start, end) {
             that.showNoData();
         },
         success: function (data) {
-            callback.call(that, data);
+            if(undefined!=data&&null!=data)
+            {
+                if(data.coinrank.length>=1)
+                {
+                    $("#coinrankBox").css("display","block");
+                }                   
+            }
+             callback.call(that, data);
+             
         }
     });
 }
@@ -117,8 +124,7 @@ GbiGraph.prototype.initCharts = function (seriesData) {
             months: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
             printChart: '打印图表',
             shortMonths: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
-            rangeSelectorFrom: "从",
-            rangeSelectorTo: "到",
+           
             rangeSelectorZoom: "缩放",
             resetZoom: "恢复初始缩放等级",
             resetZoomTitle: " 1:1缩放等级",
@@ -128,13 +134,12 @@ GbiGraph.prototype.initCharts = function (seriesData) {
             thousandsSep: ","
         }
     });
-    var titleName = "全球区块链GBI指数走势图";
-
+    var titleName =   $("#coinname").val()+"历史排名趋势图"; 
     $('#' + that.graphId).highcharts('StockChart', {
-        chart: { type: 'line', zoomType: is_mobile() ? 'null' : 'x', height: 520, ignoreHiddenSeries: true },
-        tooltip: { shared: true, hideDelay: 50, xDateFormat: '%A, %b %d %Y, %H:%M:%S' },
+        chart: { type: 'line', zoomType: is_mobile() ? 'null' : 'x',  ignoreHiddenSeries: true },
+        tooltip: { shared: true, hideDelay: 50, xDateFormat: '%A, %b %d %Y' },
         legend: {
-            enabled: true,
+            enabled: false,
             align: 'center',
             backgroundColor: '#FFFFFF',
             borderColor: 'black',
@@ -147,19 +152,9 @@ GbiGraph.prototype.initCharts = function (seriesData) {
         },
         navigator: { adaptToUpdatedData: false },
         scrollbar: { liveRedraw: false },
-        title: { text: titleName, align: "left", style: { fontSize: "24px" } },
+        title: { text: "", align: "left", style: { fontSize: "24px" } },
         subtitle: { text: '' },
-        rangeSelector: {
-            allButtonsEnabled: true,
-            buttons: [{ type: 'day', count: 1, text: 'D' }, { type: 'week', count: 1, text: 'W' }, {
-                type: 'month',
-                count: 1,
-                text: 'M'
-            }, { type: 'year', count: 1, text: 'Y' }, { type: 'all', text: 'ALL' }],
-            selected: 5,
-            inputEnabled: true,
-            enabled: true
-        },
+      
         xAxis: [{
             dateTimeLabelFormats: {
                 day: '%Y<br/>%m-%d',
@@ -179,14 +174,16 @@ GbiGraph.prototype.initCharts = function (seriesData) {
             showEmpty: false,
             height: '100%',
             opposite: true,
-            floor: 0
+            floor: 0,
+            min: 1, 
+            reversed: true
         }],
         series: [{
-            name: '全球区块链GBI指数',
+            name: $("#coinname").val()+"排名",
             yAxis: 0,
             color: '#85BCEB',
             tooltip: { pointFormatter: tooltip_format_fiat },
-            data: seriesData["gbi"],
+            data: seriesData["coinrank"],
             dataGrouping: { enabled: false }
         }],
         plotOptions: {
@@ -205,8 +202,7 @@ GbiGraph.prototype.initCharts = function (seriesData) {
 
 $(document).ready(function () {
     $(function () {
-        var gbiGraph = new GbiGraph("highcharts-graph", "highcharts-loading", "highcharts-nodata")
-
+        var gbiGraph = new GbiGraph("highcharts-graph_coinrank", "highcharts-loading_coinrank", "highcharts-nodata_coinrank");
         gbiGraph.init();
 
     });

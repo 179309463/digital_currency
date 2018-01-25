@@ -2753,13 +2753,12 @@ CurrencyDetailGraph.prototype.finishUpdateCharts = function(seriesData) {
 CurrencyDetailGraph.prototype.fetchAndLoad = function(callback, start, end) {
 	var that = this;
 	var slug = $("#coincode").val();
-	var apiDomain = "/api";
 	timeParams = "";
 	if (start !== undefined && end !== undefined) {
 		timeParams = start + "/" + end + "/"
 	}
 	$.ajax({
-		url: apiDomain + "/coinhisdata/" + slug + ".json?" + timeParams,
+		url: "/currencies/" + slug + "/hischarts.json?" + timeParams,
 		type: "GET",
 		dataType: "json",
 		error: function() {

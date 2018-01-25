@@ -33,11 +33,11 @@
             <i class="space"></i>交易平台：
             <a href="../exchange/index.html">252</a>
             <i class="space"></i>24小时成交量：
-            <a id="total_vol" class="totalvolcap" href="../vol/charts.html">¥2119.10亿</a>
+            <a id="total_vol" class="totalvolcap" href="../dashboard/charts.html">¥2119.10亿</a>
             <i class="space"></i>总市值：
-            <a id="total_cap" class="totalvolcap" href="../vol/charts.html">¥32039.20亿</a>
+            <a id="total_cap" class="totalvolcap" href="../dashboard/charts.html">¥32039.20亿</a>
             <i class="space"></i>GBI指数：
-            <a id="total_gbi" class="totalvolcap" href="../vol/gbi.html">13958.59</a></div>
+            <a id="total_gbi" class="totalvolcap" href="../dashboard/gbi.html">13958.59</a></div>
           <div class="leftSise"></div>
           <div class="rightSise loginbar">
             <div class="getgroup">官方交流群
@@ -92,19 +92,19 @@
               <li>
                 <a href="../concept/index.html">概念行情</a></li>
               <li>
-                <a href="../vol/charts.html">市值趋势</a></li>
+                <a href="../dashboard/charts.html">市值趋势</a></li>
             </ul>
           </li>
           <li class="navSlide">排行榜
             <ul class="subNav">
               <li>
-                <a href="../vol/maxchange.html">涨跌幅排行榜</a></li>
+                <a href="../currencies/maxchange.html">涨跌幅排行榜</a></li>
               <li>
-                <a href="../vol/currency.html">24小时成交额排行(币种)</a></li>
+                <a href="../currencies/vol.html">24小时成交额排行(币种)</a></li>
               <li>
-                <a href="../vol/exchange/index.html">24小时成交额排行(交易平台)</a></li>
+                <a href="../exchange/vol.html">24小时成交额排行(交易平台)</a></li>
               <li>
-                <a href="../vol/monthrank.html">月成交额排行</a></li>
+                <a href="../currencies/monthrank.html">月成交额排行</a></li>
             </ul>
           </li>
           <li>
@@ -305,7 +305,7 @@
           <div class="tabTit">
             <h3 class="active tit" style="width: 40%">涨幅榜</h3>
             <h3 class="tit" style="width: 40%">跌幅榜</h3>
-            <a href="../vol/maxchange.html" target="_blank" class="more" title="更多"></a>
+            <a href="../currencies/maxchange.html" target="_blank" class="more" title="更多"></a>
           </div>
           <div class="tabBody padding5" style="height:385px">
             <ul class="tabTit-a" id="maxchange_up">
@@ -506,7 +506,90 @@
       loadHomeCoinMaxChange();
       loadconcept(0);
       autoComplete($('#search2'));
-      refreshUserticker();</script>
+
+      function refreshUserticker() {
+        setInterval(function () {
+            var page = $("#usertickerpage").val();
+            $.ajax({
+                url: "/currencies/userticker.json?page=" + page,
+                async: true,
+                xhrFields: {
+                    withCredentials: true
+                },
+                dataType: "json",
+                success: function (data) {
+
+                    if (data.TickerList.length > 0) {
+
+                        for (var i = 0; i < data.TickerList.length; i++) {
+                            var rowId = '#tr_' + data.TickerList[i].CoinCode + "_" + data.TickerList[i].SiteCode + "_" + data.TickerList[i].CoinSymbolPair.replace("/", "_");
+                            var tickerRow = $(rowId);
+                            if (0 == tickerRow.length) {
+                                continue;
+                            }
+
+
+
+                            updateUserTickerData(tickerRow, 3, "¥" + data.TickerList[i].Last_Cny);
+                            if (0 == data.TickerList[i].SiteCode.length)
+                            {
+                                updateUserTickerData(tickerRow, 4, "$" + data.TickerList[i].Last);
+                            } else {
+                                updateUserTickerData(tickerRow, 4, data.TickerList[i].Last);
+                            }
+                           
+                            updateUserTickerData(tickerRow, 5, data.TickerList[i].Vol);
+                            changeTd = tickerRow.find('td').eq(6)
+                            var changePercent = data.TickerList[i].Change + "%";
+                            changeTd.removeClass('text-green').removeClass('text-red');
+                            if (data.TickerList[i].Change > 0) {
+                                changeTd.text(changePercent).css('background', '#eee').animate({ backgroundColor: 'transparent' }, 1500).addClass('text-green');
+                            } else if (data.TickerList[i].Change < 0) {
+                                changeTd.text(changePercent).css('background', '#eee').animate({ backgroundColor: 'transparent' }, 1500).addClass('text-red');
+                            } else {
+                                changeTd.text(changePercent).css('background', '#eee').animate({ backgroundColor: 'transparent' }, 1500);
+                            }
+
+                        }
+
+                    }
+
+                }
+            });
+        }, 30000);
+
+      }
+
+      function updateUserTickerData(tickerRow, cellIndex, cellValue) {
+        var lastValue = tickerRow.find('td').eq(cellIndex).find("span").html();
+        var curValue = cellValue;
+        if (lastValue == curValue) {
+            return;
+        }
+
+        var change = 0;
+        if (lastValue.replace("¥", "") > 0 && "?" != lastValue) {
+            change = parseFloat(curValue.replace("¥", "")) - parseFloat(lastValue.replace("¥", ""));
+        }else if (lastValue.replace("$", "") > 0 && "?" != lastValue) {
+            change = parseFloat(curValue.replace("$", "")) - parseFloat(lastValue.replace("$", ""));
+        }
+        if (change > 0) {
+            tickerRow.find('td').eq(cellIndex).find('span').text(cellValue).css('background', '#eee').animate({ backgroundColor: 'transparent' }, 1500).addClass('text-green');
+        } else if (change < 0) {
+            tickerRow.find('td').eq(cellIndex).find('span').text(cellValue).css('background', '#eee').animate({ backgroundColor: 'transparent' }, 1500).addClass('text-red');
+        } else {
+            tickerRow.find('td').eq(cellIndex).find('span').text(cellValue).css('background', '#eee').animate({ backgroundColor: 'transparent' }, 1500);
+        }
+        (function ($) {
+            var b = setTimeout(function () {
+                tickerRow.find('td').eq(cellIndex).find('span').removeClass('text-green').removeClass('text-red');
+            }, 10000);
+
+        })(jQuery);
+      }
+
+      refreshUserticker();
+    </script>
   </body>
 
 </html>

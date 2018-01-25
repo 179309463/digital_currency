@@ -40,19 +40,19 @@
               <li>
                 <a href="../concept/index.html">概念行情</a></li>
               <li>
-                <a href="../vol/charts.html">市值趋势</a></li>
+                <a href="../dashboard/charts.html">市值趋势</a></li>
             </ul>
           </li>
           <li class="navSlide">排行榜
             <ul class="subNav">
               <li>
-                <a href="../vol/maxchange.html">涨跌幅排行榜</a></li>
+                <a href="../currencies/maxchange.html">涨跌幅排行榜</a></li>
               <li>
-                <a href="../vol/currency.html">24小时成交额排行(币种)</a></li>
+                <a href="../currencies/vol.html">24小时成交额排行(币种)</a></li>
               <li>
-                <a href="../vol/exchange/index.html">24小时成交额排行(交易平台)</a></li>
+                <a href="../exchange/vol.html">24小时成交额排行(交易平台)</a></li>
               <li>
-                <a href="../vol/monthrank.html">月成交额排行</a></li>
+                <a href="../currencies/monthrank.html">月成交额排行</a></li>
             </ul>
           </li>
           <li>
@@ -232,17 +232,19 @@
     <script src="/assets/js/jquery.color.js"></script>
     <script src="/assets/js/tablesort.js"></script>
     <script src="/assets/js/fxh3.js"></script>
-    <script src="/assets/js/cropper.js"></script>
     <script src="/assets/js/layer/layer.js"></script>
     <script>
       var apiHots = "/api/";
       $('.infocell .editname,.infocell .editpwd').click(function() {
         $(this).hide();
-        $(this).closest('.infocell').find('.info').hide() $(this).closest('.infocell').find('.input').show()
+        $(this).closest('.infocell').find('.info').hide();
+        $(this).closest('.infocell').find('.input').show()
 
       });
       $('.infocell .cancel').click(function() {
-        $(this).closest('.infocell').find('.info').show() $(this).closest('.infocell').find('.input').hide() $(this).closest('.infocell').find('.editbtn').show()
+        $(this).closest('.infocell').find('.info').show();
+        $(this).closest('.infocell').find('.input').hide();
+        $(this).closest('.infocell').find('.editbtn').show()
       });
       $('.nameedit .sure').click(function() {
         var a = $(this);
@@ -261,7 +263,8 @@
               username: a.closest('.infocell').find('input').val()
             },
             success: function(data) {
-              a.closest('.infocell').find('.info').text(a.closest('.infocell').find('input').val()) a.closest('.infocell').find('.editbtn').show();
+              a.closest('.infocell').find('.info').text(a.closest('.infocell').find('input').val());
+              a.closest('.infocell').find('.editbtn').show();
               a.closest('.infocell').find('.info').show();
               a.closest('.infocell').find('.input').css('display', 'none');
               a.closest('.infocell').find('.nameedit input').attr('value', a.closest('.infocell').find('input').val());
@@ -382,8 +385,9 @@
         $('body').css('overflow', 'auto');
         cropper = null
       })</script>
-    <script type="text/javascript">//getUserInfo();
-      </script>
+    <script type="text/javascript">
+      //getUserInfo();
+    </script>
   </body>
 
 </html>
