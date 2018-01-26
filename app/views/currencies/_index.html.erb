@@ -1,0 +1,69 @@
+<div class="box box860" style="min-height:2880px">
+  <div class="boxTit">
+    <h1>所有货币</h1>
+    <%= render "currencies/searchform" %>
+  </div>
+  <%= render "currencies/tool_top" %>
+  <div class="boxContain">
+    <style>
+    .maintable tr td a.price.text-red:after,
+    .maintable  tr td .tprice.text-red:after {
+      content: url("/assets/images/arrow-d4.svg")
+    }
+
+    .maintable tr td a.price.text-green:after,
+    .maintable  tr td .tprice.text-green:after {
+      content: url("/assets/images/arrow-u3.svg")
+    }
+    </style>            
+    <table class="table maintable" id="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th data-sort-method='none'>名称</th>
+          <th>流通市值</th>
+          <th>价格</th>
+          <th>流通数量</th>
+          <th>成交额(24h)</th>
+          <th>涨幅(24h)</th>
+          <th width="95" data-sort-method='none'>价格趋势(7d)</th></tr>
+      </thead>
+      <tbody>
+        <tr id="bitcoin">
+          <td>1</td>
+          <td>
+            <a href="currencies/bitcoin.html" target="_blank">
+              <img src="https://static.eastcoinbay.com/Coin/7033f2f2c2a16094bbb3bafc47205ba8_small.png" alt="BTC-比特币">BTC-比特币</a></td>
+          <td class="market-cap" data-usd="176624485715" data-cny="1131509375135" data-btc="16898432">¥11,315亿</td>
+          <td>
+            <a href="currencies/bitcoin.html#markets" target="_blank" class="price" data-usd="10500" data-cny="67266" data-btc="1">¥67,266</a></td>
+          <td>1,682万</td>
+          <td>
+            <a href="currencies/bitcoin.html#markets" target="_blank" class="volume" data-usd="5625949541.07999" data-cny="36041519242.9921" data-btc="538855.452734885">¥3,604,152万</a></td>
+          <td class="change">
+            <span class="text-red">-5.51%</span></td>
+          <td class="char">
+            <span class="line2" data-peity='{"stroke": "#3ca316"}'>12256,11131,11131,10330,10396,11237,11255,11715,11953,11518,11636,12002,11907,11619,12774,12999,13198,13222,12533,12125,11625,11626,11843,11964,10868,10940,10892,10596</span>
+            <script type="text/javascript">
+
+            </script>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script type="text/javascript">
+      new Tablesort(document.getElementById('table'));
+      $('.line2').peity('line', {
+        width: 80,
+        height: 20,
+        fill: 'none',
+        strokeWidth: 1,
+        min: 2500,
+        stroke: '#3499da'
+      })      
+    </script>
+  </div>
+  <%= render "currencies/tool_bottom" %>
+  <div class="tips">备注：* 不可挖矿&nbsp;&nbsp;&nbsp;&nbsp;** 有预挖矿&nbsp;&nbsp;&nbsp;&nbsp;IFO表示该币由其它币分叉而来。</div>
+</div>
+

@@ -1,0 +1,36 @@
+<style>
+.searchForm2 {
+  float: right
+}
+
+.searchForm2 input {
+  width: 0 !important;
+  height: 20px;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  transition: all .3s;
+  padding: 3px 0
+}
+
+.searchForm2 .icon-search {
+  position: relative;
+  right: 0
+}
+
+.searchForm2 input.open {
+  width: 260px !important;
+  padding: 3px 10px;
+  padding-right: 30px
+}
+
+.searchForm2 form{
+    margin-top: 0;
+}
+</style>            
+<div class="searchForm searchForm2">
+  <form action="">
+    <input type="text" id="search2" class="open" placeholder="输入关键词...">
+    <i class="icon-search" onclick="search(document.getElementById('search2').value)"></i>
+    <span class="searchBtn">搜索</span></form>
+</div>

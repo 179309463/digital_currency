@@ -151,7 +151,7 @@ gem 'friendly_id'
 gem 'high_voltage'
 
 gem 'ember-cli-rails'
-gem 'dashing-rails'
+#gem 'dashing-rails'
 
 gem 'carrierwave'
 gem 'mini_magick'

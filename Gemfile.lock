@@ -213,13 +213,6 @@ GEM
     crass (1.0.3)
     css_parser (1.6.0)
       addressable
-    dashing-rails (2.6.2)
-      coffee-script (>= 2.0)
-      connection_pool (~> 2.2)
-      jquery-rails (>= 3.0)
-      rails (>= 4.0)
-      redis (~> 3.2)
-      rufus-scheduler (~> 3.2)
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
     db_text_search (0.2.2)
@@ -276,8 +269,6 @@ GEM
       nokogiri
       rails-erd (>= 0.4.5)
     erubi (1.7.0)
-    et-orbi (1.0.9)
-      tzinfo
     execjs (2.7.0)
     faker (1.8.7)
       i18n (>= 0.7)
@@ -623,8 +614,6 @@ GEM
     ruby-graphviz (1.2.3)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
-    rufus-scheduler (3.4.2)
-      et-orbi (~> 1.0)
     sanitize (4.5.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.4.4)
@@ -817,7 +806,6 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.2)
   country_select
-  dashing-rails
   default_value_for
   delayed_job_active_record
   delayed_job_web
