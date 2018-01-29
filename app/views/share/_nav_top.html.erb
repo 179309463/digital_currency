@@ -15,11 +15,11 @@
     <i class="space"></i>交易平台：
     <a href="/exchange/">252</a>
     <i class="space"></i>24小时成交量：
-    <a id="total_vol" class="totalvolcap" href="/dashboard/charts.html">¥1937.96亿</a>
+    <a id="total_vol" class="totalvolcap" href="/pages/charts">¥1937.96亿</a>
     <i class="space"></i>总市值：
-    <a id="total_cap" class="totalvolcap" href="/dashboard/charts.html">¥33040.80亿</a>
+    <a id="total_cap" class="totalvolcap" href="/pages/charts">¥33040.80亿</a>
     <i class="space"></i>GBI指数：
-    <a id="total_gbi" class="totalvolcap" href="/dashboard/gbi.html">14324.07</a></div>
+    <a id="total_gbi" class="totalvolcap" href="/pages/gbi">14324.07</a></div>
   <div class="leftSise"></div>
   <div class="rightSise loginbar">
     <div class="getgroup">官方交流群
@@ -338,7 +338,7 @@
   function getUserInfo() {
     $.ajax({
         type: "GET",
-        url: "/user/login.json",
+        url: "/users/login.json",
         xhrFields: {
             withCredentials: true
         },

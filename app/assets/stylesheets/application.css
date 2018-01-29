@@ -2,4 +2,5 @@
  *= require 'stylesheet_nav'
  *= require 'tablesort/tablesort'
  *= require 'layer/skin/default/layer.css'
+ *= require 'chartist/chartist.min'
 */

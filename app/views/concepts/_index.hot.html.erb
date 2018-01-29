@@ -60,7 +60,8 @@
     })      
     function loadconcept(conceptid) {
         $.ajax({
-            url: "/concept/" + conceptid + "/hotconceptCoinTable.html",
+            //url: "/concept/" + conceptid + "/hotconceptCoinTable.html",
+            url: "/concepts/currencies.html",
             async: true,
             success: function (data) {
                 $("#hotconceptCoinTable").html("");

@@ -16,4 +16,19 @@ Rails.application.routes.draw do
   devise_for :users
   mount_ember_app :frontend, to: '/frontend'
   root "pages#index"
+
+  resources :concepts, only: [:index, :show] do 
+    collection do 
+      get :currencies
+    end
+  end
+  resources :currencies, only: [:index, :show]
+  resources :currency_ranks, only: [:index]
+  resources :currency_trades, only: [] do
+    collection do 
+      get :percent
+    end
+  end
+
+  get '/users/login' => 'users#login'
 end

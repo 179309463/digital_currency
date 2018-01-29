@@ -1,0 +1,48 @@
+<div class="boxTit">
+  <h2>BTC市场行情</h2>
+  <a class="more" href="../currencies/bitcoin/market.html" target="_blank"></a>
+</div>
+<div class="unit2">
+  <a href="index.html#native" class="price-toggle" data-currency="native">平台价格</a>
+  <a href="index.html#CNY" title="人民币(CNY)" class="price-toggle active" data-currency="cny">人民币(CNY)</a>
+  <a href="index.html#USD" title="美元(USD)" class="price-toggle" data-currency="usd">美元(USD)</a>
+  <a href="index.html#BTC" title="比特币(BTC)" class="price-toggle" data-currency="btc">比特币(BTC)</a>
+  <a href="index.html#ETH" title="以太坊(ETH)" class="price-toggle" data-currency="eth">以太坊(ETH)</a>
+  <a href="index.html#JPY" title="日元(JPY)" class="price-toggle" data-currency="jpy">日元(JPY)</a>
+  <a href="index.html#KRW" title="韩币(KRW)" class="price-toggle" data-currency="krw">韩币(KRW)</a>
+  <a href="index.html#HKD" title="港币(HKD)" class="price-toggle" data-currency="hkd">港币(HKD)</a>
+  <a href="index.html#RUB" title="卢布(RUB)" class="price-toggle" data-currency="rub">卢布(RUB)</a>
+  <span class="moreUnit2">
+    <span>更多</span>
+    <ul style="width:200px">
+      <li style="float:left">
+        <a href="index.html#INR" title="卢比(INR)" class="price-toggle" data-currency="inr">卢比(INR)</a></li>
+      <li style="float:left">
+        <a href="index.html#AUD" title="澳元(AUD)" class="price-toggle" data-currency="aud">澳元(AUD)</a></li>
+      <li style="float:left">
+        <a href="index.html#EUR" title="欧元(EUR)" class="price-toggle" data-currency="eur">欧元(EUR)</a></li>
+      <li style="float:left">
+        <a href="index.html#CHF" title="法郎(CHF)" class="price-toggle" data-currency="chf">法郎(CHF)</a></li>
+      <li style="float:left">
+        <a href="index.html#GBP" title="英镑(GBP)" class="price-toggle" data-currency="gbp">英镑(GBP)</a></li>
+      <li style="float:left">
+        <a href="index.html#CAD" title="加元(CAD)" class="price-toggle" data-currency="cad">加元(CAD)</a></li>
+      <li style="float:left">
+        <a href="index.html#IDR" title="印尼盾(IDR)" class="price-toggle" data-currency="idr">印尼盾(IDR)</a></li>
+      <li style="float:left">
+        <a href="index.html#BRL" title="巴西雷亚尔(BRL)" class="price-toggle" data-currency="brl">巴西雷亚尔(BRL)</a></li>
+      <li style="float:left">
+        <a href="index.html#MXN" title="比索(MXN)" class="price-toggle" data-currency="mxn">比索(MXN)</a></li>
+    </ul>
+  </span>
+</div>
+
+<script>
+  $('.unit2 a').click(function() {
+    if ($(this).hasClass('active')) {
+      return;
+    }
+    $('.unit2 a').removeClass('active');
+    $(this).addClass('active')
+  });
+</script>

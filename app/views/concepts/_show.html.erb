@@ -1,0 +1,97 @@
+<div class="boxContain" style="min-height: 559px;">
+  <table class="table3" id="table">
+    <thead>
+      <tr>
+        <th style="min-width: 30px;padding-left: 10px">#</th>
+        <th data-sort-method='none'>币种</th>
+        <th>流通市值</th>
+        <th>价格</th>
+        <th>流通数量</th>
+        <th>成交额(24h)</th>
+        <th>涨跌幅(24h)</th>
+        <th data-sort-method='none'>价格趋势(7d)</th></tr>
+    </thead>
+    <tbody>
+      <tr id="ugchain">
+        <td>1</td>
+        <td>
+          <a href="../currencies/ugchain/index.html" target="_blank">
+            <img src="https://static.eastcoinbay.com/Coin/20180109/92e05c22084a47bfb23c9cf8345ccdc4.png" alt="UGC">UGC</a></td>
+        <td class="market-cap" data-usd="76333019" data-cny="489012220" data-btc="7422">¥4.89亿</td>
+        <td>
+          <a href="../currencies/ugchain/index.html#markets" target="_blank" class="price" data-usd="0.1527" data-cny="0.978" data-btc="0.00001484">¥0.978</a></td>
+        <td>50,000万*</td>
+        <td>
+          <a href="../currencies/ugchain/index.html#markets" target="_blank" class="volume" data-usd="6460482.2612551" data-cny="41387787.5103049" data-btc="628.345283536429">¥4,139万</a></td>
+        <td class="change">
+          <span class="text-green">29.58%</span></td>
+        <td class="char">
+          <span class='{"stroke": "#3ca316"}'>0.0742,0.0812,0.0638,0.0617,0.0561,0.0682,0.0596,0.0682,0.0752,0.0738,0.0702,0.0861,0.0905,0.0863,0.1142,0.1143,0.1150,0.1107,0.1013,0.0994,0.0900,0.0903,0.1001,0.1272,0.1259,0.1311,0.1348,0.1631</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <script type="text/javascript">
+    new Tablesort(document.getElementById('table'));
+    
+    $('.table3 .char span').peity("line", {
+      width: 90,
+      height: 20,
+      fill: 'none',
+      strokeWidth: 1,
+      stroke: '#3499da',
+      min: 99999
+    })
+  </script>
+</div>
+<div class="boxTools">
+  <style>
+  .pageList {
+    float: right
+  }
+
+  .pageList a {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    border: 1px solid #eaecef;
+    display: block;
+    float: left;
+    color: #333;
+    border-right: 0;
+    transition: all .3s;
+    text-decoration: none
+  }
+
+  .pageList a:hover {
+    background: #3499da;
+    color: #fff
+  }
+
+  .pageList a:first-child {
+    border-radius: 3px 0 0 3px
+  }
+
+  .pageList a:last-child {
+    border-radius: 0 3px 3px 0;
+    border-right: 1px solid #eaecef
+  }
+
+  .pageList a:active,
+  .pageList .active {
+    background: #3499da;
+    color: #fff
+  }
+
+  .pageList-left {
+    float: none !important;
+    display: inline-block;
+    vertical-align: top
+  }
+  </style>            
+  <div class="pageList">
+    <a href='index.html#' class='btn btn-white'><</a>
+    <a href='index.html#' class='btn btn-white active'>1</a>
+    <a href='index.html#' class='btn btn-white'>></a>
+  </div>
+  <div class="tips">备注：* 不可挖矿&nbsp;&nbsp;&nbsp;&nbsp;** 有预挖矿</div>
+</div>

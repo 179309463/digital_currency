@@ -1,0 +1,30 @@
+<div class="fixedIndex">
+  <ul>
+    <li>
+      <a href="index.html#baseInfo" class="active">基本信息</a></li>
+    <li>
+      <a href="index.html#cointrend">价格趋势</a></li>
+    <li>
+      <a href="index.html#markets">行情</a></li>
+    <li>
+      <a href="index.html#timeLineBox">大事件</a></li>
+    <li>
+      <a href="index.html#coinrankBox">历史市值排名/概念</a></li>
+  </ul>
+</div>
+<script>
+  $('.fixedIndex a').on('click', function(e) {
+    /* e.preventDefault();*/
+    if ($(this).attr('href')[0] == "#") {
+      $('html,body').animate({
+        scrollTop: $(this.hash).offset().top - 130
+      },
+      500);
+      $('.fixedIndex a.active').removeClass('active');
+      $(this).addClass('active');
+      return false
+    } else {
+      return true
+    }
+  });
+</script>
