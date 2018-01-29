@@ -22,3 +22,32 @@
     </ul>
   </div>
 </div>
+
+<script>
+  $(function(){
+    var mun = 0;
+    var scroll1 = null;
+    function scroll() {
+      scroll1 = setInterval(function() {
+        mun--;
+        $('.artList').eq(0).css('margin-top', mun + 'px');
+        if (mun == -200) {
+          $('.artList').eq(0).appendTo('#artList');
+          $('.artList').css('margin-top', '0');
+          setTimeout(function() {
+            mun = 0;
+            clearInterval(scroll1);
+            scroll()
+          }, 75)
+        }
+      }, 80)
+    }
+    scroll();
+    $('.artList').mouseover(function() {
+      clearInterval(scroll1);
+    });
+    $('.artList').mouseout(function() {
+      scroll()
+    })
+  });
+</script>

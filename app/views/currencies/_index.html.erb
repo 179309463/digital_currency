@@ -1,3 +1,48 @@
+<style>
+  .pageList {
+    float: right
+  }
+
+  .pageList a {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    border: 1px solid #eaecef;
+    display: block;
+    float: left;
+    color: #333;
+    border-right: 0;
+    transition: all .3s;
+    text-decoration: none
+  }
+
+  .pageList a:hover {
+    background: #3499da;
+    color: #fff
+  }
+
+  .pageList a:first-child {
+    border-radius: 3px 0 0 3px
+  }
+
+  .pageList a:last-child {
+    border-radius: 0 3px 3px 0;
+    border-right: 1px solid #eaecef
+  }
+
+  .pageList a:active,
+  .pageList .active {
+    background: #3499da;
+    color: #fff
+  }
+
+  .pageList-left {
+    float: none !important;
+    display: inline-block;
+    vertical-align: top
+  }
+</style> 
+
 <div class="box box860" style="min-height:2880px">
   <div class="boxTit">
     <h1>所有货币</h1>
@@ -8,12 +53,12 @@
     <style>
     .maintable tr td a.price.text-red:after,
     .maintable  tr td .tprice.text-red:after {
-      content: url("/assets/images/arrow-d4.svg")
+      content: url('<%= asset_path("arrow-d4.svg")%>')
     }
 
     .maintable tr td a.price.text-green:after,
     .maintable  tr td .tprice.text-green:after {
-      content: url("/assets/images/arrow-u3.svg")
+      content: url('<%= asset_path("arrow-u3.svg")%>')
     }
     </style>            
     <table class="table maintable" id="table">

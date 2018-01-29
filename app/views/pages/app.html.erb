@@ -1,0 +1,232 @@
+<style>
+.gradient {
+  filter:alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#34a2d6,endcolorstr=#34d1c1,gradientType=0);
+  -ms-filter:alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#34a2d6,endcolorstr=#34d1c1,gradientType=0);
+  /*IE8*/ 
+  background:red;
+  /* 一些不支持背景渐变的浏览器 */ 
+  background:-moz-linear-gradient(top,#34a2d6,#34d1c1);
+  background:-webkit-gradient(linear,0 0,0 bottom,from(#34a2d6),to(#34d1c1));
+  background:-o-linear-gradient(top,#34a2d6,#34d1c1);
+}
+* {
+  text-decoration:none !important;
+}
+h1 {
+  color:#fff;
+  font-size:55px;
+  font-weight:100;
+}
+h2 {
+  font-size:55px;
+  font-weight:100;
+}
+.m1200 {
+  width:1200px;
+  margin:0 auto;
+}
+.headPic .leftSide {
+  margin-top:150px;
+}
+.headPic {
+  overflow:hidden;
+}
+.donloadBtn {
+  display:inline-block;
+  width:200px;
+  height:52px;
+  background:url("<%=asset_path("app/btn.png")%>") no-repeat center;
+  background-size:200px 52px;
+  box-shadow:2px 2px 3px #666;
+  overflow:hidden;
+  margin-top:10px;
+  margin-right:15px;
+  border-radius:5px;
+}
+.donloadBtn:hover {
+  box-shadow:1px 1px 3px #666;
+}
+.donloadBtn > span {
+  margin-left:45px;
+  margin-top:6px;
+  display:block;
+  color:#fff;
+  font-size:16px;
+  text-align:center;
+}
+.donloadBtn span span {
+  font-size:12px;
+  margin-top:2px;
+  display:block;
+}
+.erweima {
+  color:#fff;
+  margin-top:10px;
+  display:block;
+  font-size:15px;
+  float:left;
+}
+.leftSide {
+  float:left;
+}
+.rightSide {
+  float:right;
+}
+.w {
+  height:500px;
+  background:#fff;
+}
+.dbtn > div {
+  height:65px;
+  width:100%;
+  overflow:hidden;
+}
+.dbtn > div:after {
+  width:100%;
+  content:'';
+  display:block;
+  clear:both;
+}
+.dbtn {
+  margin-top:40px;
+}
+.ios {
+  background:url("<%=asset_path("app/btn2.png")%>");
+  background-size:200px 52px;
+}
+.btn2 {
+  text-align:center;
+  margin-top:px;
+}
+.btn2 > a {
+  display:inline-block !important;
+  margin:0 10px;
+  float:none;
+}
+.btn3 a {
+  display:inline-block;
+  width:210px;
+  color:#1d80bf;
+  float:none;
+  margin-top:10px;
+  cursor:pointer;
+}
+.btn3 a:hover {
+  text-decoration:underline !important;
+}
+.showerweima > div {
+  width:225px;
+  text-align:center;
+  float:left;
+  margin-bottom:15px;
+  margin-top:10px;
+}
+.showerweima > div span {
+  display:inline-block;
+  font-size:16px;
+}
+
+
+</style>
+
+<div class="headPic gradient" style="height: 500px;">
+  <div class="m1200">
+    <div class="leftSide" style="float: left">
+      <h1>东方币湾手机
+        <span style="color:yellow">APP</span>上线</h1>
+      <p class="sub" style="font-size: 26px;color: #fff;font-weight: 100;margin-top: 15px">实时报价 · 自选行情 · 排行榜 · 全球交易所</p>
+      <div>
+        <div class="dbtn">
+          <div>
+            <a href="https://m.eastcoinbay.com/download/fxh_android.apk" target="_blank" title="东方币湾手机APP" class="donloadBtn">
+              <span>Android客户端
+                <br>
+                <span>版本：v0.9.4</span></span>
+            </a>
+            <a href="https://itunes.apple.com/app/id1323950088" target="_blank" title="东方币湾手机APP" class="donloadBtn ios">
+              <span>IOS客户端
+                <br>
+                <span>版本：v1.0</span></span>
+            </a>
+          </div>
+          <div>
+            <a href="../" title="" style="" class="erweima">扫描二维码下载</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="rightSide" style="float: right;margin-top: 110px;">
+      <img src="<%=asset_path("app/pic1.png")%>" alt="" style="margin-right:50px"></div>
+  </div>
+</div>
+<div class="w">
+  <div class="m1200">
+    <div class="leftSide" style="margin-top: 40px">
+      <img src="<%=asset_path("app/pic2.png")%>"></div>
+    <div class="rightSide" style="width: 550px;margin-top: 130px">
+      <h2>
+        <span style="color: #34cfc1">有容乃大</span>，上千种货币行情尽收囊中</h2>
+      <p style="font-size: 16px;color: #999;margin-top: 15px">APP内收录了现在市面上几乎所有虚拟货币行情，只要有新货币出现，东方币湾都会快速收录。实时更新行情。快速把握市场。</p></div>
+  </div>
+</div>
+<div class="w" style="background: #d9d9d9">
+  <div class="m1200">
+    <div class="leftSide" style="width: 610px;margin-top: 150px">
+      <h2>
+        <span style="color: #34cfc1">支持自定</span>，轻松关注行情</h2>
+      <p style="font-size: 16px;color: #999;margin-top: 15px">APP的用户自定功能允许将行情添加到‘自定’界面，并支持行情拖动排序动能， 关注行情更加容易。</p></div>
+    <div class="rightSide" style="margin-top: 40px">
+      <img src="<%=asset_path("app/pic3.png")%>"></div>
+  </div>
+</div>
+<div class="w">
+  <div class="m1200">
+    <div class="leftSide" style="margin-top: 40px">
+      <img src="<%=asset_path("app/pic4.png")%>"></div>
+    <div class="rightSide" style="width: 550px;margin-top: 130px">
+      <h2>
+        <span style="color: #34cfc1">百家争鸣</span>，收录全球两百多间交易所行情</h2>
+      <p style="font-size: 16px;color: #999;margin-top: 15px">收录全球各个国家的交易所行情，支持国家，类型以及交易对筛选。总有一间交易所适合您。</p></div>
+  </div>
+</div>
+<div class="w" style="background: #d9d9d9">
+  <div class="m1200">
+    <div class="leftSide" style="width: 610px;margin-top: 150px">
+      <h2>
+        <span style="color: #34cfc1">榜上有名</span>，各种排行榜 把握市场趋势</h2>
+      <p style="font-size: 16px;color: #999;margin-top: 15px">分析市值排行，成交量排行，涨跌幅排行是把握市场趋势的一个重要方法。</p></div>
+    <div class="rightSide" style="margin-top: 40px">
+      <img src="<%=asset_path("app/pic5.png")%>"></div>
+  </div>
+</div>
+<div class="w" style="overflow: hidden;height: 450px">
+  <div class="m1200" style="text-align: center;margin-top: 80px">
+    <h2>
+      <span style="color: #34cfc1">一切行情，尽在东方币湾手机APP</span></h2>
+    <div style="width: 1000px; margin: 0 auto;overflow: hidden;padding-bottom: 10px;text-align: center;margin-top:60px" class="btn2">
+      <a href="https://m.eastcoinbay.com/download/fxh_android.apk" title="东方币湾手机APP" class="donloadBtn">
+        <span>下载Android版
+          <br>
+          <span>版本：v0.9.4</span></span>
+      </a>
+      <a href="https://itunes.apple.com/app/id1323950088" title="东方币湾手机APP" class="donloadBtn ios">
+        <span>下载IOS版
+          <br>
+          <span>版本：v1.0</span></span>
+      </a>
+    </div>
+    <div style="width: 1000px; margin: 0 auto;overflow: hidden;padding-bottom: 10px;text-align: center;" class="btn3">
+      <a class="erweima">扫描二维码下载</a></div>
+  </div>
+</div>
+
+<script>
+  $('.erweima').click(function() {
+    layer.open({
+      type: 1,
+      title: '扫描二维码下载',
+      area: ['450px'],
+      content: '<div class="showerweima">' + '<div><img src="<%=asset_path("fxhandroid.png")%>" width="200" height="200"><br><span>Android客户端下载</span></div>' + '<div><img src="<%=asset_path("iosapp.png")%>" width="200" height="200"><br><span>IOS客户端下载</span></div>' + '</div>'
+    });
+    return false
+  })
+</script>

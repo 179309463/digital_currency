@@ -28,3 +28,46 @@
     </table>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(function(){
+    function coinConceptSlide() {
+        var length = $('.hotidea a').length;
+       
+        var max = Math.ceil(length / 4);
+        var d = 292;
+        var page = 1;
+        $('.slideBar .slideright').click(function () {
+            if (page < max) {
+                $('.hotidea>div').eq(0).animate({ 'margin-left': -292 * page + 'px' }, 500)
+                page++;
+            }
+        });
+        $('.slideBar .slideleft').click(function () {
+            if (page != 1) {
+                page--;
+                $('.hotidea>div').eq(0).animate({ 'margin-left': -292 * (page - 1) + 'px' }, 500)
+            }
+        })
+    }              
+    coinConceptSlide();
+    $('body').on('click', "#hotconcept a", function () { 
+        if ($(this).hasClass('active')) {
+            return;
+        }
+        $('#hotconcept a').removeClass('active');
+        $(this).addClass('active')
+    })      
+    function loadconcept(conceptid) {
+        $.ajax({
+            url: "/concept/" + conceptid + "/hotconceptCoinTable.html",
+            async: true,
+            success: function (data) {
+                $("#hotconceptCoinTable").html("");
+                $("#hotconceptCoinTable").append(data);
+            }
+        });
+    }     
+    loadconcept(0);
+  });
+</script>
