@@ -688,7 +688,7 @@ function fixedNav() {
         }
     });
 }
-fixedNav();
+//fixedNav();
 //分页切换
 $('.tabTit .tit').click(function () {
     
