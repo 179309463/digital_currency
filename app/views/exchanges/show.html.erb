@@ -217,8 +217,72 @@
         </div>
       </div>
     </div>
+    <style>
+    .box845 {
+      width: 845px
+    }
+    </style>
     <div class="box box845">
       <style>
+      .tabTit .more {
+        float: right
+      }
+
+      .tabTit .more:before {
+        content: url("more.svg")
+      }
+
+      .tabTit .more:hover:before {
+        content: url("more2.svg")
+      }
+
+      .tabTit h3, .tabTit h1, .tabTit h2 {
+        display: inline-block;
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        font-size: 17px;
+        font-weight: normal;
+        text-align: center;
+        border-top: 3px solid #fff;
+        cursor: pointer
+      }
+
+      .tabTit {
+        overflow: hidden
+      }
+
+      .tabTit a {
+        color: #666 !important
+      }
+
+      .tabTit .active {
+        border-top: 3px solid #3499da;
+        background: url("arrow-d2.svg") center -6px no-repeat
+      }
+
+      .tabTit .active.tit {
+        color: #3499da
+      }
+
+      .tabTit .more {
+        height: 41px;
+        width: 40px;
+        margin-top: -10px;
+        margin-right: -15px
+      }
+
+      .tabTit .more {
+        margin-right: 0;
+        margin-top: 0
+      }
+
+      .tabTit .more:before {
+        display: block;
+        margin-top: 12px;
+        margin-left: 10px
+      }
+
       .tabTit .more {
         margin-right: 15px;
         margin-top: 15px

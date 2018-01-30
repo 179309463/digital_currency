@@ -1,3 +1,95 @@
+<style>
+
+.subNav {
+  background: #fff;
+  position: absolute;
+  left: 0;
+  border: 1px solid #eaecef;
+  border-radius: 5px;
+  display: none;
+  transition: all .4s;
+  box-shadow: 1px 1px 1px #eaecef
+}
+
+.subNav li a {
+  display: block;
+  float: none !important;
+  padding: 3px 10px;
+  min-width: 73px;
+  line-height: 25px !important;
+  white-space: nowrap;
+  color: #333 !important;
+  transition: all .1s
+}
+
+.subNav li a:hover {
+  background: #3499da;
+  color: #fff !important
+}
+
+.navSlide:after, .slideBtn button:after {
+  content: url("arrow-d.png")
+}
+
+.navSlide:hover, nav .leftNav li:hover {
+  font-weight: 500;
+  cursor: pointer;
+  color: #3499da
+}
+
+.navSlide:hover .subNav {
+  display: block
+}
+</style>
+<style>
+
+
+nav .leftNav {
+  float: left;
+  height: 40px;
+  transition: all .4s
+}
+
+
+nav .leftNav>li>a, nav .leftNav>li {
+  display: block;
+  float: left;
+  height: 70px;
+  line-height: 70px;
+  padding: 0 15px;
+  position: relative;
+  transition: all .4s
+}
+
+nav .leftNav li:hover a {
+  color: #3499da
+}
+
+nav .leftNav li.logo {
+  margin-right: 15px
+}
+
+nav .leftNav li.logo img {
+  height: 40px;
+  vertical-align: middle
+}
+
+
+nav .leftNav li.logo {
+  padding-left: 0
+  margin-right: 0
+}
+
+nav .leftNav>li>a {
+  padding: 0
+}
+
+nav .logo a {
+  padding: 0 !important
+}
+
+</style>
+
 <ul class="leftNav">
   <li class="logo">
     <a href="index.html">

@@ -1,15 +1,154 @@
+<style>
+
+.infocell {
+  padding: 15px 0;
+  font-size: 16px;
+  padding-left: 15px;
+  width: 500px;
+  float: left;
+}
+
+.infocell .info {
+  color: #999
+}
+
+.infocell  button {
+  background: #2e8ded;
+  color: #fff;
+  border: none;
+  height: 27px;
+  line-height: 27px;
+  font-size: 12px;
+  padding: 0 5px;
+  border-radius: 3px;
+  vertical-align: 1px;
+  cursor: pointer;
+}
+
+.infocell .input {
+  display: none;
+}
+
+.infocell input {
+  width: 300px;
+  padding: 5px 5px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+}
+
+.infocell  button.cancel {
+  background: #fff;
+  border: 1px solid #ddd;
+  height: 27px;
+  color: #666;
+  line-height: 27px
+}
+
+.infocell  button:hover {
+  background: #1d80bf;
+  color: #fff
+}
+</style>
 <div class="m30"></div>
 <div class="w1200">
   <div class="col">
     <div class="box box325">
+      <style>
+      .userCard {
+        height: 130px;
+        background: url("card.png");
+      }
+
+      .userCard .headPic {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        float: left;
+        background: #fff;
+        margin-top: 25px;
+        margin-left: 15px;
+        overflow: hidden;
+      }
+
+      .userCard .headPic img {
+        height: 100%;
+        width: 100%;
+        display: block;
+      }
+
+      .userCard .userName {
+        color: #fff;
+        float: left;
+        width: 210px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-top: 40px;
+        margin-left: 10px;
+      }
+
+      .userCard .main {
+        font-weight: bold;
+        font-size: 18px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .userCard .sub {
+        font-size: 12px;
+        margin-top: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      </style>
       <div class="userCard">
+        <style>
+        .headpic img {
+          height: 120px;
+          width: 120px;
+          margin-top: 10px;
+        }
+        </style>
         <div class="headPic">
-          <img src="<%= asset_path("sharelogo.png") %>"></div>
+          <img src="<%= asset_path("sharelogo.png") %>">
+        </div>
         <div class="userName">
           <div class="main">179309463@qq.com</div>
           <div class="sub">Email：179309463@qq.com</div></div>
       </div>
       <div class="menu">
+        <style>
+        .usermenu {
+          min-height: 600px;
+        }
+
+        .usermenu li {
+          height: 50px;
+          font-size: 18px;
+          line-height: 50px;
+          text-align: center;
+          border-bottom: 1px solid #f1f1f1;
+          color: #666;
+        }
+
+        .usermenu li a {
+          display: block;
+          height: 100%;
+          width: 100%;
+          text-decoration: none;
+          color: #666;
+        }
+
+        .usermenu li.active {
+          color: #1d80bf;
+        }
+
+        .usermenu li a:hover {
+          color: #1d80bf;
+        }    
+        </style>    
         <ul class="usermenu">
           <li class="active">个人中心</li>
           <li>
@@ -19,7 +158,14 @@
     </div>
     <div class="box box860">
       <div class="boxTit">
-        <h1>个人中心</h1></div>
+        <h1>个人中心</h1>
+      </div>
+      <style>
+      .padding15 {
+        padding: 15px;
+        min-height: 657px;
+      }
+      </style>
       <div class="padding15 userinfo">
         <div class="infocell">
           <span class="main">登陆账号：</span>
@@ -30,16 +176,50 @@
           <span class="input nameedit">
             <input>
             <button type="submit" class="sure">确定</button>
-            <button type="reset" class="cancel">取消</button></span>
+            <button type="reset" class="cancel">取消</button>
+          </span>
           <span class="editbtn editname">
             <a>更改</a>
           </span>
         </div>
         <div class="infocell">
           <span class="main">注册时间：</span>
-          <span class="info">2018年01月13日</span></div>
+          <span class="info">2018年01月13日</span>
+        </div>
         <div class="infocell">
           <span class="main">修改密码</span>
+          <style>
+          .pwdedit {
+            margin-top: 10px;
+            line-height: 35px;
+            color: #999;
+            font-size: 14px;
+            display: none;
+          }
+
+          .pwdedit input.padding {
+            margin-left: 14px;
+          }
+
+          .pwdedit button {
+            margin-top: 5px;
+          }
+
+          .pwdedit .sure {
+            margin-left: 70px;
+          }
+          </style>
+          <style>
+          .editbtn {
+            font-size: 14px;
+            cursor: pointer;
+          }
+
+          .editbtn:before {
+            content: url("edit.png");
+          }
+
+          </style>
           <div class="input pwdedit">旧密码：
             <input value="" type="password" class="padding" id="old">
             <br>新密码：

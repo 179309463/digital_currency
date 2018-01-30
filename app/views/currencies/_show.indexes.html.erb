@@ -1,3 +1,62 @@
+<style>
+
+.fixedIndex {
+  position: fixed;
+  right: calc(50% - 745px);
+  top: 50%;
+  margin-top: -120px
+}
+
+.fixedIndex li {
+  padding: 10px 0;
+  position: relative
+}
+
+.fixedIndex li a {
+  color: #666;
+  text-decoration: none
+}
+
+.fixedIndex li:before {
+  content: '';
+  height: 39px;
+  position: absolute;
+  top: 0;
+  display: block;
+  border-right: 1px dotted #ccc;
+  width: 2px;
+  left: 1px;
+  z-index: -1
+}
+
+.fixedIndex li a:before {
+  content: '';
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: #f4f4f4;
+  vertical-align: middle;
+  border: 1px solid #666;
+  margin-right: 5px
+}
+
+.fixedIndex li a.active:before {
+  border: 1px solid #1d80bf;
+  background: #1d80bf
+}
+
+.fixedIndex li a.active {
+  color: #1d80bf
+}
+
+@media screen and (max-width:1400px) {
+  .fixedIndex {
+    display: none
+  }
+
+}
+</style>
 <div class="fixedIndex">
   <ul>
     <li>

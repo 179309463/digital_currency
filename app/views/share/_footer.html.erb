@@ -1,8 +1,60 @@
+<style>
+
+footer {
+  background: #d8d8d8;
+  padding: 15px;
+  left: 0;
+  right: 0
+}
+
+footer:after {
+  content: '';
+  display: block;
+  width: 100%;
+  clear: both
+}
+
+footer .logo2 {
+  margin-top: 5px;
+  display: inline-block;
+  float: left
+}
+
+footer .info {
+  float: left;
+  margin-left: 30px;
+  margin-top: 10px
+}
+
+footer a:hover {
+  color: #3499da !important;
+  text-decoration: none
+}
+
+footer .info a, footer .info p, footer .info i {
+  color: #777
+}
+
+
+footer .media {
+  float: right;
+  margin-top: 5px;
+  z-index: 999;
+  position: relative
+}
+</style>
 <footer class="clear">
   <div class="w1200">
     <a class="logo2" href="index.html">
       <img src="<%= asset_path("logo.png")%>" alt="东方币湾的Logo"></a>
     <div class="info">
+      <style>
+      .space2:before {
+        content: '|';
+        margin: 0 5px;
+        font-style: normal
+      }
+      </style>
       <div>
         <a href="/pages/aboutus" target="_blank">关于我们</a>
         <i class="space2"></i>

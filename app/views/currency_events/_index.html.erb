@@ -4,7 +4,160 @@
     <a href="../currencies/bitcoin/event.html" target="_blank" class="more"></a>
   </div>
   <div class="boxContain">
+    <style>
+    .timeLineWinodow {
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch
+    }
+    </style>
     <div class="timeLineWinodow">
+      <style>
+      .timeLine {
+        white-space: nowrap;
+        moz-user-select: -moz-none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        margin-top: 10px
+      }
+
+      .timeLine:after {
+        content: '开始';
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        color: #fff;
+        border-radius: 50%;
+        background: #4aafc6;
+        vertical-align: 109px;
+        text-align: center
+      }
+
+
+      .timeLine li {
+        height: 200px;
+        position: relative;
+        display: inline-block;
+        width: 150px;
+        margin-right: -2px
+      }
+
+      .timeLine li .tit, .timeLine li .time {
+        display: table-cell;
+        vertical-align: bottom;
+        height: 50px;
+        position: absolute;
+        width: 250px;
+        white-space: normal
+      }
+
+      .timeLine li .lineDot {
+        height: 2px;
+        border-bottom: 1px dashed #999;
+        width: 100%;
+        margin-top: 85px
+      }
+
+      .timeLine li .time {
+        height: 25px;
+        color: #4aafc6
+      }
+
+      .timeLine li:nth-child(odd) .time:after {
+        content: '';
+        display: block;
+        height: 8px;
+        width: 8px;
+        background: #4aafc6;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        box-shadow: 0 0 5px #4aafc6;
+        position: absolute;
+        left: 58px;
+        bottom: -8px;
+        z-index: 1000
+      }
+
+      .timeLine li:nth-child(even) .time:after {
+        content: '';
+        display: block;
+        height: 8px;
+        width: 8px;
+        background: #4aafc6;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        box-shadow: 0 0 5px #4aafc6;
+        position: absolute;
+        left: 57px;
+        top: -12px;
+        z-index: 1000
+      }
+
+      .timeLine li:nth-child(odd):after {
+        content: '';
+        display: block;
+        border-left: 1px dashed #999;
+        height: 50px;
+        left: 62px;
+        position: absolute
+      }
+
+      .timeLine li:nth-child(even):after {
+        content: '';
+        display: block;
+        border-left: 1px dashed #999;
+        height: 50px;
+        left: 62px;
+        position: absolute;
+        top: 35px
+      }
+
+      .timeLine li .tit {
+        margin-left: 50px
+      }
+
+      .timeLine li .tit span {
+        display: inline-block;
+        height: 25px;
+        width: 25px;
+        background: #4aafc6;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 25px;
+        margin-right: 5px;
+        float: left
+      }
+
+      .timeLine li .tit h3 {
+        font-size: 14px;
+        font-weight: normal;
+        height: 38px;
+        overflow: hidden
+      }
+
+      .timeLine li:nth-child(odd) .time {
+        top: 60px;
+        vertical-align: bottom
+      }
+
+      .timeLine li:nth-child(even) .tit {
+        top: 10px
+      }
+
+      .timeLine li:nth-child(odd) .tit {
+        bottom: 10px;
+        vertical-align: top
+      }
+
+      .timeLine li:nth-child(even) .time {
+        bottom: 80px
+      }
+      </style>
       <ul class="timeLine" id="coineventtimeline">
         <li>
           <div class="time">2017-08-03</div>

@@ -1,4 +1,128 @@
+<style>
+.addto {
+  float: right;
+  background: #1d80bf;
+  color: #fff !important
+}
+
+.hasaddto {
+  float: right;
+  background: #e40101;
+  color: #ffffff !important;
+}
+
+.addto, .hasaddto {
+  cursor: pointer;
+}
+
+table .addto, table .hasaddto {
+  background: none;
+  color: #1d80bf !important;
+  float: left !important;
+  height: auto;
+  padding: 0;
+  margin-top: 0;
+  margin-left: 0;
+  line-height: normal;
+  width: 80px;
+}
+</style>
 <div class="box box1200" id="baseInfo">
+<style>
+  .cell {
+    padding: 15px;
+    float: left;
+    width: 260px
+  }
+
+  .cell>div {
+    margin-bottom: 5px;
+    color: #666
+  }
+
+  .cell .num-b {
+    font-size: 35px;
+    font-weight: bold;
+    color: #666
+  }
+
+  .cell .small {
+    font-size: 20px;
+    vertical-align: middle;
+    margin-left: 5px
+  }
+
+  .cell .num {
+    font-size: 20px;
+    color: #666;
+    min-height: 19px;
+    font-weight: bold
+  }
+
+  .cell .tit {
+    color: #000
+  }
+  </style>  
+  <style>
+  .firstPart h1 {
+    float: left;
+    width: 80%; 
+    font-size: 18px;
+    font-weight: normal;
+  }
+
+  .firstPart .cell {
+    border-right: 1px solid #f1f1f1;
+    width: 223px;
+    height: 215px;
+    overflow: hidden
+    border-bottom: 1px solid #f1f1f1 !important
+  } 
+
+  .firstPart .des {
+    width: 100%;
+    clear: both
+  }
+
+  .firstPart h1 img {
+    vertical-align: -8px;
+    margin-right: 10px
+  }
+
+  .firstPart .coinprice {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 18px;
+    float: left
+  }
+
+  .firstPart .maket .sub {
+    font-size: 16px;
+    margin-left: 10px;
+    width: 100%;
+    clear: both
+  }
+
+  .firstPart .maket {
+    width: 405px
+  }
+
+  .firstPart .des {
+    margin-top: 25px
+  }
+
+  .firstPart .cell .tit {
+    color: #999
+  }
+
+  .firstPart .cell .value {
+    font-size: 16px;
+    font-weight: bold
+  }
+  .firstPart .lowHeight {
+    float: right
+  }
+  </style>
   <div class="firstPart">
     <div class="cell maket">
       <h1>
@@ -7,6 +131,19 @@
         <input type="hidden" id="coinname" value="Bitcoin">比特币
       </h1>
       <div>
+        <style>
+        .disactive {
+          float: left;
+          background: #ddd;
+          color: #999 !important;
+          height: 25px;
+          padding: 0 5px;
+          margin-top: 4px;
+          margin-left: 5px;
+          line-height: 25px;
+          border-radius: 3px
+        }
+        </style>
         <div class="addto disactive" id="FocusChose" onclick="addchose();">添加自选</div>  
         <script>
           //添加自选(全网)
@@ -91,12 +228,34 @@
         </script>  
       </div>
       <div class="coinprice">￥67,011
-        <span class="tags-red">-6.43%</span></div>
+        <span class="tags-red">-6.43%</span>
+      </div>
+      <style>
+        .lowHeight {
+          margin-top: 15px
+        }
+
+        .lowHeight div {
+          color: #999
+        }
+
+        .lowHeight div:first-child {
+          margin-bottom: 10px
+        }
+
+        .lowHeight .value {
+          font-size: 16px !important;
+          margin-left: 5px;
+          color: #666
+        }   
+      </style>   
       <div class="lowHeight">
         <div>24H最高
-          <span class="value">￥71,689</span></div>
+          <span class="value">￥71,689</span>
+        </div>
         <div>24H最低
-          <span class="value">￥65,868</span></div>
+          <span class="value">￥65,868</span>
+        </div>
       </div>
       <div class="sub">
         <span>≈$10,460</span>&nbsp;&nbsp
@@ -107,10 +266,43 @@
     <div class="cell">
       <div class="tit">流通市值</div>
       <div class="value">¥1,127,225,008,539
-        <span class="tag-marketcap">第1名</span></div>
+        <style>
+        .tag-marketcap {
+          height: 25px;
+          border-radius: 3px;
+          line-height: 25px;
+          padding: 0 5px;
+          color: #fff;
+          display: inline-block;
+          background: #2e8ded;
+          font-weight: normal !important;
+          font-size: 14px;
+          margin-left: 3px
+        }
+        </style>        
+        <span class="tag-marketcap">第1名</span>
+      </div>
       <div class="sub">≈$175,955,711,759</div>
       <div class="sub">≈16,891,132BTC</div>
       <div class="ct-chart ct-minor-second  ct-chart1">
+        <style>
+        .chardec {
+          color: #999
+        }
+
+        .chardec span {
+          font-weight: bold;
+          color: #333
+        }
+        .chardec {
+          width: 100%;
+          position: absolute;
+          bottom: 101px;
+          text-align: center;
+          font-size: 12px;
+          z-index: 100
+        }
+        </style>
         <div class="chardec" style="color:#999">
           <span style="font-size: 20px;font-weight: 900;color:#333">35.3%</span>
           <br>占全球总市值
@@ -135,6 +327,24 @@
       <div class="tit">总发行量</div>
       <div class="value">21,000,000 BTC</div>
       <div class="ct-chart ct-minor-second  ct-chart2">
+        <style>
+        .chardec {
+          color: #999
+        }
+
+        .chardec span {
+          font-weight: bold;
+          color: #333
+        }        
+        .chardec {
+          width: 100%;
+          position: absolute;
+          bottom: 101px;
+          text-align: center;
+          font-size: 12px;
+          z-index: 100
+        }
+        </style>        
         <div class="chardec" style="color:#999">
           <span style="font-size: 20px;font-weight: 900;color:#333">80.1%</span>
           <br>流通率
@@ -156,10 +366,43 @@
     <div class="cell">
       <div class="tit">24H成交额</div>
       <div class="value">¥35,816,290,010
-        <span class="tag-vol">第1名</span></div>
+        <style>
+        .tag-vol {
+          height: 25px;
+          border-radius: 3px;
+          line-height: 25px;
+          padding: 0 5px;
+          color: #fff;
+          display: inline-block;
+          font-weight: normal !important;
+          font-size: 14px;
+          margin-left: 3px;
+          background-color: #50be67;
+        }
+        </style>
+        <span class="tag-vol">第1名</span>
+      </div>
       <div class="sub">≈$5,590,792,082</div>
       <div class="sub">≈537,363.84BTC</div>
       <div class="ct-chart ct-minor-second  ct-chart3">
+        <style>
+        .chardec {
+          color: #999
+        }
+
+        .chardec span {
+          font-weight: bold;
+          color: #333
+        }        
+        .chardec {
+          width: 100%;
+          position: absolute;
+          bottom: 101px;
+          text-align: center;
+          font-size: 12px;
+          z-index: 100
+        }
+        </style>        
         <div class="chardec" style="color:#999">
           <span style="font-size: 20px;font-weight: 900;color:#333">3.18%</span>
           <br>换手率
@@ -179,6 +422,53 @@
       </script>
     </div>
   </div>
+
+  <style>
+  .secondPark li {
+    border-bottom: 1px solid #f1f1f1;
+    margin-top: -1px;
+    float: left;
+    width: 279px;
+    border-right: 1px solid #f1f1f1;
+    padding: 10px;
+    border-top: 1px solid #f1f1f1;
+    font-size: 13px
+  }
+
+  .secondPark li .tit {
+    width: 85px;
+    display: inline-block;
+    color: #999;
+    height: 19px;
+    line-height: 19px
+  }
+
+  .secondPark li a {
+    margin-right: 5px
+  }
+
+  .secondPark li .value {
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: -4px;
+    height: 19px;
+    line-height: 19px
+  }  
+
+  .secondPark li .alert:before {
+    content: url("<%= asset_path("alert.svg")%>");
+    vertical-align: -4px;
+    margin-right: 5px;
+  }
+
+  .secondPark li .alert {
+    color: #f05b4f;
+    width: auto;
+  }  
+  </style>
   <div class="secondPark">
     <ul>
       <li>

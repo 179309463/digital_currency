@@ -11,7 +11,48 @@
       background: #fff url('<%= asset_path("cLink.png") %>') no-repeat;
       width: 107px
     }
-    </style>            
+    </style>  
+    <style>
+    .linksList {
+      margin-right: -5px;
+      margin-left: -5px;
+      overflow: hidden;
+      background: url("loading.gif") center no-repeat;
+      min-height: 203px
+    }
+
+    .linksList li {
+      float: left;
+      width: calc((100% - 2px) / 3);
+      border-bottom: 1px solid #eaecef
+    }
+
+    .linksList li:nth-child(3n-1) {
+      border-left: 1px solid #eaecef;
+      border-right: 1px solid #eaecef
+    }
+
+    .linksList li a {
+      display: block;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      transition: all .3s
+    }
+
+    .linksList li a:hover {
+      background-color: #ddd
+    }
+
+    .linksList li a img {
+      height: 40px;
+      margin-top: 5px
+    }
+
+    .linksList li:nth-last-child(1), .linksList li:nth-last-child(2), .linksList li:nth-last-child(3) {
+      border-bottom: 0
+    }  
+    </style>        
     <ul class="linksList">
       <li>
         <a href="https://www.huobi.pro/" target="_blank" title="火币网" style="background-position:-108px 0px" class="cLink"></a>

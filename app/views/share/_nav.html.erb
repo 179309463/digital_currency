@@ -1,7 +1,85 @@
+<style>
+nav {
+	top: 0;
+	left: 0;
+	right: 0;
+	position: fixed;
+	box-shadow: 2px 2px 3px #eaecef;
+	height: 70px;
+	background: #fff;
+	transition: all .5s;
+	z-index: 999999
+}
+
+nav:after {
+	content: '';
+	height: 1px;
+	width: 100%;
+	display: block;
+	visibility: hidden;
+	clear: both
+}
+
+nav a {
+	color: #333;
+	text-decoration: none !important
+}
+</style>
 <nav class="">
+  <style>
+	.navsub {
+		height: 30px;
+		line-height: 30px;
+		border-bottom: 1px solid #ddd;
+		background: #f1f1f1
+	}
+
+	.navsub {
+		color: #666;
+		font-size: 13px
+	}
+
+	.navsub a {
+		color: #2d93ca
+	}
+
+	.navsub .rightSise a {
+		vertical-align: -5px
+	}
+
+	.navsub .text-green:after {
+		content: url("arrow-u3.svg")
+	}
+
+	.navsub .text-red:after {
+		content: url("arrow-d4.svg")
+	} 
+  </style> 
   <div class="navsub">
     <%= render "share/nav_top" %>
   </div>
+  <style>
+	.minWidth {
+		min-width: 1200px;
+		width: 1200px;
+		margin: 0 auto
+	}
+
+	.minWidth .leftSise {
+		float: left
+	}
+
+	.minWidth .rightSise {
+		float: right
+	}
+
+	.minWidth:after {
+		content: '';
+		display: block;
+		width: 100%;
+		clear: both
+	}
+  </style>
   <div class="minWidth">
     <%= render "share/nav_left" %>
     <%= render "share/nav_right" %>

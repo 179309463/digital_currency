@@ -17,6 +17,21 @@
       <li class="active" style="width:133px">币种</li>
       <li class="" style="width:133px">交易所</li>
     </ul>
+    <script>
+      $('body').on('click', '.tabTit-a li', function () {
+        var index = $(this).index();
+        var table = $(this).closest('.tabBody').find('table');
+        if (table.eq(index).css('display') == 'table') {
+            return
+        }
+        else {
+            table.css('display', 'none');
+            table.eq(index).fadeIn('fast');
+            $(this).closest('.tabTit-a').find('li').removeClass('active');
+            $(this).addClass('active');
+        }
+      });
+    </script>
     
     <%= render "currency_vols/index_simple" %>
     <%= render "exchange_vols/index_simple" %>

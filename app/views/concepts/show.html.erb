@@ -3,6 +3,80 @@
 
 <div class="m15"></div>
 <div class="w1200">
+  <style>
+    .ideaHead h1 {
+      font-size: 20px;
+      font-weight: normal
+    }
+    
+    .ideaHead .boxContain {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      overflow: hidden;
+      height: 54px
+    }
+
+    .ideaHead .boxContain .tit {
+      float: left;
+      margin-top: 5px
+    }
+
+    .ideaHead .boxContain .sub {
+      color: #999
+    }
+
+    .ideaHead .boxContain .change {
+      font-size: 28px;
+      font-weight: bold;
+      float: right;
+      height: 45px;
+      line-height: 45px;
+      margin-top: 5px
+    }
+
+    .ideaHead .cell {
+      width: calc(20% - 1px);
+      float: left;
+      text-align: center;
+      padding: 8px 0;
+      border-left: 1px solid #ddd
+    }
+
+    .ideaHead .cell:first-child {
+      border: 0
+    }
+
+    .ideaHead .cell .tit {
+      font-size: 14px;
+      color: #999;
+      margin-top: 5px
+    }
+
+    .ideaHead .cell .text {
+      font-weight: bold;
+      font-size: 18px
+    }  
+    .ideaHead .boxContain {
+      padding: 10px 15px
+    }
+
+    .ideaTabel tr td:nth-child(4), .ideaTabel tr td:nth-child(5) {
+      text-align: right;
+      max-width: 90px
+    }
+
+    .ideaTabel tr th:nth-child(5), .ideaTabel tr th:nth-child(4) {
+      text-align: right
+    }
+
+    .ideaTabel tr td:nth-child(6), .ideaTabel tr td:nth-child(7) {
+      text-align: center
+    }
+
+    .ideaTabel tr th:nth-child(6), .ideaTabel tr th:nth-child(7) {
+      text-align: center
+    }
+  </style>
   <div class="col ideaHead">
     <%= render "show.stats" %>
   </div>

@@ -1,9 +1,44 @@
+<style>
+.addto {
+  float: right;
+  background: #1d80bf;
+  color: #fff !important
+}
+
+.hasaddto {
+  float: right;
+  background: #e40101;
+  color: #ffffff !important;
+}
+
+.addto, .hasaddto {
+  cursor: pointer;
+}
+
+table .addto, table .hasaddto {
+  background: none;
+  color: #1d80bf !important;
+  float: left !important;
+  height: auto;
+  padding: 0;
+  margin-top: 0;
+  margin-left: 0;
+  line-height: normal;
+  width: 80px;
+}
+</style>
 <div class="m30"></div>
 <%= render "share/advertisement" %>
 
 <div class="m15"></div>
 <div class="w1200">
   <div class="col">
+    <style>
+      .box815 {
+        width: 815px;
+        float: left;
+      }
+    </style>
     <div class="box2 box815">
       <style>
       .searchBar{
@@ -38,15 +73,59 @@
       .searchBar button:active {
           background: #1d80bf;
       }
+      .searchBar .tips {
+        padding-left: 0;
+      }
       </style>          
       <div class="searchBar">
         <input type="text" id="searchbar" name="searchbar" value="bitcoin" style="background: none" placeholder="输入关键词搜索" onkeydown="javascript:if(event.keyCode==13) search(document.getElementById('word').value);">
         <button onclick="search(document.getElementById('searchbar').value)">
           <i class="icon-search"></i>
         </button>
+        <style>
+        .tips {
+          padding: 15px;
+          color: #999;
+          font-size: 12px
+        }
+        </style>
         <div class="tips">共45个结果，41个币种，4个交易所</div>
+        <script>
+          function search(word) {
+              if (word == undefined || word == null || word.length < 1 || word.trim().length < 1) {
+                  alert("请输入关键词");
+                  return false;
+              }
+              else {
+                  word = word.trim();
+                  window.location.href = "/currencies/search.html?word=" + encodeURIComponent(word);
+                  //alert(window.location.href = "/search?word=" + encodeURIComponent(word));
+              }
+          }
+        </script>
       </div>
       <div class="m15"></div>
+      <style>
+        .slide {
+          overflow: hidden;
+        }
+
+        .slide>div {
+          cursor: pointer;
+          float: left;
+          height: 35px;
+          display: inline-block;
+          line-height: 35px;
+          font-size: 16px;
+          width: 100px;
+          text-align: center;
+        }
+
+        .slide>div.active {
+          border-bottom: 3px solid  #3499da;
+          color: #3499da
+        }
+      </style>
       <div class="slide">
         <div class="active">币种</div>
         <div>交易平台</div>
@@ -62,7 +141,23 @@
         .maintable  tr td .tprice.text-green:after {
           content: url("<%= asset_path("arrow-u3.svg") %>")
         }
-        </style>            
+        .maintable .tags-green, .maintable .tags-red {
+          margin-left: 0
+        }
+        </style>  
+        <style>
+        .disactive {
+          float: left;
+          background: #ddd;
+          color: #999 !important;
+          height: 25px;
+          padding: 0 5px;
+          margin-top: 4px;
+          margin-left: 5px;
+          line-height: 25px;
+          border-radius: 3px
+        }
+        </style>          
         <table class="table maintable" id="table">
           <thead>
             <tr>
@@ -90,6 +185,20 @@
             <% end %>
           </tbody>
         </table>
+        <style>
+        .seeAll {
+          display: block;
+          background: #f1f1f1;
+          height: 35px;
+          line-height: 35px;
+          text-align: center;
+          color: #666
+        }
+
+        .seeAll:hover {
+          color: #1d80bf !important
+        }
+        </style>        
         <div class="seeAll">
           <a href="../javascript:void(0);" page="1" onclick="MoreSearchCoin($(this), '/moresearchcoin/?word=bitcoin')">加载更多</a></div>
         <div class="m15"></div>
@@ -238,6 +347,13 @@
                   <div class="star star3" style="float: right"></div>
                 </div>
                 <div class="des">bitcointoyou成立于2010年,是巴西第一家比特币交易平台，目前已有超过20万用户</div>
+                <style>
+                .space:before {
+                  content: '/';
+                  margin: 0 5px;
+                  font-style: normal
+                }
+                </style>
                 <div class="detal">交易对:
                   <a target="_blank" href="/exchanges/show">1</a>
                   <i class="space"></i>国家:
@@ -259,8 +375,23 @@
             </div>
           </li>
         </ul>
+        <style>
+        .seeAll {
+          display: block;
+          background: #f1f1f1;
+          height: 35px;
+          line-height: 35px;
+          text-align: center;
+          color: #666
+        }
+
+        .seeAll:hover {
+          color: #1d80bf !important
+        }
+        </style>        
         <div class="seeAll">
-          <a href="../javascript:void(0);" page="1" onclick="MoreSearchExchange($(this), '')">加载更多</a></div>
+          <a href="../javascript:void(0);" page="1" onclick="MoreSearchExchange($(this), '')">加载更多</a>
+        </div>
         <div class="m15"></div>
       </div>
       <script>

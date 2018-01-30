@@ -1,3 +1,76 @@
+<style>
+.addto {
+  float: right;
+  background: #1d80bf;
+  color: #fff !important
+}
+
+.hasaddto {
+  float: right;
+  background: #e40101;
+  color: #ffffff !important;
+}
+
+.addto, .hasaddto {
+  cursor: pointer;
+}
+
+table .addto, table .hasaddto {
+  background: none;
+  color: #1d80bf !important;
+  float: left !important;
+  height: auto;
+  padding: 0;
+  margin-top: 0;
+  margin-left: 0;
+  line-height: normal;
+  width: 80px;
+}
+</style>
+<style>
+/********登陆提示*******/
+.loginTip {
+  text-align: center;
+  min-height: 500px;
+}
+
+.loginTip .tit {
+  margin-top: 160px;
+  color: #999;
+  font-size: 17px;
+}
+
+.loginTip .group {
+  margin-top: 10px;
+}
+
+.loginTip .group a {
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background: #34a2d6;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.loginTip .group a:last-child {
+  background: #2e8ded;
+}
+
+.loginTip .group a:active {
+  background: #1d80bf;
+}
+
+.loginTip .group a:hover {
+  opacity: 0.8;
+}
+</style>
 <div class="m30"></div>
 <%= render "share/advertisement" %>
 
@@ -24,7 +97,23 @@
         .maintable  tr td .tprice.text-green:after {
           content: url("<%= asset_path("arrow-u3.svg") %>")
         }
+        .maintable .tags-green, .maintable .tags-red {
+          margin-left: 0
+        }
         </style>            
+        <style>
+        .disactive {
+          float: left;
+          background: #ddd;
+          color: #999 !important;
+          height: 25px;
+          padding: 0 5px;
+          margin-top: 4px;
+          margin-left: 5px;
+          line-height: 25px;
+          border-radius: 3px
+        }
+        </style>
         <table class="table maintable" id="table">
           <thead>
             <tr>
