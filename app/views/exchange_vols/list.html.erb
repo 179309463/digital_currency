@@ -45,7 +45,9 @@
       <th>交易对</th>
       <th>成交额(24小时)</th>
       <th>价格</th>
-      <th>成交额占比</th></tr>
+      <th>成交额占比</th>
+    </tr>
+    <% (1..20).each do %>
     <tr>
       <td>1</td>
       <td>
@@ -53,7 +55,9 @@
       <td>EOS/KRW</td>
       <td class="volume" data-usd="1310597346" data-cny="8396079778" data-btc="112179" data-native="95382806">¥839,608万</td>
       <td class="price" data-usd="13.74" data-cny="88.03" data-btc="0.001176" data-native="14,760">¥88.03</td>
-      <td>43.40%</td></tr>
+      <td>43.40%</td>
+    </tr>
+    <% end %>
   </table>
 </div>
 <div class="m30"></div>

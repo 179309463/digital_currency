@@ -100,6 +100,7 @@
       }
       </style>          
       <ul class="plantList">
+        <% (1..20).each do %>
         <li class="spreadList">
           <div class="con">
             <a target="_blank" href="/exchanges/show" class="pic">
@@ -164,6 +165,7 @@
             </div>
           </div>
         </li>
+        <% end %>
       </ul>
       <div class="boxTools">
         <%= render "pagination" %>
