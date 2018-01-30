@@ -1,0 +1,120 @@
+<div class="m30"></div>
+<div class="w1200">
+  <div class="col">
+    <div class="box box1200">
+      <div class="boxTit">
+        <h1>最近一个月上市的虚拟币列表</h1></div>
+      <div class="boxTools">
+        <div class="slideBtn unit">
+          <button>人民币(CNY)</button>
+          <ul>
+            <li>
+              <a href="../index.html#CNY" class="price-toggle" data-currency="cny">人民币(CNY)</a></li>
+            <li>
+              <a href="../index.html#USD" class="price-toggle" data-currency="usd">美元(USD)</a></li>
+            <li>
+              <a href="../index.html#BTC" class="price-toggle" data-currency="btc">比特币(BTC)</a></li>
+            <li>
+              <a href="../index.html#ETH" class="price-toggle" data-currency="eth">以太坊(ETH)</a></li>
+            <li>
+              <a href="../index.html#JPY" class="price-toggle" data-currency="jpy">日元(JPY)</a></li>
+            <li>
+              <a href="../index.html#KRW" class="price-toggle" data-currency="krw">韩币(KRW)</a></li>
+            <li>
+              <a href="../index.html#HKD" class="price-toggle" data-currency="hkd">港币(HKD)</a></li>
+            <li>
+              <a href="../index.html#RUB" class="price-toggle" data-currency="rub">卢布(RUB)</a></li>
+            <li>
+              <a href="../index.html#INR" class="price-toggle" data-currency="inr">卢比(INR)</a></li>
+            <li>
+              <a href="../index.html#AUD" class="price-toggle" data-currency="aud">澳元(AUD)</a></li>
+            <li>
+              <a href="../index.html#EUR" class="price-toggle" data-currency="eur">欧元(EUR)</a></li>
+            <li>
+              <a href="../index.html#CHF" class="price-toggle" data-currency="chf">法郎(CHF)</a></li>
+            <li>
+              <a href="../index.html#GBP" class="price-toggle" data-currency="gbp">英镑(GBP)</a></li>
+            <li>
+              <a href="../index.html#CAD" class="price-toggle" data-currency="cad">加元(CAD)</a></li>
+            <li>
+              <a href="../index.html#IDR" class="price-toggle" data-currency="idr">印尼盾(IDR)</a></li>
+            <li>
+              <a href="../index.html#BRL" class="price-toggle" data-currency="brl">巴西雷亚尔(BRL)</a></li>
+            <li>
+              <a href="../index.html#MXN" class="price-toggle" data-currency="mxn">比索(MXN)</a></li>
+          </ul>
+        </div>
+        <script>
+          $(function(){
+            //下拉菜单
+            $('.slideBtn').click(function (e) {
+                e.stopPropagation();
+                if ($(this).find('ul').css('display') !== 'block') {
+                    $('.slideBtn').find('ul').css('display', 'none');
+                    $(this).find('ul').slideDown(100);
+                }
+                else {
+                    $('.slideBtn').find('ul').slideUp(100);
+                }
+            });
+            $('.unit ul li').click(function () {
+                $(this).closest('.slideBtn').find('button').text($(this).text());
+                $('.slideBtn').find('ul').slideUp(100);
+
+            });
+
+            //点击屏幕取消
+            $('html').click(
+                function () {
+                    $('.slideBtn ul').slideUp(100);
+                }
+            );
+          })
+        </script>        
+        <div style="display:none" id="currency-exchange-rates" data-cny="0.15609634266269143" data-usd="1" data-btc="10407.1" data-eth="937.01207246177455" data-jpy="0.009038240796811307" data-krw="0.0009309210066979767" data-hkd="0.1279132236690629" data-rub="0.017693180782728624" data-inr="0.01567275291905023" data-aud="0.796781004740847" data-eur="1.2246707472695966" data-chf="1.0394707846341271" data-gbp="1.3952177516344977" data-cad="0.8015710793154583" data-idr="7.47758696218376e-05" data-brl="0.3121297361005507" data-mxn="0.053277072744515125"></div>
+      </div>
+      <div class="boxContain">
+        <style>
+        .table-rank tbody tr td:first-child span {
+          margin-left: 5px
+        }
+
+        .table-rank thead tr th:first-child {
+          padding-left: 10px
+        }
+        </style>             
+        <table class="table table-rank" id="table">
+          <thead>
+            <tr>
+              <th data-sort-method='none'>名称</th>
+              <th data-sort-method='none'>简称</th>
+              <th>流通市值</th>
+              <th>当前价格</th>
+              <th>流通量</th>
+              <th>成交量(24小时)</th>
+              <th>涨幅幅(24小时)</th>
+              <th>上市时间</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a href="../currencies/ht/index.html" target="_blank">
+                  <img src="https://static.eastcoinbay.com/Coin/20180123/68450a0c1b824c92ba23aa630ee47a2f.png" alt="火币全球通用积分-HT">火币全球通用积分-HT</a></td>
+              <td>HT</td>
+              <td class="market-cap" data-usd="?" data-cny="?" data-btc="?">?</td>
+              <td>
+                <a href="../currencies/ht/index.html#markets" target="_blank" class="price" data-usd="?" data-cny="?" data-btc="?">?</a></td>
+              <td>?*</td>
+              <td class="volume" data-usd="?" data-cny="?" data-btc="?">
+                <a href="../currencies/ht/index.html#markets" target="_blank">¥?</a></td>
+              <td>
+                <div class="text-green">0%</div></td>
+              <td>今天</td></tr>
+          </tbody>
+        </table>
+        <div class="tips">备注：* 不可挖矿&nbsp;&nbsp;&nbsp;&nbsp;** 有预挖矿</div>
+        <div class="m15"></div>
+      </div>
+    </div>
+  </div>
+</div>

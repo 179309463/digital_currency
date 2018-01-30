@@ -1,0 +1,153 @@
+<div class="m30"></div>
+<%= render "share/advertisement" %>
+
+<div class="m15"></div>
+<div class="w1200">
+  <div class="col">   
+    <div class="box box860" style="min-height:880px">
+      <div class="boxTit">
+        <h1>所有货币</h1>
+        <%= render "form" %>
+      </div>
+      <div class="boxTools">
+        <%= render "toolbox" %>
+      </div>
+      <div class="boxContain">
+        <input id="usertickerpage" value="1" type="hidden">
+        <style>
+        .maintable tr td a.price.text-red:after,
+        .maintable  tr td .tprice.text-red:after {
+          content: url("<%= asset_path("arrow-d4.svg") %>")
+        }
+
+        .maintable tr td a.price.text-green:after,
+        .maintable  tr td .tprice.text-green:after {
+          content: url("<%= asset_path("arrow-u3.svg") %>")
+        }
+        </style>            
+        <table class="table maintable" id="table">
+          <thead>
+            <tr>
+              <th role="columnheader">#</th>
+              <th data-sort-method="none" role="columnheader">交易对</th>
+              <th role="columnheader">平台</th>
+              <th role="columnheader">最新价格￥</th>
+              <th role="columnheader">平台价格</th>
+              <th role="columnheader">成交额(24h)</th>
+              <th role="columnheader">涨幅(24h)</th>
+              <th role="columnheader">操作</th></tr>
+          </thead>
+          <tbody>
+            <tr id="tr_echolink__EKO">
+              <td>1</td>
+              <td>
+                <a href="../currencies/echolink/index.html" target="_blank">
+                  <img src="https://static.eastcoinbay.com/Coin/3bba7dba469625515d80596a596f13_small.png" alt="EchoLink">EKO</a></td>
+              <td>全网</td>
+              <td>
+                <span class="tprice">¥0.9606</span></td>
+              <td>
+                <span class="tprice">$0.1499</span></td>
+              <td>
+                <span class="tprice">2,544万</span></td>
+              <td>
+                <span class="text-red">-13.19%</span></td>
+              <td>
+                <div class="hasaddto disactive" id="FocusSiteChose#echolink##EKO" onclick="removesitechose($(this));">移除自选</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <script type="text/javascript">
+          new Tablesort(document.getElementById('table'));
+        </script>
+        <script>
+          function removesitechose(keys) {
+              var id = keys.attr("id");
+
+            
+              var parms = new Object();
+              var coincode = id.split("#")[1];
+              var sitecode = id.split("#")[2];
+              var symbolpair = id.split("#")[3];
+              parms["coincode"] = coincode;
+              parms["sitecode"] = sitecode;
+              parms["symbolpair"] = symbolpair;
+              parms["type"] = "2";
+              delconfirm(symbolpair, function () {
+                  keys.attr("disabled", "disabled");
+                  keys.html("提交中...");
+                  $.ajax({
+                      url: "/user/post.coinsitefocus",
+                      data: parms,
+                      type: "post",
+                      async: true,
+                      xhrFields: {
+                          withCredentials: true
+                      },
+                      success: function (data) {
+                          cancelsitefocusResponse(data);
+                          $('.layui-layer-close').trigger('click');
+                      }
+                  });
+
+              }); 
+             
+              function cancelsitefocusResponse(data) {
+
+
+                  var result = eval("(" + data + ")");
+                  if (result.status == "success") {
+                      keys.parents("tr").remove();
+                      var tbRows= $("#table tr");
+                      for(var i=1;i<tbRows.length;i++)
+                      {
+                          tbRows.eq(i).find("td:first-child").html(i);
+                      }
+                  }
+                  else {
+                      keys.removeAttr("disabled"); 
+                      keys.html("移除自选");
+                  }
+              }
+          }
+          function delconfirm(text, callback) {
+            var style = '<style class="delstyle">.alert{padding:15px;margin-top: 15px;font-size: 16px}.btngroup{margin-top: 15px}.btngroup button{height: 30px;border}.alert .group a{margin: 0 5px}</style>';
+            if ($('.delstyle').length == 0) {
+                $('head').append(style);
+            }
+            var div = '<div class="alert loginTip" style="min-height:0!important">确认移除' + text + '?<div class="group" style="margin-top: 15px"><a class="delete">确定</a><a class="cancel">取消</a></div></div>';
+            layer.open({
+                title: '移除自选',
+                type: 1,
+                area: ['300px', '190px'],
+                shadeClose: true,
+                content: div
+            });
+            $('body').on('click', '.alert .cancel', function () {
+                $('.layui-layer-close').trigger('click')
+            })
+            $('body').on('click', '.alert .delete', function () {
+                return callback()
+            })
+          }
+        </script>
+        <div class="loginTip">
+          <div class="tit">登陆后可以添加自选</div>
+          <div class="group">
+            <a class="login">立即登陆</a>
+            <a class="signup">注册账户</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="boxTools">
+        <%= render "pagination" %>
+      </div>
+    </div>
+    <%= render "exchange_notices/index" %>
+    <%= render "share/banner1" %>
+    <%= render "currency_maxchanges/index" %>
+  </div>
+</div>
+

@@ -1,0 +1,41 @@
+<div class="m30"></div>
+<%= render "share/advertisement" %>
+
+<div class="m15"></div>
+<div class="w1200">      
+  <div class="col">        
+    <div class="box box860" style="min-height:880px">         
+      <ul class="tabTit">
+        <h2 class="active tit" style="width: 150px">涨幅排行榜</h2>
+        <h2 class="tit" style="width: 150px">跌幅排行榜</h2>
+      </ul>
+      <div class="boxContain">      
+        <div class="tabBody">
+          <%= render "currency_maxchanges/index_up_complex" %>
+          <div class="m15"></div>
+        </div>
+        <div class="tabBody" style="display:none">
+          <%= render "currency_maxchanges/index_down_complex" %>
+          <div class="m15"></div>
+        </div>
+      </div>
+      <script>
+        $(function(){
+          $('.tabTit .tit').click(function () {
+            var box = $(this).closest('.box').find('.tabBody');
+            var index = $(this).index();
+            if (box.eq(index).css('display') !== 'block') {
+                $(this).closest('.tabTit').find('.tit').removeClass('active');
+                $(this).addClass('active');
+                box.css('display', 'none');
+                box.eq(index).fadeIn('100');
+            }
+          });
+        })
+      </script>
+    </div>
+    <%= render 'currency_vols/index' %>
+    <%= render 'share/banner2' %>
+    <%= render 'currency_newests/index' %>
+  </div>
+</div>

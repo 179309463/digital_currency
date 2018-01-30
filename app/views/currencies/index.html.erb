@@ -1,0 +1,73 @@
+<div class="m30"></div>
+<%= render "share/advertisement" %>
+
+<div class="m15"></div>
+<div class="w1200">
+  <div class="col">      
+    <div class="box w1200" style="min-height:880px">
+      <div class="boxTit">
+        <h1>所有货币</h1>
+        <%= render "currencies/searchform" %>
+      </div>
+      <div class="boxTools">
+        <%= render "tool_top_left" %>
+        <%= render "tool_pagelist_simple" %>
+      </div>
+      <div class="boxContain">
+        <style>
+        .maintable tr td a.price.text-red:after,
+        .maintable  tr td .tprice.text-red:after {
+          content: url('<%= asset_path("arrow-d4.svg")%>')
+        }
+
+        .maintable tr td a.price.text-green:after,
+        .maintable  tr td .tprice.text-green:after {
+          content: url('<%= asset_path("arrow-u3.svg")%>')        
+        }
+        </style>
+        <table class="table maintable" id="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th data-sort-method='none'>名称</th>
+              <th>流通市值</th>
+              <th>价格</th>
+              <th>流通数量</th>
+              <th>流通率</th>
+              <th>成交额(24h)</th>
+              <th>涨幅(1h)</th>
+              <th>涨幅(24h)</th>
+              <th>涨幅(7d)</th></tr>
+          </thead>
+          <tbody>
+            <tr id="bitcoin">
+              <td>1</td>
+              <td>
+                <a href="../currencies/bitcoin.html" target="_blank">
+                  <img src="https://static.eastcoinbay.com/Coin/7033f2f2c2a16094bbb3bafc47205ba8_small.png" alt="BTC-比特币">BTC-比特币</a></td>
+              <td class="market-cap" data-usd="176193549596" data-cny="1128748669074" data-btc="16895941">¥11,287亿</td>
+              <td>
+                <a href="../currencies/bitcoin.html#markets" target="_blank" class="price" data-usd="10474" data-cny="67102" data-btc="1">¥67,102</a></td>
+              <td>1,682万</td>
+              <td>80.1%</td>
+              <td>
+                <a href="../currencies/bitcoin.html#markets" target="_blank" class="volume" data-usd="10348700000" data-cny="35881235172.6561" data-btc="1000690">¥3,588,124万</a></td>
+              <td>
+                <span class="text-green">1.06%</span></td>
+              <td class="change">
+                <span class="text-red">-6.43%</span></td>
+              <td>
+                <span class="text-red">-13.54%</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <script>
+          new Tablesort(document.getElementById('table'));
+        </script>
+      </div>
+      <div class="boxTools">
+        <%= render "tool_pagelist_simple" %>
+      </div>
+      <div class="tips">备注：* 不可挖矿&nbsp;&nbsp;&nbsp;&nbsp;** 有预挖矿&nbsp;&nbsp;&nbsp;&nbsp;IFO表示该币由其它币分叉而来。</div></div>
+  </div>
+</div>

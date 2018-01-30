@@ -1,0 +1,177 @@
+<div class="m30"></div>
+<div class="w1200">
+  <div class="col">
+    <div class="box box860" style="min-height:800px">
+      <div class="boxTit">
+        <h1>数字货币交易平台列表</h1>
+      </div>
+      <%= render "toolbox" %>
+      <style>
+      .plantList .pic {
+        display: block;
+        float: left;
+        width: 110px;
+        height: 110px;
+        margin-right: 30px
+      }
+
+      .plantList .pic img {
+        display: block;
+        width: 100%;
+        height: 100%
+      }
+
+      .plantList {
+        padding: 15px
+      }
+
+      .plantList li {
+        overflow: hidden
+      }
+
+      .plantList li:nth-child(odd) {
+        background: #f9f9f9
+      }
+
+      .plantList li .con {
+        padding: 15px
+      }
+
+      .plantList li .info {
+        float: left;
+        overflow: hidden;
+        width: 995px
+      }
+
+      .plantList li .con div {
+        margin-bottom: 10px
+      }
+
+      .plantList li .con .tit a {
+        font-size: 16px
+      }
+
+
+
+      .plantList li .info {
+        width: 660px
+      }
+
+      .plantList li {
+        padding-bottom: 10px;
+        border-bottom: 1px dashed #ddd
+      }
+
+      .plantList li .tag a {
+        vertical-align: -3px
+      }
+
+      .plantList li .con div:last-child {
+        margin-bottom: 0
+      }
+
+      .plantList .spreadList {
+        background: #fffdf5 !important;
+        border-bottom: 1px dashed #ddd;
+        position: relative
+      }
+
+      .plantList .spreadList:after {
+        content: '广告';
+        font-size: 12px;
+        background: #fffae7;
+        height: 18px;
+        line-height: 18px;
+        position: absolute;
+        padding: 1px 5px;
+        right: 0;
+        bottom: 0;
+        display: block;
+        color: #ccc;
+        opacity: .5
+      }
+      .plantList li .con {
+        padding: 10px
+      }
+
+      .plantList .pic {
+        width: 100px;
+        height: 100px
+      }
+      </style>          
+      <ul class="plantList">
+        <li class="spreadList">
+          <div class="con">
+            <a target="_blank" href="../exchange/huobipro.html" class="pic">
+              <img src="https://static.eastcoinbay.com/PlatImages/20171109/c6720b47a0be429aac704089ed64da7d_2_100_100.png" alt="火币Pro的logo"></a>
+            <div class="info">
+              <div class="tit">
+                <a target="_blank" href="../exchange/huobipro.html">
+                  <b>火币Pro</b>
+                </a>
+                <style>
+                .star,
+                .star5 {
+                  width: 90px;
+                  height: 18px;
+                  background: url("<%= asset_path("star.png") %>")
+                }
+
+                .star1 {
+                  background: url("<%= asset_path("star.png") %>") -72px top
+                }
+
+                .star2 {
+                  background: url("<%= asset_path("star.png") %>") -54px top
+                }
+
+                .star3 {
+                  background: url("<%= asset_path("star.png") %>") -36px top
+                }
+
+                .star4 {
+                  background: url("<%= asset_path("star.png") %>") -18px top
+                }
+                </style>                    
+                <div class="star star5" style="float: right"></div>
+              </div>
+              <div class="des">火币全球专业站，是火币集团旗下服务于全球专业交易用户的创新数字资产交易平台，致力于发现优质的创新数字资产投资机会，目前提供四十多种数字资产品类的交易及投资服务，总部位于新加坡，由火币全球专业站团队负责运营</div>
+              <div class="detal">交易对:
+                <a target="_blank" href="../exchange/huobipro.html">148</a>
+                <i class="space"></i>国家:
+                <a href="../index-code=sser.html">塞舌尔</a>
+                <a href="../%22%7B0%7D/html"></a>
+                <a href="../%22%7B0%7D/html"></a>
+                <a href="../%22%7B0%7D/html"></a>
+                <i class="space"></i>成交额(24h):
+                <a href="../exchange/huobipro.html">¥632,399万</a>支持：
+                <style>
+                .xianhuo:before {
+                  content: url("<%= asset_path("xianhuo2.png") %>")
+                }
+                .qihuo:before {
+                  content: url("<%= asset_path("qihuo2.png") %>")
+                }                    
+                </style>                    
+                <span class="tag">
+                  <a href="../index-type=1.html">
+                    <i class="xianhuo" title="支持现货"></i></a>
+                  <a href="../index-type=2.html">
+                    <i class="qihuo" title="支持期货"></i>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="boxTools">
+        <%= render "pagination" %>
+      </div>
+    </div>
+    <%= render "exchange_notices/index" %>
+
+    <%= render "share/banner1" %>
+    <%= render "exchange_vols/index" %>
+  </div>
+</div>

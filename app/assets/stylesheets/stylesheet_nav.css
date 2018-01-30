@@ -2664,22 +2664,13 @@ img {
 	margin-top: 10px;
 }
 
-.plantList2 {
-	padding: 0;
-}
+
 
 .searchBar .tips {
 	padding-left: 0;
 }
 
-.plantList2 li {
-	border-top: 1px solid #ddd !important;
-	border-bottom: none !important;
-}
 
-.plantList2 li {
-	background: #fff !important;
-}
 
 .searchRight {
 	float: right;

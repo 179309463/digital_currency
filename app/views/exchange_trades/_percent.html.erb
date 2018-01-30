@@ -1,0 +1,69 @@
+<div class="box box340">
+  <div class="boxTit">
+    <h2>币种成交额占比</h2>
+  </div>
+  <div class="boxContain loading" style="height:430px">
+    <div class="m15"></div>
+    <div class="char" id="piechart_coinvol"></div>
+    <div class="m15"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $('#piechart_coinvol').highcharts({
+      legend: {
+        itemStyle: {
+          color: '#666',
+          fontWeight: 'normal',
+        },
+        itemWidth: 120,
+        symbolRadius: 0
+      },
+      chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false
+      },
+      title: {
+        text: ''
+      },
+      tooltip: {
+        headerFormat: '{series.name}<br>',
+        pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+      },
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: false
+          },
+          showInLegend: true
+        }
+      },
+      series: [{
+        type: 'pie',
+        name: '币种成交额占比'
+      }]
+
+    });
+    var siteCode = $("#HSiteCode").val();
+    var pieArr = [];
+
+    $.ajax({
+      type: "GET",
+      //url: '/exchange/' + siteCode + '.json',
+      url: '/exchange_trades/percent.json',
+      dataType: "json",
+      success: function(data) {
+
+        $(data).each(function(index, item) {
+          pieArr.push([item.name, item.y]);
+        });
+        $('#piechart_coinvol').highcharts().series[0].setData(pieArr);
+      }
+    });
+  })
+</script>

@@ -1,0 +1,145 @@
+<div class="m30"></div>
+<div class="w1200">
+  <div class="col">
+    <div class="box box325">
+      <div class="userCard">
+        <div class="headPic">
+          <img src="<%= asset_path("sharelogo.png") %>"></div>
+        <div class="userName">
+          <div class="main">179309463@qq.com</div>
+          <div class="sub">Email：179309463@qq.com</div></div>
+      </div>
+      <div class="menu">
+        <ul class="usermenu">
+          <li class="active">个人中心</li>
+          <li>
+            <a rel="nofollow" onclick="javascript: logout(); return false; ">登出账户</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="box box860">
+      <div class="boxTit">
+        <h1>个人中心</h1></div>
+      <div class="padding15 userinfo">
+        <div class="infocell">
+          <span class="main">登陆账号：</span>
+          <span class="info">179309463@qq.com</span></div>
+        <div class="infocell">
+          <span class="main">用户昵称：</span>
+          <span class="info"></span>
+          <span class="input nameedit">
+            <input>
+            <button type="submit" class="sure">确定</button>
+            <button type="reset" class="cancel">取消</button></span>
+          <span class="editbtn editname">
+            <a>更改</a>
+          </span>
+        </div>
+        <div class="infocell">
+          <span class="main">注册时间：</span>
+          <span class="info">2018年01月13日</span></div>
+        <div class="infocell">
+          <span class="main">修改密码</span>
+          <div class="input pwdedit">旧密码：
+            <input value="" type="password" class="padding" id="old">
+            <br>新密码：
+            <input value="" type="password" class="padding" id="new1">
+            <br>确认密码：
+            <input value="" type="password" id="new2">
+            <br>
+            <button type="submit" class="sure">确定</button>
+            <button type="reset" class="cancel">取消</button></div>
+          <span class="editbtn editpwd">
+            <a>更改</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('.infocell .editname,.infocell .editpwd').click(function() {
+    $(this).hide();
+    $(this).closest('.infocell').find('.info').hide();
+    $(this).closest('.infocell').find('.input').show()
+
+  });
+  $('.infocell .cancel').click(function() {
+    $(this).closest('.infocell').find('.info').show();
+    $(this).closest('.infocell').find('.input').hide();
+    $(this).closest('.infocell').find('.editbtn').show()
+  });
+  $('.nameedit .sure').click(function() {
+    var a = $(this);
+    if (a.closest('.infocell').find('input').val() == '') {
+      return false
+    } else {
+      var ii = layer.load();
+      $.ajax({
+        url: '/user/post.setting',
+        type: 'POST',
+        dataType: 'json',
+        xhrFields: {
+          withCredentials: true
+        },
+        data: {
+          username: a.closest('.infocell').find('input').val()
+        },
+        success: function(data) {
+          a.closest('.infocell').find('.info').text(a.closest('.infocell').find('input').val());
+          a.closest('.infocell').find('.editbtn').show();
+          a.closest('.infocell').find('.info').show();
+          a.closest('.infocell').find('.input').css('display', 'none');
+          a.closest('.infocell').find('.nameedit input').attr('value', a.closest('.infocell').find('input').val());
+          layer.close(ii);
+        },
+        error: function() {
+          layer.close(ii);
+          layer.msg('网络错误');
+        }
+      })
+    }
+  });
+
+  $('.pwdedit .sure').click(function() {
+    if ($('#old').val() == '' || $('#new1').val() == '' || $('#new2').val() == '') {
+      layer.msg('请填写完整表单再提交');
+      return false
+    } else if ($('#new1').val() != $('#new2').val()) {
+      layer.msg('两次新密码输入不一致');
+      return false
+    } else if ($('#new1').val().length < 6) {
+      layer.msg('密码长度必须大于等于6位');
+      return false
+    } else {
+      a = $(this);
+      var ii = layer.load();
+      $.ajax({
+        url: '/user/post.editPwd',
+        type: 'POST',
+        dataType: 'json',
+        xhrFields: {
+          withCredentials: true
+        },
+        data: {
+          oldPwd: $('#old').val(),
+          password: $('#new1').val(),
+          confirmPwd: $('#new2').val()
+        },
+        success: function(data) {
+          a.closest('.infocell').find('.editbtn').show();
+          a.closest('.infocell').find('.info').show();
+          a.closest('.infocell').find('.input').hide();
+          layer.close(ii);
+          layer.msg('修改成功');
+        },
+        error: function() {
+          layer.close(ii);
+          layer.msg('网络错误');
+        }
+      })
+    }
+  });
+
+</script>

@@ -1,0 +1,304 @@
+<div class="m30"></div>
+<div class="w1200">
+  <div class="col">
+    <div class="box box1200">
+      <div class="boxTit">
+        <h1>交易平台24小时成交额排行榜</h1>
+      </div>
+      <div class="boxTools">
+                    <style>
+        .pageList {
+          float: right
+        }
+
+        .pageList a {
+          height: 30px;
+          line-height: 30px;
+          padding: 0 10px;
+          border: 1px solid #eaecef;
+          display: block;
+          float: left;
+          color: #333;
+          border-right: 0;
+          transition: all .3s;
+          text-decoration: none
+        }
+
+        .pageList a:hover {
+          background: #3499da;
+          color: #fff
+        }
+
+        .pageList a:first-child {
+          border-radius: 3px 0 0 3px
+        }
+
+        .pageList a:last-child {
+          border-radius: 0 3px 3px 0;
+          border-right: 1px solid #eaecef
+        }
+
+        .pageList a:active,
+        .pageList .active {
+          background: #3499da;
+          color: #fff
+        }
+
+        .pageList-left {
+          float: none !important;
+          display: inline-block;
+          vertical-align: top
+        }
+        </style> 
+        <div class="pageList">
+          <a href="index.html" class="active">全部</a>
+          <a href="index.html?fee=yes">需手续费</a>
+          <a href="index.html?fee=no">无手续费</a></div>
+        <div class="slideBtn unit">
+          <button>人民币(CNY)</button>
+          <ul>
+            <li class="pointer">
+              <a href="index.html#native" class="price-toggle" data-currency="native">平台价格</a></li>
+            <li>
+              <a href="index.html#CNY" class="price-toggle" data-currency="cny">人民币(CNY)</a></li>
+            <li>
+              <a href="index.html#USD" class="price-toggle" data-currency="usd">美元(USD)</a></li>
+            <li>
+              <a href="index.html#BTC" class="price-toggle" data-currency="btc">比特币(BTC)</a></li>
+            <li>
+              <a href="index.html#ETH" class="price-toggle" data-currency="eth">以太坊(ETH)</a></li>
+            <li>
+              <a href="index.html#JPY" class="price-toggle" data-currency="jpy">日元(JPY)</a></li>
+            <li>
+              <a href="index.html#KRW" class="price-toggle" data-currency="krw">韩币(KRW)</a></li>
+            <li>
+              <a href="index.html#HKD" class="price-toggle" data-currency="hkd">港币(HKD)</a></li>
+            <li>
+              <a href="index.html#RUB" class="price-toggle" data-currency="rub">卢布(RUB)</a></li>
+            <li>
+              <a href="index.html#INR" class="price-toggle" data-currency="inr">卢比(INR)</a></li>
+            <li>
+              <a href="index.html#AUD" class="price-toggle" data-currency="aud">澳元(AUD)</a></li>
+            <li>
+              <a href="index.html#EUR" class="price-toggle" data-currency="eur">欧元(EUR)</a></li>
+            <li>
+              <a href="index.html#CHF" class="price-toggle" data-currency="chf">法郎(CHF)</a></li>
+            <li>
+              <a href="index.html#GBP" class="price-toggle" data-currency="gbp">英镑(GBP)</a></li>
+            <li>
+              <a href="index.html#CAD" class="price-toggle" data-currency="cad">加元(CAD)</a></li>
+            <li>
+              <a href="index.html#IDR" class="price-toggle" data-currency="idr">印尼盾(IDR)</a></li>
+            <li>
+              <a href="index.html#BRL" class="price-toggle" data-currency="brl">巴西雷亚尔(BRL)</a></li>
+            <li>
+              <a href="index.html#MXN" class="price-toggle" data-currency="mxn">比索(MXN)</a></li>
+          </ul>
+        </div>
+        <div id="currency-exchange-rates" data-cny="0.15609634266269143" data-usd="1" data-btc="10407.1" data-eth="937.01207246177455" data-jpy="0.009038240796811307" data-krw="0.0009309210066979767" data-hkd="0.1279132236690629" data-rub="0.017693180782728624" data-inr="0.01567275291905023" data-aud="0.796781004740847" data-eur="1.2246707472695966" data-chf="1.0394707846341271" data-gbp="1.3952177516344977" data-cad="0.8015710793154583" data-idr="7.47758696218376e-05" data-brl="0.3121297361005507" data-mxn="0.053277072744515125"></div>
+      </div>
+      <div class="boxContain">
+        <style>
+        .vol-rank .tit .rank {
+          display: inline-block;
+          height: 48px;
+          line-height: 48px;
+          padding: 0 20px;
+          background: #3499da;
+          font-weight: bold;
+          font-size: 20px;
+          color: #fff;
+          border-radius: 5px
+        }
+
+        .vol-rank {
+          margin-bottom: 15px;
+          border: 1px solid #ddd
+        }
+
+        .vol-rank .tit {
+          padding: 15px;
+          background: #eee;
+          box-shadow: inset 0 -1px 1px #ddd
+        }
+
+        .vol-rank .tit .coin {
+          font-size: 22px;
+          margin-left: 15px
+        }
+
+        .vol-rank .tit .coin img {
+          vertical-align: -4px;
+          margin-right: 3px;
+          width: 25px
+        }
+
+        .vol-rank .tit .data {
+          display: inline-block;
+          margin-left: 50px;
+          vertical-align: -11px
+        }
+
+        .vol-rank .tit .data span {
+          font-size: 22px;
+          display: block
+        }
+
+        .vol-rank .tit small {
+          font-size: 14px;
+          color: #666
+        }
+
+        .vol-rank .tit .more {
+          float: right;
+          margin-top: 16px
+        }
+
+        .vol-rank .tit .more:before {
+          content: url("<%= asset_path("more.svg") %>")
+        }
+
+        .vol-rank .tit .more:hover:before {
+          content: url("<%= asset_path("more2.svg") %>")
+        }
+
+        .vol-rank .tit a {
+          overflow: hidden;
+          display: inline-block;
+          vertical-align: middle
+        }
+
+        .vol-rank .tit .market .pic {
+          width: 49px;
+          height: 49px;
+          margin-right: 10px;
+          vertical-align: middle;
+          float: left
+        }
+
+        .vol-rank .tit .market .pic img {
+          width: 100%;
+          height: 100%
+        }
+
+        .vol-rank .tit .market {
+          display: inline-block;
+          overflow: hidden;
+          vertical-align: -16px;
+          margin-left: 15px
+        }
+
+        .vol-rank .tit .market .info {
+          float: left
+        }
+
+        .vol-rank .tit .market .name {
+          font-size: 22px
+        }
+        </style>            
+        <div class="vol-rank">
+          <div class="tit">
+            <div class="rank">NO.1</div>
+            <div class="market">
+              <a target="_blank" href="../exchange/bithumb/index.html" class="pic">
+                <img src="https://static.eastcoinbay.com/PlatImages/20170805/576bf2938beb4a49b363e27ca2d4e26f_150_150.png" alt="Bithumb"></a>
+              <div class="info">
+                <a class="name" target="_blank" href="../exchange/bithumb/index.html">Bithumb</a>
+                <style>
+                .star,
+                .star5 {
+                  width: 90px;
+                  height: 18px;
+                  background: url("<%= asset_path("star.png") %>")
+                }
+
+                .star1 {
+                  background: url("<%= asset_path("star.png") %>") -72px top
+                }
+
+                .star2 {
+                  background: url("<%= asset_path("star.png") %>") -54px top
+                }
+
+                .star3 {
+                  background: url("<%= asset_path("star.png") %>") -36px top
+                }
+
+                .star4 {
+                  background: url("<%= asset_path("star.png") %>") -18px top
+                }
+                </style>                    
+                <div class="star star5"></div>
+              </div>
+            </div>
+            <div class="data">
+              <small>总成交额</small>
+              <span class="volume" data-usd="3024638981.25" data-btc="291107.68" data-cny="19083545650.69">¥1,908,355万</span></div>
+            <a class="more" title="查看更多" target="_blank" href="../exchange/bithumb/index.html"></a>
+          </div>
+          <table class="table">
+            <tr>
+              <th>#</th>
+              <th>名称</th>
+              <th>交易对</th>
+              <th>成交额(24小时)</th>
+              <th>价格</th>
+              <th>成交额占比</th></tr>
+            <tr>
+              <td>1</td>
+              <td>
+                <a href="../currencies/eos/index.html" target="_blank">柚子-EOS</a></td>
+              <td>EOS/KRW</td>
+              <td class="volume" data-usd="1310597346" data-cny="8396079778" data-btc="112179" data-native="95382806">¥839,608万</td>
+              <td class="price" data-usd="13.74" data-cny="88.03" data-btc="0.001176" data-native="14,760">¥88.03</td>
+              <td>43.40%</td></tr>
+          </table>
+        </div>
+        <div class="m30"></div>
+      </div>
+      <div class='loading2' style="display:none"></div>
+    </div>
+  </div>
+</div>
+
+<input id="exchangeType" type="hidden" value="0">
+<input id="pagenum" type="hidden" value="2">
+<script>
+  $(document).ready(function(){
+      var lastpagenum=1;
+      $("#pagenum").val(2);
+      $(window).scroll(function(){
+          if ($(document).scrollTop() >= $(document).height() - $(window).height()) {
+                      
+              var page_num = $("#pagenum").val(); 
+                    
+              if ("0" == page_num||page_num==lastpagenum) { 
+                  return;
+              }
+                    
+              var exchangeType = $("#exchangeType").val();
+                 
+              $.ajax({
+                  type:"GET",
+                  url: '/exchange_vols/list.html?page_number='+page_num+'&exchangeType='+exchangeType,
+                  beforeSend: function () { 
+                      $('.loading2').css("display", "block"); //显示加载时候的提示
+                  },
+                  success: function (ret) {
+                      if (ret.length > 0) {
+                          var pageIndex = parseInt(page_num) + 1;
+                          $("#pagenum").val(pageIndex); 
+                          $(".boxContain").append(ret);
+                          lastpagenum=page_num;
+                      } else {
+                          $("#pagenum").val("0");
+                      }
+                     $('.loading2').css("display", "none"); //显示加载时候的提示
+                  } ,
+                  error: function (err) { 
+                  }
+              })
+          }
+      })
+  })      
+</script>

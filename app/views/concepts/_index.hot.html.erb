@@ -30,6 +30,17 @@
 </div>
 
 <script type="text/javascript">
+  function loadconcept(conceptid) {
+      $.ajax({
+          //url: "/concept/" + conceptid + "/hotconceptCoinTable.html",
+          url: "/concepts/currencies.html",
+          async: true,
+          success: function (data) {
+              $("#hotconceptCoinTable").html("");
+              $("#hotconceptCoinTable").append(data);
+          }
+      });
+  }    
   $(function(){
     function coinConceptSlide() {
         var length = $('.hotidea a').length;
@@ -57,18 +68,7 @@
         }
         $('#hotconcept a').removeClass('active');
         $(this).addClass('active')
-    })      
-    function loadconcept(conceptid) {
-        $.ajax({
-            //url: "/concept/" + conceptid + "/hotconceptCoinTable.html",
-            url: "/concepts/currencies.html",
-            async: true,
-            success: function (data) {
-                $("#hotconceptCoinTable").html("");
-                $("#hotconceptCoinTable").append(data);
-            }
-        });
-    }     
+    })         
     loadconcept(0);
   });
 </script>

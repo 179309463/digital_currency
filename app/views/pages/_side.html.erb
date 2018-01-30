@@ -1,13 +1,28 @@
-<%= render "exchanges/notices/index" %>      
+<%= render "exchange_notices/index" %>      
 
 <%= render "share/banner1" %> 
 
-<%= render "currencies/maxchange" %>     
+<%= render "currency_maxchanges/index" %>     
 <%= render "concepts/index.hot" %>
 
 <%= render "share/banner2" %> 
 
-<%= render "currencies/vol" %> 
-<%= render "currencies/newest" %> 
+<div class="box box325">
+  <div class="boxTit">
+    <h2>成交量排行榜</h2>
+    <a href="/currency_vols" target="_blank" class="more" title="更多"></a>
+  </div>
+  <div class="tabBody padding5" style="height:385px">
+    <ul class="tabTit-a">
+      <li class="active" style="width:133px">币种</li>
+      <li class="" style="width:133px">交易所</li>
+    </ul>
+    
+    <%= render "currency_vols/index_simple" %>
+    <%= render "exchange_vols/index_simple" %>
+  </div>
+</div>
+
+<%= render "currency_newests/index" %> 
 
 <%= render "pages/daohang" %> 

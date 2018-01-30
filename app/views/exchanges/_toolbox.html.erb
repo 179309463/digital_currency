@@ -1,0 +1,141 @@
+<div class="boxTools">
+  <div class="toolLable">排序</div>
+  <div class="pageList pageList-left">
+    <a href="../index.html" class="btn btn-default dropdown-toggle" aria-expanded="false">默认</a>
+    <a href="../index-filter=star.html" class="btn btn-default dropdown-toggle" aria-expanded="false">星级</a>
+    <a href="../index-filter=name.html" class="btn btn-default dropdown-toggle" aria-expanded="false">名称</a>
+    <a href="../index-filter=pair.html" class="btn btn-default dropdown-toggle" aria-expanded="false">交易对数量</a></div>
+  <div class="toolLable" style="margin-left: 15px;">筛选</div>
+  <div class="slideBtn unit">
+    <button>国家</button>
+    <ul>
+      <li>
+        <a href="../index.html">全部</a></li>
+      <li>
+        <a href="../index-code=cn.html">中国(17)</a></li>
+      <li>
+        <a href="../index-code=uk.html">英国(24)</a></li>
+      <li>
+        <a href="../index-code=us.html">美国(18)</a></li>
+      <li>
+        <a href="../index-code=jp.html">日本(12)</a></li>
+      <li>
+        <a href="../index-code=kr.html">韩国(9)</a></li>
+      <li>
+        <a href="../index-code=hongkong.html">中国香港(22)</a></li>
+      <li>
+        <a href="../index-code=pola.html">波兰(2)</a></li>
+      <li>
+        <a href="../index-code=can.html">加拿大(5)</a></li>
+      <li>
+        <a href="../index-code=india.html">印度(2)</a></li>
+      <li>
+        <a href="../index-code=aus.html">澳洲(10)</a></li>
+      <li>
+        <a href="../index-code=thailand.html">泰国(3)</a></li>
+      <li>
+        <a href="../index-code=de.html">德国(1)</a></li>
+      <li>
+        <a href="../index-code=wkl.html">乌克兰(1)</a></li>
+      <li>
+        <a href="../index-code=newzeland.html">新西兰(1)</a></li>
+      <li>
+        <a href="../index-code=sser.html">塞舌尔(5)</a></li>
+      <li>
+        <a href="../index-code=holland.html">荷兰(3)</a></li>
+      <li>
+        <a href="../index-code=els.html">俄罗斯(1)</a></li>
+      <li>
+        <a href="../index-code=danmark.html">丹麦(2)</a></li>
+      <li>
+        <a href="../index-code=spain.html">西班牙(1)</a></li>
+      <li>
+        <a href="../index-code=malta.html">马耳他(1)</a></li>
+      <li>
+        <a href="../index-code=tsny.html">坦桑尼亚(1)</a></li>
+      <li>
+        <a href="../index-code=mesica.html">墨西哥(1)</a></li>
+      <li>
+        <a href="../index-code=switzerland.html">瑞士(3)</a></li>
+      <li>
+        <a href="../index-code=teq.html">土耳其(3)</a></li>
+      <li>
+        <a href="../index-code=brazil.html">巴西(3)</a></li>
+      <li>
+        <a href="../index-code=ysl.html">以色列(1)</a></li>
+      <li>
+        <a href="../index-code=kldy.html">克罗地亚(1)</a></li>
+      <li>
+        <a href="../index-code=singepo.html">新加坡(12)</a></li>
+      <li>
+        <a href="../index-code=tw.html">台湾(1)</a></li>
+      <li>
+        <a href="../index-code=zl.html">智利(1)</a></li>
+      <li>
+        <a href="../index-code=philippines.html">菲律宾(1)</a></li>
+      <li>
+        <a href="../index-code=mengu.html">蒙古国(1)</a></li>
+      <li>
+        <a href="../index-code=asny.html">爱沙尼亚(1)</a></li>
+      <li>
+        <a href="../index-code=yuedan.html">约旦(1)</a></li>
+      <li>
+        <a href="../index-code=ydl.html">意大利(1)</a></li>
+      <li>
+        <a href="../index-code=vietnam.html">越南(2)</a></li>
+      <li>
+        <a href="../index-code=nanfei.html">南非(1)</a></li>
+      <li>
+        <a href="../index-code=malaysia.html">马来西亚(2)</a></li>
+      <li>
+        <a href="../index-code=alq.html">阿联酋(1)</a></li>
+      <li>
+        <a href="../index-code=cayman.html">开曼群岛(2)</a></li>
+      <li>
+        <a href="../index-code=samora.html">萨摩亚(1)</a></li>
+      <li>
+        <a href="../index-code=unknow.html">未知(56)</a></li>
+    </ul>
+  </div>
+  <div class="slideBtn">
+    <button>类型</button>
+    <ul>
+      <li>
+        <a href="../index.html">全部</a></li>
+      <li>
+        <a href="../index-type=1.html">现货</a></li>
+      <li>
+        <a href="../index-type=2.html">期货</a></li>
+      <li>
+        <a href="../index-type=3.html">法币</a></li>
+    </ul>
+  </div>
+  <script>
+    $(function(){
+      //下拉菜单
+      $('.slideBtn').click(function (e) {
+          e.stopPropagation();
+          if ($(this).find('ul').css('display') !== 'block') {
+              $('.slideBtn').find('ul').css('display', 'none');
+              $(this).find('ul').slideDown(100);
+          }
+          else {
+              $('.slideBtn').find('ul').slideUp(100);
+          }
+      });
+      $('.unit ul li').click(function () {
+          $(this).closest('.slideBtn').find('button').text($(this).text());
+          $('.slideBtn').find('ul').slideUp(100);
+
+      });
+
+      //点击屏幕取消
+      $('html').click(
+          function () {
+              $('.slideBtn ul').slideUp(100);
+          }
+      );
+    })
+  </script>  
+  <%= render "pagination" %>
+</div>

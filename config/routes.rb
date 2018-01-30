@@ -22,13 +22,46 @@ Rails.application.routes.draw do
       get :currencies
     end
   end
-  resources :currencies, only: [:index, :show]
+  
+  resources :currency_maxchanges, only: [:index]
+  resources :currency_newests, only: [:index]
   resources :currency_ranks, only: [:index]
   resources :currency_trades, only: [] do
     collection do 
       get :percent
     end
+  end 
+  resources :currency_trends, only: [:index]
+  resources :currency_vols, only: [:index] do
+    collection do 
+      get :list
+    end
+  end  
+  resources :currencies, only: [:index, :show]
+  
+  resources :exchange_notices, only: [:index, :show]
+  resources :exchange_ranks, only: [:index]
+  resources :exchange_trades, only: [] do
+    collection do 
+      get :percent
+    end
   end
+  resources :exchange_vols, only: [:index] do
+    collection do 
+      get :list
+    end
+  end 
+  resources :exchanges, only: [:index, :show]
 
-  get '/users/login' => 'users#login'
+  resources :search, only: [:index]
+
+  resources :user_tickers, only: [:index]
+
+  resources :user, only: [] do
+    collection do 
+      get :login
+      get :findpwd
+      get :setting
+    end
+  end
 end

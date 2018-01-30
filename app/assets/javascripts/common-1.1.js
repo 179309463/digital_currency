@@ -11,7 +11,7 @@ $('head').append(s);
 function autoComplete(a) {
     a.keyup(function () {
         var q = a.val();
-        var url ='/currencies/search.json?q=' + q + '&limit=12';
+        var url ='/search.json?q=' + q + '&limit=12';
         var ul1 = ul.clone();
         var ul2 = ul.clone();
         var position = a.offset();

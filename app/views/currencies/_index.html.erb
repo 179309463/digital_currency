@@ -48,7 +48,10 @@
     <h1>所有货币</h1>
     <%= render "currencies/searchform" %>
   </div>
-  <%= render "currencies/tool_top" %>
+  <div class="boxTools">
+    <%= render "currencies/tool_top_left" %>
+    <%= render "currencies/tool_pagelist" %>
+  </div>
   <div class="boxContain">
     <style>
     .maintable tr td a.price.text-red:after,
@@ -108,7 +111,9 @@
       })      
     </script>
   </div>
-  <%= render "currencies/tool_bottom" %>
+  <div class="boxTools">
+    <%= render "currencies/tool_pagelist" %>
+  </div>
   <div class="tips">备注：* 不可挖矿&nbsp;&nbsp;&nbsp;&nbsp;** 有预挖矿&nbsp;&nbsp;&nbsp;&nbsp;IFO表示该币由其它币分叉而来。</div>
 </div>
 

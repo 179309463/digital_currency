@@ -2642,6 +2642,16 @@ function save_preferences(chartName, index, chart) {
 	})
 }
 
+
+
+
+
+
+
+
+
+
+
 function series_is_visible(chartName, index, defaultState) {
 	var preferences = Cookies.getJSON("highcharts_" + chartName);
 	if (preferences === undefined) {
