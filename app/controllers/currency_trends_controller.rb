@@ -1,4 +1,4 @@
-class CurrenciesController < ApplicationController
+class CurrencyTrendsController < ApplicationController
 	def index
 
 	end
