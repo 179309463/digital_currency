@@ -38,6 +38,7 @@
               <th role="columnheader">操作</th></tr>
           </thead>
           <tbody>
+            <%= (1..20).each do %>
             <tr id="tr_echolink__EKO">
               <td>1</td>
               <td>
@@ -56,6 +57,7 @@
                 <div class="hasaddto disactive" id="FocusSiteChose#echolink##EKO" onclick="removesitechose($(this));">移除自选</div>
               </td>
             </tr>
+            <% end %>
           </tbody>
         </table>
         <script type="text/javascript">

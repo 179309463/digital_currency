@@ -83,6 +83,7 @@
       <th>自选状态</th></tr>
   </thead>
   <tbody>
+    <%= (1..20).each do %>
     <tr>
       <td>1</td>
       <td>
@@ -97,6 +98,7 @@
       <td>
         <div class="addto disactive" id="FocusCoinChose#bitcoin#huobipro#btc_usdt" onclick="addsitechose($(this));">添加自选</div></td>
     </tr>
+    <% end %>
   </tbody>
 </table>
 <div class="tips"></div>

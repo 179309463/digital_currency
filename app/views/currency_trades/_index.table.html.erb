@@ -13,6 +13,7 @@
         <th data-sort-method='none'>自选状态</th></tr>
     </thead>
     <tbody>
+      <%= (1..20).each do %>
       <tr class="adList">
         <td>*</td>
         <td>
@@ -43,6 +44,7 @@
         <td>
           <div class="addto disactive" id="FocusSiteChose#bitcoin#bitfinex#btc_usd" onclick="addsitechose($(this));">添加自选</div></td>
       </tr>
+      <% end %>
     </tbody>
   </table>
   <a class="seeAll" href="../currencies/bitcoin/market.html" target="_blank">查看全部</a>

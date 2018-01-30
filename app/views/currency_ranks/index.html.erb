@@ -94,6 +94,7 @@
               <th>成交额(1月)</th></tr>
           </thead>
           <tbody>
+            <%= (1..20).each do %>
             <tr>
               <td>1</td>
               <td>
@@ -107,6 +108,7 @@
               <td class="volume" data-usd="426161924096" data-cny="2730121134336.2" data-btc="31098450.25">
                 <a href="../currencies/bitcoin.html#markets" target="_blank">¥273,012,113万</a></td>
             </tr>
+            <% end %>
           </tbody>
         </table>
         <div class="m15"></div>

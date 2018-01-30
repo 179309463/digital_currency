@@ -40,6 +40,7 @@
               <th>涨幅(7d)</th></tr>
           </thead>
           <tbody>
+            <%= (1..20).each do %>
             <tr id="bitcoin">
               <td>1</td>
               <td>
@@ -59,6 +60,7 @@
               <td>
                 <span class="text-red">-13.54%</span></td>
             </tr>
+            <% end %>
           </tbody>
         </table>
         <script>

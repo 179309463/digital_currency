@@ -74,6 +74,7 @@
               <th>上涨数/下跌数</th></tr>
           </thead>
           <tbody>
+            <%= (1..20).each do %>
             <tr>
               <td>
                 <a href="../concept/6.html" target="_blank">游戏概念</a></td>
@@ -90,6 +91,7 @@
                 <span class="text-green">2</span>/
                 <span class="text-red">9</span></td>
             </tr>
+            <% end %>
           </tbody>
         </table>
       </div>

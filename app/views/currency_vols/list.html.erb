@@ -22,6 +22,7 @@
         <th>占比</th></tr>
     </thead>
     <tbody>
+      <%= (1..20).each do %>
       <tr>
         <td>1</td>
         <td>
@@ -30,7 +31,9 @@
           <a href="https://www.bitfinex.com" rel="nofollow" target="_blank">BTC/USD</a></td>
         <td class="volume" data-usd="773169107.24491030000000000000" data-cny="4953153251.7430688548900000000" data-btc="75320.90669702000000000000" data-native="75320.90669702000000000000">¥495,315万</td>
         <td class="price" data-usd="10265" data-cny="65761" data-btc="1" data-native="10265">¥65,761</td>
-        <td>6.88%</td></tr>
+        <td>6.88%</td>
+      </tr>
+      <% end %>
     </tbody>
   </table>
 </div>

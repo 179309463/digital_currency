@@ -24,6 +24,7 @@
           <th>时间</th></tr>
       </thead>
       <tbody>
+        <%= (1..20).each do %>
         <tr>
           <td>
             <a href="/currencies/ht/" target="_blank">
@@ -31,7 +32,9 @@
           <td>?</td>
           <td>
             <span class="text-green">0%</span></td>
-          <td>今天</td></tr>
+          <td>今天</td>
+        </tr>
+        <% end %>
       </tbody>              
     </table>
   </div>

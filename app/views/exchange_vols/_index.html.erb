@@ -21,13 +21,16 @@
           <th>成交量</th></tr>
       </thead>
       <tbody>
+        <%= (1..20).each do %>
         <tr>
           <td>
             <span>1</span></td>
           <td>
             <a href="/exchange/binance/">
               <img src="//static.eastcoinbay.com/PlatImages/20170805/fc88d4f22dec4d67b374e6d46aab7380_15_15.png" alt="币安网-Binance">币安网-Binance</a></td>
-          <td>¥1,658,503万</td></tr>
+          <td>¥1,658,503万</td>
+        </tr>
+        <% end %>
       </tbody>              
     </table>
   </div>

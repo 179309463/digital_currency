@@ -152,6 +152,7 @@
       <th>% 1小时</th></tr>
   </thead>
   <tbody>
+    <%= (1..20).each do %>
     <tr>
       <td>
         <span>1</span></td>
@@ -166,6 +167,7 @@
       <td>
         <span class="text-red">-58.65%</span></td>
     </tr>
+    <% end %>
   </tbody>
 </table>
 <table class="table table-rank">
@@ -179,6 +181,7 @@
       <th>% 24小时</th></tr>
   </thead>
   <tbody>
+    <%= (1..20).each do %>
     <tr>
       <td>
         <span>1</span></td>
@@ -193,6 +196,7 @@
       <td>
         <span class="text-red">-68.67%</span></td>
     </tr>
+    <% end %>
   </tbody>
 </table>
 <table class="table table-rank" style="display:none">
@@ -206,6 +210,7 @@
       <th>% 1周</th></tr>
   </thead>
   <tbody>
+    <%= (1..20).each do %>
     <tr>
       <td>
         <span>1</span></td>
@@ -220,5 +225,6 @@
       <td>
         <span class="text-red">-95.19%</span></td>
     </tr>
+    <% end %>
   </tbody>
 </table>
