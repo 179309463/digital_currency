@@ -1,0 +1,125 @@
+<style>
+.loginbar>a, .loginbar>div {
+  display: block;
+  float: right;
+  height: 30px;
+  line-height: 31px;
+  margin-left: 20px;
+}  
+nav .rightSise {
+  overflow: visible !important;
+}
+</style>
+<style>
+.getgroup {
+  margin-left: 30px !important;
+  position: relative;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.getgroup:hover {
+  background: #ddd;
+}
+
+.getgroup ul {
+  position: absolute;
+  z-index: 999999;
+  background: #ddd;
+  left: 0;
+  top: 30px;
+  padding: 5px 0;
+  display: none;
+}
+
+.getgroup a {
+  float: none;
+  vertical-align: middle;
+  line-height: 15px;
+  display: block;
+  height: 26px;
+  width: 100%;
+}
+
+.getgroup a img {
+  margin-top: 4px;
+}
+
+.getgroup ul li {
+  height: 30px;
+  overflow: hidden;
+  padding: 0 10px;
+}
+
+.getgroup li:hover img {
+  box-shadow: 0px 0px 2px #333;
+}
+
+.getgroup:hover ul {
+  display: block;
+}
+</style>
+
+<style>
+.userLinks a {
+  vertical-align: 0 !important;
+}
+</style>
+
+<div class="rightSise loginbar">
+  <div class="getgroup">官方交流群
+    <ul>
+      <li>
+        <a href="#" target="_blank">
+          <img alt="东方币湾官方电报群" src="<%= asset_path("telegram.png")%>">
+        </a>
+        </li>
+      <li>
+        <a href="#" target="_blank">
+          <img alt="东方币湾官方QQ群368805087" src="//pub.idqqimg.com/wpa/images/group.png">
+        </a>
+      </li>
+    </ul>
+  </div>&nbsp;&nbsp;
+  <div class="userLinks userinfo" style="display: none">
+    <a class="username" href="/user/setting"></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a rel="nofollow" onclick="javascript: logout(); return false; ">退出</a>
+  </div>&nbsp;&nbsp;
+  <div class="userLinks unlogin" style="display: none">
+    <a rel="nofollow" class="login">登陆</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a rel="nofollow" class="signup">注册</a>
+  </div>
+</div>
+
+<script>
+  function getUserInfo() {
+    $.ajax({
+        type: "GET",
+        url: "/user/login.json",
+        xhrFields: {
+            withCredentials: true
+        },
+        success: function (data) {
+            var result = data;
+            if (result.status == "success") {
+                if (result.username.length > 0 || result.userid.length > 0) {
+                    $(".userinfo").css('display', 'block');
+                    $(".unlogin").css('display', 'none');
+                    if (result.username.length > 0) {
+                        $(".userLinks .username").html(result.username);
+                    } else {
+                        $(".userLinks .username").html(result.userid);
+                    }
+
+                    return;
+                } else {
+                    $(".userLinks .username").html(result.userid);
+                }
+            }
+            $(".userinfo").css('display', 'none');
+            $(".unlogin").css('display', 'block');
+        }
+    })
+  };
+  getUserInfo();
+</script>

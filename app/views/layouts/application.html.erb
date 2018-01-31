@@ -16,9 +16,6 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
 
     <%= javascript_include_tag "application" %>
-    <!-- <link href="/assets/css/stylesheet_nav.css" rel="stylesheet">
-    <link href="/assets/js/tablesort/tablesort.css" rel="stylesheet">
-    <script src="/assets/js/jquery-2.1.1.js"></script> -->
     <link rel="shortcut icon" href="<%= asset_path("fav.ico") %>"/>
   </head>
   
@@ -32,6 +29,9 @@
     <%= render "share/friendlink" %> 
     <%= render "share/footer" %> 
     <%= render "share/totop" %> 
+
+    <%= render "share/outer_window" %>
+
   </body>
 
 </html>

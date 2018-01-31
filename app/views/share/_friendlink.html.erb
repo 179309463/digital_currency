@@ -1,5 +1,4 @@
 <style>
-
 .fLink {
     background: #d8d8d8;
     padding: 15px;
@@ -27,23 +26,12 @@
     text-decoration: none
 }
 </style>
+
 <div class="fLink clear">
   <div class="w1200">
     <h3>友情链接</h3>
-    <a href="http://www.bitett.com" target="_blank" title="比特头条">比特头条</a>
-    <a href="http://www.haoqkl.cn" target="_blank" title="好区块链">好区块链</a>
-    <a href="http://www.coingogo.com/" target="_blank" title="币源社区">币源社区</a>
-    <a href="http://www.bcex.ca/" target="_blank" title="BCEX">BCEX</a>
-    <a href="http://uncoinex.com/" target="_blank" title="澳洲U网">澳洲U网</a>
-    <a href="http://www.bibox.com/" target="_blank" title="Bibox">Bibox</a>
-    <a href="http://www.btctrade.im/" target="_blank" title="比特币交易网">比特币交易网</a>
-    <a href="http://www.bixingxing.com" target="_blank" title="比特币导航">比特币导航</a>
-    <a href="http://www.linkcoin.pro/" target="_blank" title="linkcoin">linkcoin</a>
-    <a href="http://topbtc.com/" target="_blank" title="TopBtc">TopBtc</a>
-    <a href="http://www.qukuaiwang.com.cn" target="_blank" title="区块网">区块网</a>
-    <a href="http://www.lun.bi/" target="_blank" title="论币">论币</a>
-    <a href="http://www.block123.com/" target="_blank" title="区块链导航">区块链导航</a>
-    <a href="http://www.weilaicaijing.com/" target="_blank" title="未来财经">未来财经</a>
-    <a href="https://www.epay.com" target="_blank" title="易派支付">易派支付</a>
+    <% @friendLinks.each do |link| %>
+        <%= link_to link[:title], link[:href], target: "_blank", title: link[:title] %>
+    <% end %>
   </div>
 </div>

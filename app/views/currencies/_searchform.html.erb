@@ -187,22 +187,22 @@ function autoComplete(a) {
                 if (data.length != 0) {
                     for (var i = 0; i < data.length; i++) {
                         var cell = $li.clone();
-                        var str = data[i].split('#');
-                        if (str[0] == '0') {//货币
+                        var result = data[i];
+                        if (result.type == '0') {//货币
                             var img = '';
-                            if (str[3]) {//是否有小图
-                                img = '<img src="' + str[3] + '">'
+                            if (result.image) {//是否有小图
+                                img = '<img src="' + result.image + '">'
                             }
-                            cell.find('a').attr('href', '/currencies/' + str[1]+"/").attr('title', str[1]).html(img + str[2]);
+                            cell.find('a').attr('href', '/currencies/' + result.id+"/").attr('title', result.id).html(img + result.name);
                             ul1.append(cell);
                         }
                         else {//市场
                             var cell = $li.clone();
                             var img = '';
-                            if (str[3]) {//是否有小图
-                                img = '<img src="' + str[3] + '">'
+                            if (result.image) {//是否有小图
+                                img = '<img src="' + result.image + '">'
                             }
-                            cell.find('a').attr('href', '/exchange/' + str[1] + "/").attr('title', str[1]).html(img + str[2]);
+                            cell.find('a').attr('href', '/exchange/' + result.id + "/").attr('title', result.id).html(img + result.name);
                             ul2.append(cell);
                         }
                     }
@@ -240,7 +240,7 @@ function autoComplete(a) {
                     $('body').find('.autocomplete').remove();
                 })
             },
-            error: function () {
+            error: function (e) {
                 return false
             }
         })
