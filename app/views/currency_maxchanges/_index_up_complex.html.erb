@@ -4,6 +4,84 @@
 }
 </style>
 <div class="boxTools  boxTools-i">
+  <style>
+
+  .slideBtn span:after {
+      margin-left: 2px
+  }
+
+  .slideBtn {
+      position: relative;
+      display: inline-block;
+      z-index: 9999
+  }
+
+  .slideBtn button, .slideBtn>a {
+      height: 32px;
+      display: inline-block;
+      border: 1px solid #eaecef;
+      border-radius: 3px;
+      position: relative;
+      background: #fff;
+      padding: 5px 10px;
+      color: #333;
+      cursor: pointer;
+      transition: all .3s
+  }
+
+  .slideBtn button:hover {
+      background: #3499da;
+      color: #fff
+  }
+
+  .slideBtn span {
+      line-height: 32px;
+      padding: 0 10px
+  }
+
+  .slideBtn ul {
+      position: absolute;
+      border: 1px solid #eaecef;
+      box-shadow: 1px 1px 3px #eaecef;
+      margin-left: -1px;
+      margin-top: 5px;
+      background: #fff;
+      padding: 3px 0;
+      border-radius: 3px;
+      display: none;
+      white-space: nowrap;
+      min-width: 100%
+  }
+
+  .slideBtn ul li a {
+      padding: 3px 10px;
+      display: block;
+      text-decoration: none;
+      height: 25px;
+      line-height: 25px;
+      color: #333
+  }
+
+  .slideBtn ul li a:hover {
+      background: #3499da;
+      color: #fff
+  }
+
+  .slideBtn button:active {
+      background: #3499da;
+      color: #fff
+  }
+  </style>  
+  <style>
+  .unit ul li {
+      width: 120px;
+      float: left
+  }
+
+  .unit ul {
+      width: 600px
+  }
+  </style>
   <div class="slideBtn unit">
     <button>人民币(CNY)</button>
     <ul>

@@ -43,10 +43,12 @@ footer .media {
   position: relative
 }
 </style>
+
 <footer class="clear">
   <div class="w1200">
     <a class="logo2" href="index.html">
-      <img src="<%= asset_path("logo.png")%>" alt="东方币湾的Logo"></a>
+      <img src="<%= asset_path("logo.png")%>" alt="东方币湾的Logo">
+    </a>
     <div class="info">
       <style>
       .space2:before {
@@ -70,6 +72,25 @@ footer .media {
           <a href="#" target="_blank">粤ICP备16116847号-8</a></p>
       </div>
     </div>
+    <style>
+    .media .detal {
+      padding: 5px;
+      position: absolute;
+      left: 0;
+      margin-top: -140px;
+      margin-left: -40px;
+      background: #3499da;
+      display: none
+    }
+
+    .media img {
+      display: block
+    }
+
+    .media div:hover .detal {
+      display: block
+    }
+    </style>
     <div class="media">
       <div class="weCat">
         <div class="detal">

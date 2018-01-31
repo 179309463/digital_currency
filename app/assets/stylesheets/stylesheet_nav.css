@@ -54,23 +54,6 @@ html, body {
 	clear: both
 }
 
-
-
-.preHead {
-	padding: 15px 0;
-	background: #fff
-}
-
-.w299 {
-	width: 224px;
-	float: left;
-	border-right: 1px solid #eaecef;
-	padding-left: 15px
-}
-
-
-
-
 .m30 {
 	height: 30px;
 	width: 100%;
@@ -113,10 +96,6 @@ html, body {
 
 
 
-.box340 {
-	width: 340px
-}
-
 .boxTit h1, .boxTit h2, .boxTit h3, .boxTit h4 {
 	font-size: 17px;
 	font-weight: 500;
@@ -158,76 +137,9 @@ html, body {
 	padding: 15px
 }
 
-.slideBtn span:after {
-	margin-left: 2px
-}
 
-.slideBtn {
-	position: relative;
-	display: inline-block;
-	z-index: 9999
-}
 
-.slideBtn button, .slideBtn>a {
-	height: 32px;
-	display: inline-block;
-	border: 1px solid #eaecef;
-	border-radius: 3px;
-	position: relative;
-	background: #fff;
-	padding: 5px 10px;
-	color: #333;
-	cursor: pointer;
-	transition: all .3s
-}
 
-.slideBtn button:hover {
-	background: #3499da;
-	color: #fff
-}
-
-.slideBtn span {
-	line-height: 32px;
-	padding: 0 10px
-}
-
-.slideBtn ul {
-	position: absolute;
-	border: 1px solid #eaecef;
-	box-shadow: 1px 1px 3px #eaecef;
-	margin-left: -1px;
-	margin-top: 5px;
-	background: #fff;
-	padding: 3px 0;
-	border-radius: 3px;
-	display: none;
-	white-space: nowrap;
-	min-width: 100%
-}
-
-.slideBtn ul li a {
-	padding: 3px 10px;
-	display: block;
-	text-decoration: none;
-	height: 25px;
-	line-height: 25px;
-	color: #333
-}
-
-.slideBtn ul li a:hover {
-	background: #3499da;
-	color: #fff
-}
-
-.sline {
-	height: 1px;
-	background: #eaecef
-}
-
-.slideBtn button:active {
-	background: #3499da;
-	color: #fff
-}
 
 .boxContain {
 	padding: 0 15px;
@@ -288,71 +200,6 @@ html, body {
 	background: #eee !important
 }
 
-
-
-
-
-
-
-
-.line, .line2 {
-	display: none !important
-}
-
-
-
-.media .detal {
-	padding: 5px;
-	position: absolute;
-	left: 0;
-	margin-top: -140px;
-	margin-left: -40px;
-	background: #3499da;
-	display: none
-}
-
-.media img {
-	display: block
-}
-
-.media div:hover .detal {
-	display: block
-}
-
-.fLink {
-	background: #d8d8d8;
-	padding: 15px;
-	color: #b2b2b2;
-	box-shadow: 1px 1px 3px #ccc;
-	z-index: 99;
-	position: relative
-}
-
-.fLink h3 {
-	font-size: 16px;
-	font-weight: normal;
-	color: #777
-}
-
-.fLink a {
-	margin-top: 10px;
-	margin-right: 15px;
-	color: #777;
-	display: inline-block
-}
-
-.fLink a:hover {
-	color: #3499da;
-	text-decoration: none
-}
-
-
-
-.pull-right {
-	float: right;
-	overflow: hidden
-}
-
 .m15 {
 	display: block;
 	width: 100%;
@@ -360,8 +207,6 @@ html, body {
 	overflow: hidden;
 	clear: both
 }
-
-
 
 table {
 	border-collapse: collapse
@@ -383,26 +228,15 @@ table {
 }
 
 
-.hidden {
-	display: none
-}
 
-.unit ul li {
-	width: 120px;
-	float: left
-}
 
-.unit ul {
-	width: 600px
-}
+
 
 .padding5 {
 	padding: 5px
 }
 
-#vol_coin, #vol_exchange, .maxchange {
-	background: #fff !important
-}
+
 
 
 
