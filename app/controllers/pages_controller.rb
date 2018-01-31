@@ -5,6 +5,7 @@ class PagesController < BaseController
 	@currencies = Array.new(20, 
 		{
 			order: 1,
+			id: 'bitcoin',
 			image: "https://static.eastcoinbay.com/Coin/7033f2f2c2a16094bbb3bafc47205ba8_small.png",
 			name: "BTC-比特币",
 			marketcap: {

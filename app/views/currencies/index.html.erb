@@ -43,25 +43,29 @@
               <th>涨幅(7d)</th></tr>
           </thead>
           <tbody>
-            <% (1..20).each do %>
-            <tr id="bitcoin">
-              <td>1</td>
+            <% @currencies.each do |currency| %>
+            <tr id="<%= currency[:id] %>">
+              <td><%= currency[:order] %></td>
               <td>
-                <a href="../currencies/bitcoin.html" target="_blank">
-                  <img src="https://static.eastcoinbay.com/Coin/7033f2f2c2a16094bbb3bafc47205ba8_small.png" alt="BTC-比特币">BTC-比特币</a></td>
-              <td class="market-cap" data-usd="176193549596" data-cny="1128748669074" data-btc="16895941">¥11,287亿</td>
+                <a href="currencies/<%= currency[:id] %>.html" target="_blank">
+                  <img src="<%= currency[:image] %>" alt="<%= currency[:name] %>"><%= currency[:name] %></a>
+                </td>
+              <td class="market-cap" data-usd="<%= currency[:marketcap][:usd] %>" data-cny="<%= currency[:marketcap][:cny] %>" data-btc="<%= currency[:marketcap][:btc] %>">¥<%= currency[:marketcap][:cny] %>亿</td>
               <td>
-                <a href="../currencies/bitcoin.html#markets" target="_blank" class="price" data-usd="10474" data-cny="67102" data-btc="1">¥67,102</a></td>
-              <td>1,682万</td>
+                <a href="../currencies/<%= currency[:id] %>.html#markets" target="_blank" class="price" data-usd="<%= currency[:price][:usd] %>" data-cny="<%= currency[:price][:cny] %>" data-btc="<%= currency[:price][:btc] %>">¥<%= currency[:price][:cny] %></a></td>
+              <td><%= currency[:volCount] %>万</td>
               <td>80.1%</td>
               <td>
-                <a href="../currencies/bitcoin.html#markets" target="_blank" class="volume" data-usd="10348700000" data-cny="35881235172.6561" data-btc="1000690">¥3,588,124万</a></td>
+                <a href="../currencies/<%= currency[:id] %>.html#markets" target="_blank" class="volume" data-usd="<%= currency[:volume][:usd] %>" data-cny="<%= currency[:volume][:cny] %>" data-btc="<%= currency[:volume][:btc] %>"><%= number_to_currency currency[:volume][:cny] %>万</a></td>
               <td>
-                <span class="text-green">1.06%</span></td>
+                <span class="text-green">1.06%</span>
+              </td>
               <td class="change">
-                <span class="text-red">-6.43%</span></td>
+                <span class="text-red">-6.43%</span>
+              </td>
               <td>
-                <span class="text-red">-13.54%</span></td>
+                <span class="text-red">-13.54%</span>
+              </td>
             </tr>
             <% end %>
           </tbody>

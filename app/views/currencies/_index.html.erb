@@ -85,27 +85,27 @@
           <th width="95" data-sort-method='none'>价格趋势(7d)</th></tr>
       </thead>
       <tbody>
-        <% @currencies.each do %>
-        <tr id="bitcoin">
-          <td>1</td>
+        <% @currencies.each do |currency| %>
+        <tr id="<%= currency[:id] %>">
+          <td><%= currency[:order] %></td>
           <td>
-            <a href="currencies/bitcoin.html" target="_blank">
-              <img src="https://static.eastcoinbay.com/Coin/7033f2f2c2a16094bbb3bafc47205ba8_small.png" alt="BTC-比特币">BTC-比特币
+            <a href="currencies/<%= currency[:id] %>.html" target="_blank">
+              <img src="<%= currency[:image] %>" alt="<%= currency[:name] %>"><%= currency[:name] %>
             </a>
           </td>
-          <td class="market-cap" data-usd="176624485715" data-cny="1131509375135" data-btc="16898432">¥11,315亿</td>
+          <td class="market-cap" data-usd="<%= currency[:marketcap][:usd] %>" data-cny="<%= currency[:marketcap][:cny] %>" data-btc="<%= currency[:marketcap][:btc] %>">¥<%= currency[:marketcap][:cny] %>亿</td>
           <td>
-            <a href="currencies/bitcoin.html#markets" target="_blank" class="price" data-usd="10500" data-cny="67266" data-btc="1">¥67,266</a>
+            <a href="../currencies/<%= currency[:id] %>.html#markets" target="_blank" class="price" data-usd="<%= currency[:price][:usd] %>" data-cny="<%= currency[:price][:cny] %>" data-btc="<%= currency[:price][:btc] %>">¥<%= currency[:price][:cny] %></a>
           </td>
-          <td>1,682万</td>
+          <td><%= currency[:volCount] %>万</td>
           <td>
-            <a href="currencies/bitcoin.html#markets" target="_blank" class="volume" data-usd="5625949541.07999" data-cny="36041519242.9921" data-btc="538855.452734885">¥3,604,152万</a>
+            <a href="../currencies/<%= currency[:id] %>.html#markets" target="_blank" class="volume" data-usd="<%= currency[:volume][:usd] %>" data-cny="<%= currency[:volume][:cny] %>" data-btc="<%= currency[:volume][:btc] %>">¥<%= currency[:volume][:cny] %>万</a>
           </td>
           <td class="change">
-            <span class="text-red">-5.51%</span>
+            <span class="text-red"><%= currency[:change] %>%</span>
           </td>
           <td class="char">
-            <span class="line2" data-peity='{"stroke": "#3ca316"}'>12256,11131,11131,10330,10396,11237,11255,11715,11953,11518,11636,12002,11907,11619,12774,12999,13198,13222,12533,12125,11625,11626,11843,11964,10868,10940,10892,10596</span>
+            <span class="line2" data-peity='{"stroke": "#3ca316"}'><%= currency[:data].join(",") %></span>
           </td>
         </tr>
         <% end %>
