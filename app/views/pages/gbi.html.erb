@@ -7,14 +7,14 @@
         <div class="tab-header">
           <style>
           .highcharts-loading {
-            background: url("loading.gif") center no-repeat
+            background: url("<%= asset_path("loading.gif") %>") center no-repeat
           }
           </style>
           <div for="highcharts-graph" id="highcharts-loading" class="text-center highcharts-loading" style="height: 520px">
             <div>
               <style>
               .loading {
-                background: url("loading.gif") center no-repeat
+                background: url("<%= asset_path("loading.gif") %>") center no-repeat
               }
               </style>
               <span class="loading"></span>
@@ -22,7 +22,7 @@
           </div>
           <style>
           .highcharts-nodata {
-            background: url("nodata.png") center no-repeat
+            background: url("<%= asset_path("nodata.png") %>") center no-repeat
           }
           </style>
           <style>

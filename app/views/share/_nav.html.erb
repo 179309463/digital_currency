@@ -1,11 +1,14 @@
 <style>
+nav li {
+	margin-top: 5px
+}
 nav {
 	top: 0;
 	left: 0;
 	right: 0;
 	position: fixed;
 	box-shadow: 2px 2px 3px #eaecef;
-	height: 70px;
+	height: 115px;
 	background: #fff;
 	transition: all .5s;
 	z-index: 999999
@@ -17,7 +20,7 @@ nav:after {
 	width: 100%;
 	display: block;
 	visibility: hidden;
-	clear: both
+	clear: both;
 }
 
 nav a {
@@ -48,11 +51,11 @@ nav a {
 	}
 
 	.navsub .text-green:after {
-		content: url("arrow-u3.svg")
+		content: url("<%= asset_path("arrow-u3.svg") %>")
 	}
 
 	.navsub .text-red:after {
-		content: url("arrow-d4.svg")
+		content: url("<%= asset_path("arrow-d4.svg") %>")
 	} 
   </style> 
   <div class="navsub">

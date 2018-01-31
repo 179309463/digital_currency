@@ -126,7 +126,7 @@
               display: inline-block;
               width: 15px;
               height: 15px;
-              background: url("<%= asset_path("facebook.png") %>g");
+              background: url("<%= asset_path("facebook.png") %>");
               background-size: 30px 15px;
               vertical-align: -3px
             }
@@ -229,11 +229,11 @@
       }
 
       .tabTit .more:before {
-        content: url("more.svg")
+        content: url("<%= asset_path("more.svg") %>")
       }
 
       .tabTit .more:hover:before {
-        content: url("more2.svg")
+        content: url("<%= asset_path("more2.svg") %>")
       }
 
       .tabTit h3, .tabTit h1, .tabTit h2 {
@@ -258,7 +258,7 @@
 
       .tabTit .active {
         border-top: 3px solid #3499da;
-        background: url("arrow-d2.svg") center -6px no-repeat
+        background: url("<%= asset_path("arrow-d2.svg") %>") center -6px no-repeat
       }
 
       .tabTit .active.tit {

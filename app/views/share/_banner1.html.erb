@@ -36,7 +36,7 @@
 		font-style: normal;
 		line-height: 40px;
 		text-align: center;
-		background: #fff url("more.svg") no-repeat center;
+		background: #fff url("<%= asset_path("more.svg") %>") no-repeat center;
 		color: #fff;
 		opacity: 0;
 		cursor: pointer
@@ -65,7 +65,7 @@
 	}
 
 	#spread2:after {
-		content: url("mark.png");
+		content: url("<%= asset_path("mark.png") %>");
 		position: absolute;
 		right: 0;
 		bottom: 0;
