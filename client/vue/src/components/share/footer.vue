@@ -1,0 +1,115 @@
+<style scoped>
+footer {
+  background: #d8d8d8;
+  padding: 15px;
+  left: 0;
+  right: 0
+}
+
+footer:after {
+  content: '';
+  display: block;
+  width: 100%;
+  clear: both
+}
+
+footer .logo2 {
+  margin-top: 5px;
+  display: inline-block;
+  float: left
+}
+
+footer .info {
+  float: left;
+  margin-left: 30px;
+  margin-top: 10px
+}
+
+footer a:hover {
+  color: #3499da !important;
+  text-decoration: none
+}
+
+footer .info a, footer .info p, footer .info i {
+  color: #777
+}
+
+footer .media {
+  float: right;
+  margin-top: 5px;
+  z-index: 999;
+  position: relative
+}
+
+.space2:before {
+  content: '|';
+  margin: 0 5px;
+  font-style: normal
+}
+
+.media .detal {
+  padding: 5px;
+  position: absolute;
+  left: 0;
+  margin-top: -140px;
+  margin-left: -40px;
+  background: #3499da;
+  display: none
+}
+
+.media img {
+  display: block
+}
+
+.media div:hover .detal {
+  display: block
+}
+</style>
+
+<template>
+  <footer class="clear">
+    <div class="w1200">
+      <a class="logo2" href="index.html">
+        <img src="/static/logo.png" alt="东方币湾的Logo">
+      </a>
+      <div class="info">
+        <div>
+          <a href="/pages/aboutus" target="_blank">关于我们</a>
+          <i class="space2"></i>
+          <a href="/pages/contact" target="_blank">联系我们</a>
+          <i class="space2"></i>
+          <a href="/pages/faq" target="_blank">常见问题（f&q）</a>
+          <i class="space2"></i>
+          <a href="/pages/declare" target="_blank">免责声明</a>
+          <i class="space2"></i>
+          <a href="#">访问手机版</a>
+        </div>
+        <div>
+          <p>©Copyright eastcoinbay.com 2018 | 备案号：
+            <a href="#" target="_blank">粤ICP备16116847号-8</a>
+          </p>
+        </div>
+      </div>
+      <div class="media">
+        <div class="weCat">
+          <div class="detal">
+            <img src="/static/fwh.jpg" alt="东方币湾微信公众号" width="120" height="120">
+          </div>
+        </div>
+        <a class="qq" href="#" target="_blank"></a>
+        <a class="sina" href='#' target='_blank'></a>
+      </div>
+    </div>
+  </footer>
+</template>
+
+<script>
+export default {
+  name: 'ShareFooter',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  }
+}
+</script>

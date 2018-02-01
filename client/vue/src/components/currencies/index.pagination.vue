@@ -1,0 +1,73 @@
+<style scoped>
+.pageList {
+  float: right
+}
+
+.pageList a {
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  border: 1px solid #eaecef;
+  display: block;
+  float: left;
+  color: #333;
+  border-right: 0;
+  transition: all .3s;
+  text-decoration: none
+}
+
+.pageList a:hover {
+  background: #3499da;
+  color: #fff
+}
+
+.pageList a:first-child {
+  border-radius: 3px 0 0 3px
+}
+
+.pageList a:last-child {
+  border-radius: 0 3px 3px 0;
+  border-right: 1px solid #eaecef
+}
+
+.pageList a:active,
+.pageList .active {
+  background: #3499da;
+  color: #fff
+}
+
+.pageList-left {
+  float: none !important;
+  display: inline-block;
+  vertical-align: top
+}
+</style>
+
+<template>
+  <div class="pageList">
+    <a href="currencies/index.html">全部</a>
+    <a href='index.html#' class='btn btn-white'><</a>
+    <a href='index.html#' class='btn btn-white active'>1</a>
+    <a class='btn btn-white' href='list_2.html'>2</a>
+    <a class='btn btn-white' href='list_3.html'>3</a>
+    <a class='btn btn-white' href='list_4.html'>4</a>
+    <a class='btn btn-white' href='list_5.html'>5</a>
+    <a href='index.html#' class='btn btn-white'>...</a>
+    <a class='btn btn-white' href='list_18.html'>18</a>
+    <a class='btn btn-white' href='list_2.html'>></a>
+  </div>
+</template>
+
+
+<script>
+import $ from 'jquery'
+
+export default {
+  name: 'CurrencyIndexPagination',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  }
+}
+</script>

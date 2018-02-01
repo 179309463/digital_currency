@@ -1,0 +1,151 @@
+<style scoped>
+.subNav {
+  background: #fff;
+  position: absolute;
+  left: 0;
+  border: 1px solid #eaecef;
+  border-radius: 5px;
+  display: none;
+  transition: all .4s;
+  box-shadow: 1px 1px 1px #eaecef;
+}
+
+.subNav li a {
+  display: block;
+  float: none !important;
+  padding: 3px 10px;
+  min-width: 73px;
+  line-height: 25px !important;
+  white-space: nowrap;
+  color: #333 !important;
+  transition: all .1s;
+}
+
+.subNav li a:hover {
+  background: #3499da;
+  color: #fff !important;
+}
+
+.navSlide:after, .slideBtn button:after {
+  content: url("/static/arrow-d.png");
+}
+
+.navSlide:hover, nav .leftNav li:hover {
+  font-weight: 500;
+  cursor: pointer;
+  color: #3499da;
+}
+
+.navSlide:hover .subNav {
+  display: block;
+}
+
+nav .leftNav {
+  float: left;
+  height: 40px;
+  transition: all .4s;
+}
+
+nav .leftNav>li>a, nav .leftNav>li {
+  display: block;
+  float: left;
+  height: 70px;
+  line-height: 70px;
+  padding: 0 15px;
+  position: relative;
+  transition: all .4s;
+}
+
+nav .leftNav li:hover a {
+  color: #3499da;
+}
+
+nav .leftNav li.logo {
+  margin-right: 15px;
+}
+
+nav .leftNav li.logo img {
+  height: 40px;
+  vertical-align: middle;
+}
+
+nav .leftNav li.logo {
+  padding-left: 0;
+  margin-right: 0;
+}
+
+nav .leftNav>li>a {
+  padding: 0;
+}
+
+nav .logo a {
+  padding: 0 !important;
+}
+
+</style>
+
+<template>
+
+  <ul class="leftNav">
+    <li class="logo">
+      <a href="index.html">
+        <img src="/static/logo.png" alt="东方币湾的Logo">
+      </a>
+    </li>
+    <li class="navSlide">行情
+      <ul class="subNav">
+        <li>
+          <a href="/">所有</a>
+        </li>
+        <li>
+          <a href="/currencies">货币</a>
+        </li>
+        <li>
+          <a href="/currencies">代币</a>
+        </li>
+        <li>
+          <a href="/currency_newests">最新上市</a>
+        </li>
+        <li>
+          <a href="/concepts">概念行情</a>
+        </li>
+        <li>
+          <a href="/pages/charts">市值趋势</a>
+        </li>
+      </ul>
+    </li>
+    <li class="navSlide">排行榜
+      <ul class="subNav">
+        <li>
+          <a href="/currency_maxchanges">涨跌幅排行榜</a>
+        </li>
+        <li>
+          <a href="/currency_vols">24小时成交额排行(币种)</a>
+        </li>
+        <li>
+          <a href="/exchange_vols">24小时成交额排行(交易平台)</a>
+        </li>
+        <li>
+          <a href="/currency_ranks">月成交额排行</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="/exchanges">交易平台</a>
+    </li>
+    <li>
+      <a href="/pages/app">APP</a>
+    </li>
+  </ul>
+</template>
+
+<script>
+export default {
+  name: 'ShareNavLeft',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  }
+}
+</script>
