@@ -1,7 +1,3 @@
-<style scoped>
-
-</style>
-
 <template>
   <div>
     <div class="m30"></div>
@@ -20,7 +16,7 @@
         <share-banner2></share-banner2>
         <%= render "share/vol" %>
         <%= render "currency_newests/index" %>
-        <%= render "pages/daohang" %>
+        <daohang-index></daohang-index>
       </div>
     </div>
   </div>
@@ -34,8 +30,9 @@ import CurrencyIndex from '@/components/currencies/index'
 import ExchangeNoticeIndex from '@/components/exchange_notices/index'
 import ExchangeMaxchangeIndex from '@/components/exchange_maxchanges/index'
 
+import DaohangIndex from '@/components/daohangs/index'
+
 export default {
-  name: 'PagesIndex',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -48,6 +45,7 @@ export default {
     'currency-index': CurrencyIndex,
     'exchange-notice-index': ExchangeNoticeIndex,
     'exchange-maxchange-index': ExchangeMaxchangeIndex,
+    'daohang-index': DaohangIndex
   }
 }
 </script>

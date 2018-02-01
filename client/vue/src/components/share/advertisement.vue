@@ -1,10 +1,9 @@
 <style>
-
-.headAd {
+section {
   width: 1205px
 }
 
-.headAd>div {
+section > div {
   float: left;
   height: 90px;
   position: relative;
@@ -12,7 +11,7 @@
   margin-right: 5px
 }
 
-.headAd>div:after {
+section > div:after {
   content: '广告';
   height: 18px;
   width: 30px;
@@ -28,59 +27,49 @@
   right: 0
 }
 
-.headAd .col-1 {
+section .col-1 {
   width: 236px
 }
 
-.headAd a img {
+section a img {
   width: 100%;
   height: 100%
 }
 
-.headAd .col-2 {
+section .col-2 {
   width: 477px
 }
 
-.headAd .col-3 {
+section .col-3 {
   width: 713px
 }
 
-.headAd .col-4 {
+section .col-4 {
   width: 949px
 }
 
-.headAd .col-5 {
+section .col-5 {
   width: 1200px
 }
 </style>
 
 <template>
-  <div id="indexheadad" class="headAd" style="width: 1205px;margin:0 auto;">
+  <section style="width: 1205px;margin:0 auto;">
     <div class="col-2" id="headAd01">
       <a href="#" target="_blank">
-        <img src="/static/vip/huobi_ht.jpg">
+        <img src="/static/images/vip/huobi_ht.jpg">
       </a>
     </div>
     <div class="col-1" id="headAd03">
       <a href="/pages/app" target="_blank">
-        <img src="/static/vip/appad.png">
+        <img src="/static/images/vip/appad.png">
       </a>
     </div>
     <div class="col-2" id="headAd04">
       <a href="#" target="_blank">
-        <img src="/static/vip/okex_the.jpg">
+        <img src="/static/images/vip/okex_the.jpg">
       </a>
     </div>
-  </div>
+  </section>
 </template>
 
-<script>
-export default {
-  name: 'ShareAdvertisement',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
-}
-</script>

@@ -27,7 +27,7 @@
 }
 
 .navSlide:after, .slideBtn button:after {
-  content: url("/static/arrow-d.png");
+  content: url("/static/images/arrow-d.png");
 }
 
 .navSlide:hover, nav .leftNav li:hover {
@@ -89,7 +89,7 @@ nav .logo a {
   <ul class="leftNav">
     <li class="logo">
       <a href="index.html">
-        <img src="/static/logo.png" alt="东方币湾的Logo">
+        <img src="/static/images/logo.png" alt="东方币湾的Logo">
       </a>
     </li>
     <li class="navSlide">行情
@@ -138,14 +138,3 @@ nav .logo a {
     </li>
   </ul>
 </template>
-
-<script>
-export default {
-  name: 'ShareNavLeft',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
-}
-</script>

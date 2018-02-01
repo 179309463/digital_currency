@@ -40,7 +40,6 @@
 
 <script>
 export default {
-  name: 'ShareFriendlinks',
   data () {
     return {
       links: [

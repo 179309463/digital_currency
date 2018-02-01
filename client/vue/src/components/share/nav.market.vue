@@ -68,11 +68,11 @@ margin-left: 8px
 }
 
 .showmarket .text-green:after {
-content: url("/static/arrow-u3.svg")
+content: url("/static/images/arrow-u3.svg")
 }
 
 .showmarket .text-red:after {
-content: url("/static/arrow-d4.svg")
+content: url("/static/images/arrow-d4.svg")
 }
 
 .line {
@@ -98,7 +98,6 @@ display: none !important
 import $ from 'jquery'
 
 export default {
-  name: 'ShareNavMarket',
   data () {
     return {
       markets: [

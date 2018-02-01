@@ -1,12 +1,12 @@
 <style scoped>
 .maintable tr td a.price.text-red:after,
 .maintable  tr td .tprice.text-red:after {
-  content: url('/static/arrow-d4.svg')
+  content: url('/static/images/arrow-d4.svg')
 }
 
 .maintable tr td a.price.text-green:after,
 .maintable  tr td .tprice.text-green:after {
-  content: url('/static/arrow-u3.svg')
+  content: url('/static/images/arrow-u3.svg')
 }
 .maintable .tags-green, .maintable .tags-red {
   margin-left: 0

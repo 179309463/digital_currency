@@ -4,11 +4,11 @@
 }
 
 .tabTit .more:before {
-  content: url("/static/more.svg")
+  content: url("/static/images/more.svg")
 }
 
 .tabTit .more:hover:before {
-  content: url("/static/more2.svg")
+  content: url("/static/images/more2.svg")
 }
 
 .tabTit h3, .tabTit h1, .tabTit h2 {
@@ -33,7 +33,7 @@
 
 .tabTit .active {
   border-top: 3px solid #3499da;
-  background: url("/static/arrow-d2.svg") center -6px no-repeat
+  background: url("/static/images/arrow-d2.svg") center -6px no-repeat
 }
 
 .tabTit .active.tit {
@@ -80,7 +80,6 @@
 import ExchangeMaxchangeIndexTab from '@/components/exchange_maxchanges/index.tab'
 
 export default {
-  name: 'ExchangeMaxchangeIndex',
   data () {
     return {
       type: 'up'

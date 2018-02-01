@@ -113,11 +113,11 @@ html, body {
 }
 
 .boxTit .more:before {
-	content: url("more.svg")
+	content: url("/static/images/more.svg")
 }
 
 .boxTit .more:hover:before {
-	content: url("more2.svg")
+	content: url("/static/images/more2.svg")
 }
 
 .boxTit .more {

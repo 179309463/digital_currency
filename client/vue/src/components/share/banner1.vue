@@ -35,7 +35,7 @@
 	font-style: normal;
 	line-height: 40px;
 	text-align: center;
-	background: #fff url("/static/more.svg") no-repeat center;
+	background: #fff url("/static/images/more.svg") no-repeat center;
 	color: #fff;
 	opacity: 0;
 	cursor: pointer
@@ -63,7 +63,7 @@
 }
 
 #spread2:after {
-	content: url("/static/mark.png");
+	content: url("/static/images/mark.png");
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -76,7 +76,7 @@
 	  <div class="banner">
 	    <div class="bannerIner">
 	      <a href="#" id="spread2" target="_blank" page="1">
-	      	<img src="/static/home_fxhrobot.png">
+	      	<img src="/static/images/home_fxhrobot.png">
 	      </a>
 	    </div>
 	    <div class="bannerPoin"></div>
@@ -84,13 +84,3 @@
 	</div>
 </template>
 
-<script>
-export default {
-  name: 'ShareBanner1',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
-}
-</script>

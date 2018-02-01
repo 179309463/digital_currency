@@ -132,7 +132,7 @@
   display: inline-block;
   height: 48px;
   width: 48px;
-  background: url('/static/icon.svg') no-repeat;
+  background: url('/static/images/icon.svg') no-repeat;
   margin: 0 10px;
   border-radius: 50%;
 }
@@ -225,7 +225,7 @@
   width: 95px;
   height: 95px;
   display: block;
-  background: url('/static/success') top center no-repeat;
+  background: url('/static/images/success') top center no-repeat;
   margin: 0 auto;
 }
 
@@ -319,7 +319,6 @@
 import $ from 'jquery'
 
 export default {
-  name: 'ShareOuterwindowr',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

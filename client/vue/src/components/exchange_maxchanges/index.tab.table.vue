@@ -66,7 +66,6 @@
 
 <script>
 export default {
-  name: 'ExchangeMaxchangeIndexTabTable',
   data () {
     return {
 

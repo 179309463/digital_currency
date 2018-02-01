@@ -70,7 +70,7 @@ nav .rightSise {
       <ul>
         <li>
           <a href="#" target="_blank">
-            <img alt="东方币湾官方电报群" src="/static/telegram.png"/>
+            <img alt="东方币湾官方电报群" src="/static/images/telegram.png"/>
           </a>
           </li>
         <li>
@@ -94,14 +94,6 @@ nav .rightSise {
 
 <script>
 import $ from 'jquery'
-
-export default {
-  name: 'ShareNavLogin',
-  data () {
-    return {
-    }
-  }
-}
 
 function getUserInfo () {
   $.ajax({

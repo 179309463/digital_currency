@@ -48,7 +48,6 @@
 import ExchangeMaxchangeIndexTabTable from '@/components/exchange_maxchanges/index.tab.table'
 
 export default {
-  name: 'ExchangeMaxchangeIndexTab',
   data () {
     return {
       type: 'hour'

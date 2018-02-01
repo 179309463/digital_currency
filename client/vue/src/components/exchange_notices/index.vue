@@ -67,7 +67,6 @@
 import $ from 'jquery'
 
 export default {
-  name: 'ExchangeNoticeIndex',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

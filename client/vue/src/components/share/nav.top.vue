@@ -21,11 +21,11 @@
   }
 
 .totalvolcap.text-red:after {
-  content: url('<%= asset_path("arrow-d4.svg")%>')
+  content: url('/static/images/arrow-d4.svg')
 }
 
 .totalvolcap.text-green:after {
-  content: url('<%= asset_path("arrow-u3.svg")%>')
+  content: url('/static/images/arrow-u3.svg')
 }
 
 .space:before {
@@ -59,7 +59,6 @@
 import ShareNavLogin from '@/components/share/nav.login'
 
 export default {
-  name: 'ShareNavTop',
   data () {
     return {
       globalinfo: {

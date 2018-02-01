@@ -25,19 +25,8 @@
 	<div class="box box325">
 	  <div class="plantListsSpread">
 	    <a id="spread3"  href="#" title="东方币湾QQ群：368805087" target="_blank">
-	    	<img src="/static/index03.png">
+	    	<img src="/static/images/index03.png">
 	    </a>
 	  </div>
 	</div>
 </template>
-
-<script>
-export default {
-  name: 'ShareBanner2',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
-}
-</script>

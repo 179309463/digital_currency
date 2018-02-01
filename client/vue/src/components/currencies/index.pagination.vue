@@ -57,17 +57,3 @@
     <a class='btn btn-white' href='list_2.html'>></a>
   </div>
 </template>
-
-
-<script>
-import $ from 'jquery'
-
-export default {
-  name: 'CurrencyIndexPagination',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
-}
-</script>

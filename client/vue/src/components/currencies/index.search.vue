@@ -22,7 +22,7 @@
 }
 
 .searchForm .icon-search:before {
-  content: url("/static/search.svg")
+  content: url("/static/images/search.svg")
 }
 
 .searchForm form {
@@ -157,7 +157,6 @@
 import $ from 'jquery'
 
 export default {
-  name: 'CurrencyIndexSearch',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

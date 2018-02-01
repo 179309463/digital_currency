@@ -1,37 +1,4 @@
 <style scoped>
-
-.weCat, .sina, .qq {
-  height: 50px;
-  width: 50px;
-  margin-left: 20px;
-  display: inline-block;
-  position: relative
-}
-
-.weCat {
-  background: url("/static/weCat.png")
-}
-
-.sina {
-  background: url("/static/sina.png")
-}
-
-.qq {
-  background: url("/static/qq.png")
-}
-
-.weCat:hover {
-  background: url("/static/weCat_a.png")
-}
-
-.sina:hover {
-  background: url("/static/sina_a.png")
-}
-
-.qq:hover {
-  background: url("/static/qq_a.png")
-}
-
 .totop {
   position: fixed;
   right: calc(50% - 660px);
@@ -55,18 +22,18 @@
 }
 
 .wCat2 {
-  background: #fff url("/static/weCat2.png") 5px 5px no-repeat !important;
+  background: #fff url("/static/images/weCat2.png") 5px 5px no-repeat !important;
   display: block;
   width: 40px;
   height: 40px
 }
 
 .wCat2:hover {
-  background: #3499da url("/static/weCat2.png") -35px 5px no-repeat !important
+  background: #3499da url("/static/images/weCat2.png") -35px 5px no-repeat !important
 }
 
 .qq2 {
-  background: #fff url("/static/qq2.png") 5px 5px no-repeat !important;
+  background: #fff url("/static/images/qq2.png") 5px 5px no-repeat !important;
   display: block;
   width: 40px;
   height: 40px;
@@ -74,11 +41,11 @@
 }
 
 .qq2:hover {
-  background: #3499da url("/static/qq2.png") -35px 5px no-repeat !important
+  background: #3499da url("/static/images/qq2.png") -35px 5px no-repeat !important
 }
 
 .sina2 {
-  background: #fff url("/static/sina2.png") 5px 5px no-repeat !important;
+  background: #fff url("/static/images/sina2.png") 5px 5px no-repeat !important;
   display: block;
   width: 40px;
   height: 40px;
@@ -86,15 +53,15 @@
 }
 
 .sina2:hover {
-  background: #3499da url("/static/sina2.png") -32px 5px no-repeat !important
+  background: #3499da url("/static/images/sina2.png") -32px 5px no-repeat !important
 }
 
 .totop .top {
-  background: #fff url("/static/top2.png") 5px 5px no-repeat !important
+  background: #fff url("/static/images/top2.png") 5px 5px no-repeat !important
 }
 
 .totop .top:hover {
-  background: #3499da url("/static/top2.png") -32px 5px no-repeat !important
+  background: #3499da url("/static/images/top2.png") -32px 5px no-repeat !important
 }
 
 .totop>div img {
@@ -153,8 +120,8 @@
   <div class="totop">
     <div class="wCat2">
       <div class="detal">
-        <img src="/static/fwh.jpg" alt="东方币湾微信服务号">
-        <img src="/static/wxdyh.png" alt="币联社公众号">
+        <img src="/static/images/fwh.jpg" alt="东方币湾微信服务号">
+        <img src="/static/images/wxdyh.png" alt="币联社公众号">
         <div style="text-align: center;width: 116px;float: left;color: #fff">东方币湾微信服务号</div>
         <div style="text-align: center;width: 116px;float: left;color: #fff">币联社公众号</div>
       </div>
@@ -167,11 +134,9 @@
 </template>
 
 <script>
-
 import $ from 'jquery'
 
 export default {
-  name: 'ShareTotop',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -193,12 +158,13 @@ function totop () {
   })
 }
 
-totop()
+$(function(){
+  totop()
 
-$('.totop>div').hover(function () {
-  $(this).find('.detal').fadeIn('fast')
-}, function () {
-  $(this).find('.detal').hide()
+  $('.totop>div').hover(function () {
+    $(this).find('.detal').fadeIn('fast')
+  }, function () {
+    $(this).find('.detal').hide()
+  })
 })
-
 </script>

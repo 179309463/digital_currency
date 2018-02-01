@@ -48,11 +48,11 @@ nav a {
 }
 
 .navsub .text-green:after {
-  content: url("/static/arrow-u3.svg")
+  content: url("/static/images/arrow-u3.svg")
 }
 
 .navsub .text-red:after {
-  content: url("/static/arrow-d4.svg")
+  content: url("/static/images/arrow-d4.svg")
 }
 
 .minWidth {
@@ -101,12 +101,6 @@ import ShareNavSearch from '@/components/share/nav.search'
 import ShareNavTop from '@/components/share/nav.top'
 
 export default {
-  name: 'ShareNav',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  },
   components: {
     'nav-top': ShareNavTop,
     'nav-left': ShareNavLeft,
