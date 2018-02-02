@@ -23,7 +23,6 @@
   display: block
 }
 
-
 .weCat, .sina, .qq {
   height: 50px;
   width: 50px;
@@ -65,4 +64,3 @@
     <a class="sina" href='#' target='_blank'></a>
   </div>
 </template>
-

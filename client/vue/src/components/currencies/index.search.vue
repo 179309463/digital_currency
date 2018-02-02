@@ -255,9 +255,9 @@ $(function () {
   $('.searchBtn').click(function () {
     var input = $(this).closest('.searchForm2').find('input')
     if (input.hasClass('open')) {
-        input.removeClass('open')
+      input.removeClass('open')
     } else {
-        input.val('').addClass('open').focus()
+      input.val('').addClass('open').focus()
     }
   })
 })

@@ -32,7 +32,7 @@ section img {
   max-width: 100% !important;
   width: auto !important
 }
-</style>      
+</style>
 
 <template>
   <div>
@@ -49,7 +49,7 @@ section img {
         </div>
         <div class="box box325" style="background: none;width: 234px;">
           <div class="boxContain">
-            <div class="m15"></div>          
+            <div class="m15"></div>
             <dashboard-nav></dashboard-nav>
           </div>
         </div>

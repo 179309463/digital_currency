@@ -1,4 +1,47 @@
 <style scoped>
+nav .leftNav {
+  float: left;
+  height: 40px;
+  transition: all .4s;
+}
+
+nav .leftNav>li>a,
+nav .leftNav>li {
+  display: block;
+  float: left;
+  height: 70px;
+  line-height: 70px;
+  padding: 0 15px;
+  position: relative;
+  transition: all .4s;
+}
+
+nav .leftNav li:hover a {
+  color: #3499da;
+}
+
+nav .leftNav li.logo {
+  margin-right: 15px;
+}
+
+nav .leftNav li.logo img {
+  height: 40px;
+  vertical-align: middle;
+}
+
+nav .leftNav li.logo {
+  padding-left: 0;
+  margin-right: 0;
+}
+
+nav .leftNav>li>a {
+  padding: 0;
+}
+
+nav .logo a {
+  padding: 0 !important;
+}
+
 .subNav {
   background: #fff;
   position: absolute;
@@ -40,101 +83,54 @@
   display: block;
 }
 
-nav .leftNav {
-  float: left;
-  height: 40px;
-  transition: all .4s;
-}
-
-nav .leftNav>li>a, nav .leftNav>li {
-  display: block;
-  float: left;
-  height: 70px;
-  line-height: 70px;
-  padding: 0 15px;
-  position: relative;
-  transition: all .4s;
-}
-
-nav .leftNav li:hover a {
-  color: #3499da;
-}
-
-nav .leftNav li.logo {
-  margin-right: 15px;
-}
-
-nav .leftNav li.logo img {
-  height: 40px;
-  vertical-align: middle;
-}
-
-nav .leftNav li.logo {
-  padding-left: 0;
-  margin-right: 0;
-}
-
-nav .leftNav>li>a {
-  padding: 0;
-}
-
-nav .logo a {
-  padding: 0 !important;
-}
-
 </style>
 
 <template>
-
   <ul class="leftNav">
     <li class="logo">
       <a href="index.html">
         <img src="/static/images/logo.png" alt="东方币湾的Logo">
       </a>
     </li>
-    <li class="navSlide">行情
-      <ul class="subNav">
-        <li>
-          <a href="/">所有</a>
-        </li>
-        <li>
-          <a href="/currencies">货币</a>
-        </li>
-        <li>
-          <a href="/currencies">代币</a>
-        </li>
-        <li>
-          <a href="/currency_newests">最新上市</a>
-        </li>
-        <li>
-          <a href="/concepts">概念行情</a>
-        </li>
-        <li>
-          <a href="/pages/charts">市值趋势</a>
-        </li>
-      </ul>
-    </li>
-    <li class="navSlide">排行榜
-      <ul class="subNav">
-        <li>
-          <a href="/currency_maxchanges">涨跌幅排行榜</a>
-        </li>
-        <li>
-          <a href="/currency_vols">24小时成交额排行(币种)</a>
-        </li>
-        <li>
-          <a href="/exchange_vols">24小时成交额排行(交易平台)</a>
-        </li>
-        <li>
-          <a href="/currency_ranks">月成交额排行</a>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <a href="/exchanges">交易平台</a>
-    </li>
-    <li>
-      <a href="/pages/app">APP</a>
+    <li :class="{'navSlide':menu.submenus}" v-for="menu of menus" :key="menu.title">
+      <template v-if="menu.submenus">
+        {{menu.title}}
+        <ul class="subNav">
+          <li v-for="submenu of menu.submenus" :key="submenu.title">
+            <a :href="submenu.href">{{submenu.title}}</a>
+          </li>
+        </ul>
+      </template>
+      <template v-else>
+        <a :href="menu.href">{{menu.title}}</a>
+      </template>
     </li>
   </ul>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      menus: [
+        { title: '行情', href: '', submenus: [
+            { title: '所有', href: '/' },
+            { title: '货币', href: '/currencies' },
+            { title: '代币', href: '/currencies' },
+            { title: '最新上市', href: '/currency_newests' },
+            { title: '概念行情', href: '/concepts' },
+            { title: '市值趋势', href: '/pages/charts' }
+        ]},
+        { title: '排行榜', href: '', submenus: [
+            { title: '涨跌幅排行榜', href: '/currency_maxchanges' },
+            { title: '24小时成交额排行(币种)', href: '/currency_vols' },
+            { title: '24小时成交额排行(交易平台)', href: '/exchange_vols' },
+            { title: '月成交额排行', href: '/currency_ranks' }
+        ]},
+        { title: '交易平台', href: '/exchanges' },
+        { title: 'APP', href: '/pages/app' }
+      ]
+    }
+  }
+}
+</script>

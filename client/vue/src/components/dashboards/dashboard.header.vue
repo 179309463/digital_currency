@@ -17,23 +17,21 @@ section span {
 </style>
 
 <template>
-    <section>
-      <div class="w1200">
-        <div class="boxContain">
-          <h1>{{title}}</h1>
-          <span>{{title_en}}</span>
-      	</div>
+  <section>
+    <div class="w1200">
+      <div class="boxContain">
+        <h1>{{title}}</h1>
+        <span>{{title_en}}</span>
       </div>
-    </section>
+    </div>
+  </section>
 </template>
 
-
 <script>
-
 export default {
   props: {
     title: String,
     title_en: String
   }
 }
-</script>    
+</script>

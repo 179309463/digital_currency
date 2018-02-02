@@ -19,4 +19,4 @@ ul li {
       <router-link :to="{name: 'DashboardDeclare'}">免责声明</router-link>
     </li>
   </ul>
-</template> 
+</template>

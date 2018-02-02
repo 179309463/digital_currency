@@ -1,20 +1,4 @@
 <style scoped>
-.maintable tr td a.price.text-red:after,
-.maintable  tr td .tprice.text-red:after {
-  content: url('/static/images/arrow-d4.svg')
-}
-
-.maintable tr td a.price.text-green:after,
-.maintable  tr td .tprice.text-green:after {
-  content: url('/static/images/arrow-u3.svg')
-}
-.maintable .tags-green, .maintable .tags-red {
-  margin-left: 0
-}
-
-.line2 {
-  display: none !important
-}
 .tips {
   padding: 15px;
   color: #999;
@@ -30,7 +14,7 @@
     </div>
     <index-tool></index-tool>
     <div class="boxContain">
-      <table class="table maintable" id="table">
+      <sortable-table>
         <thead>
           <tr>
             <th>#</th>
@@ -43,7 +27,7 @@
             <th width="95" data-sort-method='none'>价格趋势(7d)</th></tr>
         </thead>
         <tbody>
-          <tr :id="currency.id" v-for="currency of currencies">
+          <tr :id="currency.id" :key="currency.id" v-for="currency of currencies">
             <td>{{currency.order}}</td>
             <td>
               <a :href="'/currencies/'+currency.id" target="_blank">
@@ -62,11 +46,11 @@
               <span class="text-red">{{currency.change}}%</span>
             </td>
             <td class="char">
-              <span class="line2" data-peity='{"stroke": "#3ca316"}'>{{currency.data}}</span>
+              <util-line :data="currency.data"></util-line>
             </td>
           </tr>
         </tbody>
-      </table>
+      </sortable-table>
     </div>
     <div class="boxTools">
       <index-pagination></index-pagination>
@@ -76,8 +60,8 @@
 </template>
 
 <script>
-import $ from 'jquery'
-import Tablesort from 'tablesort'
+import UtilLine from '@/components/utils/line'
+import SortableTable from '@/components/utils/sortable-table'
 
 import CurrencyIndexSearch from '@/components/currencies/index.search'
 import CurrencyIndexTool from '@/components/currencies/index.tool'
@@ -88,7 +72,9 @@ export default {
   components: {
     'index-search': CurrencyIndexSearch,
     'index-tool': CurrencyIndexTool,
-    'index-pagination': CurrencyIndexPagination
+    'index-pagination': CurrencyIndexPagination,
+    'util-line': UtilLine,
+    'sortable-table': SortableTable
   },
   data () {
     return {
@@ -96,7 +82,7 @@ export default {
         {
           order: 1,
           id: 'bitcorn',
-          image: 'https://static.eastcoinbay.com/Coin/7033f2f2c2a16094bbb3bafc47205ba8_small.png',
+          image: '/static/images/currency.png',
           name: 'BTC-比特币',
           marketcap: {
             usd: 176624485715,
@@ -121,16 +107,4 @@ export default {
     }
   }
 }
-
-$(function () {
-  new Tablesort(document.getElementById('table'))
-  $('.line2').peity('line', {
-    width: 80,
-    height: 20,
-    fill: 'none',
-    strokeWidth: 1,
-    min: 2500,
-    stroke: '#3499da'
-  })
-})
 </script>

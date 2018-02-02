@@ -1,5 +1,5 @@
 <style scoped>
-.fLink {
+section {
     background: #d8d8d8;
     padding: 15px;
     color: #b2b2b2;
@@ -8,20 +8,20 @@
     position: relative
 }
 
-.fLink h3 {
+section h3 {
     font-size: 16px;
     font-weight: normal;
     color: #777
 }
 
-.fLink a {
+section a {
     margin-top: 10px;
     margin-right: 15px;
     color: #777;
     display: inline-block
 }
 
-.fLink a:hover {
+section a:hover {
     color: #3499da;
     text-decoration: none
 }
@@ -29,7 +29,7 @@
 
 <template>
 
-    <div class="fLink clear">
+    <div class="clear">
       <div class="w1200">
         <h3>友情链接</h3>
         <a :key="link.href" :href="link.href" :title="link.title" target="_blank" v-for="link of links">{{link.title}}</a>

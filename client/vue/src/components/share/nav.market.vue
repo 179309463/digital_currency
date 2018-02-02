@@ -74,10 +74,6 @@ content: url("/static/images/arrow-u3.svg")
 .showmarket .text-red:after {
 content: url("/static/images/arrow-d4.svg")
 }
-
-.line {
-display: none !important
-}
 </style>
 
 <template>
@@ -88,14 +84,14 @@ display: none !important
       </div>
       <div class="num">{{market.num}}</div>
       <div class="char">
-        <span class="line">{{market.data}}</span>
+        <util-line :data="market.data"></util-line>
       </div>
     </div>
   </li>
 </template>
 
 <script>
-import $ from 'jquery'
+import UtilLine from '@/components/utils/line'
 
 export default {
   data () {
@@ -124,16 +120,9 @@ export default {
         }
       ]
     }
+  },
+  components: {
+    'util-line': UtilLine
   }
 }
-
-$(function () {
-  $('.line').peity('line', {
-    width: 50,
-    height: 15,
-    fill: '#f5f5f5',
-    min: 99999,
-    strokeWidth: 1
-  })
-})
 </script>

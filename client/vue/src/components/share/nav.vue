@@ -1,32 +1,4 @@
 <style scoped>
-nav li {
-  margin-top: 5px
-}
-nav {
-  top: 0;
-  left: 0;
-  right: 0;
-  position: fixed;
-  box-shadow: 2px 2px 3px #eaecef;
-  height: 115px;
-  background: #fff;
-  transition: all .5s;
-  z-index: 999999
-}
-
-nav:after {
-  content: '';
-  height: 1px;
-  width: 100%;
-  display: block;
-  visibility: hidden;
-  clear: both;
-}
-
-nav a {
-  color: #333;
-  text-decoration: none !important
-}
 .navsub {
   height: 30px;
   line-height: 30px;

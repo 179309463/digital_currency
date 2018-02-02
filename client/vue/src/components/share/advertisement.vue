@@ -72,4 +72,3 @@ section .col-5 {
     </div>
   </section>
 </template>
-

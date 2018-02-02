@@ -44,8 +44,8 @@
 
 .linksList li:nth-last-child(1), .linksList li:nth-last-child(2), .linksList li:nth-last-child(3) {
   border-bottom: 0
-}  
-</style> 
+}
+</style>
 
 <template>
   <div class="box box325">
@@ -90,7 +90,7 @@
         </li>
         <li>
           <a href="http://wpa.qq.com/msgrd?v=3&uin=2409859098&site=qq&menu=yes" target="_blank" title="商务合作：2409859098" style="background-position:-108px -190px" class="cLink"></a>
-        </li>              
+        </li>
       </ul>
     </div>
   </div>

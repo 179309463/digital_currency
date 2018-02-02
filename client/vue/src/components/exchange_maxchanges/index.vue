@@ -86,7 +86,7 @@ export default {
     }
   },
   methods: {
-    toggle: function(type) {
+    toggle: function (type) {
       this.type = type
     }
   },

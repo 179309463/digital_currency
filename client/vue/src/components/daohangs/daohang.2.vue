@@ -24,8 +24,8 @@
   background: url("/static/images/cLink2.png");
   margin-right: 3px;
   vertical-align: -2px
-}            
-</style> 
+}
+</style>
 <template>
   <div class="box box1200">
     <div class="boxTit">
@@ -61,4 +61,4 @@
       </ul>
     </div>
   </div>
-</template
+</template>

@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-Vue.use(require('vue-highcharts'));
+Vue.use(require('vue-highcharts'))
 Vue.use(require('vue-chartist'))
 
 Vue.config.productionTip = false

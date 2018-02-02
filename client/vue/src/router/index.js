@@ -20,6 +20,6 @@ export default new Router({
     { path: '/daohang', name: 'Daohang', component: Daohang }
   ],
   scrollBehavior (to, from, savedPosition) {
-	  return { x: 0, y: 0 }
+    return { x: 0, y: 0 }
   }
 })

@@ -158,7 +158,7 @@ function totop () {
   })
 }
 
-$(function(){
+$(function () {
   totop()
 
   $('.totop>div').hover(function () {

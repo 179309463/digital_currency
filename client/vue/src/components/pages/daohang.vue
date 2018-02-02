@@ -39,7 +39,7 @@
   width: 1100px;
   float: left
 }
-</style>  
+</style>
 
 <template>
   <div>
@@ -52,15 +52,15 @@
         <danghang-4></danghang-4>
         <danghang-5></danghang-5>
         <danghang-6></danghang-6>
-        <div class="box box1200" v-for="section of sections">
+        <div class="box box1200" v-for="section of sections" :key="section.name">
           <div class="boxTit">
             <h2>{{section.name}}</h2>
           </div>
           <div class="boxContain">
-            <div class="linksgroud" v-for="group of section.groups">
+            <div class="linksgroud" v-for="group of section.groups" :key="group.name">
               <div class="tit">{{group.name}}</div>
               <ul class="group">
-                <li v-for="link of group.links">
+                <li v-for="link of group.links" :key="link.title">
                   <a :href="link.href" target="_blank" rel="nofollow">{{link.title}}</a>
                 </li>
               </ul>
@@ -104,10 +104,10 @@ export default {
                 { href: 'http://p2pool.in/', title: 'p2pool.info' },
                 { href: 'https://www.f2pool.com/', title: 'f2pool.com' },
                 { href: 'https://eligius.st/~gateway/', title: 'eligius.st' },
-                { href: 'https://metabank.ru/pool', title: 'metabank.ru'},
-                { href: 'https://bitminter.com/', title: 'bitminter.com'},
-                { href: 'https://www.bw.com/', title: 'BW'},
-                { href: 'https://slushpool.com/home/', title: 'slushpool'}
+                { href: 'https://metabank.ru/pool', title: 'metabank.ru' },
+                { href: 'https://bitminter.com/', title: 'bitminter.com' },
+                { href: 'https://www.bw.com/', title: 'BW' },
+                { href: 'https://slushpool.com/home/', title: 'slushpool' }
               ]
             },
             {

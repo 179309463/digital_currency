@@ -47,7 +47,7 @@
         <li>
           <a href="https://news.kucoin.com/trade-io%E4%BA%8E2018%E5%B9%B41%E6%9C%8823%E6%97%A5%E4%B8%8A%E7%BA%BFkucoin/" target="_blank" rel="nofollow" title="【库币网】trade.io于2018年1月23日上线KuCoin!">
             <span class="tit">
-              <img src="https://static.eastcoinbay.com/PlatImages/20171012/abe6f121516549289e5e629f0e7b0afb_15_15.png" alt="trade.io于2018年1月23日上线KuCoin!">trade.io于2018年1月23日上线KuCoin!</span>
+              <img src="/static/images/exchange.png" alt="trade.io于2018年1月23日上线KuCoin!">trade.io于2018年1月23日上线KuCoin!</span>
             <span class="time">01-23 21:12</span></a>
         </li>
       </ul>
@@ -55,7 +55,7 @@
         <li>
           <a href="https://www.uncoinex.com/news/detail/84" target="_blank" rel="nofollow" title="【澳洲U网】Arts净买入排名送豪礼阶段排名公布">
             <span class="tit">
-              <img src="https://static.eastcoinbay.com/PlatImages/20171025/c05793356a1746829cfae32a4b32d64b_15_15.png" alt="Arts净买入排名送豪礼阶段排名公布">Arts净买入排名送豪礼阶段排名公布</span>
+              <img src="/static/images/exchange.png" alt="Arts净买入排名送豪礼阶段排名公布">Arts净买入排名送豪礼阶段排名公布</span>
             <span class="time">01-23 18:24</span></a>
         </li>
       </ul>
@@ -74,30 +74,30 @@ export default {
   }
 }
 
-$(function(){
-  var mun = 0;
-  var scroll1 = null;
-  function scroll() {
-    scroll1 = setInterval(function() {
-      mun--;
-      $('.artList').eq(0).css('margin-top', mun + 'px');
-      if (mun == -200) {
-        $('.artList').eq(0).appendTo('#artList');
-        $('.artList').css('margin-top', '0');
-        setTimeout(function() {
-          mun = 0;
-          clearInterval(scroll1);
+$(function () {
+  var mun = 0
+  var scroll1 = null
+  function scroll () {
+    scroll1 = setInterval(function () {
+      mun--
+      $('.artList').eq(0).css('margin-top', mun + 'px')
+      if (mun === -200) {
+        $('.artList').eq(0).appendTo('#artList')
+        $('.artList').css('margin-top', '0')
+        setTimeout(function () {
+          mun = 0
+          clearInterval(scroll1)
           scroll()
         }, 75)
       }
     }, 80)
   }
-  scroll();
-  $('.artList').mouseover(function() {
-    clearInterval(scroll1);
-  });
-  $('.artList').mouseout(function() {
+  scroll()
+  $('.artList').mouseover(function () {
+    clearInterval(scroll1)
+  })
+  $('.artList').mouseout(function () {
     scroll()
   })
-});
+})
 </script>

@@ -52,7 +52,7 @@
           <span>1</span></td>
         <td>
           <a href="/currencies/zzm/">
-            <img src="//static.eastcoinbay.com/Coin/20171128/366df9e0882f45cf9e891554709b984d.png" alt="ZZM">ZZM
+            <img src="/static/images/currency.png" alt="ZZM">ZZM
           </a>
         </td>
         <td>¥2.02</td>
